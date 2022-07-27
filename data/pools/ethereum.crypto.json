@@ -1,0 +1,414 @@
+{
+  "success": true,
+  "data": {
+    "poolData": [
+      {
+        "id": "crypto-0",
+        "address": "0xD51a44d3FaE010294C616388b506AcdA1bfAAE46",
+        "coinsAddresses": [
+          "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+          "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "8", "18", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0xc4AD29ba4B3c580e6D59105FFf484999997675Ff",
+        "name": "Curve.fi USD-BTC-ETH",
+        "symbol": "crv3crypto",
+        "totalSupply": "275225594840972242779186",
+        "priceOracle": 22904.601351920108,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "usdPrice": 1.001,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT",
+            "poolBalance": "93288083373017"
+          },
+          {
+            "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "usdPrice": 22886,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "WBTC",
+            "poolBalance": "411150649690"
+          },
+          {
+            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "usdPrice": 1627.73,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH",
+            "poolBalance": "57810451258765016155840"
+          }
+        ],
+        "usdTotal": 281577114.971873,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 281577114.971873,
+        "gaugeAddress": "0xdefd8fdd20e0f34115c7018ccfb655796f6b2168"
+      },
+      {
+        "id": "crypto-1",
+        "address": "0x9838eCcC42659FA8AA7daF2aD134b53984c9427b",
+        "coinsAddresses": [
+          "0xC581b735A1688071A1746c968e0798D642EDE491",
+          "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x3b6831c0077a1e44ED0a21841C3bC4dC11bCE833",
+        "name": "Curve EURT-3Crv",
+        "symbol": "crvEURTUSD",
+        "totalSupply": "8010614593226538143574145",
+        "priceOracle": 1.0041453143895267,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xC581b735A1688071A1746c968e0798D642EDE491",
+            "usdPrice": 1.021,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "EURT",
+            "poolBalance": "8578096866150"
+          },
+          {
+            "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+            "usdPrice": 1.022,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "3Crv",
+            "poolBalance": "7530478479828275863770182"
+          }
+        ],
+        "usdTotal": 16454385.906723648,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 8758236.900339149,
+        "gaugeAddress": "0x4fd86ce7ecea88f7e0aa78dc12625996fb3a04bc"
+      },
+      {
+        "id": "crypto-2",
+        "address": "0x98a7F18d4E56Cfe84E3D081B40001B3d5bD3eB8B",
+        "coinsAddresses": [
+          "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "0xdB25f211AB05b1c97D595516F45794528a807ad8",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "2", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x3D229E1B4faab62F621eF2F6A610961f7BD7b23B",
+        "name": "Curve EURS-USDC",
+        "symbol": "crvEURSUSDC",
+        "totalSupply": "46505772108123836117216566",
+        "priceOracle": 1.018654711960524,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "usdPrice": 1.001,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "44809921314226"
+          },
+          {
+            "address": "0xdB25f211AB05b1c97D595516F45794528a807ad8",
+            "usdPrice": 1.02,
+            "decimals": "2",
+            "isBasePoolLpToken": false,
+            "symbol": "EURS",
+            "poolBalance": "4821213756"
+          }
+        ],
+        "usdTotal": 94031111.54674023,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 94031111.54674023,
+        "gaugeAddress": "0x65ca7dc5cb661fc58de57b1e1af404649a27ad35"
+      },
+      {
+        "id": "crypto-3",
+        "address": "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
+        "coinsAddresses": [
+          "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0xEd4064f376cB8d68F770FB1Ff088a3d0F3FF5c4d",
+        "name": "Curve CRV-ETH",
+        "symbol": "crvCRVETH",
+        "totalSupply": "670509681417778759171780",
+        "priceOracle": 0.000808501812118664,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "usdPrice": 1627.73,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH",
+            "poolBalance": "19675047931067456258864"
+          },
+          {
+            "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+            "usdPrice": 1.32,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "CRV",
+            "poolBalance": "23887444719874937138985664"
+          }
+        ],
+        "usdTotal": 63557092.79907135,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 63557092.79907135,
+        "gaugeAddress": "0x1cebdb0856dd985fae9b8fea2262469360b8a3a6"
+      },
+      {
+        "id": "crypto-4",
+        "address": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
+        "coinsAddresses": [
+          "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x3A283D9c08E8b55966afb64C515f5143cf907611",
+        "name": "Curve CVX-ETH",
+        "symbol": "crvCVXETH",
+        "totalSupply": "260579537776842629736575",
+        "priceOracle": 0.004315000371317237,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "usdPrice": 1627.73,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH",
+            "poolBalance": "17175735107795540049300"
+          },
+          {
+            "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+            "usdPrice": 7.01,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "CVX",
+            "poolBalance": "4072249207136529404551367"
+          }
+        ],
+        "usdTotal": 56503926.2490391,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 56503926.2490391,
+        "gaugeAddress": "0x7e1444ba99dcdffe8fbdb42c02f0005d14f13be1"
+      },
+      {
+        "id": "crypto-5",
+        "address": "0xAdCFcf9894335dC340f6Cd182aFA45999F45Fc44",
+        "coinsAddresses": [
+          "0x68749665FF8D2d112Fa859AA293F07A622782F38",
+          "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x8484673cA7BfF40F82B041916881aeA15ee84834",
+        "name": "Curve XAUT-3Crv",
+        "symbol": "crvXAUTUSD",
+        "totalSupply": "53727400506003805363745",
+        "priceOracle": 0.000594102564709113,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0x68749665FF8D2d112Fa859AA293F07A622782F38",
+            "usdPrice": 1713.75,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "XAUt",
+            "poolBalance": "1368093371"
+          },
+          {
+            "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+            "usdPrice": 1.022,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "3Crv",
+            "poolBalance": "2106579051989920370636070"
+          }
+        ],
+        "usdTotal": 4497493.805684948,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 2344570.01455125,
+        "gaugeAddress": "0x1b3e14157ed33f60668f2103bcd5db39a1573e5b"
+      },
+      {
+        "id": "crypto-6",
+        "address": "0x98638FAcf9a3865cd033F36548713183f6996122",
+        "coinsAddresses": [
+          "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "0x090185f2135308BaD17527004364eBcC2D37e5F6",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x8282BD15dcA2EA2bDf24163E8f2781B30C43A2ef",
+        "name": "Curve SPELL-ETH",
+        "symbol": "crvSPELLETH",
+        "totalSupply": "93086927753642049510889",
+        "priceOracle": 6.7047513007e-7,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "usdPrice": 1627.73,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH",
+            "poolBalance": "77547778353908286651"
+          },
+          {
+            "address": "0x090185f2135308BaD17527004364eBcC2D37e5F6",
+            "usdPrice": 0.00106666,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "SPELL",
+            "poolBalance": "119074311014565587188178731"
+          }
+        ],
+        "usdTotal": 253238.6498468037,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 253238.6498468037,
+        "gaugeAddress": "0x08380a4999be1a958e2abba07968d703c7a3027c"
+      },
+      {
+        "id": "crypto-7",
+        "address": "0x752eBeb79963cf0732E9c0fec72a49FD1DEfAEAC",
+        "coinsAddresses": [
+          "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0xCb08717451aaE9EF950a2524E33B6DCaBA60147B",
+        "name": "Curve T-ETH",
+        "symbol": "crvTETH",
+        "totalSupply": "825002292671567768704959",
+        "priceOracle": 0.000022753662376286,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "usdPrice": 1627.73,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH",
+            "poolBalance": "3938104861090814836078"
+          },
+          {
+            "address": "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+            "usdPrice": 0.03669911,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "T",
+            "poolBalance": "175622829373622666933872715"
+          }
+        ],
+        "usdTotal": 12855372.959237162,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 12855372.959237162,
+        "gaugeAddress": "0x6070fbd4e608ee5391189e7205d70cc4a274c017"
+      },
+      {
+        "id": "crypto-8",
+        "address": "0xE84f5b1582BA325fDf9cE6B0c1F087ccfC924e54",
+        "coinsAddresses": [
+          "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c",
+          "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x70fc957eb90E37Af82ACDbd12675699797745F68",
+        "name": "Curve EUROC-3Crv",
+        "symbol": "EUROC3CRV",
+        "totalSupply": "5015806144125665719105",
+        "priceOracle": 0.9659674794816333,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c",
+            "usdPrice": 1.005,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "EUROC",
+            "poolBalance": "5246900496"
+          },
+          {
+            "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+            "usdPrice": 1.022,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "3Crv",
+            "poolBalance": "4998271212343562728980"
+          }
+        ],
+        "usdTotal": 10381.368177495122,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 5273.13499848,
+        "gaugeAddress": "0x4329c8f09725c0e3b6884c1dab1771bce17934f9"
+      }
+    ],
+    "tvlAll": 519885937.2256965,
+    "tvl": 519885937.2256965,
+    "generatedTimeMs": 1658965210188
+  }
+}
