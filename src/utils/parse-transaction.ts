@@ -3,8 +3,7 @@ import lodash from 'lodash';
 import { Decimal } from 'decimal.js';
 import { CurvePoolMetadata } from './curve-api';
 import { EtherscanTx } from './etherscan';
-
-const CURVE_POOL_TOKEN_DECIMALS = 18;
+import { CurveAssetTypeName, CURVE_POOL_TOKEN_DECIMALS } from './curve.constants';
 
 export enum CurveTransactionType {
   ADD_LIQUIDITY, // can be one coin only or multiple
@@ -24,7 +23,9 @@ interface CurveTokenWithAmount {
 
 interface CurveTransaction {
   type: CurveTransactionType;
-  totalAmount: Decimal;
+  // Total is unknown for tricrypto or similar pools with different types of
+  // assets (TODO)
+  totalAmount?: Decimal;
   // Input or output tokens
   tokens: Array<CurveTokenWithAmount>;
 }
@@ -48,7 +49,7 @@ export const parseTransaction = ({
   if (decodedInput.name.startsWith('remove_liquidity')) {
     transaction = parseRemoveLiquidity({ pool, decodedInput });
   } else if (decodedInput.name.startsWith('add_liquidity')) {
-    // transactionType = CurveTransactionType.ADD_LIQUIDITY;
+    transaction = parseAddLiquidity({ pool, decodedInput });
   } else if (decodedInput.name.startsWith('exchange')) {
     // transactionType = CurveTransactionType.EXCHANGE;
   }
@@ -122,7 +123,53 @@ const parseRemoveLiquidity = ({
 
   return {
     type: CurveTransactionType.REMOVE_LIQUIDITY,
-    totalAmount,
+    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
+    tokens,
+  };
+};
+
+interface ParseAddLiquidityProps {
+  pool: CurvePoolMetadata;
+  decodedInput: ethers.utils.TransactionDescription;
+}
+const parseAddLiquidity = ({
+  pool,
+  decodedInput,
+}: ParseAddLiquidityProps): CurveTransaction | void => {
+  let totalAmount: Decimal;
+  let tokens: Array<CurveTokenWithAmount>;
+
+  if (decodedInput.name == 'add_liquidity') {
+    const rawAmounts: Array<BigNumber> =
+      decodedInput.args._amounts ?? decodedInput.args.amounts ?? decodedInput.args.uamounts;
+    totalAmount = new Decimal(0);
+    tokens = lodash.compact(
+      rawAmounts.map((rawAmount, i) => {
+        if (rawAmount.isZero()) {
+          // Ignore zero values:
+          return;
+        }
+        const coin = pool.coins[i];
+        const decimals = Number(coin.decimals);
+        const amount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
+        totalAmount = totalAmount.add(amount);
+        return {
+          symbol: coin.symbol,
+          address: coin.address,
+          decimals,
+          amount,
+          type: 'add',
+        };
+      }),
+    );
+  } else {
+    console.warn('[parseAddLiquidity] Unknown transaction type: ', decodedInput.name);
+    return;
+  }
+
+  return {
+    type: CurveTransactionType.ADD_LIQUIDITY,
+    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
     tokens,
   };
 };

@@ -199,4 +199,133 @@ describe('parseTransaction', () => {
       expect(transaction?.totalAmount).toEqual(new Decimal('5000'));
     });
   });
+
+  describe('add_liquidity(uamounts, ...', () => {
+    const poolInterface = new ethers.utils.Interface(
+      JSON.stringify([
+        {
+          stateMutability: 'nonpayable',
+          type: 'function',
+          name: 'add_liquidity',
+          inputs: [
+            { name: 'amounts', type: 'uint256[3]' },
+            { name: 'min_mint_amount', type: 'uint256' },
+          ],
+          outputs: [],
+          gas: 682649,
+        },
+      ]),
+    );
+    const tx = {
+      blockNumber: '15128484',
+      timeStamp: '1657637679',
+      hash: '0x37f2a75c19af9147827b4198131d742d78bf659172a63b8c33f180d642733aaf',
+      nonce: '5801',
+      blockHash: '0xf4d4172b2362a8bea10a875cd34ad30e91c64d1c07c9239c902d5542761fcf04',
+      transactionIndex: '45',
+      from: '0xfdbbfb0fe2986672af97eca0e797d76a0bbf35c9',
+      to: '0x80466c64868e1ab14a1ddf27a676c3fcbe638fe5',
+      value: '0',
+      gas: '762513',
+      gasPrice: '28939994707',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x4515cef30000000000000000000000000000000000000000000000000000001a06e140ba000000000000000000000000000000000000000000000000000000001a39de0000000000000000000000000000000000000000000000000470de2bbc612bb00000000000000000000000000000000000000000000000001222143e16f86a3ad2',
+      contractAddress: '',
+      cumulativeGasUsed: '3138397',
+      gasUsed: '512298',
+      confirmations: '103520',
+      methodId: '0x4515cef3',
+      functionName: 'add_liquidity(uint256[3] uamounts, uint256 min_mint_amount)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+          amount: new Decimal('111784.575162'),
+          decimals: 6,
+          symbol: 'USDT',
+          type: 'add',
+        },
+        {
+          address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+          amount: new Decimal('4.4'),
+          decimals: 8,
+          symbol: 'WBTC',
+          type: 'add',
+        },
+        {
+          address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+          amount: new Decimal('81.91996236'),
+          decimals: 18,
+          symbol: 'WETH',
+          type: 'add',
+        },
+      ]);
+      // TODO: unknown for now since different types of assets
+      expect(transaction?.totalAmount).toBeFalsy();
+    });
+  });
+
+  describe('add_liquidity(amounts, ...', () => {
+    const tx = {
+      blockNumber: '15183044',
+      timeStamp: '1658367588',
+      hash: '0x6bb77197c5a527ed8f614a3d701f32e64d242fcd9455bf15457a4d1f43254169',
+      nonce: '2032',
+      blockHash: '0xb9cec5a59cddbd8841e67bfe80e5bdfb5713cf26cfada80bd6de23ab70c97374',
+      transactionIndex: '352',
+      from: '0x38d0dbecda3b81faa65cdce0cae4c4db30dec786',
+      to: '0xdcef968d416a41cdac0ed8702fac8128a64241a2',
+      value: '0',
+      gas: '266126',
+      gasPrice: '11320532789',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x0b4c7e4d00000000000000000000000000000000000000000000d3c21bcecceda10000000000000000000000000000000000000000000000000000000000015d7b10e0d000000000000000000000000000000000000000000002112a80654ed71cf95bea',
+      contractAddress: '',
+      cumulativeGasUsed: '23798384',
+      gasUsed: '167989',
+      confirmations: '48960',
+      methodId: '0x0b4c7e4d',
+      functionName: 'add_liquidity(uint256[2] amounts, uint256 min_mint_amount)',
+    };
+  });
+
+  describe('add_liquidity(_amounts, ...', () => {
+    const tx = {
+      blockNumber: '15182271',
+      timeStamp: '1658357301',
+      hash: '0x45d9f84df8a29337a72d0941c4a82500566edff61e9bc9fe90130d448d002061',
+      nonce: '91',
+      blockHash: '0xdcc3bad73a79bc41f8db3f35c361d0ec6a4a9cfea4828ca1018403c99c2309ca',
+      transactionIndex: '108',
+      from: '0xbaea24e991f0723f845a08d3e299dd6f739285ef',
+      to: '0xeb16ae0052ed37f479f7fe63849198df1765a733',
+      value: '0',
+      gas: '551585',
+      gasPrice: '17286170348',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0xee22be230000000000000000000000000000000000000000000000042a5e84e25d0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003d45b17d720f42ffe0000000000000000000000000000000000000000000000000000000000000001',
+      contractAddress: '',
+      cumulativeGasUsed: '8470382',
+      gasUsed: '351994',
+      confirmations: '49728',
+      methodId: '0xee22be23',
+      functionName:
+        'add_liquidity(uint256[2] _amounts, uint256 _min_mint_amount, bool _use_underlying)',
+    };
+  });
 });
