@@ -13,7 +13,6 @@ export enum CurveTransactionType {
 
 interface CurveTokenWithAmount {
   symbol: string;
-  decimals: number;
   address: string;
   // may be unknown, need detailed tx logs
   amount?: Decimal;
@@ -84,7 +83,6 @@ const parseRemoveLiquidity = ({
         return {
           symbol: coin.symbol,
           address: coin.address,
-          decimals,
           amount,
           type: 'remove',
         };
@@ -93,14 +91,12 @@ const parseRemoveLiquidity = ({
   } else if (decodedInput.name === 'remove_liquidity_one_coin') {
     const rawAmount = decodedInput.args._token_amount ?? decodedInput.args.token_amount;
     const coin = pool.coins[decodedInput.args.i];
-    const decimals = Number(coin.decimals);
     totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     tokens = [
       {
         // Output amount of this token unknown without better logs of tx
         symbol: coin.symbol,
         address: coin.address,
-        decimals,
         type: 'remove',
       },
     ];
@@ -112,7 +108,6 @@ const parseRemoveLiquidity = ({
       return {
         symbol: coin.symbol,
         address: coin.address,
-        decimals: Number(coin.decimals),
         type: 'remove',
       };
     });
@@ -156,7 +151,6 @@ const parseAddLiquidity = ({
         return {
           symbol: coin.symbol,
           address: coin.address,
-          decimals,
           amount,
           type: 'add',
         };

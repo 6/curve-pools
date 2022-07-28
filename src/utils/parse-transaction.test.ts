@@ -56,19 +56,16 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-          decimals: 18,
           symbol: 'DAI',
           type: 'remove',
         },
         {
           address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-          decimals: 6,
           symbol: 'USDC',
           type: 'remove',
         },
         {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-          decimals: 6,
           symbol: 'USDT',
           type: 'remove',
         },
@@ -131,7 +128,6 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
-          decimals: 6,
           symbol: 'aUSDC',
           type: 'remove',
         },
@@ -192,7 +188,6 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens[0]).toEqual({
         address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
         amount: new Decimal('5000'),
-        decimals: 6,
         symbol: 'aUSDC',
         type: 'remove',
       });
@@ -252,21 +247,18 @@ describe('parseTransaction', () => {
         {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
           amount: new Decimal('111784.575162'),
-          decimals: 6,
           symbol: 'USDT',
           type: 'add',
         },
         {
           address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
           amount: new Decimal('4.4'),
-          decimals: 8,
           symbol: 'WBTC',
           type: 'add',
         },
         {
           address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
           amount: new Decimal('81.91996236'),
-          decimals: 18,
           symbol: 'WETH',
           type: 'add',
         },
@@ -277,6 +269,21 @@ describe('parseTransaction', () => {
   });
 
   describe('add_liquidity(amounts, ...', () => {
+    const poolInterface = new ethers.utils.Interface(
+      JSON.stringify([
+        {
+          stateMutability: 'nonpayable',
+          type: 'function',
+          name: 'add_liquidity',
+          inputs: [
+            { name: '_amounts', type: 'uint256[2]' },
+            { name: '_min_mint_amount', type: 'uint256' },
+          ],
+          outputs: [{ name: '', type: 'uint256' }],
+          gas: 2546841,
+        },
+      ]),
+    );
     const tx = {
       blockNumber: '15183044',
       timeStamp: '1658367588',
@@ -300,6 +307,31 @@ describe('parseTransaction', () => {
       methodId: '0x0b4c7e4d',
       functionName: 'add_liquidity(uint256[2] amounts, uint256 min_mint_amount)',
     };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x853d955aCEf822Db058eb8505911ED77F175b99e',
+          amount: new Decimal('1000000'),
+          symbol: 'FRAX',
+          type: 'add',
+        },
+        {
+          address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+          amount: new Decimal('1501008.29'),
+          symbol: 'USDC',
+          type: 'add',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('2501008.29'));
+    });
   });
 
   describe('add_liquidity(_amounts, ...', () => {
