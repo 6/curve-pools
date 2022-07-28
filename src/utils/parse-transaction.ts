@@ -64,12 +64,12 @@ const parseRemoveLiquidity = ({
   pool,
   decodedInput,
 }: ParseRemoveLiquidityProps): CurveTransaction | void => {
-  let totalRemoved: Decimal;
+  let totalAmount: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
   if (decodedInput.name === 'remove_liquidity_imbalance') {
     const rawAmounts: Array<BigNumber> = decodedInput.args._amounts;
-    totalRemoved = new Decimal(0);
+    totalAmount = new Decimal(0);
     tokens = lodash.compact(
       rawAmounts.map((rawAmount, i) => {
         if (rawAmount.isZero()) {
@@ -79,7 +79,7 @@ const parseRemoveLiquidity = ({
         const coin = pool.coins[i];
         const decimals = Number(coin.decimals);
         const amount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
-        totalRemoved = totalRemoved.add(amount);
+        totalAmount = totalAmount.add(amount);
         return {
           symbol: coin.symbol,
           address: coin.address,
@@ -93,7 +93,7 @@ const parseRemoveLiquidity = ({
     const rawAmount = decodedInput.args._token_amount ?? decodedInput.args.token_amount;
     const coin = pool.coins[decodedInput.args.i];
     const decimals = Number(coin.decimals);
-    totalRemoved = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     tokens = [
       {
         // Output amount of this token unknown without better logs of tx
@@ -105,7 +105,7 @@ const parseRemoveLiquidity = ({
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
     const rawAmount = decodedInput.args._amount;
-    totalRemoved = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     // all coins removed in amounts that map to current pool balance/weighting
     tokens = pool.coins.map((coin) => {
       return {
@@ -122,7 +122,7 @@ const parseRemoveLiquidity = ({
 
   return {
     type: CurveTransactionType.REMOVE_LIQUIDITY,
-    totalAmount: totalRemoved,
+    totalAmount,
     tokens,
   };
 };
