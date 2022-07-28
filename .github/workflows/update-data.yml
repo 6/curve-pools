@@ -1,10 +1,10 @@
 name: update-data
 
 on:
-#   schedule:
-#     # https://crontab.guru/
-#     # Every 10 minutes
-#     - cron: '*/10 * * * *'
+  schedule:
+    # https://crontab.guru/
+    # Every 10 minutes
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
