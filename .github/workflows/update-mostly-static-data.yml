@@ -1,4 +1,4 @@
-name: update-data
+name: update-mostly-static-data
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
   # The shortest interval you can run scheduled workflows is once every 5
   # minutes.
   schedule:
-    - cron: '5,20,35,50 * * * *'
+    - cron: '21 6 * * *'
 
 jobs:
   update-data:
@@ -32,16 +32,13 @@ jobs:
 
       - run: yarn install
 
-      - name: Fetch latest pool metadata
-        run: yarn run-script scripts/update-pool-metadata
-
-      - name: Fetch latest pool transactions
-        run: yarn run-script scripts/update-pool-transactions
+      - name: Fetch latest pool ABIs
+        run: yarn run-script scripts/update-pool-abis
 
       - name: Commit and push data
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "auto-update pool data" -a
+          git commit -m "auto-update mostly static data" -a
           git push
