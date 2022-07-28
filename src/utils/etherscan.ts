@@ -39,7 +39,7 @@ interface EtherscanTx {
 }
 export type EtherscanTxListResult = Array<EtherscanTx>;
 
-export type EtherscanAbiResult = Record<string, unknown>;
+export type EtherscanABIResult = Record<string, unknown>;
 
 type EtherscanProps = { baseURL: string; apiURL: string; apiKey: string };
 export class Etherscan {
@@ -83,7 +83,7 @@ export class Etherscan {
     contractAddress,
   }: {
     contractAddress: string;
-  }): Promise<EtherscanAbiResult | void> {
+  }): Promise<EtherscanABIResult | void> {
     const { error, result } = await this.apiFetch<string>({
       module: 'contract',
       action: 'getabi',
