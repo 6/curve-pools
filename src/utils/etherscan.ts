@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import { Network } from './curve.constants';
 import { getEnv } from './env';
 
 // *scan (Etherscan.io family) of explorers:
@@ -11,7 +10,7 @@ type EtherscanApiResponse<T> = {
   // string/array/object
   result: T;
 };
-interface EtherscanTxListResult {
+interface EtherscanTx {
   blockNumber: string; // '15228518';
   timeStamp: string; // '1658978522';
   hash: string; //'0x529cc7d08a1eb67870cb375997f9c60de8f0a283b1152fc6dd8a53e03d4c6e06';
@@ -33,6 +32,7 @@ interface EtherscanTxListResult {
   methodId: string; // '0x3df02124';
   functionName: string; // 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)';
 }
+export type EtherscanTxListResult = Array<EtherscanTx>;
 
 type EtherscanProps = { baseURL: string; apiURL: string; apiKey: string };
 export class Etherscan {
