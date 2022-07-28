@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { Network, PoolType } from './curve.constants';
 
-interface CurvePoolToken {
+export interface CurvePoolToken {
   address: string; // "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
   usdPrice: number; // 1.016,
   decimals: string; // "18",
