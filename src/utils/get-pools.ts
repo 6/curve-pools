@@ -18,7 +18,7 @@ interface CurvePoolMetadata {
   assetType: string; // "99" ??
   totalSupply: string; // "20000000000000000" ??
   implementationAddress: string; // "0x6523Ac15EC152Cb70a334230F6c5d62C5Bd963f1"
-  name: string; // "Curve.fi Factory Plain Pool: ibEUR/sEUR"
+  name?: string; // "Curve.fi Factory Plain Pool: ibEUR/sEUR"
   symbol: string; // "ibEUR+sEUR-f"
   implementation: string; // "plain2basic" ?? switch to enum?
   assetTypeName: string; // "unknown"
