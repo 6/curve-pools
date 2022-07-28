@@ -33,7 +33,7 @@ jobs:
       - run: yarn install
 
       - name: Fetch latest pool ABIs
-        run: yarn run-script scripts/update-pool-abis
+        run: yarn run-script tasks/update-pool-abis
 
       - name: Commit and push data
         run: |

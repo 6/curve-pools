@@ -33,10 +33,10 @@ jobs:
       - run: yarn install
 
       - name: Fetch latest pool metadata
-        run: yarn run-script scripts/update-pool-metadata
+        run: yarn run-script tasks/update-pool-metadata
 
       - name: Fetch latest pool transactions
-        run: yarn run-script scripts/update-pool-transactions
+        run: yarn run-script tasks/update-pool-transactions
 
       - name: Commit and push data
         run: |
