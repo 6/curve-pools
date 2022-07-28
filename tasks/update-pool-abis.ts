@@ -1,15 +1,15 @@
 import { sleep } from '../src/utils/sleep';
 import { EtherscanABIResult, explorers } from '../src/utils/etherscan';
 import { writeJSON } from '../src/utils/write-json';
-import { pools } from '../data/pools';
+import { getPools } from '../data/pools';
 import { CURVE_NETWORKS, CURVE_POOL_TYPES } from '../src/utils/curve.constants';
 
 const main = async () => {
   for (const network of CURVE_NETWORKS) {
     for (const poolType of CURVE_POOL_TYPES) {
       const abis: Record<string, EtherscanABIResult> = {};
-      const poolData = pools[network][poolType].poolData;
-      for (const pool of poolData) {
+      const pools = await getPools({ network, poolType });
+      for (const pool of pools) {
         await sleep(500);
         const contractAddress = pool.address;
         const abi = await explorers[network].mainnet.fetchABI({ contractAddress });
