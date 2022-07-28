@@ -40,9 +40,13 @@ jobs:
       - run: yarn install
 
       - name: Fetch latest pool metadata
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-metadata
 
       - name: Fetch latest pool transactions
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-transactions
 
       - name: Commit and push data

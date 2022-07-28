@@ -40,6 +40,8 @@ jobs:
       - run: yarn install
 
       - name: Fetch latest pool ABIs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-abis
 
       - name: Commit and push data
