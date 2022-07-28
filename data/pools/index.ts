@@ -8,8 +8,9 @@ import arbitrumFactory from './arbitrum.factory.json';
 import optimismMain from './optimism.main.json';
 import optimismCrypto from './optimism.crypto.json';
 import optimismFactory from './optimism.factory.json';
+import { Network, PoolType } from '../../src/utils/curve.constants';
 
-export const pools = {
+export const pools: { [network in Network]: { [poolType in PoolType]: any } } = {
   ethereum: {
     main: ethereumMain.data,
     crypto: ethereumCrypto.data,

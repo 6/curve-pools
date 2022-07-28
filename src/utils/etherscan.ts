@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { Network } from './curve.constants';
 import { getEnv } from './env';
 
 // *scan (Etherscan.io family) of explorers:
@@ -64,18 +65,27 @@ export class Etherscan {
   // see docs on different ABI formats:
   // https://docs.ethers.io/v5/api/utils/abi/formats/#abi-formats
   // Etherscan returns "Solidity JSON ABI"
+  //
+  // NOTE: if unverified, will fail with:
+  // {
+  //   status: '0',
+  //   message: 'NOTOK',
+  //   result: 'Contract source code not verified'
+  // }
   async fetchABI({
     contractAddress,
   }: {
     contractAddress: string;
   }): Promise<Record<string, unknown> | void> {
-    const result = await this.apiFetch<string>({
-      module: 'contract',
-      action: 'getabi',
-      address: contractAddress,
-    });
-    if (result) {
+    try {
+      const result = await this.apiFetch<string>({
+        module: 'contract',
+        action: 'getabi',
+        address: contractAddress,
+      });
       return JSON.parse(result);
+    } catch (e) {
+      return; // unverified contract
     }
   }
 
@@ -102,7 +112,7 @@ export class Etherscan {
     return result;
   }
 
-  async apiFetch<T>(query: Record<string, unknown>): Promise<T | void> {
+  async apiFetch<T>(query: Record<string, unknown>): Promise<T> {
     if (!this.apiURL) {
       throw new Error(`No API URL for ${this.baseURL}`);
     }
@@ -123,7 +133,7 @@ export class Etherscan {
 }
 
 export const explorers = {
-  etherscan: {
+  ethereum: {
     mainnet: new Etherscan({
       baseURL: 'https://etherscan.io',
       apiURL: 'https://api.etherscan.io',
