@@ -16,12 +16,16 @@ interface CurveTokenWithAmount {
   symbol: string;
   decimals: number;
   address: string;
-  amount?: Decimal; // may be unknown, need detailed tx logs
+  // may be unknown, need detailed tx logs
+  amount?: Decimal;
+  // whether this tx is adding or removing token liquidity to pool
+  type: 'add' | 'remove';
 }
 
 interface CurveTransaction {
   type: CurveTransactionType;
   totalAmount: Decimal;
+  // Input or output tokens
   tokens: Array<CurveTokenWithAmount>;
 }
 
@@ -81,6 +85,7 @@ const parseRemoveLiquidity = ({
           address: coin.address,
           decimals,
           amount,
+          type: 'remove',
         };
       }),
     );
@@ -95,6 +100,7 @@ const parseRemoveLiquidity = ({
         symbol: coin.symbol,
         address: coin.address,
         decimals,
+        type: 'remove',
       },
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
@@ -106,6 +112,7 @@ const parseRemoveLiquidity = ({
         symbol: coin.symbol,
         address: coin.address,
         decimals: Number(coin.decimals),
+        type: 'remove',
       };
     });
   } else {
