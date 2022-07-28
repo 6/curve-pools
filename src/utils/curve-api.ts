@@ -27,7 +27,7 @@ export interface CurvePoolMetadata {
   isMetaPool: boolean;
   usdTotalExcludingBasePool: number; // 2479.1897315233555
 }
-export interface GetPoolsResponse {
+export interface FetchPoolsResponse {
   success: boolean;
   data: {
     poolData: Array<CurvePoolMetadata>;
@@ -37,11 +37,14 @@ export interface GetPoolsResponse {
   generatedTimeMs: number; // 1658963350286
 }
 
-interface GetPoolsProps {
+interface FetchPoolsProps {
   network: Network;
   poolType: PoolType;
 }
-export const getPools = async ({ network, poolType }: GetPoolsProps): Promise<GetPoolsResponse> => {
+export const fetchPools = async ({
+  network,
+  poolType,
+}: FetchPoolsProps): Promise<FetchPoolsResponse> => {
   const poolsUri = `https://api.curve.fi/api/getPools/${network}/${poolType}`;
   console.log(`GET ${poolsUri}`);
   const response = await fetch(poolsUri);
