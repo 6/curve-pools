@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { Network, PoolType } from './curve.constants';
 
-interface CurvePoolToken {
+export interface CurvePoolToken {
   address: string; // "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
   usdPrice: number; // 1.016,
   decimals: string; // "18",
@@ -27,7 +27,7 @@ export interface CurvePoolMetadata {
   isMetaPool: boolean;
   usdTotalExcludingBasePool: number; // 2479.1897315233555
 }
-export interface GetPoolsResponse {
+export interface FetchPoolsResponse {
   success: boolean;
   data: {
     poolData: Array<CurvePoolMetadata>;
@@ -37,11 +37,14 @@ export interface GetPoolsResponse {
   generatedTimeMs: number; // 1658963350286
 }
 
-interface GetPoolsProps {
+interface FetchPoolsProps {
   network: Network;
   poolType: PoolType;
 }
-export const getPools = async ({ network, poolType }: GetPoolsProps): Promise<GetPoolsResponse> => {
+export const fetchPools = async ({
+  network,
+  poolType,
+}: FetchPoolsProps): Promise<FetchPoolsResponse> => {
   const poolsUri = `https://api.curve.fi/api/getPools/${network}/${poolType}`;
   console.log(`GET ${poolsUri}`);
   const response = await fetch(poolsUri);

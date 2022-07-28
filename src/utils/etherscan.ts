@@ -15,7 +15,7 @@ interface EtherscanApiResponse<T> {
   // string/array/object
   result: T;
 }
-interface EtherscanTx {
+export interface EtherscanTx {
   blockNumber: string; // '15228518';
   timeStamp: string; // '1658978522';
   hash: string; //'0x529cc7d08a1eb67870cb375997f9c60de8f0a283b1152fc6dd8a53e03d4c6e06';
