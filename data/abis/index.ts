@@ -5,7 +5,7 @@ import { EtherscanABIResult } from '../../src/utils/etherscan';
 interface ABIMap {
   [contractAddress: string]: EtherscanABIResult;
 }
-interface GetAbiProps {
+interface GetABIProps {
   network: Network;
   poolType: PoolType;
   contractAddress: string;
@@ -14,7 +14,7 @@ export const getABI = async ({
   network,
   poolType,
   contractAddress,
-}: GetAbiProps): Promise<EtherscanABIResult> => {
+}: GetABIProps): Promise<EtherscanABIResult> => {
   const abiMapFile = await readFile(
     path.resolve(__dirname, `./${network}.${poolType}.json`),
     'utf8',

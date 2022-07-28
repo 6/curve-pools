@@ -9,7 +9,7 @@ interface CurvePoolToken {
   symbol: string; // "ibEUR",
   poolBalance: string; // "2440147371390294759297"
 }
-interface CurvePoolMetadata {
+export interface CurvePoolMetadata {
   id: string; // "factory-v2-0"
   address: string; // "0x1F71f05CF491595652378Fe94B7820344A551B8E"
   coinsAddresses: Array<string>; // ["0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27", ...]
@@ -27,7 +27,7 @@ interface CurvePoolMetadata {
   isMetaPool: boolean;
   usdTotalExcludingBasePool: number; // 2479.1897315233555
 }
-interface GetPoolsResponse {
+export interface GetPoolsResponse {
   success: boolean;
   data: {
     poolData: Array<CurvePoolMetadata>;
