@@ -6,7 +6,7 @@ import { Network, PoolType } from '../../src/utils/curve.constants';
 import { CurvePoolMetadata, FetchPoolsResponse } from '../../src/utils/curve-api';
 import { getABIs } from '../abis';
 
-interface CurvePoolWithInterface extends CurvePoolMetadata {
+export interface CurvePoolWithInterface extends CurvePoolMetadata {
   interface: ethers.utils.Interface;
 }
 

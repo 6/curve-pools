@@ -1,25 +1,9 @@
-import { ethers } from 'ethers';
 import { Decimal } from 'decimal.js';
 import { getPool } from '../../data/pools';
 import { CurveTransactionType, parseTransaction } from './parse-transaction';
 
 describe('parseTransaction', () => {
   describe('remove_liquidity', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          name: 'remove_liquidity',
-          outputs: [],
-          inputs: [
-            { type: 'uint256', name: '_amount' },
-            { type: 'uint256[3]', name: 'min_amounts' },
-          ],
-          stateMutability: 'nonpayable',
-          type: 'function',
-          gas: 192846,
-        },
-      ]),
-    );
     // Removes liquidity in all coins relative to current balance
     const tx = {
       blockNumber: '15223674',
@@ -51,7 +35,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
         {
@@ -75,22 +59,6 @@ describe('parseTransaction', () => {
   });
 
   describe('remove_liquidity_one_coin', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          name: 'remove_liquidity_one_coin',
-          outputs: [{ type: 'uint256', name: '' }],
-          inputs: [
-            { type: 'uint256', name: '_token_amount' },
-            { type: 'int128', name: 'i' },
-            { type: 'uint256', name: '_min_amount' },
-            { type: 'bool', name: '_use_underlying' },
-          ],
-          stateMutability: 'nonpayable',
-          type: 'function',
-        },
-      ]),
-    );
     const tx = {
       blockNumber: '14837143',
       timeStamp: '1653415336',
@@ -122,7 +90,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.totalAmount).toEqual(new Decimal('2053427.233335429445268871'));
       expect(transaction?.tokens).toEqual([
@@ -136,21 +104,6 @@ describe('parseTransaction', () => {
   });
 
   describe('remove_liquidity_imbalance', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          name: 'remove_liquidity_imbalance',
-          outputs: [{ type: 'uint256', name: '' }],
-          inputs: [
-            { type: 'uint256[3]', name: '_amounts' },
-            { type: 'uint256', name: '_max_burn_amount' },
-            { type: 'bool', name: '_use_underlying' },
-          ],
-          stateMutability: 'nonpayable',
-          type: 'function',
-        },
-      ]),
-    );
     const tx = {
       blockNumber: '14134496',
       timeStamp: '1643910993',
@@ -182,7 +135,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens?.length).toEqual(1);
       expect(transaction?.tokens[0]).toEqual({
@@ -196,21 +149,6 @@ describe('parseTransaction', () => {
   });
 
   describe('add_liquidity(uamounts, ...', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          stateMutability: 'nonpayable',
-          type: 'function',
-          name: 'add_liquidity',
-          inputs: [
-            { name: 'amounts', type: 'uint256[3]' },
-            { name: 'min_mint_amount', type: 'uint256' },
-          ],
-          outputs: [],
-          gas: 682649,
-        },
-      ]),
-    );
     const tx = {
       blockNumber: '15128484',
       timeStamp: '1657637679',
@@ -241,7 +179,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
         {
@@ -269,21 +207,6 @@ describe('parseTransaction', () => {
   });
 
   describe('add_liquidity(amounts, ...', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          stateMutability: 'nonpayable',
-          type: 'function',
-          name: 'add_liquidity',
-          inputs: [
-            { name: '_amounts', type: 'uint256[2]' },
-            { name: '_min_mint_amount', type: 'uint256' },
-          ],
-          outputs: [{ name: '', type: 'uint256' }],
-          gas: 2546841,
-        },
-      ]),
-    );
     const tx = {
       blockNumber: '15183044',
       timeStamp: '1658367588',
@@ -314,7 +237,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
         {
@@ -335,21 +258,6 @@ describe('parseTransaction', () => {
   });
 
   describe('add_liquidity(_amounts, ...', () => {
-    const poolInterface = new ethers.utils.Interface(
-      JSON.stringify([
-        {
-          name: 'add_liquidity',
-          outputs: [{ type: 'uint256', name: '' }],
-          inputs: [
-            { type: 'uint256[2]', name: '_amounts' },
-            { type: 'uint256', name: '_min_mint_amount' },
-            { type: 'bool', name: '_use_underlying' },
-          ],
-          stateMutability: 'nonpayable',
-          type: 'function',
-        },
-      ]),
-    );
     const tx = {
       blockNumber: '15182271',
       timeStamp: '1658357301',
@@ -381,7 +289,7 @@ describe('parseTransaction', () => {
         poolType: 'main',
         contractAddress: tx.to,
       });
-      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
         {

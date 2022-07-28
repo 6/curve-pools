@@ -1,9 +1,9 @@
 import { BigNumber, ethers } from 'ethers';
 import lodash from 'lodash';
 import { Decimal } from 'decimal.js';
-import { CurvePoolMetadata } from './curve-api';
 import { EtherscanTx } from './etherscan';
 import { CurveAssetTypeName, CURVE_POOL_TOKEN_DECIMALS } from './curve.constants';
+import { CurvePoolWithInterface } from '../../data/pools';
 
 export enum CurveTransactionType {
   ADD_LIQUIDITY, // can be one coin only or multiple
@@ -30,20 +30,15 @@ interface CurveTransaction {
 }
 
 interface ParseTransactionProps {
-  pool: CurvePoolMetadata;
-  poolInterface: ethers.utils.Interface;
+  pool: CurvePoolWithInterface;
   tx: EtherscanTx;
 }
 interface ParseTransactionAPI {
   decodedInput: ethers.utils.TransactionDescription;
   transaction: CurveTransaction | void;
 }
-export const parseTransaction = ({
-  pool,
-  poolInterface,
-  tx,
-}: ParseTransactionProps): ParseTransactionAPI => {
-  const decodedInput = poolInterface.parseTransaction({ data: tx.input, value: tx.value });
+export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTransactionAPI => {
+  const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
   let transaction;
   if (decodedInput.name.startsWith('remove_liquidity')) {
     transaction = parseRemoveLiquidity({ pool, decodedInput });
@@ -57,7 +52,7 @@ export const parseTransaction = ({
 };
 
 interface ParseRemoveLiquidityProps {
-  pool: CurvePoolMetadata;
+  pool: CurvePoolWithInterface;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseRemoveLiquidity = ({
@@ -124,7 +119,7 @@ const parseRemoveLiquidity = ({
 };
 
 interface ParseAddLiquidityProps {
-  pool: CurvePoolMetadata;
+  pool: CurvePoolWithInterface;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseAddLiquidity = ({
