@@ -35,8 +35,8 @@ jobs:
       - name: Fetch latest pool metadata
         run: yarn run-script scripts/update-pool-metadata
 
-      - name: Fetch latest pool ABIs
-        run: yarn run-script scripts/update-pool-abis
+      - name: Fetch latest pool transactions
+        run: yarn run-script scripts/update-pool-transactions
 
       - name: Commit and push data
         run: |
