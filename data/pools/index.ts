@@ -29,8 +29,9 @@ export const getPool = async ({
   poolType,
   contractAddress,
 }: GetPoolProps): Promise<CurvePoolMetadata> => {
+  const lowercaseContractAddress = contractAddress.toLowerCase();
   const pools = await getPools({ network, poolType });
-  const pool = pools.find((p) => p.address === contractAddress);
+  const pool = pools.find((p) => p.address.toLowerCase() === lowercaseContractAddress);
   if (pool == null) {
     throw new Error(`getPool: incorrect contractAddress ${contractAddress}`);
   }
