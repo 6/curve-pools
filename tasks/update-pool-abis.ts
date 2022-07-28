@@ -28,7 +28,7 @@ const main = async () => {
         }
       }
     }
-    await writeJSON(`./data/abi/${network}.json`, abis);
+    await writeJSON(`./data/abis/${network}.json`, abis);
   }
 };
 
