@@ -3,11 +3,10 @@ name: update-data
 on:
   workflow_dispatch:
   # https://crontab.guru/
-  # Every 10 minutes
   # The shortest interval you can run scheduled workflows is once every 5
   # minutes.
   schedule:
-    - cron: '53 * * * *'
+    - cron: '27,57 * * * *'
 
 jobs:
   update-data:
