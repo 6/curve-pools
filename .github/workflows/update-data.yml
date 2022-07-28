@@ -32,8 +32,11 @@ jobs:
 
       - run: yarn install
 
-      - name: Fetch latest pool data
+      - name: Fetch latest pool metadata
         run: yarn run-script scripts/update-pool-metadata
+
+      - name: Fetch latest pool ABIs
+        run: yarn run-script scripts/update-pool-abis
 
       - name: Commit and push data
         run: |
