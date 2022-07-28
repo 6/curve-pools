@@ -2,6 +2,7 @@ import path from 'path';
 import { readFile } from 'fs/promises';
 import { Network, PoolType } from '../../src/utils/curve.constants';
 import { EtherscanABIResult } from '../../src/utils/etherscan';
+import { ethers } from 'ethers';
 interface ABIMap {
   [contractAddress: string]: EtherscanABIResult;
 }
@@ -25,4 +26,13 @@ export const getABI = async ({
     throw new Error(`getABI: incorrect contractAddress ${contractAddress}`);
   }
   return abi;
+};
+
+export const getABIInterface = async ({
+  network,
+  poolType,
+  contractAddress,
+}: GetABIProps): Promise<ethers.utils.Interface> => {
+  const abi = await getABI({ network, poolType, contractAddress });
+  return new ethers.utils.Interface(JSON.stringify(abi));
 };
