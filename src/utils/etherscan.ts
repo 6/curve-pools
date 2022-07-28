@@ -1,17 +1,21 @@
 import fetch from 'isomorphic-fetch';
-import { Network } from './curve.constants';
 import { getEnv } from './env';
+
+interface EtherscanParsedResponse<T> {
+  error?: string;
+  result: T;
+}
 
 // *scan (Etherscan.io family) of explorers:
 // https://info.etherscan.com/api-return-errors/
-type EtherscanApiResponse<T> = {
+interface EtherscanApiResponse<T> {
   // 1 = OK, 0 = NOT OK
   status: '1' | '0';
   message: string | void;
   // string/array/object
   result: T;
-};
-interface EtherscanTxListResult {
+}
+interface EtherscanTx {
   blockNumber: string; // '15228518';
   timeStamp: string; // '1658978522';
   hash: string; //'0x529cc7d08a1eb67870cb375997f9c60de8f0a283b1152fc6dd8a53e03d4c6e06';
@@ -33,6 +37,7 @@ interface EtherscanTxListResult {
   methodId: string; // '0x3df02124';
   functionName: string; // 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)';
 }
+export type EtherscanTxListResult = Array<EtherscanTx>;
 
 type EtherscanProps = { baseURL: string; apiURL: string; apiKey: string };
 export class Etherscan {
@@ -77,16 +82,17 @@ export class Etherscan {
   }: {
     contractAddress: string;
   }): Promise<Record<string, unknown> | void> {
-    try {
-      const result = await this.apiFetch<string>({
-        module: 'contract',
-        action: 'getabi',
-        address: contractAddress,
-      });
-      return JSON.parse(result);
-    } catch (e) {
-      return; // unverified contract
+    const { error, result } = await this.apiFetch<string>({
+      module: 'contract',
+      action: 'getabi',
+      address: contractAddress,
+    });
+    if (error && result === 'Contract source code not verified') {
+      return;
+    } else if (error) {
+      throw new Error(`Etherscan#fetchABI unhandled error: ${error}`);
     }
+    return JSON.parse(result);
   }
 
   async fetchTxList({
@@ -99,9 +105,9 @@ export class Etherscan {
     page?: number;
     offset?: number;
     sort?: 'asc' | 'desc';
-  }): Promise<EtherscanTxListResult | void> {
+  }): Promise<EtherscanTxListResult> {
     // https://api.etherscan.io/api?module=account&action=txlist&address=0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7&page=1&offset=100&sort=desc&apikey=YourApiKeyToken
-    const result = await this.apiFetch<EtherscanTxListResult>({
+    const { error, result } = await this.apiFetch<EtherscanTxListResult>({
       module: 'account',
       action: 'txlist',
       address: contractAddress,
@@ -109,10 +115,16 @@ export class Etherscan {
       offset,
       sort,
     });
+    // Not sure why etherscan consider this an error
+    if (error === 'No transactions found') {
+      return [];
+    } else if (error) {
+      throw new Error(`Etherscan#fetchTxList unhandled error: ${error}`);
+    }
     return result;
   }
 
-  async apiFetch<T>(query: Record<string, unknown>): Promise<T> {
+  async apiFetch<T>(query: Record<string, unknown>): Promise<EtherscanParsedResponse<T>> {
     if (!this.apiURL) {
       throw new Error(`No API URL for ${this.baseURL}`);
     }
@@ -126,9 +138,12 @@ export class Etherscan {
     const json: EtherscanApiResponse<T> = await response.json();
     if (json?.status !== '1') {
       console.error('Etherscan error:', json);
-      throw new Error('Etherscan API error');
+      return {
+        error: json.message ?? 'unhandled etherscan error',
+        result: json.result,
+      };
     }
-    return json.result;
+    return { result: json.result };
   }
 }
 
