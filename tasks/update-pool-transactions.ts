@@ -2,18 +2,12 @@ import { sleep } from '../src/utils/sleep';
 import { EtherscanTxListResult, explorers } from '../src/utils/etherscan';
 import { writeJSON } from '../src/utils/write-json';
 import { pools } from '../data/pools';
-import { CURVE_NETWORKS, CURVE_POOL_TYPES, PoolType } from '../src/utils/curve.constants';
-
-type TxForNetwork = {
-  [poolType in PoolType]: {
-    [contractAddress: string]: EtherscanTxListResult;
-  };
-};
+import { CURVE_NETWORKS, CURVE_POOL_TYPES } from '../src/utils/curve.constants';
 
 const main = async () => {
   for (const network of CURVE_NETWORKS) {
-    const transactions: TxForNetwork = { main: {}, crypto: {}, factory: {} };
     for (const poolType of CURVE_POOL_TYPES) {
+      const transactions: Record<string, EtherscanTxListResult> = {};
       const poolData = pools[network][poolType].poolData;
       for (const pool of poolData) {
         await sleep(500);
@@ -22,10 +16,10 @@ const main = async () => {
           contractAddress: pool.address,
           offset: 250,
         });
-        transactions[poolType][contractAddress] = txlist;
+        transactions[contractAddress] = txlist;
       }
+      await writeJSON(`./data/txs/${network}.${poolType}.json`, transactions);
     }
-    await writeJSON(`./data/txs/${network}.json`, transactions);
   }
 };
 
