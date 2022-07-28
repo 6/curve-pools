@@ -6,7 +6,7 @@ import { pools } from '../data/pools';
 const main = async () => {
   for (const pool of pools.ethereum.main.poolData) {
     await sleep(500);
-    const txlist = await explorers.etherscan.mainnet.fetchTxList({ contractAddress: pool.address });
+    const txlist = await explorers.ethereum.mainnet.fetchTxList({ contractAddress: pool.address });
     if (txlist) {
       await writeJSON(`./data/tx/ethereum.${pool.address}.json`, txlist);
     }

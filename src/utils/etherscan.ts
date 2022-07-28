@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { Network } from './curve.constants';
 import { getEnv } from './env';
 
 // *scan (Etherscan.io family) of explorers:
@@ -132,7 +133,7 @@ export class Etherscan {
 }
 
 export const explorers = {
-  etherscan: {
+  ethereum: {
     mainnet: new Etherscan({
       baseURL: 'https://etherscan.io',
       apiURL: 'https://api.etherscan.io',

@@ -12,7 +12,7 @@ const main = async () => {
       for (const pool of poolData) {
         await sleep(500);
         const contractAddress = pool.address;
-        const abi = await explorers.etherscan.mainnet.fetchABI({ contractAddress });
+        const abi = await explorers[network].mainnet.fetchABI({ contractAddress });
         if (abi) {
           abis[contractAddress] = abi;
         } else {
