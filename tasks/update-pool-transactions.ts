@@ -16,7 +16,7 @@ const main = async () => {
           contractAddress: pool.address,
           offset: 250,
         });
-        transactions[contractAddress] = txlist;
+        transactions[contractAddress.toLowerCase()] = txlist;
       }
       await writeJSON(`./data/txs/${network}.${poolType}.json`, transactions);
     }
