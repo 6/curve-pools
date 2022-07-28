@@ -22,7 +22,9 @@ const main = async () => {
         if (abi) {
           abis[poolType][contractAddress] = abi;
         } else {
-          console.warn(`Unable to fetch ABI for ${contractAddress}`);
+          console.warn(
+            `[update-pool-abis] Unable to fetch ABI for ${network}.${poolType} => ${contractAddress}`,
+          );
           // TODO: ensure here that the error is infact "unverified contract".
           // otherwise should probably fail with different error
         }
