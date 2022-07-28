@@ -1,4 +1,5 @@
 import { ethers } from 'ethers';
+import { Decimal } from 'decimal.js';
 import { getPool } from '../../data/pools';
 import { CurveTransactionType, parseTransaction } from './parse-transaction';
 
@@ -69,7 +70,7 @@ describe('parseTransaction', () => {
           symbol: 'USDT',
         },
       ]);
-      expect(transaction?.totalAmount.formatted).toEqual('11.695987077239375748');
+      expect(transaction?.totalAmount).toEqual(new Decimal('11.695987077239375748'));
     });
   });
 
@@ -123,7 +124,7 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, poolInterface, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
-      expect(transaction?.totalAmount?.formatted).toEqual('2053427.233335429445268871');
+      expect(transaction?.totalAmount).toEqual(new Decimal('2053427.233335429445268871'));
       expect(transaction?.tokens).toEqual([
         {
           address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
@@ -186,13 +187,11 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens?.length).toEqual(1);
       expect(transaction?.tokens[0]).toMatchObject({
         address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
-        amount: {
-          formatted: '5000.0',
-        },
+        amount: new Decimal('5000'),
         decimals: 6,
         symbol: 'aUSDC',
       });
-      expect(transaction?.totalAmount.formatted).toEqual('0.0'); // TODO
+      expect(transaction?.totalAmount).toEqual(new Decimal('5000'));
     });
   });
 });

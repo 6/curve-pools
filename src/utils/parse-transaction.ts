@@ -1,7 +1,10 @@
 import { BigNumber, ethers } from 'ethers';
 import lodash from 'lodash';
+import { Decimal } from 'decimal.js';
 import { CurvePoolMetadata } from './curve-api';
 import { EtherscanTx } from './etherscan';
+
+const CURVE_POOL_TOKEN_DECIMALS = 18;
 
 export enum CurveTransactionType {
   ADD_LIQUIDITY, // can be one coin only or multiple
@@ -13,18 +16,12 @@ interface CurveTokenWithAmount {
   symbol: string;
   decimals: number;
   address: string;
-  amount?: {
-    value: BigNumber; // may be unknown, need detailed tx logs
-    formatted: string;
-  };
+  amount?: Decimal; // may be unknown, need detailed tx logs
 }
 
 interface CurveTransaction {
   type: CurveTransactionType;
-  totalAmount: {
-    value: BigNumber;
-    formatted: string;
-  };
+  totalAmount: Decimal;
   tokens: Array<CurveTokenWithAmount>;
 }
 
@@ -63,12 +60,12 @@ const parseRemoveLiquidity = ({
   pool,
   decodedInput,
 }: ParseRemoveLiquidityProps): CurveTransaction | void => {
-  let totalRemoved: BigNumber;
+  let totalRemoved: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
   if (decodedInput.name === 'remove_liquidity_imbalance') {
     const rawAmounts: Array<BigNumber> = decodedInput.args._amounts;
-    totalRemoved = BigNumber.from('0');
+    totalRemoved = new Decimal(0);
     tokens = lodash.compact(
       rawAmounts.map((rawAmount, i) => {
         if (rawAmount.isZero()) {
@@ -77,34 +74,33 @@ const parseRemoveLiquidity = ({
         }
         const coin = pool.coins[i];
         const decimals = Number(coin.decimals);
-        const formattedAmount = ethers.utils.formatUnits(rawAmount, decimals);
-        // TODO
-        // totalRemoved = totalRemoved.add(BigNumber.from(formattedAmount));
+        const amount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
+        totalRemoved = totalRemoved.add(amount);
         return {
           symbol: coin.symbol,
           address: coin.address,
           decimals,
-          amount: {
-            value: rawAmount,
-            formatted: formattedAmount,
-          },
+          amount,
         };
       }),
     );
   } else if (decodedInput.name === 'remove_liquidity_one_coin') {
-    totalRemoved = decodedInput.args._token_amount ?? decodedInput.args.token_amount;
+    const rawAmount = decodedInput.args._token_amount ?? decodedInput.args.token_amount;
     const coin = pool.coins[decodedInput.args.i];
+    const decimals = Number(coin.decimals);
+    totalRemoved = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     tokens = [
       {
         // Output amount of this token unknown without better logs of tx
         symbol: coin.symbol,
         address: coin.address,
-        decimals: Number(coin.decimals),
+        decimals,
       },
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
-    totalRemoved = decodedInput.args._amount;
-    // all coins removed in amounts that map to current pool balance
+    const rawAmount = decodedInput.args._amount;
+    totalRemoved = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    // all coins removed in amounts that map to current pool balance/weighting
     tokens = pool.coins.map((coin) => {
       return {
         symbol: coin.symbol,
@@ -119,10 +115,7 @@ const parseRemoveLiquidity = ({
 
   return {
     type: CurveTransactionType.REMOVE_LIQUIDITY,
-    totalAmount: {
-      value: totalRemoved,
-      formatted: ethers.utils.formatUnits(totalRemoved, 18),
-    },
+    totalAmount: totalRemoved,
     tokens,
   };
 };
