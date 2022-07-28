@@ -61,6 +61,9 @@ export class Etherscan {
     return `${this.baseURL}/tx/${transactionHash}`;
   }
 
+  // see docs on different ABI formats:
+  // https://docs.ethers.io/v5/api/utils/abi/formats/#abi-formats
+  // Etherscan returns "Solidity JSON ABI"
   async fetchABI({
     contractAddress,
   }: {
