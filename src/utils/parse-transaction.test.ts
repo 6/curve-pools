@@ -335,6 +335,21 @@ describe('parseTransaction', () => {
   });
 
   describe('add_liquidity(_amounts, ...', () => {
+    const poolInterface = new ethers.utils.Interface(
+      JSON.stringify([
+        {
+          name: 'add_liquidity',
+          outputs: [{ type: 'uint256', name: '' }],
+          inputs: [
+            { type: 'uint256[2]', name: '_amounts' },
+            { type: 'uint256', name: '_min_mint_amount' },
+            { type: 'bool', name: '_use_underlying' },
+          ],
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+      ]),
+    );
     const tx = {
       blockNumber: '15182271',
       timeStamp: '1658357301',
@@ -359,5 +374,24 @@ describe('parseTransaction', () => {
       functionName:
         'add_liquidity(uint256[2] _amounts, uint256 _min_mint_amount, bool _use_underlying)',
     };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, poolInterface, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x028171bCA77440897B824Ca71D1c56caC55b68A3',
+          amount: new Decimal('76.84'),
+          symbol: 'aDAI',
+          type: 'add',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('76.84'));
+    });
   });
 });
