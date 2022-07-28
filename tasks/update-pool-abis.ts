@@ -14,7 +14,7 @@ const main = async () => {
         const contractAddress = pool.address;
         const abi = await explorers[network].mainnet.fetchABI({ contractAddress });
         if (abi) {
-          abis[contractAddress] = abi;
+          abis[contractAddress.toLowerCase()] = abi;
         } else {
           console.warn(
             `[update-pool-abis] Unable to fetch ABI for ${network}.${poolType} => ${contractAddress}`,
