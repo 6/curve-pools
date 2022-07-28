@@ -1,7 +1,6 @@
 import { writeJSON } from '../src/utils/write-json';
 import { ethers } from 'ethers';
 import { getTxs } from '../data/txs';
-import { getABIInterface } from '../data/abis';
 import { getPools } from '../data/pools';
 
 const main = async () => {
@@ -13,10 +12,9 @@ const main = async () => {
   for (const pool of pools) {
     const contractAddress = pool.address;
     const txs = await getTxs({ network, poolType, contractAddress });
-    const poolInterface = await getABIInterface({ network, poolType, contractAddress });
 
     txs.map((tx) => {
-      const decodedInput = poolInterface.parseTransaction({ data: tx.input, value: tx.value });
+      const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
     });
 
     break;

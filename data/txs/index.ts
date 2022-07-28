@@ -21,7 +21,7 @@ export const getTxs = async ({
     'utf8',
   );
   const txMap = JSON.parse(txMapFile) as TxMap;
-  const txs = txMap[contractAddress];
+  const txs = txMap[contractAddress.toLowerCase()];
   if (txs == null) {
     throw new Error(`getTxs: incorrect contractAddress ${contractAddress}`);
   }
