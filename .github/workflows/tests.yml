@@ -45,5 +45,5 @@ jobs:
       - name: ESLint
         run: yarn lint
 
-      # - name: Jest
-      #   run: yarn test
+      - name: Test
+        run: yarn test
