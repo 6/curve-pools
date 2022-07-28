@@ -8,7 +8,11 @@ const main = async () => {
     for (const poolType of CURVE_POOL_TYPES) {
       await sleep(250); // don't blast curve api with requests
       const pools = await getPools({ network, poolType });
-      await writeJSON(`./data/pools/${network}.${poolType}.json`, pools);
+      if (pools.success) {
+        await writeJSON(`./data/pools/${network}.${poolType}.json`, pools);
+      } else {
+        console.error('[update-pool-metadata] something went wrong: ', pools);
+      }
     }
   }
 };
