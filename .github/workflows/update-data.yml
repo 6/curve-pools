@@ -49,6 +49,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-transactions
 
+      - name: Process pool transactions
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/process-pool-transactions
+
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
       - name: Commit and push data

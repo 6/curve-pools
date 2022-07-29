@@ -34,8 +34,8 @@ export interface EtherscanTx {
   cumulativeGasUsed: string; // '8099602';
   gasUsed: string; // '136993';
   confirmations: string; // '47';
-  methodId: string; // '0x3df02124';
-  functionName: string; // 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)';
+  methodId?: string; // '0x3df02124'; // missing for some chains (optimism)
+  functionName?: string; // 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)'; -- not present for some chains
 }
 export type EtherscanTxListResult = Array<EtherscanTx>;
 
