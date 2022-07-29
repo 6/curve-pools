@@ -5995,6 +5995,40 @@
   "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47": [],
   "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4": [
     {
+      "hash": "0xf5bf243d7bdca40c954066a85aba8527d5f122b678b753a3e33271d0c2d90443",
+      "poolAddress": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659065544,
+      "type": "remove_liquidity",
+      "totalAmount": "7171.140844222726014784",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x7ab259edc678409bea6c9f2b26c5f652debce7bc454b715d544434716a83940e",
+      "poolAddress": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659064349,
+      "type": "exchange",
+      "totalAmount": "25253.485936969722",
+      "tokens": [
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "amount": "25253.485936969722",
+          "type": "add"
+        },
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x602300a0a8bcc7304eb5174e90389c196d3f5ab254e1811fc77f28fe1f752ea5",
       "poolAddress": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
       "timestamp": 1659050531,
@@ -9477,21 +9511,6 @@
           "symbol": "FRAX",
           "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
           "amount": "24.99",
-          "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0xb9cd93b0b7b4e371f5e50aef3b018d1820e03825b860f1eaec9f386e8c41b830",
-      "poolAddress": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
-      "timestamp": 1658388007,
-      "type": "add_liquidity",
-      "totalAmount": "5000.69",
-      "tokens": [
-        {
-          "symbol": "FRAX",
-          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
-          "amount": "5000.69",
           "type": "add"
         }
       ]
