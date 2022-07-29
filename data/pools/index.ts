@@ -16,6 +16,50 @@ export interface CurvePoolExtended extends CurvePoolMetadata {
   constants: IPoolData | void;
 }
 
+interface GetRawPoolDataProps {
+  network: Network;
+  poolType: PoolType;
+}
+const getRawPoolData = async ({
+  network,
+  poolType,
+}: GetRawPoolDataProps): Promise<Array<CurvePoolMetadata>> => {
+  const poolsFile = await readFile(
+    path.resolve(__dirname, `./${network}.${poolType}.json`),
+    'utf8',
+  );
+  const poolsResponse = JSON.parse(poolsFile) as FetchPoolsResponse;
+  return poolsResponse.data.poolData;
+};
+
+interface GetPoolDataWithoutDuplicatesProps {
+  network: Network;
+  poolType: PoolType;
+}
+const getPoolDataWithoutDuplicates = async ({
+  network,
+  poolType,
+}: GetPoolDataWithoutDuplicatesProps): Promise<Array<CurvePoolMetadata>> => {
+  if (poolType !== 'factory') {
+    return await getRawPoolData({ network, poolType });
+  }
+  // Factory pools sometimes get upgraded to one of the other pool types?
+  const factoryPools = await getRawPoolData({ network, poolType });
+  const mainPoolAddresses = (await getRawPoolData({ network, poolType: 'main' })).map((pool) =>
+    pool.address.toLowerCase(),
+  );
+  const cryptoPoolAddresses = (await getRawPoolData({ network, poolType: 'crypto' })).map((pool) =>
+    pool.address.toLowerCase(),
+  );
+
+  return factoryPools.filter((pool) => {
+    return (
+      !mainPoolAddresses.includes(pool.address.toLowerCase()) &&
+      !cryptoPoolAddresses.includes(pool.address.toLowerCase())
+    );
+  });
+};
+
 interface GetPoolsProps {
   network: Network;
   poolType: PoolType;
@@ -24,12 +68,7 @@ export const getPools = async ({
   network,
   poolType,
 }: GetPoolsProps): Promise<Array<CurvePoolExtended>> => {
-  const poolsFile = await readFile(
-    path.resolve(__dirname, `./${network}.${poolType}.json`),
-    'utf8',
-  );
-  const poolsResponse = JSON.parse(poolsFile) as FetchPoolsResponse;
-  const pools = poolsResponse.data.poolData;
+  const pools = await getPoolDataWithoutDuplicates({ network, poolType });
   const abis = await getABIs({ network, poolType });
   return lodash.compact(
     pools.map((pool) => {
