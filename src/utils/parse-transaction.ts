@@ -6,9 +6,9 @@ import { CurveAssetTypeName, CURVE_POOL_TOKEN_DECIMALS } from './curve.constants
 import { CurvePoolWithInterface } from '../../data/pools';
 
 export enum CurveTransactionType {
-  ADD_LIQUIDITY, // can be one coin only or multiple
-  REMOVE_LIQUIDITY, // can be one coin only or multiple
-  EXCHANGE,
+  ADD_LIQUIDITY = 'add_liquidity', // can be one coin only or multiple
+  REMOVE_LIQUIDITY = 'remove_liquidity', // can be one coin only or multiple
+  EXCHANGE = 'exchange',
 }
 
 interface CurveTokenWithAmount {
