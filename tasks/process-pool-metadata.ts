@@ -12,7 +12,7 @@ const main = async () => {
 
   console.log(`Found ${topPools.length} pools with gte $${minimumTVL}`);
 
-  writeJSON('./src/processed-data/top-pools.json', topPoolsSimplified);
+  writeJSON('./src/processed-data/pools/top-pools.json', topPoolsSimplified);
 };
 
 main();
