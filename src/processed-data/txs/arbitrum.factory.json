@@ -5995,6 +5995,46 @@
   "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47": [],
   "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4": [
     {
+      "hash": "0xb46a3048c97d48e3d2c1f73eea2e1a0bc1214f24cdafd529528f61be45b0789c",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659090343,
+      "type": "exchange",
+      "totalAmount": "32.124747131994171368",
+      "tokens": [
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "amount": "32.124747131994171368",
+          "type": "add"
+        },
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x2e694ed88c07b8f2bbd29723d04e02f5f82c1e6497c58601c99a559bca3621ac",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659090232,
+      "type": "exchange",
+      "totalAmount": "5030.75982701425635128",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "amount": "5030.75982701425635128",
+          "type": "add"
+        },
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xd5132695a1429d1410ed5a2bb68c6b1abce0d910f784fe9387bd806181e19503",
       "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
       "timestamp": 1659089407,
@@ -9610,21 +9650,6 @@
           "symbol": "FRAX",
           "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
           "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x4f8e45627334c6266ed30bc97ec6b8673ba4285476bd6847f6d1c2cf24bee9eb",
-      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
-      "timestamp": 1658394972,
-      "type": "add_liquidity",
-      "totalAmount": "1000",
-      "tokens": [
-        {
-          "symbol": "VST",
-          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
-          "amount": "1000",
-          "type": "add"
         }
       ]
     }
