@@ -68,7 +68,7 @@ const parseRemoveLiquidity = ({
   let tokens: Array<CurveTokenWithAmount>;
 
   if (decodedInput.name === 'remove_liquidity_imbalance') {
-    const rawAmounts: Array<BigNumber> = decodedInput.args._amounts;
+    const rawAmounts: Array<BigNumber> = decodedInput.args._amounts ?? decodedInput.args.amounts;
     totalAmount = new Decimal(0);
     tokens = lodash.compact(
       rawAmounts.map((rawAmount, i) => {

@@ -108,7 +108,7 @@ describe('parseTransaction', () => {
     });
   });
 
-  describe('remove_liquidity_imbalance', () => {
+  describe('remove_liquidity_imbalance(_amounts, ...', () => {
     const tx = {
       blockNumber: '14134496',
       timeStamp: '1643910993',
@@ -150,6 +150,50 @@ describe('parseTransaction', () => {
         type: 'remove',
       });
       expect(transaction?.totalAmount).toEqual(new Decimal('5000'));
+    });
+  });
+
+  describe('remove_liquidity_imbalance(amounts, ...', () => {
+    const tx = {
+      blockNumber: '11372473',
+      timeStamp: '1606904621',
+      hash: '0xb1546160c091bfd873826708032393ab09ee6dcd5fb32f3cc4ee1a6bf89649c2',
+      nonce: '474',
+      blockHash: '0xb5253f1b376a43075d1870338d641831d0b589e0d4f054c7e5306e54306edc8e',
+      transactionIndex: '115',
+      from: '0xfe8c25d07fc1990ee581bb5881da88bedeeae473',
+      to: '0x3e01dd8a5e1fb3481f0f589056b428fc308af0fb',
+      value: '0',
+      gas: '1200000',
+      gasPrice: '22000000000',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0xe310327300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005621e118ba311c37b800000000000000000000000000000000000000000000002f196ebc4fb48c0ed40',
+      contractAddress: '',
+      cumulativeGasUsed: '8969222',
+      gasUsed: '150087',
+      confirmations: '3861857',
+      methodId: '0xe3103273',
+      functionName: 'remove_liquidity_imbalance(uint256[2] amounts, uint256 max_burn_amount)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
+      expect(transaction?.tokens?.length).toEqual(1);
+      expect(transaction?.tokens[0]).toEqual({
+        address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
+        amount: new Decimal('25421.779999999998'),
+        symbol: '3Crv',
+        type: 'remove',
+      });
+      expect(transaction?.totalAmount).toEqual(new Decimal('25421.779999999998'));
     });
   });
 
