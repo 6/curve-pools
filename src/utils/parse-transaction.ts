@@ -37,10 +37,14 @@ interface ParseTransactionProps {
   tx: EtherscanTx;
 }
 interface ParseTransactionAPI {
-  decodedInput: ethers.utils.TransactionDescription;
+  decodedInput: ethers.utils.TransactionDescription | void;
   transaction: CurveTransaction | void;
 }
 export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTransactionAPI => {
+  if (tx.txreceipt_status !== '1' || tx.isError === '1') {
+    // Sometimes failed / reverted tx cannot be decoded/parsed correctly
+    return { decodedInput: undefined, transaction: undefined };
+  }
   const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
   let transaction;
   if (decodedInput.name.startsWith('remove_liquidity')) {

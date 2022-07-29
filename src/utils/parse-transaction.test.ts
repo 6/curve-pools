@@ -461,4 +461,40 @@ describe('parseTransaction', () => {
       expect(transaction?.totalAmount).toEqual(new Decimal('120318'));
     });
   });
+
+  describe('invalid function call / fail', () => {
+    const tx = {
+      blockNumber: '15049516',
+      timeStamp: '1656578558',
+      hash: '0xaf997ae805e9429cef39403f737789006840a2181919ae01a8cb162fe0e1004f',
+      nonce: '6',
+      blockHash: '0xdbb95299ddbc6a4744d1e57dbf74fbac3deef24a1044bff0a8dfc897636f0c23',
+      transactionIndex: '51',
+      from: '0x8279c4312a3803065106afab1b8a04add4a8d468',
+      to: '0x4ca9b3063ec5866a4b82e437059d2c43d1be596f',
+      value: '0',
+      gas: '21000',
+      gasPrice: '37000000000',
+      isError: '1',
+      txreceipt_status: '0',
+      input: '0x',
+      contractAddress: '',
+      cumulativeGasUsed: '4779069',
+      gasUsed: '21000',
+      confirmations: '184814',
+      methodId: '0x',
+      functionName: '',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { decodedInput, transaction } = parseTransaction({ pool, tx });
+      expect(transaction).toBeFalsy();
+      expect(decodedInput).toBeFalsy();
+    });
+  });
 });
