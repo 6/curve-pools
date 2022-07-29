@@ -5995,6 +5995,60 @@
   "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47": [],
   "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4": [
     {
+      "hash": "0xa53ab53514972567158358bb8280fef8d62614ce770c5c7a3bc8fc9110570769",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659078482,
+      "type": "exchange",
+      "totalAmount": "30",
+      "tokens": [
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "amount": "30",
+          "type": "add"
+        },
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x3568faba4e69b1777a1c0d139f9e67581a67d3e319e302df4e40f35e39ea5e32",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659078373,
+      "type": "exchange",
+      "totalAmount": "1041",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "amount": "1041",
+          "type": "add"
+        },
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x7e5ef4302b48fb56d31af562b624f106e88aea017976d256500935f5402f8f09",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659078331,
+      "type": "remove_liquidity",
+      "totalAmount": "1997.943943473803206218",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xb18f3d8d804b2343e0f6a56ba58d1b2827c5965cd2cd3b7ac9b437bb2039e1ac",
       "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
       "timestamp": 1659077832,
@@ -9550,21 +9604,6 @@
           "symbol": "FRAX",
           "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
           "amount": "19030.22",
-          "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0x7ecbd0476d4527e6536757504d6ee3bf15083bec87ff7d33648dc16668e1b0ca",
-      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
-      "timestamp": 1658391364,
-      "type": "add_liquidity",
-      "totalAmount": "326.17",
-      "tokens": [
-        {
-          "symbol": "VST",
-          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
-          "amount": "326.17",
           "type": "add"
         }
       ]
