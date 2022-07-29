@@ -12,7 +12,10 @@ on:
 env:
   ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
   ETHERSCAN_ARBITRUM_API_KEY: ${{ secrets.ETHERSCAN_ARBITRUM_API_KEY }}
+  ETHERSCAN_AVALANCHE_API_KEY: ${{ secrets.ETHERSCAN_AVALANCHE_API_KEY }}
+  ETHERSCAN_FANTOM_API_KEY: ${{ secrets.ETHERSCAN_FANTOM_API_KEY }}
   ETHERSCAN_OPTIMISM_API_KEY: ${{ secrets.ETHERSCAN_OPTIMISM_API_KEY }}
+  ETHERSCAN_POLYGON_API_KEY: ${{ secrets.ETHERSCAN_POLYGON_API_KEY }}
   INFURA_PROJECT_ID: ${{ secrets.INFURA_PROJECT_ID }}
 
 jobs:
@@ -47,7 +50,7 @@ jobs:
       - name: Process top pools
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/update-pool-metadata
+        run: yarn run-script tasks/process-top-pools
 
       - name: Fetch top pool latest transactions
         env:

@@ -1,0 +1,3585 @@
+{
+  "success": true,
+  "data": {
+    "poolData": [
+      {
+        "id": "factory-v2-0",
+        "address": "0x30dF229cefa463e991e29D42DB0bae2e122B2AC7",
+        "coinsAddresses": [
+          "0x130966628846BFd36ff31a822705796e8cb8C18D",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "148742194396251480047091",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MIM",
+        "symbol": "MIM3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            "usdPrice": 0.99909,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MIM",
+            "poolBalance": "85794170463971957260724"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "69094927723033147214656"
+          }
+        ],
+        "usdTotal": 156379.29619502742,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 85716.09776884974
+      },
+      {
+        "id": "factory-v2-1",
+        "address": "0xE9dcF2d2A17eAD11fab8b198578B20535370Be6a",
+        "coinsAddresses": [
+          "0xAafd2577Fb67366d3C89DB0d627C49D769ee2e5D",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "30638756121883344157",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Stabilize",
+        "symbol": "SUSD3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xAafd2577Fb67366d3C89DB0d627C49D769ee2e5D",
+            "usdPrice": 0.982484,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "SUSD",
+            "poolBalance": "9611938314907144053"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "20929915070110141185"
+          }
+        ],
+        "usdTotal": 30.84854396185241,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 9.44357560338323
+      },
+      {
+        "id": "factory-v2-2",
+        "address": "0xF92C2A3C91bf869F77f9cB221C5AB1B1ada8a586",
+        "coinsAddresses": [
+          "0x346A59146b9b4a77100D369a3d18E8007A9F46a6",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "39934494528613731779",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: AVAI",
+        "symbol": "AVAI3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x346A59146b9b4a77100D369a3d18E8007A9F46a6",
+            "usdPrice": 0.910945,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "AVAI",
+            "poolBalance": "19479782971748579133"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "20422664389585036732"
+          }
+        ],
+        "usdTotal": 38.63121533865223,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 17.745010899199507
+      },
+      {
+        "id": "factory-v2-3",
+        "address": "0x6041631c566Eb8dc6258A75Fa5370761d4873990",
+        "coinsAddresses": [
+          "0x2e79658c12815EED09723c8FF8f3eAF3738e5603",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "23735120656066931175",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: TestH2O",
+        "symbol": "TestH2O3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x2e79658c12815EED09723c8FF8f3eAF3738e5603",
+            "usdPrice": 0.9981078489696726,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "H2O",
+            "poolBalance": "13838236874270239989"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "9880407050910274385"
+          }
+        ],
+        "usdTotal": 23.916718797191276,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 13.812052840110676
+      },
+      {
+        "id": "factory-v2-4",
+        "address": "0xAEA2E71b631fA93683BCF256A8689dFa0e094fcD",
+        "coinsAddresses": [
+          "0x130966628846BFd36ff31a822705796e8cb8C18D",
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "6", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "259806220312285246828660",
+        "implementationAddress": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+        "name": "Curve.fi Factory Plain Pool: 3poolV2",
+        "symbol": "3poolV2-f",
+        "implementation": "plain3basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            "usdPrice": 0.99909,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MIM",
+            "poolBalance": "176308315462845854764515"
+          },
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "49097319793"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "54846086268"
+          }
+        ],
+        "usdTotal": 279927.78544754046,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 279927.78544754046
+      },
+      {
+        "id": "factory-v2-5",
+        "address": "0x850c7cC8757CE1fa8CeD709f297D842E12E61759",
+        "coinsAddresses": [
+          "0xe0Ce60AF0850bF54072635e66E79Df17082A1109",
+          "0x264c1383EA520f73dd837F915ef3a732e204a493",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
+        "name": "Curve.fi Factory Plain Pool: ICEBIN",
+        "symbol": "ICE/BNB-f",
+        "implementation": "plain2optimized",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xe0Ce60AF0850bF54072635e66E79Df17082A1109",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "ICE",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x264c1383EA520f73dd837F915ef3a732e204a493",
+            "usdPrice": 297.78,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "BNB",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-6",
+        "address": "0x065f44Cd602Cc6680E82E516125839b9BbbbE57e",
+        "coinsAddresses": [
+          "0xe0Ce60AF0850bF54072635e66E79Df17082A1109",
+          "0x264c1383EA520f73dd837F915ef3a732e204a493",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
+        "name": "Curve.fi Factory Plain Pool: ICEBIN",
+        "symbol": "ICE/BNB-f",
+        "implementation": "plain2optimized",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xe0Ce60AF0850bF54072635e66E79Df17082A1109",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "ICE",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x264c1383EA520f73dd837F915ef3a732e204a493",
+            "usdPrice": 297.78,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "BNB",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-7",
+        "address": "0xb0D2EB3C2cA3c6916FAb8DCbf9d9c165649231AE",
+        "coinsAddresses": [
+          "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3234008222469558002089053",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MAI",
+        "symbol": "MAI+av3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b",
+            "usdPrice": 0.9958411060279452,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MAI",
+            "poolBalance": "1968518275477863361292060"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "1270974360783863251132382"
+          }
+        ],
+        "usdTotal": 3260153.507980561,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 1960331.4166880988
+      },
+      {
+        "id": "factory-v2-8",
+        "address": "0xF72beaCc6fD334E14a7DDAC25c3ce1Eb8a827E10",
+        "coinsAddresses": [
+          "0x026187BdbC6b751003517bcb30Ac7817D5B766f8",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3304627612514839531839659",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Defrost H2O",
+        "symbol": "DefrostH2O3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x026187BdbC6b751003517bcb30Ac7817D5B766f8",
+            "usdPrice": 0.831395,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "H2O",
+            "poolBalance": "3183606457237639562698958"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "169199253333605163252323"
+          }
+        ],
+        "usdTotal": 2819874.115938822,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 2646834.4905150877
+      },
+      {
+        "id": "factory-v2-9",
+        "address": "0xf07d553B195080F84F582e88ecdD54bAa122b279",
+        "coinsAddresses": [
+          "0x1E12291D7548405Cd47412fCdF6A2FcD993c9E65",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Curve DD2Pool",
+        "symbol": "crvDD2Pool-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x1E12291D7548405Cd47412fCdF6A2FcD993c9E65",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-10",
+        "address": "0xC120Ef573752aAD82484eBc9A752daD6f3FEC54B",
+        "coinsAddresses": [
+          "0x02A9cE6ECfCa13832F9DF90CC8a963121dAFfe92",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Curve DD2Pool",
+        "symbol": "crvDD2Pool-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x02A9cE6ECfCa13832F9DF90CC8a963121dAFfe92",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DD",
+            "poolBalance": "5000000000000000000"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "1"
+          }
+        ],
+        "usdTotal": 9.98787e-7,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 9.98787e-7
+      },
+      {
+        "id": "factory-v2-11",
+        "address": "0xf31BFaA54b3b5E57e602686320Da7F1eE295A6eE",
+        "coinsAddresses": [
+          "0x67f3af0aeC80dF8760dd4B875c4ABEE940F13112",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Curve DD2Pool",
+        "symbol": "crvDD2Pool-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x67f3af0aeC80dF8760dd4B875c4ABEE940F13112",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DD",
+            "poolBalance": "5000000000000000000"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "1"
+          }
+        ],
+        "usdTotal": 9.98787e-7,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 9.98787e-7
+      },
+      {
+        "id": "factory-v2-12",
+        "address": "0xd0DD5D76cF0fC06DaBC48632735566DCa241a35e",
+        "coinsAddresses": [
+          "0xc741b23Ab912CaEbA652EF61715D74CdF9a98410",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "10000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Curve DD2Pool",
+        "symbol": "crvDD2Pool-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc741b23Ab912CaEbA652EF61715D74CdF9a98410",
+            "usdPrice": 0.997353740655,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DD",
+            "poolBalance": "5000000000000000000"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "5000000"
+          }
+        ],
+        "usdTotal": 9.980703703275001,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 9.980703703275001
+      },
+      {
+        "id": "factory-v2-13",
+        "address": "0x2ce5Fd6f6F4a159987eac99FF5158B7B62189Acf",
+        "coinsAddresses": [
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Tether",
+        "symbol": "USDT.eUSDt-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-14",
+        "address": "0xf3b9DDB3132543E06349AFF9A12f8503D4ca5b47",
+        "coinsAddresses": [
+          "0xEB9aC3e1C9C3F919804Bdc412e0a39b94D4C09d3",
+          "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "20320000000000000000",
+        "implementationAddress": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
+        "name": "Curve.fi Factory Plain Pool: renDAI",
+        "symbol": "renDAI-f",
+        "implementation": "plain2optimized",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xEB9aC3e1C9C3F919804Bdc412e0a39b94D4C09d3",
+            "usdPrice": 1.0001051308621445,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "renDAI",
+            "poolBalance": "10160000000000000000"
+          },
+          {
+            "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI.e",
+            "poolBalance": "10160000000000000000"
+          }
+        ],
+        "usdTotal": 20.331228129559385,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 20.331228129559385
+      },
+      {
+        "id": "factory-v2-15",
+        "address": "0x0a824B5d4C96EA0EC46306Efbd34Bf88fE1277e0",
+        "coinsAddresses": [
+          "0x0694bf58a4F48C5970454CD4874218eBa843Cf3e",
+          "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "1",
+        "totalSupply": "9724000000000000",
+        "implementationAddress": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
+        "name": "Curve.fi Factory Plain Pool: renETH",
+        "symbol": "renETH-f",
+        "implementation": "plain2optimized",
+        "assetTypeName": "avax",
+        "coins": [
+          {
+            "address": "0x0694bf58a4F48C5970454CD4874218eBa843Cf3e",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "renETH",
+            "poolBalance": "4862000000000000"
+          },
+          {
+            "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+            "usdPrice": 1730.11,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WETH.e",
+            "poolBalance": "4862000000000000"
+          }
+        ],
+        "usdTotal": 8.411794819999999,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 8.411794819999999
+      },
+      {
+        "id": "factory-v2-16",
+        "address": "0x667A881B28dC2d464d6Ede7f8b13F6a7ffe71659",
+        "coinsAddresses": [
+          "0x705Bc47EbA113Be1a66e20824a05a176aA3b5265",
+          "0x130966628846BFd36ff31a822705796e8cb8C18D",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "20320000000000000000",
+        "implementationAddress": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
+        "name": "Curve.fi Factory Plain Pool: renMIM",
+        "symbol": "renMIM-f",
+        "implementation": "plain2optimized",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x705Bc47EbA113Be1a66e20824a05a176aA3b5265",
+            "usdPrice": 0.9991827433934408,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "renMIM",
+            "poolBalance": "9161737784905351447"
+          },
+          {
+            "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            "usdPrice": 0.99909,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MIM",
+            "poolBalance": "11158955038356871828"
+          }
+        ],
+        "usdTotal": 20.30305068344504,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 20.30305068344504
+      },
+      {
+        "id": "factory-v2-17",
+        "address": "0x76b44e0Cf9bD024dbEd09E1785DF295D59770138",
+        "coinsAddresses": [
+          "0x6E48a0c5386211837d99DacA233f45EF5aa5f594",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "20320000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: renUSDC",
+        "symbol": "renUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x6E48a0c5386211837d99DacA233f45EF5aa5f594",
+            "usdPrice": 0.997894084422,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "renUSDC",
+            "poolBalance": "10160000"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "10160000"
+          }
+        ],
+        "usdTotal": 20.286279817727518,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 20.286279817727518
+      },
+      {
+        "id": "factory-v2-18",
+        "address": "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47",
+        "coinsAddresses": [
+          "0xf55941e971302C634c586416c43469F3EaD5ad3e",
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "20320000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: renUSDT",
+        "symbol": "renUSDT-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xf55941e971302C634c586416c43469F3EaD5ad3e",
+            "usdPrice": 0.9971327656500001,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "renUSDT",
+            "poolBalance": "10160000"
+          },
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "10160000"
+          }
+        ],
+        "usdTotal": 20.270802899004003,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 20.270802899004003
+      },
+      {
+        "id": "factory-v2-19",
+        "address": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+        "coinsAddresses": [
+          "0x6bD3156F45c063cfF86E7574Ad12f0bA8df589f7",
+          "0x979aB023e9F63f86eA08625BdAc258058a28D609",
+          "0x9fee03160502782CeB5845e8799638AF351D1Ed5",
+          "0xc53A6EDa2C847ce9f10b5C8D51BC2a9Ed2Fe3d44"
+        ],
+        "decimals": ["18", "18", "18", "18"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "415581935388279442361",
+        "implementationAddress": "0xCE94D3E5b0D80565D7B713A687b39a3Dc81780BA",
+        "name": "Curve.fi Factory Plain Pool: Stabilize - U.TOKEN",
+        "symbol": "U.TOKEN-f",
+        "implementation": "plain4optimized",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x6bD3156F45c063cfF86E7574Ad12f0bA8df589f7",
+            "usdPrice": 27.09500389888084,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "U.ETH",
+            "poolBalance": "15260461244887891572"
+          },
+          {
+            "address": "0x979aB023e9F63f86eA08625BdAc258058a28D609",
+            "usdPrice": 24.831744829798915,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "U.BTC",
+            "poolBalance": "125919281123669703014"
+          },
+          {
+            "address": "0x9fee03160502782CeB5845e8799638AF351D1Ed5",
+            "usdPrice": 24.866613728356477,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "U.DAI",
+            "poolBalance": "113868914957725696843"
+          },
+          {
+            "address": "0xc53A6EDa2C847ce9f10b5C8D51BC2a9Ed2Fe3d44",
+            "usdPrice": 24.77,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "U.AVAX",
+            "poolBalance": "161799736900335277824"
+          }
+        ],
+        "usdTotal": 10379.59152188578,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 10379.59152188578
+      },
+      {
+        "id": "factory-v2-20",
+        "address": "0x298D15d9208ab16a59f45FC37133252F1Cf68991",
+        "coinsAddresses": [
+          "0x21308779a472491098e75b80B9F1B03CF7D34C64",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: CoCoPool",
+        "symbol": "CoCoPool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x21308779a472491098e75b80B9F1B03CF7D34C64",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "CoCo",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-21",
+        "address": "0xaa9dFbf31d2f807cA4d9f7BE281D75cA7BDCE64D",
+        "coinsAddresses": [
+          "0x210c2E177B34145C64C4EACCd17ACa07D2b86164",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "133904564254615355664067",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Curve DD2Pool",
+        "symbol": "crvDD2Pool-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x210c2E177B34145C64C4EACCd17ACa07D2b86164",
+            "usdPrice": 0.000453449298,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DD",
+            "poolBalance": "269546610117931559073981"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "41113910"
+          }
+        ],
+        "usdTotal": 163.28975996342575,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 163.28975996342575
+      },
+      {
+        "id": "factory-v2-22",
+        "address": "0x5f16C819c22009746b79d3170D8c214C7C950B4E",
+        "coinsAddresses": [
+          "0x4fbf0429599460D327BD5F55625E30E4fC066095",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: TSD",
+        "symbol": "TSD3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x4fbf0429599460D327BD5F55625E30E4fC066095",
+            "usdPrice": 1.076,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "TSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-23",
+        "address": "0x27c60A5a3F6D69b88B46Ab55924ECA5778f8BC88",
+        "coinsAddresses": [
+          "0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3508600458398241010",
+        "implementationAddress": "0xc50C05Ca1f8C2346664bd0d4a1eb6aC1Da38414f",
+        "name": "Curve.fi Factory USD Metapool: QU + Aave Basket",
+        "symbol": "QI+aa3CRV3CRV-f",
+        "implementation": "metausdbalances",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xA56F9A54880afBc30CF29bB66d2D9ADCdcaEaDD6",
+            "usdPrice": 0.284486,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "QI",
+            "poolBalance": "1750000000000000000"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "1743568539776319115"
+          }
+        ],
+        "usdTotal": 2.280993398560172,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0.49785050000000003
+      },
+      {
+        "id": "factory-v2-24",
+        "address": "0xB1f0Ca2e34912a093e89c5615C4f61b196e4D8D0",
+        "coinsAddresses": [
+          "0x130966628846BFd36ff31a822705796e8cb8C18D",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MIMv2",
+        "symbol": "MIMv23CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            "usdPrice": 0.99909,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MIM",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-25",
+        "address": "0x8c0E0cC1D66a1b1fF10EBB1D99Bb9779311d6dE6",
+        "coinsAddresses": [
+          "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+          "0x6807eD4369d9399847F306D7d835538915fA749d",
+          "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "6", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+        "name": "Curve.fi Factory Plain Pool: Blizz",
+        "symbol": "USD-f",
+        "implementation": "plain3basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDC",
+            "poolBalance": "26480000"
+          },
+          {
+            "address": "0x6807eD4369d9399847F306D7d835538915fA749d",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "bDAI",
+            "poolBalance": "1"
+          },
+          {
+            "address": "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDT",
+            "poolBalance": "23770000"
+          }
+        ],
+        "usdTotal": 1.001e-18,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 1.001e-18
+      },
+      {
+        "id": "factory-v2-26",
+        "address": "0x1C5ffa4FB4907B681c61B8c82b28C4672ceb1974",
+        "coinsAddresses": [
+          "0xC7D074C525f04B39f21e6f8C84c9FeFcC980f49D",
+          "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "100000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Private AVAX",
+        "symbol": "pAVAX+AVAX-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xC7D074C525f04B39f21e6f8C84c9FeFcC980f49D",
+            "usdPrice": 24.705164079894235,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "pAVAX",
+            "poolBalance": "49999994602801932498"
+          },
+          {
+            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+            "usdPrice": 24.76,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WAVAX",
+            "poolBalance": "50000025224827992174"
+          }
+        ],
+        "usdTotal": 2473.2586952227894,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 2473.2586952227894
+      },
+      {
+        "id": "factory-v2-27",
+        "address": "0xbcda256079372C6FE5d1b813AB9DeF5C9D78Ab8F",
+        "coinsAddresses": [
+          "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "199949095784347286379",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: FRAX",
+        "symbol": "FRAX3pool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+            "usdPrice": 0.999957,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "FRAX",
+            "poolBalance": "100971238564672206396"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "98129424150658404686"
+          }
+        ],
+        "usdTotal": 201.32359733954902,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 100.96689680141392
+      },
+      {
+        "id": "factory-v2-28",
+        "address": "0xE013593CEA239E445d2271106836b00C9E7356ae",
+        "coinsAddresses": [
+          "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "12565486710661829970149446",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: FRAX",
+        "symbol": "FRAX3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+            "usdPrice": 0.999957,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "FRAX",
+            "poolBalance": "7064726469223256948215753"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "5481731391058515535247086"
+          }
+        ],
+        "usdTotal": 12670574.769363664,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 7064422.685985081
+      },
+      {
+        "id": "factory-v2-29",
+        "address": "0x37C9Be6C81990398e9B87494484Afc6a4608C25d",
+        "coinsAddresses": [
+          "0x6807eD4369d9399847F306D7d835538915fA749d",
+          "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+          "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "6", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "319445207331735072502141",
+        "implementationAddress": "0x094d12e5b541784701FD8d65F11fc0598FBC6332",
+        "name": "Curve.fi Factory Plain Pool: blizz",
+        "symbol": "bCRV-f",
+        "implementation": "plain3balances",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x6807eD4369d9399847F306D7d835538915fA749d",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "bDAI",
+            "poolBalance": "94864517271034877112910"
+          },
+          {
+            "address": "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+            "usdPrice": 1.0019271969814298,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDC",
+            "poolBalance": "67032191430"
+          },
+          {
+            "address": "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+            "usdPrice": 0.9990395752572435,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDT",
+            "poolBalance": "185236312127"
+          }
+        ],
+        "usdTotal": 347179.1640448647,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 347179.1640448647
+      },
+      {
+        "id": "factory-v2-30",
+        "address": "0x3a43A5851A3e3E0e25A3c1089670269786be1577",
+        "coinsAddresses": [
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "1576670097446417850405758",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: USD Coin",
+        "symbol": "USDC.eUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "620015891276"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "1032752822380"
+          }
+        ],
+        "usdTotal": 1652016.6343798821,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 1652016.6343798821
+      },
+      {
+        "id": "factory-v2-31",
+        "address": "0xa852739519fd46387e2163fc0FB0EfaA94Aa83c4",
+        "coinsAddresses": [
+          "0x7BA40fc9fb1F490E071D39f6C64f610D7E476E52",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3599530845056324903",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MoreMoney USD",
+        "symbol": "MONEY3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x7BA40fc9fb1F490E071D39f6C64f610D7E476E52",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MNY",
+            "poolBalance": "1550040818624346107"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "2028181729333163904"
+          }
+        ],
+        "usdTotal": 2.0742160489508965,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-32",
+        "address": "0x943F3B750447AbDd61cdF68AE6c3912cd3bedA04",
+        "coinsAddresses": [
+          "0x40b393cecf8F7D7Fc79b83e8fA40e850511817f6",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "85853243354252775130853",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Topshelf USDL",
+        "symbol": "USDL-3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x40b393cecf8F7D7Fc79b83e8fA40e850511817f6",
+            "usdPrice": 1.0988991534102877,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "USDL Stablecoin",
+            "poolBalance": "9622485556903625674845"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "76422640793831244726142"
+          }
+        ],
+        "usdTotal": 88731.37228558301,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 10574.141232184114
+      },
+      {
+        "id": "factory-v2-33",
+        "address": "0x445109BcF194c538B73EA60C71bb773849bc9b79",
+        "coinsAddresses": [
+          "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "0xe0237F9E2aaABd7Ffb8630BE5203D573a045Bca7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "693486881758795431626",
+        "implementationAddress": "0x64448B78561690B70E17CBE8029a3e5c1bB7136e",
+        "name": "Curve.fi Factory Pool: Topshelf AVAXL",
+        "symbol": "AVAX/AVAXL-f",
+        "implementation": "plain2eth",
+        "assetTypeName": "avax",
+        "coins": [
+          {
+            "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+            "usdPrice": 24.77,
+            "poolBalance": "1845940411875745911",
+            "decimals": 18,
+            "symbol": "AVAX",
+            "isBasePoolLpToken": false
+          },
+          {
+            "address": "0xe0237F9E2aaABd7Ffb8630BE5203D573a045Bca7",
+            "usdPrice": 0.2320912240581527,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "AVAX-L",
+            "poolBalance": "938403884841371903207"
+          }
+        ],
+        "usdTotal": 263.519250295922,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 263.519250295922
+      },
+      {
+        "id": "factory-v2-34",
+        "address": "0x428663216f2Ec5d4180e89B187664d2333EfE229",
+        "coinsAddresses": [
+          "0x321E7092a180BB43555132ec53AaA65a5bF84251",
+          "0x50b7545627a5162F82A992c33b87aDc75187B218",
+          "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118"
+        ],
+        "decimals": ["18", "8", "18", "6"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c",
+        "name": "Curve.fi Factory Plain Pool: Cohesion1",
+        "symbol": "LINDY-f",
+        "implementation": "plain4balances",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0x321E7092a180BB43555132ec53AaA65a5bF84251",
+            "usdPrice": 3002.22,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "gOHM",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+            "usdPrice": 23888,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "WBTC.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+            "usdPrice": 24.76,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WAVAX",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-35",
+        "address": "0x93004D8477f117eA359b71ec02f2706c8175c55c",
+        "coinsAddresses": [
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "5112722976447528480590",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: USDC.e-UST",
+        "symbol": "USDC.e+UST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "31587061"
+          },
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "6085506498"
+          }
+        ],
+        "usdTotal": 252.35386400194443,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 252.35386400194443
+      },
+      {
+        "id": "factory-v2-36",
+        "address": "0x8a5b8058C1523111768E5F2DEF3b11644F0e165b",
+        "coinsAddresses": [
+          "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+          "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+          "0x6807eD4369d9399847F306D7d835538915fA749d",
+          "0x943df430F7f9F734EC7625b561dc5e17A173Adf8"
+        ],
+        "decimals": ["6", "6", "18", "18"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "7346484244000769842",
+        "implementationAddress": "0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c",
+        "name": "Curve.fi Factory Plain Pool: BlizzV2",
+        "symbol": "USD-f",
+        "implementation": "plain4balances",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x18cb11C9F2B6F45A7ac0A95eFD322ED4cf9EEEBF",
+            "usdPrice": 0.9990395752572435,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDT",
+            "poolBalance": "3598753"
+          },
+          {
+            "address": "0xC25Ff1aF397b76252D6975b4D7649b35C0E60F69",
+            "usdPrice": 1.0019271969814298,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "bUSDC",
+            "poolBalance": "2830031"
+          },
+          {
+            "address": "0x6807eD4369d9399847F306D7d835538915fA749d",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "bDAI",
+            "poolBalance": "260158383499182880"
+          },
+          {
+            "address": "0x943df430F7f9F734EC7625b561dc5e17A173Adf8",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "bMIM",
+            "poolBalance": "4654098126810728025"
+          }
+        ],
+        "usdTotal": 6.691200237658966,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 6.691200237658966
+      },
+      {
+        "id": "factory-v2-37",
+        "address": "0xfC78eAFf2E8290D3d608B689e93ec6954E21B6C2",
+        "coinsAddresses": [
+          "0x1687b16087B576E403C8d6926fBc0798e48FD0de",
+          "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "8", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: renGOLD",
+        "symbol": "renGOLD-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x1687b16087B576E403C8d6926fBc0798e48FD0de",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "PAXG",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
+            "usdPrice": 23935,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "renBTC",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-38",
+        "address": "0xdC6eBB38Be3FDBA42Ff65da6Aafb9eDE6443DFDB",
+        "coinsAddresses": [
+          "0xAff6268287211783cA7C9934D5234765F57e98B6",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "43644931438379272984190",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Versus Token",
+        "symbol": "VERS3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xAff6268287211783cA7C9934D5234765F57e98B6",
+            "usdPrice": 0.00008820253027202774,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "VERS",
+            "poolBalance": "309545005648120159463795"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "12392419225100984161"
+          }
+        ],
+        "usdTotal": 39.97634684368515,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 27.30265273123332
+      },
+      {
+        "id": "factory-v2-39",
+        "address": "0xb3F21Fc59Bc06209D5fb82c474F21582AEf09a20",
+        "coinsAddresses": [
+          "0x0f577433Bf59560Ef2a79c124E9Ff99fCa258948",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "466129681864309983506681",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MoreMoney USD",
+        "symbol": "MONEY3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x0f577433Bf59560Ef2a79c124E9Ff99fCa258948",
+            "usdPrice": 1.004,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MONEY",
+            "poolBalance": "296414492549297584650482"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "169826624195030912349771"
+          }
+        ],
+        "usdTotal": 471281.3864511007,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 297600.1505194948
+      },
+      {
+        "id": "factory-v2-40",
+        "address": "0x1cDAEf9e69aDa311bDe095fD3be6752b6a626bC8",
+        "coinsAddresses": [
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Test",
+        "symbol": "TST3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-41",
+        "address": "0xC9B8a3FDECB9D5b218d02555a8Baf332E5B740d5",
+        "coinsAddresses": [
+          "0x06Cfc400951Ef1FB120b78448d753e1F9b02bA31",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "4934912694380813582",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: JYCrvPool",
+        "symbol": "JYCrvPool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x06Cfc400951Ef1FB120b78448d753e1F9b02bA31",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "JY",
+            "poolBalance": "3999906370538069123"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "1035754665816795017"
+          }
+        ],
+        "usdTotal": 1.059263536172039,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-42",
+        "address": "0xe5042bbac35056f3f95bF0a79D9eB64dc0daFDb8",
+        "coinsAddresses": [
+          "0xc6636e205460bE6073b65094422910161d767ef2",
+          "0x130966628846BFd36ff31a822705796e8cb8C18D",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: FUSD-MIM Factory Pool",
+        "symbol": "FUSD-MIM-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc6636e205460bE6073b65094422910161d767ef2",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "FUSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            "usdPrice": 0.99909,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MIM",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-43",
+        "address": "0xe413f1611781f66B25aF566276Ee562D050E5Fc4",
+        "coinsAddresses": [
+          "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: MAI+3Pool",
+        "symbol": "MAI+3Pool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b",
+            "usdPrice": 0.9958411060279452,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "MAI",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-44",
+        "address": "0x4b043CDd981dBD9a0c229d23b80Cc1EB3c50b05B",
+        "coinsAddresses": [
+          "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "0x6C6f910A79639dcC94b4feEF59Ff507c2E843929",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "5586511955585094295370",
+        "implementationAddress": "0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0",
+        "name": "Curve.fi Factory Plain Pool: Ankr Reward Earning Staked AVAX",
+        "symbol": "aAVAXb-f",
+        "implementation": "plain2balances",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+            "usdPrice": 24.76,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WAVAX",
+            "poolBalance": "2601785626514892229703"
+          },
+          {
+            "address": "0x6C6f910A79639dcC94b4feEF59Ff507c2E843929",
+            "usdPrice": 29.28,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "aAVAXb",
+            "poolBalance": "3121834543370660124755"
+          }
+        ],
+        "usdTotal": 155827.5275424017,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 155827.5275424017
+      },
+      {
+        "id": "factory-v2-45",
+        "address": "0x3d49594Ed8c108F817512829C102E4059c76a220",
+        "coinsAddresses": [
+          "0x432E264AD545dA68e116D71572BACCd943802aa9",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "5998968043901330828",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: PUCrvPool",
+        "symbol": "PUCrvPool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x432E264AD545dA68e116D71572BACCd943802aa9",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "POLE",
+            "poolBalance": "3800128333136797692"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "2192440435619340852"
+          }
+        ],
+        "usdTotal": 2.242202990077084,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-46",
+        "address": "0xc5536d59D026BE19b4267810f43aC083cD607b64",
+        "coinsAddresses": [
+          "0x65069e550C5526c029DC9135eDD02F6683859Ac1",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "4864444696032100896387",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: NorthPole",
+        "symbol": "NorthPole3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x65069e550C5526c029DC9135eDD02F6683859Ac1",
+            "usdPrice": 2.511973734225767e-7,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "POLE",
+            "poolBalance": "235208784605975591652641"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "28601867147861667"
+          }
+        ],
+        "usdTotal": 0.08833488219955177,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0.059083828898937665
+      },
+      {
+        "id": "factory-v2-47",
+        "address": "0x5Aa2a79293424bf39171d704A364FDE3B641DB25",
+        "coinsAddresses": [
+          "0xc6636e205460bE6073b65094422910161d767ef2",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: FUSD/USDC",
+        "symbol": "FUSDUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc6636e205460bE6073b65094422910161d767ef2",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "FUSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-48",
+        "address": "0x5CCaeDc2A2C19aB773D75Dd55071680636C242FA",
+        "coinsAddresses": [
+          "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "0x02D980A0D7AF3fb7Cf7Df8cB35d9eDBCF355f665",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: test/test",
+        "symbol": "testtx-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+            "usdPrice": 24.76,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WAVAX",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x02D980A0D7AF3fb7Cf7Df8cB35d9eDBCF355f665",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "SHIB.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-49",
+        "address": "0x00E3852AEdBFA153629BeFc870fa45c4d859652c",
+        "coinsAddresses": [
+          "0x5CCaeDc2A2C19aB773D75Dd55071680636C242FA",
+          "0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: another test",
+        "symbol": "testcrvlol-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x5CCaeDc2A2C19aB773D75Dd55071680636C242FA",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "testtx-f",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd",
+            "usdPrice": 0.382162,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "JOE",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-50",
+        "address": "0x07094aB16Ad163F21C76adcEDC36aD8E494fAb74",
+        "coinsAddresses": [
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: USDC/av3CRV",
+        "symbol": "USDCav3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-51",
+        "address": "0x661cf823583e7BdE97954e98fAc2Ef777493a8dc",
+        "coinsAddresses": [
+          "0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: BUSD",
+        "symbol": "BUSD3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x19860CCB0A68fd4213aB9D8266F7bBf05A8dDe98",
+            "usdPrice": 1.002,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "BUSD.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-52",
+        "address": "0x7F2d1C7b8911901de7c9785d6E7A7A10d8dEff66",
+        "coinsAddresses": [
+          "0xBdf3c7412Eb426197DA14Ad084567c006f365d76",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "1760964168424748414303",
+        "implementationAddress": "0xc50C05Ca1f8C2346664bd0d4a1eb6aC1Da38414f",
+        "name": "Curve.fi Factory USD Metapool: Factor XUSD",
+        "symbol": "XUSDav3CRV3CRV-f",
+        "implementation": "metausdbalances",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xBdf3c7412Eb426197DA14Ad084567c006f365d76",
+            "usdPrice": 0.9973413063730779,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "XUSD",
+            "poolBalance": "1008025744862448616386"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "743076984251701553737"
+          }
+        ],
+        "usdTotal": 1765.2885645372821,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 1005.3457132388095
+      },
+      {
+        "id": "factory-v2-53",
+        "address": "0xdb721E854aC98d1782dd80fD60d9c73ef7C4707F",
+        "coinsAddresses": [
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0x50b7545627a5162F82A992c33b87aDc75187B218",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "8", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: BTC/UST(Terra)",
+        "symbol": "BTCUST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+            "usdPrice": 23888,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "WBTC.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-54",
+        "address": "0x92926170cc85A4BA573bd86d61348bE650E3Eae5",
+        "coinsAddresses": [
+          "0x3a43A5851A3e3E0e25A3c1089670269786be1577",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: usdc.e/usd",
+        "symbol": "USDC.eUSDC3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x3a43A5851A3e3E0e25A3c1089670269786be1577",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.eUSDC-f",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-55",
+        "address": "0xD79138c49c49200a1Afc935171D1bDAd084FDc95",
+        "coinsAddresses": [
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "6", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "8838491685203695765698246",
+        "implementationAddress": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+        "name": "Curve.fi Factory Plain Pool: 3pool",
+        "symbol": "3pool-f",
+        "implementation": "plain3basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "12160640674919"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "97896111071"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "97798411041"
+          }
+        ],
+        "usdTotal": 636928.1180181727,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 636928.1180181727
+      },
+      {
+        "id": "factory-v2-56",
+        "address": "0x8177ae5A1e32Ec91E62a3d118fC0B36C82CA84Ce",
+        "coinsAddresses": [
+          "0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11",
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: UST(axelar) - UST(wormhole)",
+        "symbol": "USTUST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-57",
+        "address": "0xB89B080Bb9fb489516FC7Fc98bC4eb3f5A92c54E",
+        "coinsAddresses": [
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118"
+        ],
+        "decimals": ["6", "18", "6", "6"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x7544Fe3d184b6B55D6B36c3FCA1157eE0Ba30287",
+        "name": "Curve.fi Factory Plain Pool: UST (wormhole)",
+        "symbol": "USTtrio-f",
+        "implementation": "plain4basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "961789440"
+          },
+          {
+            "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI.e",
+            "poolBalance": "999420000000000000000"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "1"
+          },
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "999180000"
+          }
+        ],
+        "usdTotal": 2032.5233873281757,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 2032.5233873281757
+      },
+      {
+        "id": "factory-v2-58",
+        "address": "0x2CB445366FbE025569D6883Aa931E79deF202802",
+        "coinsAddresses": [
+          "0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11",
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Axelar/Wormhole UST",
+        "symbol": "UST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x260Bbf5698121EB85e7a74f2E45E16Ce762EbE11",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-59",
+        "address": "0xbb8a6436e0E9A22bb7F1dC76aFB4421D8195620E",
+        "coinsAddresses": [
+          "0xfaB550568C688d5D8A52C7d794cb93Edc26eC0eC",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "2000000000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: axlUSDC/USDC.e",
+        "symbol": "AXELARUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xfaB550568C688d5D8A52C7d794cb93Edc26eC0eC",
+            "usdPrice": 0.999062,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "axlUSDC",
+            "poolBalance": "1021810943504"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "979942869013"
+          }
+        ],
+        "usdTotal": 1999606.6831518803,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 1999606.6831518803
+      },
+      {
+        "id": "factory-v2-60",
+        "address": "0x48E8DCb9fbE51899Df8960415fB11dfb8745C2DB",
+        "coinsAddresses": [
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: AVAX/USDC",
+        "symbol": "AVAXUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+            "usdPrice": 24.76,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "WAVAX",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-61",
+        "address": "0xd39016475200ab8957e9C772C949Ef54bDA69111",
+        "coinsAddresses": [
+          "0x28690ec942671aC8d9Bc442B667EC338eDE6dFd3",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "1000210298335522081550933",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: deBridge-USDC",
+        "symbol": "deUSDС-3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x28690ec942671aC8d9Bc442B667EC338eDE6dFd3",
+            "usdPrice": 1.0011311172044122,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "deUSDC",
+            "poolBalance": "458145970627"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "534210263653066654570451"
+          }
+        ],
+        "usdTotal": 1004999.6002435416,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 458664.18741650827
+      },
+      {
+        "id": "factory-v2-62",
+        "address": "0x305fC0A3EEd959a3bBDC54300a1A140925B4b058",
+        "coinsAddresses": [
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0xaB9A04808167C170A9EC4f8a87a0cD781ebcd55e",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: aUST/UST",
+        "symbol": "aUSTUST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xaB9A04808167C170A9EC4f8a87a0cD781ebcd55e",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "aUST",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-63",
+        "address": "0xcb11EE4B70d73e38a383b8691cAFb221059669cC",
+        "coinsAddresses": [
+          "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+          "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7"
+        ],
+        "decimals": ["6", "18", "6", "6"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3298264049326328606",
+        "implementationAddress": "0x7544Fe3d184b6B55D6B36c3FCA1157eE0Ba30287",
+        "name": "Curve.fi Factory Plain Pool: 4pool",
+        "symbol": "4pool-f",
+        "implementation": "plain4basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xb599c3590F42f8F995ECfa0f85D2980B76862fc1",
+            "usdPrice": 0.03628377,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "UST",
+            "poolBalance": "16026004"
+          },
+          {
+            "address": "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
+            "usdPrice": 0.999957,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "FRAX",
+            "poolBalance": "77707444494934077"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "123574"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "77421"
+          }
+        ],
+        "usdTotal": 0.8601827139669008,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0.8601827139669008
+      },
+      {
+        "id": "factory-v2-64",
+        "address": "0x15a1C069Fcf6F79a3D5Bb5d4A8ba004FbF4fABAc",
+        "coinsAddresses": [
+          "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: NXUSD+av3crv",
+        "symbol": "NXUSD3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "NXUSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-65",
+        "address": "0x5c999Df25df87A8DfbDD4730c3467de69482bfa8",
+        "coinsAddresses": [
+          "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: NXUSD+av3crv",
+        "symbol": "NXUSD3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "NXUSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-66",
+        "address": "0x6BF6fc7EaF84174bb7e1610Efd865f0eBD2AA96D",
+        "coinsAddresses": [
+          "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "3311607799722180809795851",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: NXUSD+av3CRV",
+        "symbol": "NXUSD3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xF14f4CE569cB3679E99d5059909E23B07bd2F387",
+            "usdPrice": 0.9921671031235336,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "NXUSD",
+            "poolBalance": "2465968853407509688733401"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "842239062342786390653659"
+          }
+        ],
+        "usdTotal": 3308008.817947378,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 2446653.1736781904
+      },
+      {
+        "id": "factory-v2-67",
+        "address": "0x0F24131384044A9D1670fa135CefD3f25870446e",
+        "coinsAddresses": [
+          "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["9", "6", "0", "0"],
+        "underlyingDecimals": ["9", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: ERC-Plenty",
+        "symbol": "RUGUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+            "usdPrice": 1.75,
+            "decimals": "9",
+            "isBasePoolLpToken": false,
+            "symbol": "RUG",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-68",
+        "address": "0x268C6c52B84A484Fe4A8f36311BF418d22036A86",
+        "coinsAddresses": [
+          "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["9", "6", "0", "0"],
+        "underlyingDecimals": ["9", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: ERC-Plenty",
+        "symbol": "RUGUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xb8EF3a190b68175000B74B4160d325FD5024760e",
+            "usdPrice": 1.75,
+            "decimals": "9",
+            "isBasePoolLpToken": false,
+            "symbol": "RUG",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-69",
+        "address": "0x1da20Ac34187b2d9c74F729B85acB225D3341b25",
+        "coinsAddresses": [
+          "0x111111111111ed1D73f860F57b2798b683f2d325",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "6", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "17850562461183887464205641",
+        "implementationAddress": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+        "name": "Curve.fi Factory Plain Pool: YUSD Pool",
+        "symbol": "YUSDCRV-f",
+        "implementation": "plain3basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x111111111111ed1D73f860F57b2798b683f2d325",
+            "usdPrice": 0.996182,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "YUSD",
+            "poolBalance": "9747389585931277222997478"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "4150959167318"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "4001490880949"
+          }
+        ],
+        "usdTotal": 17862612.09628655,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 17862612.09628655
+      },
+      {
+        "id": "factory-v2-70",
+        "address": "0x7C01B05DDE0FbB38e2902a9fC3447BEb877d9455",
+        "coinsAddresses": [
+          "0xE1d70994Be12b73E76889412b284A8F19b0DE56d",
+          "0x9fB1d52596c44603198fB0aee434fac3a679f702",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "200000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: eEUR-jEUR",
+        "symbol": "eEURjEUR-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xE1d70994Be12b73E76889412b284A8F19b0DE56d",
+            "usdPrice": null,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "EEUR",
+            "poolBalance": "158178730"
+          },
+          {
+            "address": "0x9fB1d52596c44603198fB0aee434fac3a679f702",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "jEUR",
+            "poolBalance": "42187698272364600524"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-71",
+        "address": "0xb6C7Af9a5703B8E03358dE0A6c07e3208B0CD6A4",
+        "coinsAddresses": [
+          "0x6feFd97F328342a8A840546A55FDcfEe7542F9A8",
+          "0x9fB1d52596c44603198fB0aee434fac3a679f702",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "200000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: agEUR-jEUR",
+        "symbol": "agEURjEUR-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0x6feFd97F328342a8A840546A55FDcfEe7542F9A8",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "agEUR",
+            "poolBalance": "146386407084174520727"
+          },
+          {
+            "address": "0x9fB1d52596c44603198fB0aee434fac3a679f702",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "jEUR",
+            "poolBalance": "54001659949786896770"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-72",
+        "address": "0x63171ae9A9886e49547dd40aDB70F04EABA39D6b",
+        "coinsAddresses": [
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: USDT.e/USDT",
+        "symbol": "USDUSDT.e-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-73",
+        "address": "0x9C907Ee3bC1da92095a81B806Ae8cBA6c597703c",
+        "coinsAddresses": [
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: USDT.e/USDT",
+        "symbol": "USDT.eUSD-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-74",
+        "address": "0xd92Be5A1c565Db5256cDD537B875ED46111Bd8b0",
+        "coinsAddresses": [
+          "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: USDT.e/USDT",
+        "symbol": "USDT.eUSDT-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
+            "usdPrice": 0.998025,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDT.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-75",
+        "address": "0xaB174fFA530C888649C44C4d21C849BBAaBc723F",
+        "coinsAddresses": [
+          "0x95571A6bDB416b367518bc77eFBCf2825dd2f3bf",
+          "0xA8F1985F08AdCC1728dDdC1983725f2De5Ca6278",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: TEST/safeTEST",
+        "symbol": "safeTEST-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x95571A6bDB416b367518bc77eFBCf2825dd2f3bf",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "TEST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xA8F1985F08AdCC1728dDdC1983725f2De5Ca6278",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "safeTEST",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-76",
+        "address": "0x75183Ba0a9D7f0b006FBD2F130ED7DdBcb3c5907",
+        "coinsAddresses": [
+          "0x002F54C1BeF8fC10CE5C30C24a9b2b2a86Ed1692",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: TSDT/AVAX",
+        "symbol": "TSDT3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x002F54C1BeF8fC10CE5C30C24a9b2b2a86Ed1692",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "TDST",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-77",
+        "address": "0x6856860ce8913e98A2baC1A922F309D9a16651fA",
+        "coinsAddresses": [
+          "0x9456e074A1e6Eb3B6952a47Da2859dd1Ad6C2B25",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "58181170102446723650754",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: USDR",
+        "symbol": "USDR3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x9456e074A1e6Eb3B6952a47Da2859dd1Ad6C2B25",
+            "usdPrice": 0.9992029568430283,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "USDR",
+            "poolBalance": "32126340003977289563655"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "25576983900348815985491"
+          }
+        ],
+        "usdTotal": 58258.247190011294,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 32100.733924518572
+      },
+      {
+        "id": "factory-v2-78",
+        "address": "0x90D5233b53436767fecACD1a783D3dA8Cc7395ED",
+        "coinsAddresses": [
+          "0xaB05b04743E0aeAF9D2cA81E5D3b8385e4BF961e",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "71096586806513628815232",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: USDS",
+        "symbol": "USDS+3Pool3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xaB05b04743E0aeAF9D2cA81E5D3b8385e4BF961e",
+            "usdPrice": 0.984434,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "USDS",
+            "poolBalance": "68814515622869715271764"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "2659607674039253296878"
+          }
+        ],
+        "usdTotal": 70463.32255236962,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 67743.34887268413
+      },
+      {
+        "id": "factory-v2-79",
+        "address": "0x39BA6943D7C0F415bce7A8c42A8C601eaD6Ee426",
+        "coinsAddresses": [
+          "0x480f99A35579985353c900827F6bF3B9ff8c41e5",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "23641654277097517597",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: Curve.fi USDB/av3Crv",
+        "symbol": "USDBav3CRV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x480f99A35579985353c900827F6bF3B9ff8c41e5",
+            "usdPrice": 1.131280942642312,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "USDB",
+            "poolBalance": "5999998794574571439"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "17629665309065846490"
+          }
+        ],
+        "usdTotal": 24.817496016062485,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 6.7876842921790566
+      },
+      {
+        "id": "factory-v2-80",
+        "address": "0x0149123760957395f283AF81fE8c904348aA33FC",
+        "coinsAddresses": [
+          "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "6", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "300000000000000000000",
+        "implementationAddress": "0x094d12e5b541784701FD8d65F11fc0598FBC6332",
+        "name": "Curve.fi Factory Plain Pool: avax-3pool",
+        "symbol": "avax3pool-f",
+        "implementation": "plain3balances",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI.e",
+            "poolBalance": "136188209345309649156"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "95717836"
+          },
+          {
+            "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+            "usdPrice": 0.999997,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDt",
+            "poolBalance": "68402024"
+          }
+        ],
+        "usdTotal": 300.44405234858294,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 300.44405234858294
+      },
+      {
+        "id": "factory-v2-81",
+        "address": "0x17459b66F9f7b34703eDfeaB4902522c77c23103",
+        "coinsAddresses": [
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+          "0x5541D83EFaD1f281571B343977648B75d95cdAC2",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "18", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "3",
+        "totalSupply": "0",
+        "implementationAddress": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+        "name": "Curve.fi Factory Plain Pool: GRAPE/USDC/DAI",
+        "symbol": "GRAPE/USD-f",
+        "implementation": "plain3basic",
+        "assetTypeName": "other",
+        "coins": [
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI.e",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x5541D83EFaD1f281571B343977648B75d95cdAC2",
+            "usdPrice": 0.859407,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "GRAPE",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-82",
+        "address": "0xd7bB79aeE866672419999a0496D99c54741D67B5",
+        "coinsAddresses": [
+          "0xfaB550568C688d5D8A52C7d794cb93Edc26eC0eC",
+          "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "6", "0", "0"],
+        "underlyingDecimals": ["6", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "5000061789999992853769905",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: axlUSDC/USDC",
+        "symbol": "axlUSDC-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xfaB550568C688d5D8A52C7d794cb93Edc26eC0eC",
+            "usdPrice": 0.999062,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "axlUSDC",
+            "poolBalance": "2628282903288"
+          },
+          {
+            "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "2371920240292"
+          }
+        ],
+        "usdTotal": 4997737.814216716,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 4997737.814216716
+      },
+      {
+        "id": "factory-v2-83",
+        "address": "0x741aEa6c7707b39Bd950da945f84D6b8bA455D48",
+        "coinsAddresses": [
+          "0x2C791261B19241265241D0F80c9DD06D16566037",
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "18", "6", "6", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0xA237034249290De2B07988Ac64b96f22c0E76fE0",
+        "name": "Curve.fi Factory USD Metapool: IDM/AAVE",
+        "symbol": "IDMAV3CRV-f",
+        "implementation": "metausd",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x2C791261B19241265241D0F80c9DD06D16566037",
+            "usdPrice": null,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "IDM",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0226973347367978,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 0
+      },
+      {
+        "id": "factory-v2-84",
+        "address": "0x357547528d53C04420bc43Bc4f97252A4B860D9A",
+        "coinsAddresses": [
+          "0xC5Fa5669E326DA8B2C35540257cD48811F40a36B",
+          "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "18", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "1100000000000000000000",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: Axelar DAI",
+        "symbol": "axlDAI-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0xC5Fa5669E326DA8B2C35540257cD48811F40a36B",
+            "usdPrice": 1.0005905489477716,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "axlDAI",
+            "poolBalance": "550000000000000000000"
+          },
+          {
+            "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI.e",
+            "poolBalance": "550000000000000000000"
+          }
+        ],
+        "usdTotal": 1100.8748019212744,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 1100.8748019212744
+      },
+      {
+        "id": "factory-v2-85",
+        "address": "0x5483e0F934f5d3964A2C4d0eC423353cF4a57ba2",
+        "coinsAddresses": [
+          "0x111111111111ed1D73f860F57b2798b683f2d325",
+          "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "0", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "0",
+        "implementationAddress": "0x697434ca761d4F86b553784B69F4f37F5eDf54dF",
+        "name": "Curve.fi Factory Plain Pool: YUSD/USDC.e",
+        "symbol": "YUSDC.e-f",
+        "implementation": "plain2basic",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x111111111111ed1D73f860F57b2798b683f2d325",
+            "usdPrice": 0.996182,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "YUSD",
+            "poolBalance": "0"
+          },
+          {
+            "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+            "usdPrice": 0.998787,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC.e",
+            "poolBalance": "0"
+          }
+        ],
+        "usdTotal": 0,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 0
+      }
+    ],
+    "tvlAll": 43020731.2007874,
+    "generatedTimeMs": 1659134147830
+  }
+}

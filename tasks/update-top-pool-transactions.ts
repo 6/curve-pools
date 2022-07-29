@@ -5,7 +5,7 @@ import { topPools } from '../src/processed-data/pools';
 
 const main = async () => {
   for (const pool of topPools) {
-    await sleep(500);
+    await sleep(400);
     const txlist = await explorers[pool.network].mainnet.fetchTxList({
       contractAddress: pool.address,
       offset: 1000,

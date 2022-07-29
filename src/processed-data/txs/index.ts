@@ -2,6 +2,9 @@ import { Decimal } from 'decimal.js';
 import prominentEthereumTxs from './prominent-ethereum.json';
 import prominentArbitrumTxs from './prominent-arbitrum.json';
 import prominentOptimismTxs from './prominent-optimism.json';
+import prominentPolygonTxs from './prominent-polygon.json';
+import prominentFantomTxs from './prominent-fantom.json';
+import prominentAvalancheTxs from './prominent-avalanche.json';
 import {
   CurveLiquidityImpact,
   CurveTransaction,
@@ -14,6 +17,9 @@ const prominentTxsMap: Record<Network, Record<string, Array<CurveTransactionJSON
   ethereum: prominentEthereumTxs,
   optimism: prominentOptimismTxs,
   arbitrum: prominentArbitrumTxs,
+  polygon: prominentPolygonTxs,
+  fantom: prominentFantomTxs,
+  avalanche: prominentAvalancheTxs,
 };
 interface GetProminentTxsProps {
   network: Network;

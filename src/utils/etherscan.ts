@@ -176,4 +176,25 @@ export const explorers = {
       apiKey: getEnv('ETHERSCAN_OPTIMISM_API_KEY'),
     }),
   },
+  polygon: {
+    mainnet: new Etherscan({
+      baseURL: 'https://polygonscan.com',
+      apiURL: 'https://api.polygonscan.com',
+      apiKey: getEnv('ETHERSCAN_POLYGON_API_KEY'),
+    }),
+  },
+  fantom: {
+    mainnet: new Etherscan({
+      baseURL: 'https://ftmscan.com',
+      apiURL: 'https://api.ftmscan.com',
+      apiKey: getEnv('ETHERSCAN_FANTOM_API_KEY'),
+    }),
+  },
+  avalanche: {
+    mainnet: new Etherscan({
+      baseURL: 'https://snowtrace.io',
+      apiURL: 'https://api.snowtrace.io',
+      apiKey: getEnv('ETHERSCAN_AVALANCHE_API_KEY'),
+    }),
+  },
 };

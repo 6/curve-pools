@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "data": {
+    "poolData": [
+      {
+        "id": "crypto-0",
+        "address": "0xB755B949C126C04e0348DD881a5cF55d424742B2",
+        "coinsAddresses": [
+          "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+          "0x686bEF2417b6Dc32C50a3cBfbCC3bb60E1e9a15D",
+          "0x53f7c5869a859F0AeC3D334ee8B4Cf01E3492f21",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "8", "18", "0", "0", "0", "0", "0"],
+        "lpTokenAddress": "0x1daB6560494B04473A0BE3E7D83CF3Fdf3a51828",
+        "name": "Curve USD-BTC-ETH",
+        "symbol": "crvUSDBTCETH",
+        "totalSupply": "8355021498861358662719",
+        "priceOracle": 23291.35301379518,
+        "implementation": "",
+        "assetTypeName": "unknown",
+        "coins": [
+          {
+            "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+            "usdPrice": 1.0258742798603362,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "av3CRV",
+            "poolBalance": "2912313662470017190790257"
+          },
+          {
+            "address": "0x686bEF2417b6Dc32C50a3cBfbCC3bb60E1e9a15D",
+            "usdPrice": 23894,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "avWBTC",
+            "poolBalance": "12437064561"
+          },
+          {
+            "address": "0x53f7c5869a859F0AeC3D334ee8B4Cf01E3492f21",
+            "usdPrice": 1730.11,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "avWETH",
+            "poolBalance": "1707848108435853869951"
+          }
+        ],
+        "usdTotal": 8914144.978305142,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 5926477.297091295
+      }
+    ],
+    "tvlAll": 5926477.297091295,
+    "generatedTimeMs": 1659134094797
+  }
+}
