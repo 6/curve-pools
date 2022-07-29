@@ -5995,6 +5995,46 @@
   "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47": [],
   "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4": [
     {
+      "hash": "0xc2b95d23817cd6e710664c5b864d4e96fe6e581d6cc353f4315a49c9e0e2f588",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659071791,
+      "type": "exchange",
+      "totalAmount": "24.549607775417158674",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "amount": "24.549607775417158674",
+          "type": "add"
+        },
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xa311cf6cb3e222057ec6b752c8c05f34ed9b2ffd1bae451b4135fa51620ad280",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659071125,
+      "type": "exchange",
+      "totalAmount": "69.260370272045409783",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "amount": "69.260370272045409783",
+          "type": "add"
+        },
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x3cc3879451dc660eadb1fb5b9f51f409916755504ab7a706b12048a737c7bcd6",
       "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
       "timestamp": 1659070187,
@@ -9522,20 +9562,6 @@
           "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
           "amount": "357.61",
           "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0xb12a2efc327aaa02cf245d0e227a03d7e9cf256fc2d7b38459470435ef6503c8",
-      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
-      "timestamp": 1658390226,
-      "type": "remove_liquidity",
-      "totalAmount": "843.915237450711929241",
-      "tokens": [
-        {
-          "symbol": "VST",
-          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
-          "type": "remove"
         }
       ]
     }
