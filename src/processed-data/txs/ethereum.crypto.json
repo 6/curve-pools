@@ -10577,6 +10577,26 @@
   ],
   "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4": [
     {
+      "hash": "0x145c5a194bd1fc3bddfe6dc6615c5e6b4991cfc2697e720bcd3e90dda44fa1ec",
+      "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
+      "timestamp": 1659074450,
+      "type": "add_liquidity",
+      "tokens": [
+        {
+          "symbol": "WETH",
+          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "amount": "38.13",
+          "type": "add"
+        },
+        {
+          "symbol": "CVX",
+          "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+          "amount": "8139.2134",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x69611793ed9c6c45d6169c22b95e1c62d39343f3332ee741518e0146d59f221f",
       "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
       "timestamp": 1659073066,
@@ -14869,25 +14889,6 @@
           "symbol": "CVX",
           "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
           "amount": "104.468733017703135475",
-          "type": "add"
-        },
-        {
-          "symbol": "WETH",
-          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xc53ea6e449b46a2d3a561ba9c1999b77f3a32c6143ca929aee1627ee0df8a347",
-      "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
-      "timestamp": 1658446425,
-      "type": "exchange",
-      "tokens": [
-        {
-          "symbol": "CVX",
-          "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-          "amount": "44.715097614595722325",
           "type": "add"
         },
         {
