@@ -37,6 +37,10 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
+      expect(transaction?.hash).toEqual(
+        '0x2b15a24c260bc1e4cd11253d5a43c1da56881d4249d3349ddcb8546baf1a1b04',
+      );
+      expect(transaction?.timestamp).toEqual(1658913590);
       expect(transaction?.tokens).toEqual([
         {
           address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
@@ -181,6 +185,10 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
+      expect(transaction?.hash).toEqual(
+        '0x37f2a75c19af9147827b4198131d742d78bf659172a63b8c33f180d642733aaf',
+      );
+      expect(transaction?.timestamp).toEqual(1657637679);
       expect(transaction?.tokens).toEqual([
         {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
@@ -386,6 +394,10 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
+      expect(transaction?.hash).toEqual(
+        '0x7ee2f4758ad066b5f350dc53b1289b09622f0a12807fa01417fedfdb8756a555',
+      );
+      expect(transaction?.timestamp).toEqual(1659055417);
       expect(transaction?.tokens).toEqual([
         {
           address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
