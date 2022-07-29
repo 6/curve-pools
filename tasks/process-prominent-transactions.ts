@@ -44,7 +44,7 @@ const main = async () => {
 
   for (const network in txsByNetwork) {
     const txs = txsByNetwork[network as Network];
-    writeJSON(`./src/processed-data/txs/${network}.json`, txs);
+    writeJSON(`./src/processed-data/txs/prominent-${network}.json`, txs);
   }
 };
 

@@ -1,7 +1,7 @@
 import { Decimal } from 'decimal.js';
-import ethereumTxs from './ethereum.json';
-import arbitrumTxs from './arbitrum.json';
-import optimismTxs from './optimism.json';
+import prominentEthereumTxs from './prominent-ethereum.json';
+import prominentArbitrumTxs from './prominent-arbitrum.json';
+import prominentOptimismTxs from './prominent-optimism.json';
 import {
   CurveLiquidityImpact,
   CurveTransaction,
@@ -10,20 +10,20 @@ import {
 } from '../../utils/parse-transaction';
 import { Network } from '../../utils/curve.constants';
 
-const topTxsByNetwork: Record<Network, Record<string, Array<CurveTransactionJSON>>> = {
-  ethereum: ethereumTxs,
-  optimism: optimismTxs,
-  arbitrum: arbitrumTxs,
+const prominentTxsMap: Record<Network, Record<string, Array<CurveTransactionJSON>>> = {
+  ethereum: prominentEthereumTxs,
+  optimism: prominentOptimismTxs,
+  arbitrum: prominentArbitrumTxs,
 };
-interface GetTopPoolTxsProps {
+interface GetProminentTxsProps {
   network: Network;
   contractAddress: string;
 }
-export const getTopPoolTxs = ({
+export const getProminentTxs = ({
   network,
   contractAddress,
-}: GetTopPoolTxsProps): Array<CurveTransaction> => {
-  const txs = topTxsByNetwork[network][contractAddress];
+}: GetProminentTxsProps): Array<CurveTransaction> => {
+  const txs = prominentTxsMap[network][contractAddress];
   return txs.map(deserializeCurveTransaction);
 };
 

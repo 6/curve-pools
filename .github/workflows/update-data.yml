@@ -57,7 +57,7 @@ jobs:
       - name: Process top pool latest transactions
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/process-top-pool-transactions
+        run: yarn run-script tasks/process-prominent-transactions
 
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
