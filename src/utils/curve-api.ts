@@ -37,6 +37,34 @@ export interface FetchPoolsResponse {
   generatedTimeMs: number; // 1658963350286
 }
 
+interface GaugeMetadata {
+  swap: string; // '0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56';
+  swap_token: string; // '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2';
+  name: string; // 'compound';
+  gauge: string; // '0x7ca5b0a2910B33e9759DC7dDB0413949071D7575';
+  type: string; // 'stable', 'crypto', 'tether-eurt', 'terra-krw', ...
+  factory?: boolean;
+  gauge_controller: {
+    get_gauge_weight: string; // '829238348634470388835212';
+    gauge_relative_weight: string; // '1709707559875778';
+    inflation_rate: string; // '7327853447857530670';
+  };
+  gauge_data: {
+    working_supply: string; //'43620766443951785825086848';
+    inflation_rate: string; // '7327853447857530670';
+  };
+  swap_data: {
+    virtual_price: string; // '1108136951467551113';
+  };
+}
+export interface FetchGaugesResponse {
+  success: boolean;
+  data: {
+    gauges: Record<string, GaugeMetadata>;
+    generatedTimeMs: number; // 1658963350286
+  };
+}
+
 interface FetchPoolsProps {
   network: Network;
   poolType: PoolType;
@@ -45,9 +73,19 @@ export const fetchPools = async ({
   network,
   poolType,
 }: FetchPoolsProps): Promise<FetchPoolsResponse> => {
+  // TODO: also https://api.curve.fi/api/getFactoryCryptoPools/ethereum
   const poolsUri = `https://api.curve.fi/api/getPools/${network}/${poolType}`;
   console.log(`GET ${poolsUri}`);
   const response = await fetch(poolsUri);
+  const json = await response.json();
+  return json;
+};
+
+export const fetchGauges = async (): Promise<FetchGaugesResponse> => {
+  // Includes all chains:
+  const gaugesUri = 'https://api.curve.fi/api/getGauges';
+  console.log(`GET ${gaugesUri}`);
+  const response = await fetch(gaugesUri);
   const json = await response.json();
   return json;
 };
