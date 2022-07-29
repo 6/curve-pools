@@ -14,6 +14,8 @@ export interface CurvePoolExtended extends CurvePoolMetadata {
   interface: ethers.utils.Interface;
   gauge: GaugeMetadata | void;
   constants: IPoolData | void;
+  network: Network;
+  poolType: PoolType;
 }
 
 interface GetRawPoolDataProps {
@@ -88,6 +90,8 @@ export const getPools = async ({
         shortName,
         gauge,
         constants,
+        network,
+        poolType,
         interface: new ethers.utils.Interface(JSON.stringify(abi)),
       };
     }),
@@ -138,8 +142,4 @@ const getPoolConstants = ({
       return pool;
     }
   }
-
-  console.warn(
-    `getPoolConstants: unable to find pool network=${network} contractAddress=${contractAddress}`,
-  );
 };
