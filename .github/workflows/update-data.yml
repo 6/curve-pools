@@ -50,7 +50,7 @@ jobs:
       - name: Process top pools
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/update-pool-metadata
+        run: yarn run-script tasks/process-top-pools
 
       - name: Fetch top pool latest transactions
         env:
