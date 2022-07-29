@@ -44730,6 +44730,41 @@
   ],
   "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022": [
     {
+      "hash": "0xb55767730da54cf935f4407bc5c1f0c91199a1950025501af8903b6ed42ded1e",
+      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "timestamp": 1659085671,
+      "type": "exchange",
+      "totalAmount": "201.06538604",
+      "tokens": [
+        {
+          "symbol": "stETH",
+          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+          "amount": "201.06538604",
+          "type": "add"
+        },
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x61e5cc5747156ef60e75eb33c431fee975a2ca2e6d3075b8c22e166fadc1a2f5",
+      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "timestamp": 1659085057,
+      "type": "add_liquidity",
+      "totalAmount": "1.3",
+      "tokens": [
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "amount": "1.3",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x55c09c09c4ff5c325dff592286c78469fa8cfc82b724a2396ec91534c36fe50c",
       "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
       "timestamp": 1659084408,
@@ -49263,41 +49298,6 @@
           "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
           "amount": "2.15",
           "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0xc421e9c3c640bfe7ab4ac980cb917840e8a4a014acab3cc6671596bb8ccdd061",
-      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-      "timestamp": 1658707603,
-      "type": "add_liquidity",
-      "totalAmount": "10.65632659",
-      "tokens": [
-        {
-          "symbol": "ETH",
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "amount": "10.65632659",
-          "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0x642db7e7e3b001140bea09e1a2088d25a0f73a4e5894bdbc8a12b2da05d11490",
-      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-      "timestamp": 1658706004,
-      "type": "exchange",
-      "totalAmount": "16",
-      "tokens": [
-        {
-          "symbol": "ETH",
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "amount": "16",
-          "type": "add"
-        },
-        {
-          "symbol": "stETH",
-          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-          "type": "remove"
         }
       ]
     }
@@ -63840,21 +63840,6 @@
           "symbol": "3Crv",
           "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
           "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xe232f5bee5a992993993c216e68889ec1e866e396c178a12f60e7f13f9963399",
-      "pool": "0xd632f22692FaC7611d2AA1C0D552930D43CAEd3B",
-      "timestamp": 1656617574,
-      "type": "add_liquidity",
-      "totalAmount": "4898.7",
-      "tokens": [
-        {
-          "symbol": "3Crv",
-          "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-          "amount": "4898.7",
-          "type": "add"
         }
       ]
     }
