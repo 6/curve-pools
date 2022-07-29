@@ -11,6 +11,11 @@ export enum CurveTransactionType {
   EXCHANGE = 'exchange',
 }
 
+export enum CurveLiquidityImpact {
+  ADD = 'add',
+  REMOVE = 'remove',
+}
+
 interface CurveTokenWithAmount {
   symbol: string;
   address: string;
@@ -18,7 +23,7 @@ interface CurveTokenWithAmount {
   tokenAmount?: Decimal;
   usdAmount?: Decimal;
   // whether this tx is adding or removing token liquidity to pool
-  type: 'add' | 'remove';
+  type: CurveLiquidityImpact;
 }
 
 export interface CurveTransaction {
@@ -29,6 +34,24 @@ export interface CurveTransaction {
   totalUsdAmount: Decimal;
   // Input or output tokens
   tokens: Array<CurveTokenWithAmount>;
+}
+
+// JSON representations of above (TODO: better way?)
+interface CurveTokenWithAmountJSON {
+  symbol: string;
+  address: string;
+  tokenAmount?: string;
+  usdAmount?: string;
+  type: string;
+}
+export interface CurveTransactionJSON {
+  hash: string;
+  pool: string;
+  timestamp: number;
+  type: string;
+  totalUsdAmount: string;
+  // Input or output tokens
+  tokens: Array<CurveTokenWithAmountJSON>;
 }
 
 interface ParseTransactionProps {
@@ -101,7 +124,7 @@ const parseRemoveLiquidity = ({
           address: coin.address,
           tokenAmount,
           usdAmount,
-          type: 'remove',
+          type: CurveLiquidityImpact.REMOVE,
         };
       }),
     );
@@ -120,7 +143,7 @@ const parseRemoveLiquidity = ({
         address: coin.address,
         tokenAmount,
         usdAmount,
-        type: 'remove',
+        type: CurveLiquidityImpact.REMOVE,
       },
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
@@ -132,7 +155,7 @@ const parseRemoveLiquidity = ({
       return {
         symbol: coin.symbol,
         address: coin.address,
-        type: 'remove',
+        type: CurveLiquidityImpact.REMOVE,
       };
     });
   } else {
@@ -183,7 +206,7 @@ const parseAddLiquidity = ({
           address: coin.address,
           tokenAmount,
           usdAmount,
-          type: 'add',
+          type: CurveLiquidityImpact.REMOVE,
         };
       }),
     );
@@ -228,13 +251,13 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
         address: fromCoin.address,
         tokenAmount: fromCoinAmount,
         usdAmount: fromCoinUsdAmount,
-        type: 'add',
+        type: CurveLiquidityImpact.ADD,
       },
       {
         symbol: toCoin.symbol,
         address: toCoin.address,
         // TODO: need tx logs to determine amount
-        type: 'remove',
+        type: CurveLiquidityImpact.REMOVE,
       },
     ];
   } else if (decodedInput.name === 'exchange_underlying') {
