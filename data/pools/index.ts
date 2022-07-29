@@ -23,7 +23,7 @@ export interface CurvePoolExtended extends CurvePoolMetadata {
   poolType: PoolType;
 }
 
-export interface CurvePoolMinimum {
+export interface CurvePoolSimplified {
   id: string;
   shortName?: string | void;
   name?: string | void;
@@ -161,7 +161,7 @@ const getPoolConstants = ({
   }
 };
 
-export const convertPoolToMinimum = (pool: CurvePoolExtended): CurvePoolMinimum => {
+export const convertToSimplifiedPool = (pool: CurvePoolExtended): CurvePoolSimplified => {
   return lodash.pick(pool, [
     'id',
     'shortName',

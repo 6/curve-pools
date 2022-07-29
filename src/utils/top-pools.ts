@@ -3,12 +3,12 @@ import lodash from 'lodash';
 import { CurvePoolExtended, getPools } from '../../data/pools';
 import { CURVE_NETWORKS, CURVE_POOL_TYPES } from './curve.constants';
 
-interface GetTopPoolsProps {
+interface ProcessTopPoolsProps {
   minimumTVL: Decimal;
 }
-export const getTopPools = async ({
+export const processTopPools = async ({
   minimumTVL,
-}: GetTopPoolsProps): Promise<Array<CurvePoolExtended>> => {
+}: ProcessTopPoolsProps): Promise<Array<CurvePoolExtended>> => {
   let allPools: Array<CurvePoolExtended> = [];
   for (const network of CURVE_NETWORKS) {
     for (const poolType of CURVE_POOL_TYPES) {
