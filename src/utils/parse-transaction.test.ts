@@ -40,7 +40,7 @@ describe('parseTransaction', () => {
       expect(transaction?.hash).toEqual(
         '0x2b15a24c260bc1e4cd11253d5a43c1da56881d4249d3349ddcb8546baf1a1b04',
       );
-      expect(transaction?.poolAddress).toEqual('0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7');
+      expect(transaction?.pool).toEqual('0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7');
       expect(transaction?.timestamp).toEqual(1658913590);
       expect(transaction?.tokens).toEqual([
         {
@@ -327,7 +327,7 @@ describe('parseTransaction', () => {
       expect(transaction?.hash).toEqual(
         '0x37f2a75c19af9147827b4198131d742d78bf659172a63b8c33f180d642733aaf',
       );
-      expect(transaction?.poolAddress).toEqual('0x80466c64868E1ab14a1Ddf27A676C3fcBE638Fe5');
+      expect(transaction?.pool).toEqual('0x80466c64868E1ab14a1Ddf27A676C3fcBE638Fe5');
       expect(transaction?.timestamp).toEqual(1657637679);
       expect(transaction?.tokens).toEqual([
         {
@@ -591,7 +591,7 @@ describe('parseTransaction', () => {
       expect(transaction?.hash).toEqual(
         '0x7ee2f4758ad066b5f350dc53b1289b09622f0a12807fa01417fedfdb8756a555',
       );
-      expect(transaction?.poolAddress).toEqual('0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7');
+      expect(transaction?.pool).toEqual('0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7');
       expect(transaction?.timestamp).toEqual(1659055417);
       expect(transaction?.tokens).toEqual([
         {
@@ -646,7 +646,7 @@ describe('parseTransaction', () => {
       expect(transaction?.hash).toEqual(
         '0x91d35ae136b9936453b4bf19c47a98e3e21510836fd8243c846771face73945b',
       );
-      expect(transaction?.poolAddress).toEqual('0x42d7025938bEc20B69cBae5A77421082407f053A');
+      expect(transaction?.pool).toEqual('0x42d7025938bEc20B69cBae5A77421082407f053A');
       expect(transaction?.timestamp).toEqual(1655721971);
       expect(transaction?.tokens).toEqual([
         {

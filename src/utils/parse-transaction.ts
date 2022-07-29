@@ -22,7 +22,7 @@ interface CurveTokenWithAmount {
 
 export interface CurveTransaction {
   hash: string;
-  poolAddress: string;
+  pool: string;
   timestamp: number;
   type: CurveTransactionType;
   // Total is unknown for tricrypto or similar pools with different types of
@@ -137,7 +137,7 @@ const parseRemoveLiquidity = ({
 
   return {
     hash: tx.hash,
-    poolAddress: pool.address,
+    pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.REMOVE_LIQUIDITY,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
@@ -187,7 +187,7 @@ const parseAddLiquidity = ({
 
   return {
     hash: tx.hash,
-    poolAddress: pool.address,
+    pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.ADD_LIQUIDITY,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
@@ -238,7 +238,7 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
 
   return {
     hash: tx.hash,
-    poolAddress: pool.address,
+    pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.EXCHANGE,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
