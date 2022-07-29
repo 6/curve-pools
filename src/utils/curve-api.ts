@@ -42,18 +42,22 @@ interface GaugeMetadata {
   swap_token: string; // '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2';
   name: string; // 'compound';
   gauge: string; // '0x7ca5b0a2910B33e9759DC7dDB0413949071D7575';
-  type: string; // 'stable', 'crypto', 'tether-eurt', 'terra-krw', ...
+  type: string; // 'stable', 'crypto', 'bitcoin', 'tether-eurt', 'terra-krw', ...
   factory?: boolean;
+  side_chain?: boolean; // true if non-eth mainnet?
+  is_killed?: boolean; // ignore this gauge if true?
   gauge_controller: {
     get_gauge_weight: string; // '829238348634470388835212';
     gauge_relative_weight: string; // '1709707559875778';
     inflation_rate: string; // '7327853447857530670';
   };
-  gauge_data: {
+  gauge_data?: {
+    // may not be present for side chains?
     working_supply: string; //'43620766443951785825086848';
     inflation_rate: string; // '7327853447857530670';
   };
-  swap_data: {
+  swap_data?: {
+    // may not be present for side chains?
     virtual_price: string; // '1108136951467551113';
   };
 }
