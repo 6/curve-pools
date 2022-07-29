@@ -3488,6 +3488,21 @@
   ],
   "0x8461A004b50d321CB22B7d034969cE6803911899": [
     {
+      "hash": "0x6715ce2ce5b77adec856edb17f820dfff36cb4b1f5b8b1d071e6179deb9d0709",
+      "pool": "0x8461A004b50d321CB22B7d034969cE6803911899",
+      "timestamp": 1659073690,
+      "type": "add_liquidity",
+      "totalAmount": "29326510.74",
+      "tokens": [
+        {
+          "symbol": "ibKRW",
+          "address": "0x95dFDC8161832e4fF7816aC4B6367CE201538253",
+          "amount": "29326510.74",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x6ee93fad72fe61a3f76e652cddfc6d33515f0ee08ff12e5727f572035561b66e",
       "pool": "0x8461A004b50d321CB22B7d034969cE6803911899",
       "timestamp": 1659064118,
@@ -6393,26 +6408,6 @@
       "type": "remove_liquidity",
       "totalAmount": "2479273.314778019478416139",
       "tokens": [
-        {
-          "symbol": "ibKRW",
-          "address": "0x95dFDC8161832e4fF7816aC4B6367CE201538253",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x89868b46dccaddd6abe8e0d8bad3719d6131c9a4a573164c69bdbf5b213d6324",
-      "pool": "0x8461A004b50d321CB22B7d034969cE6803911899",
-      "timestamp": 1647337243,
-      "type": "exchange",
-      "totalAmount": "5126104.413",
-      "tokens": [
-        {
-          "symbol": "sKRW",
-          "address": "0x269895a3dF4D73b077Fc823dD6dA1B95f72Aaf9B",
-          "amount": "5126104.413",
-          "type": "add"
-        },
         {
           "symbol": "ibKRW",
           "address": "0x95dFDC8161832e4fF7816aC4B6367CE201538253",
@@ -78568,6 +78563,26 @@
     }
   ],
   "0x48fF31bBbD8Ab553Ebe7cBD84e1eA3dBa8f54957": [
+    {
+      "hash": "0xa358ebddf34808a80276e1105925eb5804bbfed54116b313c4d42f2fa138f5fe",
+      "pool": "0x48fF31bBbD8Ab553Ebe7cBD84e1eA3dBa8f54957",
+      "timestamp": 1659073633,
+      "type": "exchange",
+      "totalAmount": "28808.538926954127072671",
+      "tokens": [
+        {
+          "symbol": "ANGLE",
+          "address": "0x31429d1856aD1377A8A0079410B297e1a9e214c2",
+          "amount": "28808.538926954127072671",
+          "type": "add"
+        },
+        {
+          "symbol": "sdANGLE",
+          "address": "0x752B4c6e92d96467fE9b9a2522EF07228E00F87c",
+          "type": "remove"
+        }
+      ]
+    },
     {
       "hash": "0x8282cd4564b516f8b56bc354c8ec5634aff0a5674f34f00e5949d6b559122643",
       "pool": "0x48fF31bBbD8Ab553Ebe7cBD84e1eA3dBa8f54957",
