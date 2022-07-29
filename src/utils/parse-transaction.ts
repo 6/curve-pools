@@ -45,6 +45,10 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
     // Sometimes failed / reverted tx cannot be decoded/parsed correctly
     return { decodedInput: undefined, transaction: undefined };
   }
+  if (!tx.to || !tx.functionName) {
+    // `to` is empty on deploy contract call
+    return { decodedInput: undefined, transaction: undefined };
+  }
   const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
   let transaction;
   if (decodedInput.name.startsWith('remove_liquidity')) {
@@ -190,9 +194,7 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
   let tokens: Array<CurveTokenWithAmount>;
 
   // `exchange` is a standard/straightforward exchange.
-  // `exchange_underlying` exchanges the underlying token. E.g. instead of
-  // aUSDC => aUSDT, exchange USDC => USDT through the Curve aToken pool
-  if (['exchange', 'exchange_underlying'].includes(decodedInput.name)) {
+  if (decodedInput.name === 'exchange') {
     const fromCoin = pool.coins[decodedInput.args.i.toNumber()];
     const toCoin = pool.coins[decodedInput.args.j.toNumber()];
     const rawAmount: BigNumber = decodedInput.args.dx;
@@ -212,6 +214,12 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
         type: 'remove',
       },
     ];
+  } else if (decodedInput.name === 'exchange_underlying') {
+    // `exchange_underlying` exchanges the underlying token. E.g. instead of
+    // aUSDC => aUSDT, exchange USDC => USDT through the Curve aToken pool
+    // `i` and `j` correspond to underlying tokens, but pool data doesn't have
+    // this so need another way to fetch.
+    return;
   } else {
     console.warn('[parseExchange] Unknown transaction type: ', decodedInput.name);
     return;
