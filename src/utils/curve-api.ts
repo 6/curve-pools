@@ -18,8 +18,10 @@ export interface CurvePoolMetadata {
   assetType: string; // "99" ??
   totalSupply: string; // "20000000000000000" ??
   implementationAddress: string; // "0x6523Ac15EC152Cb70a334230F6c5d62C5Bd963f1"
+  // Some pools like 0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 have no name
   name?: string; // "Curve.fi Factory Plain Pool: ibEUR/sEUR"
-  symbol: string; // "ibEUR+sEUR-f"
+  // Some pools like 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7 don't have symbol
+  symbol?: string; // "ibEUR+sEUR-f"
   implementation: string; // "plain2basic" ?? switch to enum?
   assetTypeName: string; // "unknown"
   coins: Array<CurvePoolToken>;

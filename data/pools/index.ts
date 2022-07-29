@@ -6,10 +6,14 @@ import { Network, PoolType } from '../../src/utils/curve.constants';
 import { CurvePoolMetadata, FetchPoolsResponse, GaugeMetadata } from '../../src/utils/curve-api';
 import { getABIs } from '../abis';
 import { getGauge } from '../gauges';
+import { IPoolData } from '@curvefi/api/lib/interfaces';
+import * as POOL_CONSTANTS from '@curvefi/api/lib/constants/pools';
 
 export interface CurvePoolExtended extends CurvePoolMetadata {
+  shortName: string | void;
   interface: ethers.utils.Interface;
   gauge: GaugeMetadata | void;
+  constants: IPoolData | void;
 }
 
 interface GetPoolsProps {
@@ -35,9 +39,16 @@ export const getPools = async ({
         return;
       }
       const gauge = getGauge({ contractAddress: pool.address });
+      const constants = getPoolConstants({ network, contractAddress: pool.address });
+      // Rarely pools will have none of the first three,
+      // e.g. linkusd on eth mainnet: 0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171
+      const shortName = constants?.name ?? gauge?.name;
+
       return {
         ...pool,
+        shortName,
         gauge,
+        constants,
         interface: new ethers.utils.Interface(JSON.stringify(abi)),
       };
     }),
@@ -61,4 +72,35 @@ export const getPool = async ({
     throw new Error(`getPool: incorrect contractAddress ${contractAddress}`);
   }
   return pool;
+};
+
+interface GetPoolConstantsProps {
+  network: Network;
+  contractAddress: string;
+}
+const getPoolConstants = ({
+  network,
+  contractAddress,
+}: GetPoolConstantsProps): IPoolData | void => {
+  let poolConstants;
+  if (network === 'optimism') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_OPTIMISM;
+  } else if (network === 'arbitrum') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_ARBITRUM;
+  } else if (network === 'ethereum') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_ETHEREUM;
+  } else {
+    throw new Error(`getPoolConstants: unknown network ${network}`);
+  }
+
+  for (const poolId in poolConstants) {
+    const pool = poolConstants[poolId];
+    if (pool.swap_address.toLowerCase() === contractAddress.toLowerCase()) {
+      return pool;
+    }
+  }
+
+  console.warn(
+    `getPoolConstants: unable to find pool network=${network} contractAddress=${contractAddress}`,
+  );
 };
