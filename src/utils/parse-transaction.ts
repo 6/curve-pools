@@ -206,7 +206,7 @@ const parseAddLiquidity = ({
           address: coin.address,
           tokenAmount,
           usdAmount,
-          type: CurveLiquidityImpact.REMOVE,
+          type: CurveLiquidityImpact.ADD,
         };
       }),
     );
