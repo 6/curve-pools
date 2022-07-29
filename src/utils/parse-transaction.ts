@@ -21,6 +21,7 @@ interface CurveTokenWithAmount {
 }
 
 interface CurveTransaction {
+  hash: string;
   type: CurveTransactionType;
   // Total is unknown for tricrypto or similar pools with different types of
   // assets (TODO)
@@ -41,21 +42,23 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
   const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
   let transaction;
   if (decodedInput.name.startsWith('remove_liquidity')) {
-    transaction = parseRemoveLiquidity({ pool, decodedInput });
+    transaction = parseRemoveLiquidity({ tx, pool, decodedInput });
   } else if (decodedInput.name.startsWith('add_liquidity')) {
-    transaction = parseAddLiquidity({ pool, decodedInput });
+    transaction = parseAddLiquidity({ tx, pool, decodedInput });
   } else if (decodedInput.name.startsWith('exchange')) {
-    transaction = parseExchange({ pool, decodedInput });
+    transaction = parseExchange({ tx, pool, decodedInput });
   }
 
   return { decodedInput, transaction };
 };
 
 interface ParseRemoveLiquidityProps {
+  tx: EtherscanTx;
   pool: CurvePoolWithInterface;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseRemoveLiquidity = ({
+  tx,
   pool,
   decodedInput,
 }: ParseRemoveLiquidityProps): CurveTransaction | void => {
@@ -112,6 +115,7 @@ const parseRemoveLiquidity = ({
   }
 
   return {
+    hash: tx.hash,
     type: CurveTransactionType.REMOVE_LIQUIDITY,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
     tokens,
@@ -119,10 +123,12 @@ const parseRemoveLiquidity = ({
 };
 
 interface ParseAddLiquidityProps {
+  tx: EtherscanTx;
   pool: CurvePoolWithInterface;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseAddLiquidity = ({
+  tx,
   pool,
   decodedInput,
 }: ParseAddLiquidityProps): CurveTransaction | void => {
@@ -157,6 +163,7 @@ const parseAddLiquidity = ({
   }
 
   return {
+    hash: tx.hash,
     type: CurveTransactionType.ADD_LIQUIDITY,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
     tokens,
@@ -164,10 +171,11 @@ const parseAddLiquidity = ({
 };
 
 interface ParseExchangeProps {
+  tx: EtherscanTx;
   pool: CurvePoolWithInterface;
   decodedInput: ethers.utils.TransactionDescription;
 }
-const parseExchange = ({ pool, decodedInput }: ParseExchangeProps): CurveTransaction | void => {
+const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTransaction | void => {
   let totalAmount: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
@@ -200,6 +208,7 @@ const parseExchange = ({ pool, decodedInput }: ParseExchangeProps): CurveTransac
   }
 
   return {
+    hash: tx.hash,
     type: CurveTransactionType.EXCHANGE,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
     tokens,
