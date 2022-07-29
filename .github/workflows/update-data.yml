@@ -44,15 +44,20 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-metadata
 
+      - name: Process top pools
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-pool-metadata
+
       - name: Fetch latest pool transactions
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/update-pool-transactions
+        run: yarn run-script tasks/update-top-pool-transactions
 
       - name: Process pool transactions
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/process-pool-transactions
+        run: yarn run-script tasks/process-top-pool-transactions
 
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
