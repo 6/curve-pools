@@ -12,10 +12,7 @@ const main = async () => {
       const txsMap: Record<string, Array<CurveTransaction>> = {};
       for (const pool of pools) {
         // Skip pools with uncorrelated/other assets like tricrypto
-        if (
-          pool.assetTypeName === CurveAssetTypeName.UNKNOWN ||
-          pool.assetTypeName === CurveAssetTypeName.OTHER
-        ) {
+        if (pool.assetTypeName === CurveAssetTypeName.UNKNOWN) {
           console.info(
             `[process-pool-transactions] skipping unknown/other pool ${pool.name} (${network} => ${pool.address})`,
           );
