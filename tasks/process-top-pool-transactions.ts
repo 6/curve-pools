@@ -1,9 +1,15 @@
+import { Decimal } from 'decimal.js';
 import lodash from 'lodash';
 import { getTxs } from '../data/txs';
 import { getPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
 import { CurveTransaction, parseTransaction } from '../src/utils/parse-transaction';
 import { topPools } from '../src/processed-data/pools';
+import { processProminentTransactions } from '../src/utils/prominent-transactions';
+import moment from 'moment';
+
+const minimumTotalUsdAmount = new Decimal(10000);
+const minimumTimestamp = moment().subtract(7, 'days');
 
 const main = async () => {
   for (const simplifiedPool of topPools) {
@@ -21,26 +27,16 @@ const main = async () => {
       `[process-pool-transactions] ${network} pool=${contractAddress} (${pool.name}) with ${txs.length} txs`,
     );
 
-    const parsedTxs = lodash.compact(
-      txs.map((tx) => {
-        try {
-          const { transaction } = parseTransaction({ pool, tx });
-          return transaction;
-        } catch (e) {
-          console.log(tx);
-          const decodedInput = pool.interface.parseTransaction({
-            data: tx.input,
-            value: tx.value,
-          });
-          console.log(decodedInput);
-          throw e;
-        }
-      }),
-    ) as Array<CurveTransaction>;
+    const processedTxs = processProminentTransactions({
+      pool,
+      txs,
+      minimumTotalUsdAmount,
+      minimumTimestamp,
+    });
 
     writeJSON(
       `./src/processed-data/txs/${network}.${contractAddress.toLowerCase()}.json`,
-      parsedTxs,
+      processedTxs,
     );
   }
 };
