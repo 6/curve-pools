@@ -37,7 +37,7 @@ export interface FetchPoolsResponse {
   generatedTimeMs: number; // 1658963350286
 }
 
-interface GaugeMetadata {
+export interface GaugeMetadata {
   swap: string; // '0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56';
   swap_token: string; // '0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2';
   name: string; // 'compound';

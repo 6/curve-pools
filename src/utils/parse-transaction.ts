@@ -3,7 +3,7 @@ import lodash from 'lodash';
 import { Decimal } from 'decimal.js';
 import { EtherscanTx } from './etherscan';
 import { CurveAssetTypeName, CURVE_POOL_TOKEN_DECIMALS } from './curve.constants';
-import { CurvePoolWithInterface } from '../../data/pools';
+import { CurvePoolExtended } from '../../data/pools';
 
 export enum CurveTransactionType {
   ADD_LIQUIDITY = 'add_liquidity', // can be one coin only or multiple
@@ -33,7 +33,7 @@ export interface CurveTransaction {
 }
 
 interface ParseTransactionProps {
-  pool: CurvePoolWithInterface;
+  pool: CurvePoolExtended;
   tx: EtherscanTx;
 }
 interface ParseTransactionAPI {
@@ -72,7 +72,7 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
 
 interface ParseRemoveLiquidityProps {
   tx: EtherscanTx;
-  pool: CurvePoolWithInterface;
+  pool: CurvePoolExtended;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseRemoveLiquidity = ({
@@ -147,7 +147,7 @@ const parseRemoveLiquidity = ({
 
 interface ParseAddLiquidityProps {
   tx: EtherscanTx;
-  pool: CurvePoolWithInterface;
+  pool: CurvePoolExtended;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseAddLiquidity = ({
@@ -197,7 +197,7 @@ const parseAddLiquidity = ({
 
 interface ParseExchangeProps {
   tx: EtherscanTx;
-  pool: CurvePoolWithInterface;
+  pool: CurvePoolExtended;
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTransaction | void => {
