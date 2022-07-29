@@ -11014,6 +11014,26 @@
   "0x67d9eAe741944D4402eB0D1cB3bC3a168EC1764c": [],
   "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8": [
     {
+      "hash": "0x526748c25f99a3bc965a5e829b7fdefedcbcaf2fe59d8f25ee8be4a02daa625d",
+      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
+      "timestamp": 1659077463,
+      "type": "exchange",
+      "totalAmount": "898.066982577540934405",
+      "tokens": [
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "898.066982577540934405",
+          "type": "add"
+        },
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xd1d1d361657f6a1241cc1c458037f69016b2732e3947f24276e21cc3e8633fb0",
       "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
       "timestamp": 1659075470,
@@ -67998,6 +68018,25 @@
   ],
   "0x447Ddd4960d9fdBF6af9a790560d0AF76795CB08": [
     {
+      "hash": "0x4415d9d9b601903e01118b25bbc265556c1b9e9d1406f67fd40e29123ebdf7a7",
+      "pool": "0x447Ddd4960d9fdBF6af9a790560d0AF76795CB08",
+      "timestamp": 1659077330,
+      "type": "remove_liquidity",
+      "totalAmount": "9.788531648972458067",
+      "tokens": [
+        {
+          "symbol": "rETH",
+          "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
+          "type": "remove"
+        },
+        {
+          "symbol": "wstETH",
+          "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x3d33d1ab153bfdf8b854b19aba88126e7bdc2922b714178d64bfb1b719fdec39",
       "pool": "0x447Ddd4960d9fdBF6af9a790560d0AF76795CB08",
       "timestamp": 1659010193,
@@ -71033,26 +71072,6 @@
           "symbol": "wstETH",
           "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
           "amount": "2.81",
-          "type": "add"
-        },
-        {
-          "symbol": "rETH",
-          "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x40b3e00f2a08525d0d237ad13564929af81007fa7148d0de0998d59ee818abf1",
-      "pool": "0x447Ddd4960d9fdBF6af9a790560d0AF76795CB08",
-      "timestamp": 1652926206,
-      "type": "exchange",
-      "totalAmount": "1.896695108632202321",
-      "tokens": [
-        {
-          "symbol": "wstETH",
-          "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
-          "amount": "1.896695108632202321",
           "type": "add"
         },
         {
