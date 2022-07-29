@@ -3,7 +3,7 @@ import { getPool } from '../../data/pools';
 import { CurveTransactionType, parseTransaction } from './parse-transaction';
 
 describe('parseTransaction', () => {
-  describe('remove_liquidity', () => {
+  describe('remove_liquidity (_amount, ...', () => {
     // Removes liquidity in all coins relative to current balance
     const tx = {
       blockNumber: '15223674',
@@ -63,7 +63,56 @@ describe('parseTransaction', () => {
     });
   });
 
-  describe('remove_liquidity_one_coin', () => {
+  describe('remove_liquidity(_burn_amount, ...', () => {
+    const tx = {
+      blockNumber: '15207441',
+      timeStamp: '1658694277',
+      hash: '0x0e26d6ed63327bb904cdebcc85bc252a62c94c56d29f7d608c60e59a194d2eee',
+      nonce: '24',
+      blockHash: '0xb9d285b8ee7fca89364c7a6d0c085262da817f16edd764ffe528ca761aeb6f61',
+      transactionIndex: '78',
+      from: '0x63b9b9baae0c1e122f9988c14ca37f9a44dcc120',
+      to: '0xd632f22692fac7611d2aa1c0d552930d43caed3b',
+      value: '0',
+      gas: '154341',
+      gasPrice: '12000000000',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x5b36389c00000000000000000000000000000000000000000000001cc29e1b7ae3bad93e000000000000000000000000000000000000000000000011358e092bdfa125b700000000000000000000000000000000000000000000000b411264741f44c398',
+      contractAddress: '',
+      cumulativeGasUsed: '6936235',
+      gasUsed: '125443',
+      confirmations: '26890',
+      methodId: '0x5b36389c',
+      functionName: 'remove_liquidity(uint256 _amount, uint256[2] min_amounts)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x853d955aCEf822Db058eb8505911ED77F175b99e',
+          symbol: 'FRAX',
+          type: 'remove',
+        },
+        {
+          address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
+          symbol: '3Crv',
+          type: 'remove',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('530.532510568166381886'));
+    });
+  });
+
+  describe('remove_liquidity_one_coin(_token_amount, ...', () => {
     const tx = {
       blockNumber: '14837143',
       timeStamp: '1653415336',
@@ -102,6 +151,51 @@ describe('parseTransaction', () => {
         {
           address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
           symbol: 'aUSDC',
+          type: 'remove',
+        },
+      ]);
+    });
+  });
+
+  describe('remove_liquidity_one_coin(_burn_amount, ...', () => {
+    const tx = {
+      blockNumber: '14515268',
+      timeStamp: '1649017499',
+      hash: '0x9676b138a0eebd0426bf9a48b3e69b0991b73dc71bd6189647b219275d6dc56b',
+      nonce: '344',
+      blockHash: '0x003ce1c9d2b1dc73de0ee809a4c954cfe3a12b7665ce0d468cf8768c04870aee',
+      transactionIndex: '173',
+      from: '0x678783721b49a5d079f4aadf12c91049ebf7b3c1',
+      to: '0xecd5e75afb02efa118af914515d6521aabd189f1',
+      value: '0',
+      gas: '252666',
+      gasPrice: '62164688089',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x1a4d01d200000000000000000000000000000000000000000000069aa2b2506448096ab5000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000067ca1390b09425b36be',
+      contractAddress: '',
+      cumulativeGasUsed: '18391928',
+      gasUsed: '151168',
+      confirmations: '719062',
+      methodId: '0x1a4d01d2',
+      functionName:
+        'remove_liquidity_one_coin(uint256 _token_amount, int128 i, uint256 _min_amount)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
+      expect(transaction?.totalAmount).toEqual(new Decimal('31186.721005740776581813'));
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
+          symbol: '3Crv',
           type: 'remove',
         },
       ]);
@@ -418,7 +512,7 @@ describe('parseTransaction', () => {
     // });
   });
 
-  describe('exchange', () => {
+  describe('exchange(i, j, dx)', () => {
     const tx = {
       blockNumber: '15234268',
       timeStamp: '1659055417',
@@ -470,6 +564,61 @@ describe('parseTransaction', () => {
         },
       ]);
       expect(transaction?.totalAmount).toEqual(new Decimal('120318'));
+    });
+  });
+
+  describe('exchange(i, j, _dx)', () => {
+    const tx = {
+      blockNumber: '14996133',
+      timeStamp: '1655721971',
+      hash: '0x91d35ae136b9936453b4bf19c47a98e3e21510836fd8243c846771face73945b',
+      nonce: '3238',
+      blockHash: '0xbdffc087cacc12db49df7442ebe027e62c5224e79215274c87aede6b8cc2cf8d',
+      transactionIndex: '212',
+      from: '0x7a16ff8270133f063aab6c9977183d9e72835428',
+      to: '0x42d7025938bec20b69cbae5a77421082407f053a',
+      value: '0',
+      gas: '245016',
+      gasPrice: '25819631445',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x3df0212400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000004bf3a6b51f6d1344b000000000000000000000000000000000000000000000004b46fd610a916c3ad',
+      contractAddress: '',
+      cumulativeGasUsed: '20709101',
+      gasUsed: '161579',
+      confirmations: '238197',
+      methodId: '0x3df02124',
+      functionName: 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
+      expect(transaction?.hash).toEqual(
+        '0x91d35ae136b9936453b4bf19c47a98e3e21510836fd8243c846771face73945b',
+      );
+      expect(transaction?.poolAddress).toEqual('0x42d7025938bEc20B69cBae5A77421082407f053A');
+      expect(transaction?.timestamp).toEqual(1655721971);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x1456688345527bE1f37E9e627DA0837D6f08C925',
+          amount: new Decimal('87.566420304509088843'),
+          symbol: 'USDP',
+          type: 'add',
+        },
+        {
+          address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
+          symbol: '3Crv',
+          type: 'remove',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('87.566420304509088843'));
     });
   });
 

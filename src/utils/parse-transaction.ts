@@ -20,7 +20,7 @@ interface CurveTokenWithAmount {
   type: 'add' | 'remove';
 }
 
-interface CurveTransaction {
+export interface CurveTransaction {
   hash: string;
   poolAddress: string;
   timestamp: number;
@@ -97,7 +97,10 @@ const parseRemoveLiquidity = ({
       }),
     );
   } else if (decodedInput.name === 'remove_liquidity_one_coin') {
-    const rawAmount = decodedInput.args._token_amount ?? decodedInput.args.token_amount;
+    const rawAmount =
+      decodedInput.args._token_amount ??
+      decodedInput.args.token_amount ??
+      decodedInput.args._burn_amount;
     const coin = pool.coins[decodedInput.args.i];
     totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     tokens = [
@@ -109,7 +112,7 @@ const parseRemoveLiquidity = ({
       },
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
-    const rawAmount = decodedInput.args._amount;
+    const rawAmount = decodedInput.args._amount ?? decodedInput.args._burn_amount;
     totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
     // all coins removed in amounts that map to current pool balance/weighting
     tokens = pool.coins.map((coin) => {
@@ -197,7 +200,7 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
   if (decodedInput.name === 'exchange') {
     const fromCoin = pool.coins[decodedInput.args.i.toNumber()];
     const toCoin = pool.coins[decodedInput.args.j.toNumber()];
-    const rawAmount: BigNumber = decodedInput.args.dx;
+    const rawAmount: BigNumber = decodedInput.args.dx ?? decodedInput.args._dx;
     totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, Number(fromCoin.decimals)));
 
     tokens = [
