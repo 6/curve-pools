@@ -1,0 +1,222 @@
+{
+  "success": true,
+  "data": {
+    "poolData": [
+      {
+        "id": "0",
+        "address": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+        "coinsAddresses": [
+          "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "0", "0"],
+        "underlyingDecimals": ["18", "6", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "29825230710235691721050325",
+        "implementation": "",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+            "usdPrice": 1.001,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "DAI",
+            "poolBalance": "16036574004816296943900307"
+          },
+          {
+            "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "USDC",
+            "poolBalance": "14186579477744"
+          }
+        ],
+        "usdTotal": 30239190.05656511,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 30239190.05656511
+      },
+      {
+        "id": "1",
+        "address": "0x92D5ebF3593a92888C25C0AbEF126583d4b5312E",
+        "coinsAddresses": [
+          "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+          "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["6", "18", "0", "0"],
+        "underlyingDecimals": ["6", "18", "6", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "99715520983626107098347",
+        "implementation": "",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+            "usdPrice": 0.998729,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "fUSDT",
+            "poolBalance": "52468085112"
+          },
+          {
+            "address": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+            "usdPrice": 0.998729,
+            "decimals": "18",
+            "isBasePoolLpToken": true,
+            "symbol": "DAI+USDC",
+            "poolBalance": "53520430743527080021988"
+          }
+        ],
+        "usdTotal": 105853.8044518747,
+        "isMetaPool": true,
+        "usdTotalExcludingBasePool": 52401.39817582265
+      },
+      {
+        "id": "2",
+        "address": "0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604",
+        "coinsAddresses": [
+          "0x321162Cd933E2Be498Cd2267a90534A804051b11",
+          "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["8", "8", "0", "0"],
+        "underlyingDecimals": ["8", "8", "0", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "265312655027233972165",
+        "lpTokenAddress": "0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858",
+        "name": "Curve.fi WBTC/renBTC",
+        "symbol": "btcCRV",
+        "priceOracle": 0,
+        "implementation": "",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x321162Cd933E2Be498Cd2267a90534A804051b11",
+            "usdPrice": 23896,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "BTC",
+            "poolBalance": "14821854280"
+          },
+          {
+            "address": "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
+            "usdPrice": 23896,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "renBTC",
+            "poolBalance": "11789263961"
+          }
+        ],
+        "usdTotal": 6358992.81486936,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 6358992.81486936
+      },
+      {
+        "id": "3",
+        "address": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
+        "coinsAddresses": [
+          "0x07E6332dD090D287d3489245038daF987955DCFB",
+          "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
+          "0x940F41F0ec9ba1A34CF001cc03347ac092F5F6B5",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["18", "6", "6", "0"],
+        "underlyingDecimals": ["18", "6", "6", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "13563419911372455167565188",
+        "lpTokenAddress": "0xD02a30d33153877BC20e5721ee53DeDEE0422B2F",
+        "name": "Curve.fi gDAI/gUSDC/gUSDT",
+        "symbol": "g3CRV",
+        "priceOracle": 0,
+        "implementation": "",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x07E6332dD090D287d3489245038daF987955DCFB",
+            "usdPrice": 1,
+            "decimals": "18",
+            "isBasePoolLpToken": false,
+            "symbol": "gDAI",
+            "poolBalance": "5053831666374676264616624"
+          },
+          {
+            "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
+            "usdPrice": 0.999995,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "gUSDC",
+            "poolBalance": "4421811016780"
+          },
+          {
+            "address": "0x940F41F0ec9ba1A34CF001cc03347ac092F5F6B5",
+            "usdPrice": 1,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
+            "symbol": "gfUSDT",
+            "poolBalance": "4368852637762"
+          }
+        ],
+        "usdTotal": 13844473.211861592,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 13844473.211861592
+      },
+      {
+        "id": "4",
+        "address": "0x4FC8D635c3cB1d0aa123859e2B2587d0FF2707b1",
+        "coinsAddresses": [
+          "0x04c762a5dF2Fa02FE868F25359E0C259fB811CfE",
+          "0x328A7b4d538A2b3942653a9983fdA3C12c571141",
+          "0x70faC71debfD67394D1278D98A29dea79DC6E57A",
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "decimals": ["8", "8", "8", "0"],
+        "underlyingDecimals": ["18", "6", "6", "0", "0", "0", "0", "0"],
+        "assetType": "0",
+        "totalSupply": "71513068401346149353331",
+        "lpTokenAddress": "0xDf38ec60c0eC001142a33eAa039e49E9b84E64ED",
+        "name": "Curve.fi cyDAI/cyUSDC/cyUSDT",
+        "symbol": "ib3CRV",
+        "priceOracle": 0,
+        "implementation": "",
+        "assetTypeName": "usd",
+        "coins": [
+          {
+            "address": "0x04c762a5dF2Fa02FE868F25359E0C259fB811CfE",
+            "usdPrice": 0.005319602066360219,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "iDAI",
+            "poolBalance": "391654753957790"
+          },
+          {
+            "address": "0x328A7b4d538A2b3942653a9983fdA3C12c571141",
+            "usdPrice": 0.005176156805474196,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "iUSDC",
+            "poolBalance": "151695058756435"
+          },
+          {
+            "address": "0x70faC71debfD67394D1278D98A29dea79DC6E57A",
+            "usdPrice": 0.0032204529603634827,
+            "decimals": "8",
+            "isBasePoolLpToken": false,
+            "symbol": "iFUSDT",
+            "poolBalance": "159209172499976"
+          }
+        ],
+        "usdTotal": 33813.7050008716,
+        "isMetaPool": false,
+        "usdTotalExcludingBasePool": 33813.7050008716
+      }
+    ],
+    "tvlAll": 50528871.18647275,
+    "generatedTimeMs": 1659134053728
+  }
+}
