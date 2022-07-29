@@ -451,6 +451,49 @@ describe('parseTransaction', () => {
     });
   });
 
+  describe('[optimism] add_liquidity', () => {
+    const tx = {
+      blockNumber: '16030361',
+      timeStamp: '1658928411',
+      hash: '0x41dd5c5fa60a67f5dd2d57cf88ddddd555d857bd2902f0f07e75b96e4e58431c',
+      nonce: '66',
+      blockHash: '0x547c64d1171daf381ad99dd5233d9015dcbe9e34b11fc84af1cb57809e66c394',
+      transactionIndex: '0',
+      from: '0xc693567e1dbb9929c8d9d6ed2714a7e742af3e90',
+      to: '0x1337bedc9d22ecbe766df105c9623922a27963ec',
+      value: '0',
+      gas: '208753',
+      gasPrice: '1000000',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x4515cef30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000186a0000000000000000000000000000000000000000000000000015b10e5cecded53',
+      contractAddress: '',
+      cumulativeGasUsed: '127008',
+      gasUsed: '127008',
+      confirmations: '340228',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'optimism',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58',
+          amount: new Decimal('0.1'),
+          symbol: 'USDT',
+          type: 'add',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('0.1'));
+    });
+  });
+
   describe('exchange_underlying', () => {
     const tx = {
       blockNumber: '15160061',

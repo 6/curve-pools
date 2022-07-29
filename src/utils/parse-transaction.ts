@@ -45,7 +45,7 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
     // Sometimes failed / reverted tx cannot be decoded/parsed correctly
     return { decodedInput: undefined, transaction: undefined };
   }
-  if (!tx.to || !tx.functionName) {
+  if (!tx.to) {
     // `to` is empty on deploy contract call
     return { decodedInput: undefined, transaction: undefined };
   }
