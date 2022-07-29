@@ -3,7 +3,12 @@ import { readFile } from 'fs/promises';
 import { ethers } from 'ethers';
 import lodash from 'lodash';
 import { Network, PoolType } from '../../src/utils/curve.constants';
-import { CurvePoolMetadata, FetchPoolsResponse, GaugeMetadata } from '../../src/utils/curve-api';
+import {
+  CurvePoolMetadata,
+  CurvePoolToken,
+  FetchPoolsResponse,
+  GaugeMetadata,
+} from '../../src/utils/curve-api';
 import { getABIs } from '../abis';
 import { getGauge } from '../gauges';
 import { IPoolData } from '@curvefi/api/lib/interfaces';
@@ -16,6 +21,18 @@ export interface CurvePoolExtended extends CurvePoolMetadata {
   constants: IPoolData | void;
   network: Network;
   poolType: PoolType;
+}
+
+export interface CurvePoolMinimum {
+  id: string;
+  shortName?: string | void;
+  name?: string | void;
+  network: Network;
+  poolType: PoolType;
+  isMetaPool: boolean;
+  address: string;
+  coins: Array<CurvePoolToken>;
+  usdTotal: number;
 }
 
 interface GetRawPoolDataProps {
@@ -142,4 +159,18 @@ const getPoolConstants = ({
       return pool;
     }
   }
+};
+
+export const convertPoolToMinimum = (pool: CurvePoolExtended): CurvePoolMinimum => {
+  return lodash.pick(pool, [
+    'id',
+    'shortName',
+    'name',
+    'network',
+    'poolType',
+    'isMetaPool',
+    'address',
+    'coins',
+    'usdTotal',
+  ]);
 };
