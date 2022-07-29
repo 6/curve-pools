@@ -36466,6 +36466,21 @@
   ],
   "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714": [
     {
+      "hash": "0x3350e324b17c0e3c554eeb8fad3836c4310098bb8cf1e9c7c76b1370252d2a0e",
+      "pool": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
+      "timestamp": 1659086466,
+      "type": "add_liquidity",
+      "totalAmount": "0.01",
+      "tokens": [
+        {
+          "symbol": "WBTC",
+          "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+          "amount": "0.01",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x74e892223a07bd40791475d07317982de2aa2e8b2e2c0f3843ae4ffce7b7ff87",
       "pool": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
       "timestamp": 1659082810,
@@ -40701,26 +40716,6 @@
           "type": "remove"
         }
       ]
-    },
-    {
-      "hash": "0x5b26b3147d4870acb327449de54ca589c5504019f4abc407c05daf9c6b533423",
-      "pool": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
-      "timestamp": 1652095337,
-      "type": "exchange",
-      "totalAmount": "1.0009",
-      "tokens": [
-        {
-          "symbol": "renBTC",
-          "address": "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D",
-          "amount": "1.0009",
-          "type": "add"
-        },
-        {
-          "symbol": "WBTC",
-          "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-          "type": "remove"
-        }
-      ]
     }
   ],
   "0xc5424B857f758E906013F3555Dad202e4bdB4567": [
@@ -44729,6 +44724,20 @@
     }
   ],
   "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022": [
+    {
+      "hash": "0x3f9b022fbf44f03b8f4040855c7be46c7b3c2bcc38f3ea2f4bfac2b85ddd86fc",
+      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "timestamp": 1659086729,
+      "type": "remove_liquidity",
+      "totalAmount": "0.96339021587818378",
+      "tokens": [
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "type": "remove"
+        }
+      ]
+    },
     {
       "hash": "0xb55767730da54cf935f4407bc5c1f0c91199a1950025501af8903b6ed42ded1e",
       "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
@@ -49283,21 +49292,6 @@
           "symbol": "stETH",
           "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
           "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xf427694a028098080772ea707b95a9a77e21f288d9894d6f6f8d77b93e65a00e",
-      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-      "timestamp": 1658708762,
-      "type": "add_liquidity",
-      "totalAmount": "2.15",
-      "tokens": [
-        {
-          "symbol": "ETH",
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "amount": "2.15",
-          "type": "add"
         }
       ]
     }

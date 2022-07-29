@@ -10999,6 +10999,67 @@
   "0x67d9eAe741944D4402eB0D1cB3bC3a168EC1764c": [],
   "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8": [
     {
+      "hash": "0xd11276a5e04a65d7ea1dc4f6c7bd1716285a9a960c5d1eca677da41c389cf686",
+      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
+      "timestamp": 1659086583,
+      "type": "add_liquidity",
+      "totalAmount": "63179.69",
+      "tokens": [
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "amount": "63011.9",
+          "type": "add"
+        },
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "167.79",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0x1550d155116331ff788c9e2934546bce04801bd8309814f81ff920ddcb0779ca",
+      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
+      "timestamp": 1659086551,
+      "type": "exchange",
+      "totalAmount": "6847.318103136376104378",
+      "tokens": [
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "6847.318103136376104378",
+          "type": "add"
+        },
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xea348be422cdb6a3b0526af6ccd0c6fba507195ed1fd0c3d9f0a952d1f047dc1",
+      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
+      "timestamp": 1659086427,
+      "type": "exchange",
+      "totalAmount": "1",
+      "tokens": [
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "1",
+          "type": "add"
+        },
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x943e29ce64900a2dc7f3ad8325b67f0bbc43e1cc1d8272799cb184d22ec4299d",
       "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
       "timestamp": 1659085537,
@@ -14754,66 +14815,6 @@
         {
           "symbol": "cvxCRV",
           "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x1c5e86f266b12bd5c989334faaf4e08a997c666693ae52dd9c522b6c1a8e5a28",
-      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
-      "timestamp": 1658658996,
-      "type": "exchange",
-      "totalAmount": "1",
-      "tokens": [
-        {
-          "symbol": "CRV",
-          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-          "amount": "1",
-          "type": "add"
-        },
-        {
-          "symbol": "cvxCRV",
-          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xb7837b585da95e94736ced3b548bb715f0b7300520b9d6f46fcab4231017e55c",
-      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
-      "timestamp": 1658654331,
-      "type": "exchange",
-      "totalAmount": "1551.81764752049737254",
-      "tokens": [
-        {
-          "symbol": "CRV",
-          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-          "amount": "1551.81764752049737254",
-          "type": "add"
-        },
-        {
-          "symbol": "cvxCRV",
-          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x61dd772ec81af1717262bf8e3e05e59d8439b287376d0b18e5234fc7e5f87eff",
-      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
-      "timestamp": 1658652600,
-      "type": "exchange",
-      "totalAmount": "16.830452684528212498",
-      "tokens": [
-        {
-          "symbol": "cvxCRV",
-          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-          "amount": "16.830452684528212498",
-          "type": "add"
-        },
-        {
-          "symbol": "CRV",
-          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
           "type": "remove"
         }
       ]
