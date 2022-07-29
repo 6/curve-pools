@@ -44725,6 +44725,26 @@
   ],
   "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022": [
     {
+      "hash": "0x3489357eb7182bcb00fa7a40816ded0f7093089f3ced4999e531192032a8410b",
+      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "timestamp": 1659086981,
+      "type": "exchange",
+      "totalAmount": "2.92269121",
+      "tokens": [
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "amount": "2.92269121",
+          "type": "add"
+        },
+        {
+          "symbol": "stETH",
+          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x3f9b022fbf44f03b8f4040855c7be46c7b3c2bcc38f3ea2f4bfac2b85ddd86fc",
       "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
       "timestamp": 1659086729,
@@ -49271,26 +49291,6 @@
         {
           "symbol": "ETH",
           "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x95ad586fadaffd9c4791b75e970c623122d861cd4b7e331bf84d2ab6843b817e",
-      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-      "timestamp": 1658711286,
-      "type": "exchange",
-      "totalAmount": "2",
-      "tokens": [
-        {
-          "symbol": "ETH",
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "amount": "2",
-          "type": "add"
-        },
-        {
-          "symbol": "stETH",
-          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
           "type": "remove"
         }
       ]
