@@ -16,6 +16,9 @@ const main = async () => {
     ethereum: {},
     optimism: {},
     arbitrum: {},
+    fantom: {},
+    polygon: {},
+    avalanche: {},
   };
   for (const simplifiedPool of topPools) {
     const pool = await getPool({

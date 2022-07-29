@@ -147,6 +147,12 @@ const getPoolConstants = ({
     poolConstants = POOL_CONSTANTS.POOLS_DATA_OPTIMISM;
   } else if (network === 'arbitrum') {
     poolConstants = POOL_CONSTANTS.POOLS_DATA_ARBITRUM;
+  } else if (network === 'fantom') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_FANTOM;
+  } else if (network === 'polygon') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_POLYGON;
+  } else if (network === 'avalanche') {
+    poolConstants = POOL_CONSTANTS.POOLS_DATA_AVALANCHE;
   } else if (network === 'ethereum') {
     poolConstants = POOL_CONSTANTS.POOLS_DATA_ETHEREUM;
   } else {
