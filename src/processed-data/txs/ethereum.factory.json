@@ -11019,6 +11019,26 @@
   "0x67d9eAe741944D4402eB0D1cB3bC3a168EC1764c": [],
   "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8": [
     {
+      "hash": "0x5f2d7ee42f41591fe06a6e89435723f94ec548da2633fd1de113ba9041602f4e",
+      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
+      "timestamp": 1659068753,
+      "type": "exchange",
+      "totalAmount": "170.389636042712649764",
+      "tokens": [
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "170.389636042712649764",
+          "type": "add"
+        },
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x9a19a83cc3db4f959a9daffc77af72e268e033a067147d71cc2d94ee0fc64769",
       "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
       "timestamp": 1659064616,
@@ -14781,26 +14801,6 @@
           "symbol": "cvxCRV",
           "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
           "amount": "286470.604055843830534101",
-          "type": "add"
-        },
-        {
-          "symbol": "CRV",
-          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x62821af9655efb46ae3491d9a98ed01dce8d9c9d2f3edfe99a658bc82a06e94f",
-      "pool": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
-      "timestamp": 1658636865,
-      "type": "exchange",
-      "totalAmount": "1000",
-      "tokens": [
-        {
-          "symbol": "cvxCRV",
-          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-          "amount": "1000",
           "type": "add"
         },
         {
@@ -21048,6 +21048,21 @@
   ],
   "0x3F1B0278A9ee595635B61817630cC19DE792f506": [
     {
+      "hash": "0x53349808139f78c3c9b578593c46eaf2849c18dbf109b9c4a9365aeb271a5f21",
+      "pool": "0x3F1B0278A9ee595635B61817630cC19DE792f506",
+      "timestamp": 1659068709,
+      "type": "add_liquidity",
+      "totalAmount": "23771.16",
+      "tokens": [
+        {
+          "symbol": "ibAUD",
+          "address": "0xFAFdF0C4c1CB09d430Bf88c75D88BB46DAe09967",
+          "amount": "23771.16",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x02ae434361c161e6d7b5b8bbb0a962f50ee42dbac347040057f3cf76b4ee5db0",
       "pool": "0x3F1B0278A9ee595635B61817630cC19DE792f506",
       "timestamp": 1659010730,
@@ -23838,21 +23853,6 @@
           "symbol": "ibAUD",
           "address": "0xFAFdF0C4c1CB09d430Bf88c75D88BB46DAe09967",
           "amount": "420000",
-          "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0xc0863110d372001ddbed3149c843386f46a46d7e59fb464b5e77c40afe704e53",
-      "pool": "0x3F1B0278A9ee595635B61817630cC19DE792f506",
-      "timestamp": 1643882362,
-      "type": "add_liquidity",
-      "totalAmount": "70442.03",
-      "tokens": [
-        {
-          "symbol": "sAUD",
-          "address": "0xF48e200EAF9906362BB1442fca31e0835773b8B4",
-          "amount": "70442.03",
           "type": "add"
         }
       ]
