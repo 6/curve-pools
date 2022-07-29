@@ -26,7 +26,7 @@ export interface CurveTransaction {
   pool: string;
   timestamp: number;
   type: CurveTransactionType;
-  totalUsdAmount?: Decimal;
+  totalUsdAmount: Decimal;
   // Input or output tokens
   tokens: Array<CurveTokenWithAmount>;
 }
