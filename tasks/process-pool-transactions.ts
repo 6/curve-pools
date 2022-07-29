@@ -2,7 +2,7 @@ import lodash from 'lodash';
 import { getTxs } from '../data/txs';
 import { getPools } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
-import { CurveAssetTypeName, CURVE_NETWORKS, CURVE_POOL_TYPES } from '../src/utils/curve.constants';
+import { CURVE_NETWORKS, CURVE_POOL_TYPES } from '../src/utils/curve.constants';
 import { CurveTransaction, parseTransaction } from '../src/utils/parse-transaction';
 
 const main = async () => {
@@ -11,14 +11,6 @@ const main = async () => {
       const pools = await getPools({ network, poolType });
       const txsMap: Record<string, Array<CurveTransaction>> = {};
       for (const pool of pools) {
-        // Skip pools with uncorrelated/other assets like tricrypto
-        if (pool.assetTypeName === CurveAssetTypeName.UNKNOWN) {
-          console.info(
-            `[process-pool-transactions] skipping unknown/other pool ${pool.name} (${network} => ${pool.address})`,
-          );
-          continue;
-        }
-
         const contractAddress = pool.address;
         const txs = await getTxs({ network, poolType, contractAddress });
 

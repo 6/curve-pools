@@ -1,4 +1,83 @@
 {
+  "0x1F71f05CF491595652378Fe94B7820344A551B8E": [
+    {
+      "hash": "0xf953181e42f7b75e45bb43832e87af9166af6f1d675eae8a190cd4d2f6ab52c7",
+      "poolAddress": "0x1F71f05CF491595652378Fe94B7820344A551B8E",
+      "timestamp": 1639550478,
+      "type": "exchange",
+      "tokens": [
+        {
+          "symbol": "ibEUR",
+          "address": "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
+          "amount": "2440.138280818634594471",
+          "type": "add"
+        },
+        {
+          "symbol": "sUSD",
+          "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xf6eb1885c114d502009e72b763e518193d3197ff7b71955c72e321ccb5b6439b",
+      "poolAddress": "0x1F71f05CF491595652378Fe94B7820344A551B8E",
+      "timestamp": 1627897566,
+      "type": "remove_liquidity",
+      "tokens": [
+        {
+          "symbol": "ibEUR",
+          "address": "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
+          "type": "remove"
+        },
+        {
+          "symbol": "sUSD",
+          "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x888e2729bfe1f89ae838f819ceb119aa59c7496e082f87c437746d5f2d8d821e",
+      "poolAddress": "0x1F71f05CF491595652378Fe94B7820344A551B8E",
+      "timestamp": 1627894507,
+      "type": "add_liquidity",
+      "tokens": [
+        {
+          "symbol": "ibEUR",
+          "address": "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
+          "amount": "5355.173618740211089953",
+          "type": "add"
+        },
+        {
+          "symbol": "sUSD",
+          "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+          "amount": "6427.231059996059956021",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0xab0e7dba1ba3e8866f12c2ab142694a687287b8f4e4d08b9e9b1fca2a635d13f",
+      "poolAddress": "0x1F71f05CF491595652378Fe94B7820344A551B8E",
+      "timestamp": 1627645847,
+      "type": "add_liquidity",
+      "tokens": [
+        {
+          "symbol": "ibEUR",
+          "address": "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
+          "amount": "0.01",
+          "type": "add"
+        },
+        {
+          "symbol": "sUSD",
+          "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+          "amount": "0.01",
+          "type": "add"
+        }
+      ]
+    }
+  ],
   "0xFD5dB7463a3aB53fD211b4af195c5BCCC1A03890": [
     {
       "hash": "0x53772dac72b19ef9f0fdf955fe6400fdfc0bef1238b47334ec6a3e558ea6611b",
@@ -9832,6 +9911,46 @@
     }
   ],
   "0xED24FE718EFFC6B2Fc59eeaA5C5f51dD079AB6ED": [],
+  "0x6c7Fc04FEE277eABDd387C5B498A8D0f4CB9C6A6": [
+    {
+      "hash": "0x56742d5a4dfd6eced030f87acf7aed60481fdd5ccc107b1b8ce68215d816d894",
+      "poolAddress": "0x6c7Fc04FEE277eABDd387C5B498A8D0f4CB9C6A6",
+      "timestamp": 1629809495,
+      "type": "remove_liquidity",
+      "tokens": [
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "type": "remove"
+        },
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x04b1802fdd18f6936fb0eec2b63538056332494ec8697ab2b48caf1340c12dea",
+      "poolAddress": "0x6c7Fc04FEE277eABDd387C5B498A8D0f4CB9C6A6",
+      "timestamp": 1628422389,
+      "type": "add_liquidity",
+      "tokens": [
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "amount": "15000",
+          "type": "add"
+        },
+        {
+          "symbol": "cvxCRV",
+          "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+          "amount": "15230.83",
+          "type": "add"
+        }
+      ]
+    }
+  ],
   "0xDa5B670CcD418a187a3066674A8002Adc9356Ad1": [
     {
       "hash": "0x43931982d275155e0088e5b1bd756950333e1f34edf18c60d308c4a3195afe48",

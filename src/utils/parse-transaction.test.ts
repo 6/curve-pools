@@ -737,4 +737,41 @@ describe('parseTransaction', () => {
       expect(decodedInput).toBeFalsy();
     });
   });
+
+  describe('current ABI no longer matches historical function call', () => {
+    const tx = {
+      blockNumber: '15126527',
+      timeStamp: '1657610795',
+      hash: '0x1e89c5c42ff65cf1db02814794746827d3f8f0de00775058e81dccff4201f023',
+      nonce: '63',
+      blockHash: '0x0019f8cbd2ccf223d9c93e07f19a1547bfd2ae41dee1cd7cfdf76f7397cdc83f',
+      transactionIndex: '12',
+      from: '0x0d1396e69326d53798299d8e0af5b89a08629b6e',
+      to: '0x80466c64868e1ab14a1ddf27a676c3fcbe638fe5',
+      value: '0',
+      gas: '33104',
+      gasPrice: '19990000000',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x095ea7b30000000000000000000000000d1396e69326d53798299d8e0af5b89a08629b6e0000000000000000000000000000000000000000000000056bc75e2d63100000',
+      contractAddress: '',
+      cumulativeGasUsed: '1987296',
+      gasUsed: '23346',
+      confirmations: '107804',
+      methodId: '0x095ea7b3',
+      functionName: 'approve(address _spender, uint256 _value)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { decodedInput, transaction } = parseTransaction({ pool, tx });
+      expect(transaction).toBeFalsy();
+      expect(decodedInput).toBeFalsy();
+    });
+  });
 });

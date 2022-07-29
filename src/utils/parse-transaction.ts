@@ -49,7 +49,15 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
     // `to` is empty on deploy contract call
     return { decodedInput: undefined, transaction: undefined };
   }
-  const decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
+  let decodedInput;
+  try {
+    decodedInput = pool.interface.parseTransaction({ data: tx.input, value: tx.value });
+  } catch (e) {
+    if ((e as any).code === 'INVALID_ARGUMENT') {
+      return { decodedInput: undefined, transaction: undefined };
+    }
+    throw e;
+  }
   let transaction;
   if (decodedInput.name.startsWith('remove_liquidity')) {
     transaction = parseRemoveLiquidity({ tx, pool, decodedInput });
