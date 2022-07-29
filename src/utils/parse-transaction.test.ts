@@ -32,7 +32,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -91,7 +90,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -141,7 +139,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -186,7 +183,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -231,7 +227,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -275,7 +270,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -319,7 +313,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -382,7 +375,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -434,7 +426,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -477,7 +468,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'optimism',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -522,7 +512,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
@@ -583,7 +572,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -638,7 +626,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { transaction } = parseTransaction({ pool, tx });
@@ -693,7 +680,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: '0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171',
       });
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
@@ -729,7 +715,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
@@ -766,7 +751,6 @@ describe('parseTransaction', () => {
     it('returns the correct transaction type and amounts', async () => {
       const pool = await getPool({
         network: 'ethereum',
-        poolType: 'main',
         contractAddress: tx.to,
       });
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
