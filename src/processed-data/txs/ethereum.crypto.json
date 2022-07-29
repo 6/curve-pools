@@ -6398,6 +6398,26 @@
   ],
   "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511": [
     {
+      "hash": "0xf10ea2bc39ab256168741162225e03037507a6381f994f3f70e14d82fb4ae9da",
+      "pool": "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
+      "timestamp": 1659088299,
+      "type": "add_liquidity",
+      "tokens": [
+        {
+          "symbol": "WETH",
+          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "amount": "4.45475392",
+          "type": "add"
+        },
+        {
+          "symbol": "CRV",
+          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+          "amount": "5040.17050861",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x2802bdc284a0c2f45d5ed318b02cf077a8d342b35fccefef3b43f762212120c5",
       "pool": "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
       "timestamp": 1659080410,
@@ -10537,24 +10557,6 @@
         {
           "symbol": "WETH",
           "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x934cfa2e34783b68378a98c5a309d26ffde1103c70b92ed5a0c53f6fcb38de55",
-      "pool": "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
-      "timestamp": 1658441075,
-      "type": "remove_liquidity",
-      "tokens": [
-        {
-          "symbol": "WETH",
-          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-          "type": "remove"
-        },
-        {
-          "symbol": "CRV",
-          "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
           "type": "remove"
         }
       ]
