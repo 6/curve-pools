@@ -12,7 +12,7 @@ export const getTxs = async ({
   contractAddress,
 }: GetTxsProps): Promise<EtherscanTxListResult> => {
   const txFile = await readFile(
-    path.resolve(__dirname, `./${network}.${contractAddress}.json`),
+    path.resolve(__dirname, `./${network}.${contractAddress.toLowerCase()}.json`),
     'utf8',
   );
   return JSON.parse(txFile) as EtherscanTxListResult;
