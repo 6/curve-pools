@@ -39,7 +39,7 @@ interface GetRawPoolDataProps {
   network: Network;
   poolType: PoolType;
 }
-const getRawPoolData = async ({
+export const getRawPoolData = async ({
   network,
   poolType,
 }: GetRawPoolDataProps): Promise<Array<CurvePoolMetadata>> => {
