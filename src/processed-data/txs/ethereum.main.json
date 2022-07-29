@@ -1,6 +1,40 @@
 {
   "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7": [
     {
+      "hash": "0x2ec06d1004fb6894d36c9ffb2fb55f9cad8ac9481363be651bd44e5f1f030698",
+      "pool": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "timestamp": 1659076113,
+      "type": "exchange",
+      "totalAmount": "30000",
+      "tokens": [
+        {
+          "symbol": "DAI",
+          "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          "amount": "30000",
+          "type": "add"
+        },
+        {
+          "symbol": "USDT",
+          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x8e6a8adcaabf5d725c492de780855daf202cdbd5fa5a59947736c7c8f45945bc",
+      "pool": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "timestamp": 1659076046,
+      "type": "remove_liquidity",
+      "totalAmount": "602.62579131244519734",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xe2fed09c29932d99c3e3fd6789d41eeb8ab18f5d38f18f8e7fb7e6f0b70daa43",
       "pool": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
       "timestamp": 1659074975,
@@ -4246,44 +4280,6 @@
         {
           "symbol": "USDC",
           "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xacda622bfab6d7b5c424b20cb915d6ccea29e7ec535de644e559813e75f2e1b3",
-      "pool": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
-      "timestamp": 1658881569,
-      "type": "remove_liquidity",
-      "totalAmount": "0",
-      "tokens": [
-        {
-          "symbol": "USDT",
-          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x8e6b35cdf1d7b42debbc8fde4086a224ae42f1d4ca9c925aa8c15f0bcbe0ce79",
-      "pool": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
-      "timestamp": 1658881542,
-      "type": "remove_liquidity",
-      "totalAmount": "0",
-      "tokens": [
-        {
-          "symbol": "DAI",
-          "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-          "type": "remove"
-        },
-        {
-          "symbol": "USDC",
-          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          "type": "remove"
-        },
-        {
-          "symbol": "USDT",
-          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
           "type": "remove"
         }
       ]
@@ -44750,6 +44746,26 @@
   ],
   "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022": [
     {
+      "hash": "0xbb4e1ab723a9832a2f93e9078fcb84f1ce0d7011848900e70509b970dc083636",
+      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "timestamp": 1659075384,
+      "type": "exchange",
+      "totalAmount": "123.3",
+      "tokens": [
+        {
+          "symbol": "stETH",
+          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+          "amount": "123.3",
+          "type": "add"
+        },
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x797289a3c328000397e33a12876bbf98519161bf8766cc6a323c2b50a72cb2ec",
       "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
       "timestamp": 1659074544,
@@ -49295,27 +49311,6 @@
           "symbol": "stETH",
           "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
           "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xff4e3e6bb87c3b63f861b5c0a60e4ae5f71c205d0875b0b5e6bf2c507f6019f9",
-      "pool": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-      "timestamp": 1658687006,
-      "type": "add_liquidity",
-      "totalAmount": "22.76913468",
-      "tokens": [
-        {
-          "symbol": "ETH",
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          "amount": "7.12884077",
-          "type": "add"
-        },
-        {
-          "symbol": "stETH",
-          "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-          "amount": "15.64029391",
-          "type": "add"
         }
       ]
     }
