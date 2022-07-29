@@ -5995,6 +5995,45 @@
   "0xc1796710a28f1cBbFE1e8a79A65eE96446607a47": [],
   "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4": [
     {
+      "hash": "0x3cc3879451dc660eadb1fb5b9f51f409916755504ab7a706b12048a737c7bcd6",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659070187,
+      "type": "exchange",
+      "totalAmount": "6208.595632524737106293",
+      "tokens": [
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "amount": "6208.595632524737106293",
+          "type": "add"
+        },
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xbb4a20a570a1fbd288825b4029b32e3f9a9dbd9220af2464932a03a2aa9f8a8e",
+      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
+      "timestamp": 1659069463,
+      "type": "remove_liquidity",
+      "totalAmount": "10020.826109880276120935",
+      "tokens": [
+        {
+          "symbol": "VST",
+          "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
+          "type": "remove"
+        },
+        {
+          "symbol": "FRAX",
+          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xf5bf243d7bdca40c954066a85aba8527d5f122b678b753a3e33271d0c2d90443",
       "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
       "timestamp": 1659065544,
@@ -9497,21 +9536,6 @@
           "symbol": "VST",
           "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
           "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xa1d2ec05afcf5ad6bf3a991a2a2d41a0cd24cb5ed1a8a2728710ce6d6179879f",
-      "pool": "0x59bF0545FCa0E5Ad48E13DA269faCD2E8C886Ba4",
-      "timestamp": 1658390174,
-      "type": "add_liquidity",
-      "totalAmount": "24.99",
-      "tokens": [
-        {
-          "symbol": "FRAX",
-          "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
-          "amount": "24.99",
-          "type": "add"
         }
       ]
     }
