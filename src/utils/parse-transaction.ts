@@ -45,7 +45,7 @@ export const parseTransaction = ({ pool, tx }: ParseTransactionProps): ParseTran
   } else if (decodedInput.name.startsWith('add_liquidity')) {
     transaction = parseAddLiquidity({ pool, decodedInput });
   } else if (decodedInput.name.startsWith('exchange')) {
-    // transactionType = CurveTransactionType.EXCHANGE;
+    transaction = parseExchange({ pool, decodedInput });
   }
 
   return { decodedInput, transaction };
@@ -158,6 +158,49 @@ const parseAddLiquidity = ({
 
   return {
     type: CurveTransactionType.ADD_LIQUIDITY,
+    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
+    tokens,
+  };
+};
+
+interface ParseExchangeProps {
+  pool: CurvePoolWithInterface;
+  decodedInput: ethers.utils.TransactionDescription;
+}
+const parseExchange = ({ pool, decodedInput }: ParseExchangeProps): CurveTransaction | void => {
+  let totalAmount: Decimal;
+  let tokens: Array<CurveTokenWithAmount>;
+
+  // `exchange` is a standard/straightforward exchange.
+  // `exchange_underlying` exchanges the underlying token. E.g. instead of
+  // aUSDC => aUSDT, exchange USDC => USDT through the Curve aToken pool
+  if (['exchange', 'exchange_underlying'].includes(decodedInput.name)) {
+    const fromCoin = pool.coins[decodedInput.args.i.toNumber()];
+    const toCoin = pool.coins[decodedInput.args.j.toNumber()];
+    const rawAmount: BigNumber = decodedInput.args.dx;
+    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, Number(fromCoin.decimals)));
+
+    tokens = [
+      {
+        symbol: fromCoin.symbol,
+        address: fromCoin.address,
+        amount: totalAmount,
+        type: 'add',
+      },
+      {
+        symbol: toCoin.symbol,
+        address: toCoin.address,
+        // TODO: need tx logs to determine amount
+        type: 'remove',
+      },
+    ];
+  } else {
+    console.warn('[parseExchange] Unknown transaction type: ', decodedInput.name);
+    return;
+  }
+
+  return {
+    type: CurveTransactionType.EXCHANGE,
     totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
     tokens,
   };

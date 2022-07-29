@@ -302,4 +302,104 @@ describe('parseTransaction', () => {
       expect(transaction?.totalAmount).toEqual(new Decimal('76.84'));
     });
   });
+
+  describe('exchange_underlying', () => {
+    const tx = {
+      blockNumber: '15160061',
+      timeStamp: '1658059498',
+      hash: '0xffbb71c5a857e32f36ac3cdf51e9df66527367daaba991783d0d6356284d6ca2',
+      nonce: '9',
+      blockHash: '0x3962c956aed50508dad1e139a5f23547fb1c91acf44d1e648bbc52de3c58eb0d',
+      transactionIndex: '165',
+      from: '0x77212a17cb8559866bb709460dc79f42d93d7167',
+      to: '0xdebf20617708857ebe4f679508e7b7863a8a8eee',
+      value: '0',
+      gas: '788227',
+      gasPrice: '9743915074',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0xa6417ed600000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000d18b959180000000000000000000000000000000000000000000000000000000d15a7138c0',
+      contractAddress: '',
+      cumulativeGasUsed: '14158719',
+      gasUsed: '515309',
+      confirmations: '74269',
+      methodId: '0xa6417ed6',
+      functionName: 'exchange_underlying(int128 i, int128 j, uint256 dx, uint256 min_dy)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
+          amount: new Decimal('899990'),
+          symbol: 'aUSDC',
+          type: 'add',
+        },
+        {
+          address: '0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811',
+          symbol: 'aUSDT',
+          type: 'remove',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('899990'));
+    });
+  });
+
+  describe('exchange', () => {
+    const tx = {
+      blockNumber: '15234268',
+      timeStamp: '1659055417',
+      hash: '0x7ee2f4758ad066b5f350dc53b1289b09622f0a12807fa01417fedfdb8756a555',
+      nonce: '271',
+      blockHash: '0xe19c3b9c6186e4370d0d1996cd1748d7a006b7513469fbea243fcf331a7d5677',
+      transactionIndex: '24',
+      from: '0xca10ceb443a4a3c0c3504377045969093232d7f1',
+      to: '0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7',
+      value: '0',
+      gas: '218980',
+      gasPrice: '12000000000',
+      isError: '0',
+      txreceipt_status: '1',
+      input:
+        '0x3df02124000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000001c0382fb800000000000000000000000000000000000000000000000000000001bfa3948bd',
+      contractAddress: '',
+      cumulativeGasUsed: '2328377',
+      gasUsed: '160382',
+      confirmations: '62',
+      methodId: '0x3df02124',
+      functionName: 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await getPool({
+        network: 'ethereum',
+        poolType: 'main',
+        contractAddress: tx.to,
+      });
+      const { transaction } = parseTransaction({ pool, tx });
+      expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+          amount: new Decimal('120318'),
+          symbol: 'USDC',
+          type: 'add',
+        },
+        {
+          address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+          symbol: 'USDT',
+          type: 'remove',
+        },
+      ]);
+      expect(transaction?.totalAmount).toEqual(new Decimal('120318'));
+    });
+  });
 });
