@@ -39,6 +39,11 @@ jobs:
 
       - run: yarn install
 
+      - name: Fetch gauges
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-gauges
+
       - name: Fetch latest pool ABIs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
