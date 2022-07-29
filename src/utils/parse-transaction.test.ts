@@ -59,7 +59,7 @@ describe('parseTransaction', () => {
           type: 'remove',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('11.695987077239375748'));
+      expect(transaction?.totalUsdAmount).toEqual(new Decimal('11.695987077239375748'));
     });
   });
 
@@ -108,7 +108,7 @@ describe('parseTransaction', () => {
           type: 'remove',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('530.532510568166381886'));
+      expect(transaction?.totalUsdAmount).toEqual(new Decimal('530.532510568166381886'));
     });
   });
 
@@ -146,11 +146,13 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
-      expect(transaction?.totalAmount).toEqual(new Decimal('2053427.233335429445268871'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
       expect(transaction?.tokens).toEqual([
         {
           address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
           symbol: 'aUSDC',
+          tokenAmount: new Decimal('2053427.233335429445268871'),
+          usdAmount: expect.any(Decimal),
           type: 'remove',
         },
       ]);
@@ -191,10 +193,12 @@ describe('parseTransaction', () => {
       });
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
-      expect(transaction?.totalAmount).toEqual(new Decimal('31186.721005740776581813'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
       expect(transaction?.tokens).toEqual([
         {
           address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
+          tokenAmount: new Decimal('31186.721005740776581813'),
+          usdAmount: expect.any(Decimal),
           symbol: '3Crv',
           type: 'remove',
         },
@@ -237,13 +241,16 @@ describe('parseTransaction', () => {
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens?.length).toEqual(1);
-      expect(transaction?.tokens[0]).toEqual({
-        address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
-        amount: new Decimal('5000'),
-        symbol: 'aUSDC',
-        type: 'remove',
-      });
-      expect(transaction?.totalAmount).toEqual(new Decimal('5000'));
+      expect(transaction?.tokens).toEqual([
+        {
+          address: '0xBcca60bB61934080951369a648Fb03DF4F96263C',
+          tokenAmount: new Decimal('5000'),
+          usdAmount: expect.any(Decimal),
+          symbol: 'aUSDC',
+          type: 'remove',
+        },
+      ]);
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -283,11 +290,12 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens?.length).toEqual(1);
       expect(transaction?.tokens[0]).toEqual({
         address: '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490',
-        amount: new Decimal('25421.779999999998'),
+        tokenAmount: new Decimal('25421.779999999998'),
+        usdAmount: expect.any(Decimal),
         symbol: '3Crv',
         type: 'remove',
       });
-      expect(transaction?.totalAmount).toEqual(new Decimal('25421.779999999998'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -332,25 +340,28 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-          amount: new Decimal('111784.575162'),
+          tokenAmount: new Decimal('111784.575162'),
+          usdAmount: expect.any(Decimal),
           symbol: 'USDT',
           type: 'add',
         },
         {
           address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
-          amount: new Decimal('4.4'),
+          tokenAmount: new Decimal('4.4'),
+          usdAmount: expect.any(Decimal),
+
           symbol: 'WBTC',
           type: 'add',
         },
         {
           address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
-          amount: new Decimal('81.91996236'),
+          tokenAmount: new Decimal('81.91996236'),
+          usdAmount: expect.any(Decimal),
           symbol: 'WETH',
           type: 'add',
         },
       ]);
-      // TODO: unknown for now since different types of assets
-      expect(transaction?.totalAmount).toBeFalsy();
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -390,18 +401,20 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0x853d955aCEf822Db058eb8505911ED77F175b99e',
-          amount: new Decimal('1000000'),
+          tokenAmount: new Decimal('1000000'),
+          usdAmount: expect.any(Decimal),
           symbol: 'FRAX',
           type: 'add',
         },
         {
           address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-          amount: new Decimal('1501008.29'),
+          tokenAmount: new Decimal('1501008.29'),
+          usdAmount: expect.any(Decimal),
           symbol: 'USDC',
           type: 'add',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('2501008.29'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -442,12 +455,13 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0x028171bCA77440897B824Ca71D1c56caC55b68A3',
-          amount: new Decimal('76.84'),
+          tokenAmount: new Decimal('76.84'),
+          usdAmount: expect.any(Decimal),
           symbol: 'aDAI',
           type: 'add',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('76.84'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -485,12 +499,13 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58',
-          amount: new Decimal('0.1'),
+          tokenAmount: new Decimal('0.1'),
+          usdAmount: expect.any(Decimal),
           symbol: 'USDT',
           type: 'add',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('0.1'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -551,7 +566,7 @@ describe('parseTransaction', () => {
     //       type: 'remove',
     //     },
     //   ]);
-    //   expect(transaction?.totalAmount).toEqual(new Decimal('899990'));
+    //   expect(transaction?.totalUsdAmount).toEqual(new Decimal('899990'));
     // });
   });
 
@@ -596,7 +611,8 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-          amount: new Decimal('120318'),
+          tokenAmount: new Decimal('120318'),
+          usdAmount: expect.any(Decimal),
           symbol: 'USDC',
           type: 'add',
         },
@@ -606,7 +622,7 @@ describe('parseTransaction', () => {
           type: 'remove',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('120318'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 
@@ -651,7 +667,8 @@ describe('parseTransaction', () => {
       expect(transaction?.tokens).toEqual([
         {
           address: '0x1456688345527bE1f37E9e627DA0837D6f08C925',
-          amount: new Decimal('87.566420304509088843'),
+          tokenAmount: new Decimal('87.566420304509088843'),
+          usdAmount: expect.any(Decimal),
           symbol: 'USDP',
           type: 'add',
         },
@@ -661,7 +678,7 @@ describe('parseTransaction', () => {
           type: 'remove',
         },
       ]);
-      expect(transaction?.totalAmount).toEqual(new Decimal('87.566420304509088843'));
+      expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
     });
   });
 

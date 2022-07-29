@@ -2,7 +2,7 @@ import { BigNumber, ethers } from 'ethers';
 import lodash from 'lodash';
 import { Decimal } from 'decimal.js';
 import { EtherscanTx } from './etherscan';
-import { CurveAssetTypeName, CURVE_POOL_TOKEN_DECIMALS } from './curve.constants';
+import { CURVE_POOL_TOKEN_DECIMALS } from './curve.constants';
 import { CurvePoolExtended } from '../../data/pools';
 
 export enum CurveTransactionType {
@@ -14,8 +14,9 @@ export enum CurveTransactionType {
 interface CurveTokenWithAmount {
   symbol: string;
   address: string;
-  // may be unknown, need detailed tx logs
-  amount?: Decimal;
+  // may be unknown in some cases, need detailed tx logs
+  tokenAmount?: Decimal;
+  usdAmount?: Decimal;
   // whether this tx is adding or removing token liquidity to pool
   type: 'add' | 'remove';
 }
@@ -25,9 +26,7 @@ export interface CurveTransaction {
   pool: string;
   timestamp: number;
   type: CurveTransactionType;
-  // Total is unknown for tricrypto or similar pools with different types of
-  // assets (TODO)
-  totalAmount?: Decimal;
+  totalUsdAmount?: Decimal;
   // Input or output tokens
   tokens: Array<CurveTokenWithAmount>;
 }
@@ -80,12 +79,12 @@ const parseRemoveLiquidity = ({
   pool,
   decodedInput,
 }: ParseRemoveLiquidityProps): CurveTransaction | void => {
-  let totalAmount: Decimal;
+  let totalUsdAmount: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
   if (decodedInput.name === 'remove_liquidity_imbalance') {
     const rawAmounts: Array<BigNumber> = decodedInput.args._amounts ?? decodedInput.args.amounts;
-    totalAmount = new Decimal(0);
+    totalUsdAmount = new Decimal(0);
     tokens = lodash.compact(
       rawAmounts.map((rawAmount, i) => {
         if (rawAmount.isZero()) {
@@ -94,12 +93,14 @@ const parseRemoveLiquidity = ({
         }
         const coin = pool.coins[i];
         const decimals = Number(coin.decimals);
-        const amount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
-        totalAmount = totalAmount.add(amount);
+        const tokenAmount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
+        const usdAmount = tokenAmount.times(coin.usdPrice);
+        totalUsdAmount = totalUsdAmount.add(usdAmount);
         return {
           symbol: coin.symbol,
           address: coin.address,
-          amount,
+          tokenAmount,
+          usdAmount,
           type: 'remove',
         };
       }),
@@ -110,19 +111,23 @@ const parseRemoveLiquidity = ({
       decodedInput.args.token_amount ??
       decodedInput.args._burn_amount;
     const coin = pool.coins[decodedInput.args.i];
-    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    const tokenAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    const usdAmount = tokenAmount.times(coin.usdPrice);
+    totalUsdAmount = usdAmount;
     tokens = [
       {
-        // Output amount of this token unknown without better logs of tx
         symbol: coin.symbol,
         address: coin.address,
+        tokenAmount,
+        usdAmount,
         type: 'remove',
       },
     ];
   } else if (decodedInput.name === 'remove_liquidity') {
     const rawAmount = decodedInput.args._amount ?? decodedInput.args._burn_amount;
-    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
-    // all coins removed in amounts that map to current pool balance/weighting
+    totalUsdAmount = new Decimal(ethers.utils.formatUnits(rawAmount, CURVE_POOL_TOKEN_DECIMALS));
+    // all coins removed in amounts relative to current pool balance/weighting
+    // Output amount of tokens unknown without better logs of tx
     tokens = pool.coins.map((coin) => {
       return {
         symbol: coin.symbol,
@@ -140,7 +145,7 @@ const parseRemoveLiquidity = ({
     pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.REMOVE_LIQUIDITY,
-    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
+    totalUsdAmount,
     tokens,
   };
 };
@@ -155,13 +160,13 @@ const parseAddLiquidity = ({
   pool,
   decodedInput,
 }: ParseAddLiquidityProps): CurveTransaction | void => {
-  let totalAmount: Decimal;
+  let totalUsdAmount: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
   if (decodedInput.name == 'add_liquidity') {
     const rawAmounts: Array<BigNumber> =
       decodedInput.args._amounts ?? decodedInput.args.amounts ?? decodedInput.args.uamounts;
-    totalAmount = new Decimal(0);
+    totalUsdAmount = new Decimal(0);
     tokens = lodash.compact(
       rawAmounts.map((rawAmount, i) => {
         if (rawAmount.isZero()) {
@@ -170,12 +175,14 @@ const parseAddLiquidity = ({
         }
         const coin = pool.coins[i];
         const decimals = Number(coin.decimals);
-        const amount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
-        totalAmount = totalAmount.add(amount);
+        const tokenAmount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
+        const usdAmount = tokenAmount.times(coin.usdPrice);
+        totalUsdAmount = totalUsdAmount.add(usdAmount);
         return {
           symbol: coin.symbol,
           address: coin.address,
-          amount,
+          tokenAmount,
+          usdAmount,
           type: 'add',
         };
       }),
@@ -190,7 +197,7 @@ const parseAddLiquidity = ({
     pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.ADD_LIQUIDITY,
-    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
+    totalUsdAmount,
     tokens,
   };
 };
@@ -201,7 +208,7 @@ interface ParseExchangeProps {
   decodedInput: ethers.utils.TransactionDescription;
 }
 const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTransaction | void => {
-  let totalAmount: Decimal;
+  let totalUsdAmount: Decimal;
   let tokens: Array<CurveTokenWithAmount>;
 
   // `exchange` is a standard/straightforward exchange.
@@ -209,13 +216,18 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
     const fromCoin = pool.coins[decodedInput.args.i.toNumber()];
     const toCoin = pool.coins[decodedInput.args.j.toNumber()];
     const rawAmount: BigNumber = decodedInput.args.dx ?? decodedInput.args._dx;
-    totalAmount = new Decimal(ethers.utils.formatUnits(rawAmount, Number(fromCoin.decimals)));
+    const fromCoinAmount = new Decimal(
+      ethers.utils.formatUnits(rawAmount, Number(fromCoin.decimals)),
+    );
+    const fromCoinUsdAmount = fromCoinAmount.times(fromCoin.usdPrice);
+    totalUsdAmount = fromCoinUsdAmount;
 
     tokens = [
       {
         symbol: fromCoin.symbol,
         address: fromCoin.address,
-        amount: totalAmount,
+        tokenAmount: fromCoinAmount,
+        usdAmount: fromCoinUsdAmount,
         type: 'add',
       },
       {
@@ -241,7 +253,7 @@ const parseExchange = ({ tx, pool, decodedInput }: ParseExchangeProps): CurveTra
     pool: pool.address,
     timestamp: Number(tx.timeStamp),
     type: CurveTransactionType.EXCHANGE,
-    totalAmount: pool.assetTypeName !== CurveAssetTypeName.UNKNOWN ? totalAmount : undefined,
+    totalUsdAmount,
     tokens,
   };
 };
