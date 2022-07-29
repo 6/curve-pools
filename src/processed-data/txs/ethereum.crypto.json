@@ -2439,25 +2439,6 @@
           "type": "remove"
         }
       ]
-    },
-    {
-      "hash": "0x6d2b6ac65c20d32c0e82b5d90ed496205801b3bf1692c0e9ff29e9ccb8eabb50",
-      "pool": "0xD51a44d3FaE010294C616388b506AcdA1bfAAE46",
-      "timestamp": 1658945046,
-      "type": "exchange",
-      "tokens": [
-        {
-          "symbol": "WETH",
-          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-          "amount": "270",
-          "type": "add"
-        },
-        {
-          "symbol": "USDT",
-          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-          "type": "remove"
-        }
-      ]
     }
   ],
   "0x9838eCcC42659FA8AA7daF2aD134b53984c9427b": [
@@ -10545,6 +10526,25 @@
   ],
   "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4": [
     {
+      "hash": "0x0ac4c7ebca61b436af44da53a55fd9a68c35689b231984cc156efecc8cd874ae",
+      "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
+      "timestamp": 1659095169,
+      "type": "exchange",
+      "tokens": [
+        {
+          "symbol": "CVX",
+          "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+          "amount": "73.045028739185138586",
+          "type": "add"
+        },
+        {
+          "symbol": "WETH",
+          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x3abbbbd7bd2bcd17db2abb45a5c27d7b7e881cdf4b719b54ed38fea6b291ccb4",
       "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
       "timestamp": 1659086669,
@@ -14842,26 +14842,6 @@
           "symbol": "CVX",
           "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
           "amount": "179.63609357",
-          "type": "add"
-        }
-      ]
-    },
-    {
-      "hash": "0x723c14b4813b631483911634d8091f974da845d4449464ffba10f4c83856f5ea",
-      "pool": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
-      "timestamp": 1658455692,
-      "type": "add_liquidity",
-      "tokens": [
-        {
-          "symbol": "WETH",
-          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-          "amount": "50.93472358",
-          "type": "add"
-        },
-        {
-          "symbol": "CVX",
-          "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-          "amount": "10079.21969665",
           "type": "add"
         }
       ]
