@@ -1,23 +1,17 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { getProminentTxs } from './processed-data/txs';
 import { useTopPools } from './hooks/use-top-pools';
+import { useProminentTransactions } from './hooks/use-prominent-transactions';
 
 function App() {
-  const topStethTxs = useMemo(() => {
-    return getProminentTxs({
-      network: 'ethereum',
-      contractAddress: '0xDC24316b9AE028F1497c275EB9192a3Ea0f67022',
-    });
-  }, []);
-
-  console.log('top stETH txs:', topStethTxs);
-
   const topPools = useTopPools();
 
   console.log('top pools:', topPools);
 
+  const prominentTxs = useProminentTransactions({ pool: topPools[0] });
+
+  console.log('prominent txs:', prominentTxs);
   return (
     <div className="App">
       <header className="App-header">

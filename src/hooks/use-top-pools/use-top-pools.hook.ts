@@ -4,7 +4,12 @@ import { Decimal } from 'decimal.js';
 import { CurvePoolSimplified } from '../../../data/pools';
 import { topPools } from '../../processed-data/pools';
 import { CurvePoolToken } from '../../utils/curve-api';
-import { Network } from '../../utils/curve.constants';
+import {
+  percentFormatter,
+  usdExtraPrecisionFormatter,
+  usdFormatter,
+} from '../../utils/number-formatters';
+import { getLogoURLForToken } from '../../utils/curve-ui-data';
 
 interface CurvePoolTokenForUi extends CurvePoolToken {
   logoURL: string;
@@ -19,38 +24,6 @@ interface CurvePoolForUi extends CurvePoolSimplified {
   coins: Array<CurvePoolTokenForUi>;
   usdTotalFormatted: string;
 }
-
-const usdFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
-
-const usdExtraPrecisionFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 6,
-});
-
-const percentFormatter = new Intl.NumberFormat('en-US', {
-  style: 'percent',
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-});
-
-const getLogoURLForToken = ({
-  network,
-  tokenAddress,
-}: {
-  network: Network;
-  tokenAddress: string;
-}) => {
-  // Examples:
-  // https://cdn.jsdelivr.net/gh/curvefi/curve-assets/images/assets/0x6b175474e89094c44da98b954eedeac495271d0f.png
-  // https://cdn.jsdelivr.net/gh/curvefi/curve-assets/images/assets-fantom/0x04068da6c83afcfa0e13ba15a6696662335d5b75.png
-
-  const assetsFolder = network === 'ethereum' ? 'assets' : `assets-${network}`;
-  return `https://cdn.jsdelivr.net/gh/curvefi/curve-assets/images/${assetsFolder}/${tokenAddress.toLowerCase()}.png`;
-};
 
 const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
   const coins = pool.coins.map((token) => {
