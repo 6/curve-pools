@@ -52,16 +52,15 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-metadata
 
-      # TODO: only fetch for top pools
-      - name: Fetch pool ABIs
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run-script tasks/update-pool-abis
-
       - name: Process top pools
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/process-top-pools
+
+      - name: Fetch top pool ABIs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-top-pool-abis
 
       - name: Fetch top pool latest transactions
         env:

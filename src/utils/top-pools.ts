@@ -1,6 +1,6 @@
 import { Decimal } from 'decimal.js';
 import lodash from 'lodash';
-import { CurvePoolExtended, getPools } from '../../data/pools';
+import { CurvePoolExtendedWithoutABI, getPoolsWithoutABI } from '../../data/pools';
 import { CURVE_NETWORKS, CURVE_POOL_TYPES } from './curve.constants';
 
 interface ProcessTopPoolsProps {
@@ -8,11 +8,11 @@ interface ProcessTopPoolsProps {
 }
 export const processTopPools = async ({
   minimumTVL,
-}: ProcessTopPoolsProps): Promise<Array<CurvePoolExtended>> => {
-  let allPools: Array<CurvePoolExtended> = [];
+}: ProcessTopPoolsProps): Promise<Array<CurvePoolExtendedWithoutABI>> => {
+  let allPools: Array<CurvePoolExtendedWithoutABI> = [];
   for (const network of CURVE_NETWORKS) {
     for (const poolType of CURVE_POOL_TYPES) {
-      const pools = await getPools({ network, poolType });
+      const pools = await getPoolsWithoutABI({ network, poolType });
       allPools = allPools.concat(pools);
     }
   }
