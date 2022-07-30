@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, Text, Center, Wrap } from '@chakra-ui/react';
+import { Container, Heading, Text, Center } from '@chakra-ui/react';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { useTopPools } from '../../hooks/use-top-pools';
 
@@ -14,8 +14,11 @@ export const DashboardScreen = () => {
 
   return (
     <Container maxW="800px" paddingTop="10">
-      <Heading fontSize="3xl" textAlign="center">
-        Curve Pools Scanner
+      <Heading fontSize="4xl" textAlign="center">
+        🕵
+      </Heading>
+      <Heading paddingTop="2" fontSize="3xl" textAlign="center">
+        Curve Pool Scanner
       </Heading>
       <Center>
         <Text marginTop="5" fontSize="xl" textAlign="center" maxW="md" alignSelf="center">
