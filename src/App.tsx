@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { getProminentTxs } from './processed-data/txs';
+import { useTopPools } from './hooks/use-top-pools';
 
 function App() {
   const topStethTxs = useMemo(() => {
@@ -12,6 +13,10 @@ function App() {
   }, []);
 
   console.log('top stETH txs:', topStethTxs);
+
+  const topPools = useTopPools();
+
+  console.log('top pools:', topPools);
 
   return (
     <div className="App">
