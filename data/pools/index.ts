@@ -174,6 +174,7 @@ export const convertToSimplifiedPool = (pool: CurvePoolExtended): CurvePoolSimpl
     'name',
     'network',
     'poolType',
+    'assetTypeName',
     'isMetaPool',
     'address',
     'coins',

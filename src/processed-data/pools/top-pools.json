@@ -5,6 +5,7 @@
     "name": "Curve.fi ETH/stETH",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
     "coins": [
@@ -32,6 +33,7 @@
     "shortName": "frax",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xd632f22692FaC7611d2AA1C0D552930D43CAEd3B",
     "coins": [
@@ -59,6 +61,7 @@
     "shortName": "3pool",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
     "coins": [
@@ -95,6 +98,7 @@
     "name": "Curve.fi FRAX/USDC",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0xDcEF968d416a41Cdac0ED8702fAC8128A64241A2",
     "coins": [
@@ -123,6 +127,7 @@
     "name": "Curve.fi USD-BTC-ETH",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0xD51a44d3FaE010294C616388b506AcdA1bfAAE46",
     "coins": [
@@ -158,6 +163,7 @@
     "shortName": "mim",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x5a6A4D54456819380173272A5E8E9B9904BdF41B",
     "coins": [
@@ -185,6 +191,7 @@
     "shortName": "susd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD",
     "coins": [
@@ -229,6 +236,7 @@
     "name": "Curve.fi Factory Plain Pool: cvxCRV",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "other",
     "isMetaPool": false,
     "address": "0x9D0464996170c6B9e75eED71c68B99dDEDf279e8",
     "coins": [
@@ -257,6 +265,7 @@
     "name": "Curve.fi Factory Pool: alETH",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0xC4C319E2D4d66CcA4464C0c2B32c9Bd23ebe784e",
     "coins": [
@@ -285,6 +294,7 @@
     "name": "Curve.fi Factory USD Metapool: DOLA-3pool Curve LP",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xAA5A67c256e27A5d80712c51971408db3370927D",
     "coins": [
@@ -312,6 +322,7 @@
     "shortName": "alusd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x43b4FdFD4Ff969587185cDB6f0BD875c5Fc83f8c",
     "coins": [
@@ -340,6 +351,7 @@
     "name": "Curve EURS-USDC",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0x98a7F18d4E56Cfe84E3D081B40001B3d5bD3eB8B",
     "coins": [
@@ -367,6 +379,7 @@
     "shortName": "seth",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0xc5424B857f758E906013F3555Dad202e4bdB4567",
     "coins": [
@@ -394,6 +407,7 @@
     "shortName": "tusd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xEcd5e75AFb02eFa118AF914515D6521aaBd189F1",
     "coins": [
@@ -422,6 +436,7 @@
     "name": "Curve CRV-ETH",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
     "coins": [
@@ -449,6 +464,7 @@
     "shortName": "compound",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56",
     "coins": [
@@ -477,6 +493,7 @@
     "name": "Curve CVX-ETH",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
     "coins": [
@@ -505,6 +522,7 @@
     "name": "Curve.fi amDAI/amUSDC/amUSDT",
     "network": "polygon",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x445FE580eF8d70FF569aB36e80c647af338db351",
     "coins": [
@@ -541,6 +559,7 @@
     "name": "Curve.fi avDAI/avUSDC/avUSDT",
     "network": "avalanche",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
     "coins": [
@@ -576,6 +595,7 @@
     "shortName": "lusd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA",
     "coins": [
@@ -603,6 +623,7 @@
     "shortName": "ren",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "btc",
     "isMetaPool": false,
     "address": "0x93054188d876f558f4a66B2EF1d97d16eDf0895B",
     "coins": [
@@ -630,6 +651,7 @@
     "shortName": "sbtc",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "btc",
     "isMetaPool": false,
     "address": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
     "coins": [
@@ -665,6 +687,7 @@
     "shortName": "musd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6",
     "coins": [
@@ -693,6 +716,7 @@
     "name": "Curve.fi Factory USD Metapool: USDD/3CRV",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xe6b5CC1B4b47305c58392CE3D359B10282FC36Ea",
     "coins": [
@@ -720,6 +744,7 @@
     "shortName": "2pool",
     "network": "arbitrum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
     "coins": [
@@ -747,6 +772,7 @@
     "shortName": "busdv2",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x4807862AA8b2bF68830e4C8dc86D0e9A998e085a",
     "coins": [
@@ -775,6 +801,7 @@
     "name": "Curve USD-BTC-ETH",
     "network": "polygon",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": true,
     "address": "0x92215849c439E1f8612b6646060B4E3E5ef822cC",
     "coins": [
@@ -811,6 +838,7 @@
     "name": "Curve.fi Factory BTC Metapool: ibBTC",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "btc",
     "isMetaPool": false,
     "address": "0xFbdCA68601f835b27790D98bbb8eC7f05FDEaA9B",
     "coins": [
@@ -839,6 +867,7 @@
     "name": "Curve.fi aDAI/aUSDC/aUSDT",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
     "coins": [
@@ -875,6 +904,7 @@
     "name": "Curve.fi Factory USD Metapool: FRAX2pool",
     "network": "fantom",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x7a656B342E14F745e2B164890E88017e27AE7320",
     "coins": [
@@ -902,6 +932,7 @@
     "shortName": "2pool",
     "network": "fantom",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
     "coins": [
@@ -929,6 +960,7 @@
     "shortName": "gusd",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956",
     "coins": [
@@ -957,6 +989,7 @@
     "name": "Curve.fi Factory Plain Pool: 3EURpool",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "other",
     "isMetaPool": false,
     "address": "0xb9446c4Ef5EBE66268dA6700D26f96273DE3d571",
     "coins": [
@@ -992,6 +1025,7 @@
     "shortName": "usdn",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x0f9cb53Ebe405d49A0bbdBD291A65Ff571bC83e1",
     "coins": [
@@ -1020,6 +1054,7 @@
     "name": "Curve.fi USD-BTC-ETH",
     "network": "arbitrum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x960ea3e3C7FB317332d990873d354E18d7645590",
     "coins": [
@@ -1056,6 +1091,7 @@
     "name": "Curve.fi USD-BTC-ETH",
     "network": "arbitrum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0x960ea3e3C7FB317332d990873d354E18d7645590",
     "coins": [
@@ -1092,6 +1128,7 @@
     "name": "Curve.fi Factory Plain Pool: stETH concentrated",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0x828b154032950C8ff7CF8085D841723Db2696056",
     "coins": [
@@ -1120,6 +1157,7 @@
     "name": "Curve.fi Factory USD Metapool: PUSd",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x8EE017541375F6Bcd802ba119bdDC94dad6911A1",
     "coins": [
@@ -1147,6 +1185,7 @@
     "name": "Curve.fi Factory USD Metapool: USDM",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x5B3b5DF2BF2B6543f78e053bD91C4Bdd820929f1",
     "coins": [
@@ -1175,6 +1214,7 @@
     "name": "Curve.fi Factory Plain Pool: Stax Frax/Temple xLP + LP",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "other",
     "isMetaPool": false,
     "address": "0xdaDfD00A2bBEb1abc4936b1644a3033e1B653228",
     "coins": [
@@ -1203,6 +1243,7 @@
     "name": "Curve.fi Factory USD Metapool: TOR-2pool",
     "network": "fantom",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x24699312CB27C26Cfc669459D670559E5E44EE60",
     "coins": [
@@ -1231,6 +1272,7 @@
     "name": "Curve.fi Factory Plain Pool: rETH/wstETH",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0x447Ddd4960d9fdBF6af9a790560d0AF76795CB08",
     "coins": [
@@ -1259,6 +1301,7 @@
     "name": "Curve.fi Factory USD Metapool: Curve FRAX3CRV Pool",
     "network": "polygon",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x5e5A23b52Cb48F5E70271Be83079cA5bC9c9e9ac",
     "coins": [
@@ -1286,6 +1329,7 @@
     "name": "Curve.fi Factory Plain Pool: YUSD Pool",
     "network": "avalanche",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x1da20Ac34187b2d9c74F729B85acB225D3341b25",
     "coins": [
@@ -1321,6 +1365,7 @@
     "name": "Curve.fi Factory USD Metapool: FRAX+2CRV",
     "network": "arbitrum",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xf07d553B195080F84F582e88ecdD54bAa122b279",
     "coins": [
@@ -1349,6 +1394,7 @@
     "name": "Curve EURT-3Crv",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": true,
     "address": "0x9838eCcC42659FA8AA7daF2aD134b53984c9427b",
     "coins": [
@@ -1376,6 +1422,7 @@
     "name": "Curve.fi Factory Plain Pool: Tokemak tFXS/FXS",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "other",
     "isMetaPool": false,
     "address": "0x961226B64AD373275130234145b96D100Dc0b655",
     "coins": [
@@ -1403,6 +1450,7 @@
     "shortName": "hbtc",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "btc",
     "isMetaPool": false,
     "address": "0x4CA9b3063Ec5866A4B82E437059D2C43d1be596F",
     "coins": [
@@ -1431,6 +1479,7 @@
     "name": "Curve.fi Factory USD Metapool: sUSD Synthetix",
     "network": "optimism",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x061b87122Ed14b9526A813209C8a59a633257bAb",
     "coins": [
@@ -1458,6 +1507,7 @@
     "name": "Curve.fi Factory Plain Pool: Tokemak tALCX/ALCX",
     "network": "ethereum",
     "poolType": "factory",
+    "assetTypeName": "other",
     "isMetaPool": false,
     "address": "0x9001a452d39A8710D27ED5c2E10431C13F5Fba74",
     "coins": [
@@ -1486,6 +1536,7 @@
     "name": "Curve.fi gDAI/gUSDC/gUSDT",
     "network": "fantom",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
     "coins": [
@@ -1521,6 +1572,7 @@
     "shortName": "ren",
     "network": "arbitrum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb",
     "coins": [
@@ -1549,6 +1601,7 @@
     "name": "Curve.fi Factory USD Metapool: FRAX",
     "network": "avalanche",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xE013593CEA239E445d2271106836b00C9E7356ae",
     "coins": [
@@ -1577,6 +1630,7 @@
     "name": "Curve T-ETH",
     "network": "ethereum",
     "poolType": "crypto",
+    "assetTypeName": "unknown",
     "isMetaPool": false,
     "address": "0x752eBeb79963cf0732E9c0fec72a49FD1DEfAEAC",
     "coins": [
@@ -1604,6 +1658,7 @@
     "shortName": "3pool",
     "network": "optimism",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": false,
     "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
     "coins": [
@@ -1640,6 +1695,7 @@
     "name": "Curve.fi USDP/3Crv",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0x42d7025938bEc20B69cBae5A77421082407f053A",
     "coins": [
@@ -1668,6 +1724,7 @@
     "name": "Curve.fi ETH/aETH",
     "network": "ethereum",
     "poolType": "main",
+    "assetTypeName": "eth",
     "isMetaPool": false,
     "address": "0xA96A65c051bF88B4095Ee1f2451C2A9d43F53Ae2",
     "coins": [
@@ -1696,6 +1753,7 @@
     "name": "Curve.fi Factory USD Metapool: curve.fi TUSD/am3CRV Pool",
     "network": "polygon",
     "poolType": "factory",
+    "assetTypeName": "usd",
     "isMetaPool": true,
     "address": "0xAdf577B69eEaC9Df325536cf1aF106372f2Da263",
     "coins": [
