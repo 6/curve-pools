@@ -14,7 +14,7 @@
         "decimals": ["6", "6", "18", "0"],
         "underlyingDecimals": ["6", "6", "18", "0", "0", "0", "0", "0"],
         "assetType": "0",
-        "totalSupply": "57887415634337546214349296",
+        "totalSupply": "57887599869864576530442947",
         "lpTokenAddress": "0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171",
         "name": "Curve.fi amDAI/amUSDC/amUSDT",
         "symbol": "am3CRV",
@@ -24,32 +24,32 @@
         "coins": [
           {
             "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
-            "usdPrice": 1,
+            "usdPrice": 0.999822,
             "decimals": "18",
             "isBasePoolLpToken": false,
             "symbol": "amDAI",
-            "poolBalance": "16654618653790773841172206"
+            "poolBalance": "16661311218003539251009890"
           },
           {
             "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
-            "usdPrice": 1.003,
-            "decimals": "6",
-            "isBasePoolLpToken": false,
-            "symbol": "amUSDC",
-            "poolBalance": "25709915650432"
-          },
-          {
-            "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
             "usdPrice": 1.002,
             "decimals": "6",
             "isBasePoolLpToken": false,
+            "symbol": "amUSDC",
+            "poolBalance": "25756096360205"
+          },
+          {
+            "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
+            "usdPrice": 1.001,
+            "decimals": "6",
+            "isBasePoolLpToken": false,
             "symbol": "amUSDT",
-            "poolBalance": "18920406823883"
+            "poolBalance": "18867869829214"
           }
         ],
-        "usdTotal": 61399911.68870483,
+        "usdTotal": 61352691.75657536,
         "isMetaPool": false,
-        "usdTotalExcludingBasePool": 61399911.68870483
+        "usdTotalExcludingBasePool": 61352691.75657536
       },
       {
         "id": "1",
@@ -73,27 +73,27 @@
         "coins": [
           {
             "address": "0x5c2ed810328349100A66B82b78a1791B101C9D61",
-            "usdPrice": 23791,
+            "usdPrice": 23778,
             "decimals": "8",
             "isBasePoolLpToken": false,
             "symbol": "amWBTC",
-            "poolBalance": "17200076352"
+            "poolBalance": "17195098924"
           },
           {
             "address": "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
-            "usdPrice": 23908,
+            "usdPrice": 23934,
             "decimals": "8",
             "isBasePoolLpToken": false,
             "symbol": "renBTC",
-            "poolBalance": "17994410122"
+            "poolBalance": "17999389742"
           }
         ],
-        "usdTotal": 8394173.73687208,
+        "usdTotal": 8396624.562999,
         "isMetaPool": false,
-        "usdTotalExcludingBasePool": 8394173.73687208
+        "usdTotalExcludingBasePool": 8396624.562999
       }
     ],
-    "tvlAll": 69794085.42557691,
-    "generatedTimeMs": 1659142510097
+    "tvlAll": 69749316.31957436,
+    "generatedTimeMs": 1659145227646
   }
 }
