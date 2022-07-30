@@ -42,10 +42,21 @@ jobs:
 
       - run: yarn install
 
+      - name: Fetch gauges
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-gauges
+
       - name: Fetch latest pool metadata
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/update-pool-metadata
+
+      # TODO: only fetch for top pools
+      - name: Fetch pool ABIs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-pool-abis
 
       - name: Process top pools
         env:
