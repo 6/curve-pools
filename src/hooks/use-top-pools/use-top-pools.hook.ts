@@ -4,7 +4,8 @@ import { Decimal } from 'decimal.js';
 import { CurvePoolSimplified } from '../../../data/pools';
 import { topPools } from '../../processed-data/pools';
 import { CurvePoolToken } from '../../utils/curve-api';
-import { Network } from '../../utils/curve.constants';
+import { CurveAssetTypeName, Network } from '../../utils/curve.constants';
+import { percentageChange } from '../../utils/percentage-calculations';
 
 interface CurvePoolTokenForUi extends CurvePoolToken {
   logoURL: string;
@@ -13,6 +14,8 @@ interface CurvePoolTokenForUi extends CurvePoolToken {
   totalUsdBalanceFormatted: string;
   poolWeight: Decimal;
   poolWeightFormatted: string;
+  percentChangeFromPeg?: Decimal;
+  percentChangeFromPegFormatted?: string;
 }
 
 interface CurvePoolForUi extends CurvePoolSimplified {
@@ -61,6 +64,13 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     const poolWeight = totalUsdBalance.dividedBy(pool.usdTotal);
     const poolWeightFormatted = percentFormatter.format(poolWeight.toNumber());
 
+    let percentChangeFromPeg;
+    let percentChangeFromPegFormatted;
+    if (pool.assetTypeName === CurveAssetTypeName.USD) {
+      percentChangeFromPeg = percentageChange(1, token.usdPrice);
+      percentChangeFromPegFormatted = percentFormatter.format(percentChangeFromPeg.toNumber());
+    }
+
     return {
       ...token,
       logoURL: getLogoURLForToken({ network: pool.network, tokenAddress: token.address }),
@@ -69,6 +79,8 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       totalUsdBalanceFormatted,
       poolWeight,
       poolWeightFormatted,
+      percentChangeFromPeg,
+      percentChangeFromPegFormatted,
     };
   });
 
