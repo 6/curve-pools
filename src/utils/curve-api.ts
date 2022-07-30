@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { Network, PoolType } from './curve.constants';
+import { CurveAssetTypeName, Network, PoolType } from './curve.constants';
 
 export interface CurvePoolToken {
   address: string; // "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
@@ -23,7 +23,7 @@ export interface CurvePoolMetadata {
   // Some pools like 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7 don't have symbol
   symbol?: string; // "ibEUR+sEUR-f"
   implementation: string; // "plain2basic" ?? switch to enum?
-  assetTypeName: string; // "unknown"
+  assetTypeName: CurveAssetTypeName; // "unknown"
   coins: Array<CurvePoolToken>;
   usdTotal: number; // 2479.1897315233555
   isMetaPool: boolean;
