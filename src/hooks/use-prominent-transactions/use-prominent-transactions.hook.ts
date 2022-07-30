@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { CurvePoolSimplified } from '../../../data/pools';
 import { getProminentTxs } from '../../processed-data/txs';
 import { getLogoURLForToken } from '../../utils/curve-ui-data';
-import { usdExtraPrecisionFormatter, usdFormatter } from '../../utils/number-formatters';
+import { usdFormatter } from '../../utils/number-formatters';
 import { CurveTokenWithAmount, CurveTransaction } from '../../utils/parse-transaction';
 
 interface CurveTokenForUi extends CurveTokenWithAmount {
