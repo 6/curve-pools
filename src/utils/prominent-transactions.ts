@@ -8,8 +8,8 @@ import moment, { Moment } from 'moment';
 interface ProcessProminentTransactionsProps {
   pool: CurvePoolExtended;
   txs: EtherscanTxListResult;
-  minimumTotalUsdAmount: Decimal;
-  minimumTimestamp: Moment;
+  minimumTotalUsdAmount?: Decimal;
+  minimumTimestamp?: Moment;
 }
 export const processProminentTransactions = ({
   pool,
@@ -35,9 +35,12 @@ export const processProminentTransactions = ({
   ) as Array<CurveTransaction>;
 
   return parsedTxs.filter((tx) => {
-    return (
-      tx.totalUsdAmount.gte(minimumTotalUsdAmount) &&
-      moment(tx.timestamp * 1000).isSameOrAfter(minimumTimestamp)
-    );
+    const metUsdThreshold = minimumTotalUsdAmount
+      ? tx.totalUsdAmount.gte(minimumTotalUsdAmount)
+      : true;
+    const metTimestampThreshold = minimumTimestamp
+      ? moment(tx.timestamp * 1000).isSameOrAfter(minimumTimestamp)
+      : true;
+    return metUsdThreshold && metTimestampThreshold;
   });
 };
