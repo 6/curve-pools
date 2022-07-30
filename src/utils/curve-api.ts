@@ -16,8 +16,11 @@ export interface CurvePoolMetadata {
   decimals: Array<string>; // ["18", ...] (same length as coinsAddresses)
   underlyingDecimals: Array<string>; // ["18", ...] (>= above length maybe?)
   assetType: string; // "99" ??
-  totalSupply: string; // "20000000000000000" ??
-  implementationAddress: string; // "0x6523Ac15EC152Cb70a334230F6c5d62C5Bd963f1"
+  totalSupply: string | number; // "20000000000000000" . Sometimes number 0
+  implementationAddress?: string; // "0x6523Ac15EC152Cb70a334230F6c5d62C5Bd963f1"
+  lpTokenAddress?: string;
+  priceOracle?: number;
+  gaugeAddress?: string;
   // Some pools like 0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 have no name
   name?: string; // "Curve.fi Factory Plain Pool: ibEUR/sEUR"
   // Some pools like 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7 don't have symbol
