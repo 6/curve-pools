@@ -2,7 +2,7 @@ import path from 'path';
 import { readFile } from 'fs/promises';
 import { ethers } from 'ethers';
 import lodash from 'lodash';
-import { Network, PoolType } from '../../src/utils/curve.constants';
+import { CurveAssetTypeName, Network, PoolType } from '../../src/utils/curve.constants';
 import {
   CurvePoolMetadata,
   CurvePoolToken,
@@ -29,6 +29,7 @@ export interface CurvePoolSimplified {
   name?: string | void;
   network: Network;
   poolType: PoolType;
+  assetTypeName: CurveAssetTypeName;
   isMetaPool: boolean;
   address: string;
   coins: Array<CurvePoolToken>;
@@ -174,6 +175,7 @@ export const convertToSimplifiedPool = (pool: CurvePoolExtended): CurvePoolSimpl
     'name',
     'network',
     'poolType',
+    'assetTypeName',
     'isMetaPool',
     'address',
     'coins',
