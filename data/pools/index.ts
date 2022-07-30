@@ -23,6 +23,8 @@ export interface CurvePoolExtended extends CurvePoolMetadata {
   poolType: PoolType;
 }
 
+export type CurvePoolExtendedWithoutABI = Omit<CurvePoolExtended, 'interface'>;
+
 export interface CurvePoolSimplified {
   id: string;
   shortName?: string | void;
@@ -80,6 +82,33 @@ const getPoolDataWithoutDuplicates = async ({
   });
 };
 
+interface GetPoolsWithoutABIProps {
+  network: Network;
+  poolType: PoolType;
+}
+export const getPoolsWithoutABI = async ({
+  network,
+  poolType,
+}: GetPoolsWithoutABIProps): Promise<Array<CurvePoolExtendedWithoutABI>> => {
+  const pools = await getPoolDataWithoutDuplicates({ network, poolType });
+  return pools.map((pool) => {
+    const gauge = getGauge({ contractAddress: pool.address });
+    const constants = getPoolConstants({ network, contractAddress: pool.address });
+    // Rarely pools will have none of the first three,
+    // e.g. linkusd on eth mainnet: 0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171
+    const shortName = constants?.name ?? gauge?.name;
+
+    return {
+      ...pool,
+      shortName,
+      gauge,
+      constants,
+      network,
+      poolType,
+    };
+  });
+};
+
 interface GetPoolsProps {
   network: Network;
   poolType: PoolType;
@@ -88,7 +117,7 @@ export const getPools = async ({
   network,
   poolType,
 }: GetPoolsProps): Promise<Array<CurvePoolExtended>> => {
-  const pools = await getPoolDataWithoutDuplicates({ network, poolType });
+  const pools = await getPoolsWithoutABI({ network, poolType });
   const abis = await getABIs({ network, poolType });
   return lodash.compact(
     pools.map((pool) => {
@@ -97,19 +126,8 @@ export const getPools = async ({
         // Ignore pools that don't have a verified contract yet:
         return;
       }
-      const gauge = getGauge({ contractAddress: pool.address });
-      const constants = getPoolConstants({ network, contractAddress: pool.address });
-      // Rarely pools will have none of the first three,
-      // e.g. linkusd on eth mainnet: 0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171
-      const shortName = constants?.name ?? gauge?.name;
-
       return {
         ...pool,
-        shortName,
-        gauge,
-        constants,
-        network,
-        poolType,
         interface: new ethers.utils.Interface(JSON.stringify(abi)),
       };
     }),
@@ -168,7 +186,9 @@ const getPoolConstants = ({
   }
 };
 
-export const convertToSimplifiedPool = (pool: CurvePoolExtended): CurvePoolSimplified => {
+export const convertToSimplifiedPool = (
+  pool: CurvePoolExtended | CurvePoolExtendedWithoutABI,
+): CurvePoolSimplified => {
   return lodash.pick(pool, [
     'id',
     'shortName',
