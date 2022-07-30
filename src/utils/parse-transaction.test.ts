@@ -1,5 +1,18 @@
 import { Decimal } from 'decimal.js';
-import { getPool } from '../../data/pools';
+import {
+  mock3Pool,
+  mockAavePool,
+  mockCrvFraxPool,
+  mockFraxPool,
+  mockHbtcPool,
+  mockLinkUsdPool,
+  mockOp3pool,
+  mockSaCrvPool,
+  mockTricryptoPool,
+  mockTusdPool,
+  mockUsdkPool,
+  mockUsdpPool,
+} from '../../test/mock-pools';
 import { CurveTransactionType, parseTransaction } from './parse-transaction';
 
 describe('parseTransaction', () => {
@@ -30,11 +43,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mock3Pool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.hash).toEqual(
@@ -89,11 +98,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockFraxPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
@@ -139,11 +144,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockAavePool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
@@ -186,11 +187,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockTusdPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.totalUsdAmount).toEqual(expect.any(Decimal));
@@ -233,11 +230,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockAavePool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens?.length).toEqual(1);
@@ -280,11 +273,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockUsdkPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
       expect(transaction?.tokens?.length).toEqual(1);
@@ -325,11 +314,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockTricryptoPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.hash).toEqual(
@@ -391,11 +376,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockCrvFraxPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
@@ -445,11 +426,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockSaCrvPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
@@ -489,11 +466,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'optimism',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockOp3pool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.ADD_LIQUIDITY);
       expect(transaction?.tokens).toEqual([
@@ -535,11 +508,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockAavePool();
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
       expect(transaction).toBeFalsy();
       expect(decodedInput).toBeTruthy();
@@ -596,11 +565,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mock3Pool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
       expect(transaction?.hash).toEqual(
@@ -652,11 +617,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockUsdpPool();
       const { transaction } = parseTransaction({ pool, tx });
       expect(transaction?.type).toEqual(CurveTransactionType.EXCHANGE);
       expect(transaction?.hash).toEqual(
@@ -708,11 +669,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: '0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171',
-      });
+      const pool = await mockLinkUsdPool();
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
       expect(transaction).toBeFalsy();
       expect(decodedInput).toBeFalsy();
@@ -744,11 +701,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockHbtcPool();
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
       expect(transaction).toBeFalsy();
       expect(decodedInput).toBeFalsy();
@@ -781,11 +734,7 @@ describe('parseTransaction', () => {
     };
 
     it('returns the correct transaction type and amounts', async () => {
-      const pool = await getPool({
-        network: 'ethereum',
-        poolType: 'main',
-        contractAddress: tx.to,
-      });
+      const pool = await mockTricryptoPool();
       const { decodedInput, transaction } = parseTransaction({ pool, tx });
       expect(transaction).toBeFalsy();
       expect(decodedInput).toBeFalsy();
