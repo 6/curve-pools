@@ -21,7 +21,7 @@ const main = async () => {
           abis[contractAddress.toLowerCase()] = abi;
         } else {
           console.warn(
-            `[update-pool-abis] Unable to fetch ABI for ${pool.network} => ${contractAddress}`,
+            `[update-pool-abis] Unable to fetch ABI for ${network}.${poolType} => ${contractAddress}`,
           );
         }
       }
