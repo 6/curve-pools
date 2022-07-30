@@ -16,7 +16,7 @@ const main = async () => {
       for (const pool of pools) {
         await sleep(400);
         const contractAddress = pool.address;
-        const abi = await explorers[pool.network].mainnet.fetchABI({ contractAddress });
+        const abi = await explorers[network].mainnet.fetchABI({ contractAddress });
         if (abi) {
           abis[contractAddress.toLowerCase()] = abi;
         } else {
