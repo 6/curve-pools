@@ -16,7 +16,7 @@ export enum CurveLiquidityImpact {
   REMOVE = 'remove',
 }
 
-interface CurveTokenWithAmount {
+export interface CurveTokenWithAmount {
   symbol: string;
   address: string;
   // may be unknown in some cases, need detailed tx logs
