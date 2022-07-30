@@ -4,7 +4,7 @@ import './App.css';
 import { useTopPools } from './hooks/use-top-pools';
 import { useProminentTransactions } from './hooks/use-prominent-transactions';
 
-function App() {
+export const App = () => {
   const topPools = useTopPools();
 
   console.log('top pools:', topPools);
@@ -30,6 +30,4 @@ function App() {
       </header>
     </div>
   );
-}
-
-export default App;
+};
