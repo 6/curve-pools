@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import lodash from 'lodash';
 import { ethers } from 'ethers';
 import { Decimal } from 'decimal.js';
 import { CurvePoolSimplified } from '../../../data/pools';
@@ -34,6 +35,7 @@ interface CurvePoolTokenForUi extends CurvePoolToken {
   logoURL: string;
   usdPriceFormatted: string;
   poolBalanceFormatted: string;
+  totalUsdBalance: Decimal;
   totalUsdBalanceFormatted: string;
   poolWeight: Decimal;
   poolWeightFormatted: string;
@@ -88,6 +90,7 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       logoURL: getLogoURLForToken({ network: pool.network, tokenAddress: token.address }),
       usdPriceFormatted,
       poolBalanceFormatted,
+      totalUsdBalance,
       totalUsdBalanceFormatted,
       poolWeight,
       poolWeightFormatted,
@@ -124,9 +127,11 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     poolBalanceStatus = PoolBalanceStatus.MINOR;
   }
 
+  const coinsSorted = lodash.orderBy(coins, 'totalUsdBalance', 'desc');
+
   return {
     ...pool,
-    coins,
+    coins: coinsSorted,
     idealPoolWeight,
     idealPoolWeightFormatted,
     usdTotalFormatted,
