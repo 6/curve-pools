@@ -5,19 +5,61 @@
       "pool": "0x061b87122Ed14b9526A813209C8a59a633257bAb",
       "timestamp": 1658927020,
       "type": "remove_liquidity",
-      "totalUsdAmount": "834523.46497477600439",
+      "totalUsdAmount": "835357.98843975078039",
       "tokens": [
         {
           "symbol": "3CRV",
           "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
           "tokenAmount": "834523.464974776004385829",
-          "usdAmount": "834523.46497477600439",
+          "usdAmount": "835357.98843975078039",
           "type": "remove"
         }
       ]
     }
   ],
   "0x1337BedC9D22ecbe766dF105c9623922A27963EC": [
+    {
+      "hash": "0x43f3c45fb9cca879179f8297c13d95369e16ddaa165bae988ef1bc923f7a1ce6",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659229646,
+      "type": "exchange",
+      "totalUsdAmount": "49500",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "49500",
+          "usdAmount": "49500",
+          "type": "add"
+        },
+        {
+          "symbol": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x7ffce30660400b87fa830d37302749b83e81921ad8e3bdc59bc2fa33cd756eb5",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659228929,
+      "type": "exchange",
+      "totalUsdAmount": "79000",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "79000",
+          "usdAmount": "79000",
+          "type": "add"
+        },
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "type": "remove"
+        }
+      ]
+    },
     {
       "hash": "0x3a083a7fbbd65e77236153a21df527f56b03c8667f6493ed9ee77eab4076c38b",
       "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
