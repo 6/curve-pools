@@ -1,7 +1,7 @@
 import { sleep } from '../src/utils/sleep';
-import { explorers } from '../src/utils/etherscan';
 import { writeJSON } from '../src/utils/write-json';
 import { topPools } from '../src/processed-data/pools';
+import { explorers } from '../src/utils/explorers';
 
 const main = async () => {
   for (const pool of topPools) {

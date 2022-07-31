@@ -1,9 +1,9 @@
 import { sleep } from '../src/utils/sleep';
-import { EtherscanABIResult, explorers } from '../src/utils/etherscan';
+import { EtherscanABIResult } from '../src/utils/etherscan';
 import { writeJSON } from '../src/utils/write-json';
-import { getRawPoolData } from '../data/pools';
 import { CURVE_NETWORKS, CURVE_POOL_TYPES } from '../src/utils/curve.constants';
 import { topPools } from '../src/processed-data/pools';
+import { explorers } from '../src/utils/explorers';
 
 const main = async () => {
   for (const network of CURVE_NETWORKS) {

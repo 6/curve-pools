@@ -1,35 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { useTopPools } from './hooks/use-top-pools';
-import { useProminentTransactions } from './hooks/use-prominent-transactions';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { DashboardScreen } from './screens/dashboard/dashboard.screen';
 
-function App() {
-  const topPools = useTopPools();
+const theme = extendTheme({
+  colors: {
+    brand: {
+      900: '#1a365d',
+      800: '#153e75',
+      700: '#2a69ac',
+    },
+  },
+});
 
-  console.log('top pools:', topPools);
-
-  const prominentTxs = useProminentTransactions({ pool: topPools[0] });
-
-  console.log('prominent txs:', prominentTxs);
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider resetCSS theme={theme}>
+      <DashboardScreen />
+    </ChakraProvider>
   );
-}
-
-export default App;
+};

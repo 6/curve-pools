@@ -1,3 +1,6 @@
+import { Decimal } from 'decimal.js';
+import moment from 'moment';
+
 export type Network = 'ethereum' | 'optimism' | 'arbitrum' | 'fantom' | 'avalanche' | 'polygon';
 export type PoolType = 'main' | 'crypto' | 'factory';
 
@@ -23,3 +26,9 @@ export enum CurveAssetTypeName {
   // used for uncorrelated assets? e.g. tricrypto
   UNKNOWN = 'unknown',
 }
+
+// only analyze pools with sufficient tvl
+export const TOP_POOLS_MINIMUM_TVL_THRESHOLD = new Decimal(10000000);
+
+export const PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD = new Decimal(10000);
+export const PROMINENT_TRANSACTIONS_MINIMUM_DATE_THRESHOLD = moment().subtract(7, 'days');
