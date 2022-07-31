@@ -171,6 +171,26 @@ export class Etherscan {
     return result;
   }
 
+  async fetchBlockNumberByTimestamp({
+    timestamp,
+    closest = 'before',
+  }: {
+    timestamp: number;
+    closest?: 'before' | 'after';
+  }): Promise<number> {
+    const { error, result } = await this.apiFetch<string>({
+      module: 'block',
+      action: 'getblocknobytime',
+      timestamp,
+      closest,
+    });
+    if (error || !result || result.toLowerCase().startsWith('error')) {
+      console.warn(result);
+      throw new Error(`Etherscan#fetchBlockNumberByTImestamp unhandled error: ${error}`);
+    }
+    return Number(result);
+  }
+
   async apiFetch<T>(query: Record<string, unknown>): Promise<EtherscanParsedResponse<T>> {
     if (!this.apiURL) {
       throw new Error(`No API URL for ${this.baseURL}`);
