@@ -16,7 +16,7 @@ export const DashboardScreen = () => {
   console.log('prominent txs:', prominentTxs);
 
   return (
-    <Container maxW="800px" paddingTop="10" paddingBottom="10">
+    <Container maxW="900px" paddingTop="10" paddingBottom="10">
       <Heading fontSize="4xl" textAlign="center">
         🕵
       </Heading>

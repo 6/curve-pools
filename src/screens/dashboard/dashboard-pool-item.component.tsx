@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Decimal } from 'decimal.js';
+import React from 'react';
 import {
   AccordionItem,
   AccordionPanel,
   AccordionButton,
   AccordionIcon,
+  Avatar,
+  AvatarGroup,
   Box,
-  Image,
   HStack,
   Text,
 } from '@chakra-ui/react';
@@ -16,31 +16,33 @@ interface DashboardPoolItemProps {
   pool: CurvePoolForUi;
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
-  const [hiddenCoins, setHiddenCoins] = useState<Array<string>>([]);
-
   return (
     <AccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="3" textAlign="left">
-            {pool.network}: {pool.shortName ?? pool.name ?? pool.id}
-          </Box>
-          <Box flex="1" textAlign="right">
-            {pool.usdTotalFormatted} - {pool.balanceStatus}
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
+      <AccordionButton>
+        <Box flex="1" maxWidth="80px" textAlign="center">
+          <AvatarGroup size="xs" spacing="-0.7rem">
+            {pool.coins.map((coin) => {
+              return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
+            })}
+          </AvatarGroup>
+        </Box>
+        <Box flex="3" textAlign="left">
+          <HStack>
+            <Text>
+              {pool.network}: {pool.shortName ?? pool.name ?? pool.id}
+            </Text>
+          </HStack>
+        </Box>
+        <Box flex="1" textAlign="right">
+          {pool.usdTotalFormatted} - {pool.balanceStatus}
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
       <AccordionPanel pb={4}>
         {pool.coins.map((coin) => {
           return (
-            <HStack key={coin.address}>
-              <Image
-                hidden={hiddenCoins.includes(coin.address.toLowerCase())}
-                src={coin.logoURL}
-                onError={() => setHiddenCoins([...hiddenCoins, coin.address.toLowerCase()])}
-                maxH="5"
-              />
+            <HStack key={coin.address} marginBottom="1">
+              <Avatar size="xs" src={coin.logoURL} />
               <Text fontSize="md">{coin.symbol}</Text>
               <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
               <Text fontSize="md">
