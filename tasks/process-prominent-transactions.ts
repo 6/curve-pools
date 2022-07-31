@@ -1,15 +1,14 @@
-import { Decimal } from 'decimal.js';
 import { getTxs } from '../data/txs';
 import { getPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
 import { CurveTransaction } from '../src/utils/parse-transaction';
 import { topPools } from '../src/processed-data/pools';
 import { processProminentTransactions } from '../src/utils/prominent-transactions';
-import moment from 'moment';
-import { Network } from '../src/utils/curve.constants';
-
-const minimumTotalUsdAmount = new Decimal(10000);
-const minimumTimestamp = moment().subtract(7, 'days');
+import {
+  Network,
+  PROMINENT_TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
+  PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
+} from '../src/utils/curve.constants';
 
 const main = async () => {
   const txsByNetwork: Record<Network, Record<string, Array<CurveTransaction>>> = {
@@ -38,8 +37,8 @@ const main = async () => {
     const processedTxs = processProminentTransactions({
       pool,
       txs,
-      minimumTotalUsdAmount,
-      minimumTimestamp,
+      minimumTotalUsdAmount: PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
+      minimumTimestamp: PROMINENT_TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
     });
 
     txsByNetwork[network][pool.address] = processedTxs;
