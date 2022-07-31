@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import { getEnv } from './env';
 
 interface EtherscanParsedResponse<T> {
   error?: string;
@@ -41,11 +40,11 @@ export type EtherscanTxListResult = Array<EtherscanTx>;
 
 export type EtherscanABIResult = Record<string, unknown>;
 
-type EtherscanProps = { baseURL: string; apiURL: string; apiKey: string };
+type EtherscanProps = { baseURL: string; apiURL: string; apiKey?: string };
 export class Etherscan {
   baseURL: string;
   apiURL: string;
-  apiKey: string;
+  apiKey?: string;
 
   constructor({ baseURL, apiURL, apiKey }: EtherscanProps) {
     this.baseURL = baseURL;
@@ -132,7 +131,7 @@ export class Etherscan {
     }
     const queryWithApiKey = new URLSearchParams({
       ...query,
-      apikey: this.apiKey,
+      apikey: this.apiKey as string,
     }).toString();
     const url = `${this.apiURL}/api?${queryWithApiKey}`;
     console.info(`GET ${url}`);
@@ -148,53 +147,3 @@ export class Etherscan {
     return { result: json.result };
   }
 }
-
-export const explorers = {
-  ethereum: {
-    mainnet: new Etherscan({
-      baseURL: 'https://etherscan.io',
-      apiURL: 'https://api.etherscan.io',
-      apiKey: getEnv('ETHERSCAN_API_KEY'),
-    }),
-    goerli: new Etherscan({
-      baseURL: 'https://goerli.etherscan.io',
-      apiURL: 'https://api-goerli.etherscan.io',
-      apiKey: getEnv('ETHERSCAN_API_KEY'),
-    }),
-  },
-  arbitrum: {
-    mainnet: new Etherscan({
-      baseURL: 'https://arbiscan.io',
-      apiURL: 'https://api.arbiscan.io',
-      apiKey: getEnv('ETHERSCAN_ARBITRUM_API_KEY'),
-    }),
-  },
-  optimism: {
-    mainnet: new Etherscan({
-      baseURL: 'https://optimistic.etherscan.io',
-      apiURL: 'https://api-optimistic.etherscan.io',
-      apiKey: getEnv('ETHERSCAN_OPTIMISM_API_KEY'),
-    }),
-  },
-  polygon: {
-    mainnet: new Etherscan({
-      baseURL: 'https://polygonscan.com',
-      apiURL: 'https://api.polygonscan.com',
-      apiKey: getEnv('ETHERSCAN_POLYGON_API_KEY'),
-    }),
-  },
-  fantom: {
-    mainnet: new Etherscan({
-      baseURL: 'https://ftmscan.com',
-      apiURL: 'https://api.ftmscan.com',
-      apiKey: getEnv('ETHERSCAN_FANTOM_API_KEY'),
-    }),
-  },
-  avalanche: {
-    mainnet: new Etherscan({
-      baseURL: 'https://snowtrace.io',
-      apiURL: 'https://api.snowtrace.io',
-      apiKey: getEnv('ETHERSCAN_AVALANCHE_API_KEY'),
-    }),
-  },
-};
