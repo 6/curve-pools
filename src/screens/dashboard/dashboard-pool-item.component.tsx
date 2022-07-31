@@ -6,6 +6,7 @@ import {
   AccordionIcon,
   Avatar,
   AvatarGroup,
+  Badge,
   Box,
   HStack,
   Heading,
@@ -20,7 +21,7 @@ import {
   Td,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { CurvePoolForUi } from '../../hooks/use-top-pools';
+import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
@@ -31,12 +32,17 @@ interface DashboardPoolItemProps {
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
+  const badgeColor = {
+    [PoolBalanceStatus.SEVERE]: 'red',
+    [PoolBalanceStatus.MODERATE]: 'orange',
+    [PoolBalanceStatus.MINOR]: 'yellow',
+    [PoolBalanceStatus.GOOD]: 'green',
+  }[pool.balanceStatus];
 
-  console.log('prominent txs:', prominentTxs);
   return (
     <AccordionItem>
       <AccordionButton>
-        <Box flex="1" maxWidth="80px" textAlign="center">
+        <Box flex="1" maxWidth="80px">
           <AvatarGroup size="xs" spacing="-0.7rem">
             {pool.coins.map((coin) => {
               return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
@@ -44,14 +50,11 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </AvatarGroup>
         </Box>
         <Box flex="3" textAlign="left">
-          <HStack>
-            <Text>
-              {pool.network}: {pool.shortName ?? pool.name ?? pool.id}
-            </Text>
-          </HStack>
+          {pool.network}: {pool.shortName ?? pool.name ?? pool.id} (
+          {pool.coins.map((coin) => coin.symbol).join('+')})
         </Box>
         <Box flex="1" textAlign="right">
-          {pool.usdTotalFormatted} - {pool.balanceStatus}
+          {pool.usdTotalFormatted} <Badge colorScheme={badgeColor}>{pool.balanceStatus}</Badge>
         </Box>
         <AccordionIcon />
       </AccordionButton>
