@@ -6,7 +6,7 @@ on:
   # The shortest interval you can run scheduled workflows is once every 5
   # minutes.
   schedule:
-    - cron: '20,50 * * * *'
+    - cron: '20 * * * *'
 
 # Environment variables available to all jobs and steps in this workflow
 env:
