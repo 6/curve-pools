@@ -34,7 +34,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
       <AccordionPanel pb={4}>
         {pool.coins.map((coin) => {
           return (
-            <HStack>
+            <HStack key={coin.address}>
               <Image
                 hidden={hiddenCoins.includes(coin.address.toLowerCase())}
                 src={coin.logoURL}

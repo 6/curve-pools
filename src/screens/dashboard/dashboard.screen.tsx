@@ -37,7 +37,7 @@ export const DashboardScreen = () => {
       </Center>
       <Accordion allowToggle>
         {topPools.map((pool) => {
-          return <DashboardPoolItem pool={pool} />;
+          return <DashboardPoolItem key={`${pool.network}-${pool.id}`} pool={pool} />;
         })}
       </Accordion>
       <Center>
