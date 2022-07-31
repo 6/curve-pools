@@ -21,13 +21,14 @@ const main = async () => {
   const endTimestamp = moment().unix();
 
   for (const network in blocksByNetwork) {
-    await sleep(400);
     const networkCasted = network as Network;
+    await sleep(400);
     blocksByNetwork[networkCasted].start = await explorers[
       networkCasted
     ].mainnet.fetchBlockNumberByTimestamp({
       timestamp: startTimestamp,
     });
+    await sleep(400);
     blocksByNetwork[networkCasted].end = await explorers[
       networkCasted
     ].mainnet.fetchBlockNumberByTimestamp({
@@ -37,14 +38,22 @@ const main = async () => {
 
   console.log(blocksByNetwork);
 
-  // for (const pool of topPools) {
-  //   await sleep(400);
-  //   const txlist = await explorers[pool.network].mainnet.fetchTxList({
-  //     contractAddress: pool.address,
-  //     offset: 1000,
-  //   });
-  //   await writeJSON(`./data/txs/${pool.network}.${pool.address.toLowerCase()}.json`, txlist);
-  // }
+  for (const pool of topPools) {
+    if (pool.network !== 'ethereum') {
+      // Seems like pagination doesn't work for non-eth?
+      continue;
+    }
+    await sleep(400);
+    const fromBlock = blocksByNetwork[pool.network].start as number;
+    const toBlock = blocksByNetwork[pool.network].end as number;
+
+    const logs = await explorers[pool.network].mainnet.fetchLogsPaginated({
+      contractAddress: pool.address,
+      fromBlock,
+      toBlock,
+    });
+    await writeJSON(`./data/logs/${pool.network}.${pool.address.toLowerCase()}.json`, logs);
+  }
 };
 
 main();

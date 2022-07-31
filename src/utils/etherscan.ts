@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { sleep } from './sleep';
 
 interface EtherscanParsedResponse<T> {
   error?: string;
@@ -169,6 +170,30 @@ export class Etherscan {
       throw new Error(`Etherscan#fetchLogs unhandled error: ${error}`);
     }
     return result;
+  }
+
+  async fetchLogsPaginated({
+    contractAddress,
+    fromBlock,
+    toBlock,
+  }: {
+    contractAddress: string;
+    fromBlock: number;
+    toBlock: number;
+  }): Promise<EtherscanLogsResult> {
+    let logs: EtherscanLogsResult = [];
+    const offset = 1000; // maximum
+    let page = 1;
+    while (true) {
+      const newLogs = await this.fetchLogs({ contractAddress, fromBlock, toBlock, page, offset });
+      logs = logs.concat(newLogs);
+      page++;
+      if (newLogs.length < offset) {
+        break;
+      }
+      await sleep(400);
+    }
+    return logs;
   }
 
   async fetchBlockNumberByTimestamp({
