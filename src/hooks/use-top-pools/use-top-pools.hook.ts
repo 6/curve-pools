@@ -11,22 +11,23 @@ import {
   usdFormatter,
 } from '../../utils/number-formatters';
 import { getLogoURLForToken } from '../../utils/curve-ui-data';
+import { percentageChange } from '../../utils/percentage-calculations';
 
 export enum TokenBalanceStatus {
   EXTREME_OVERSUPPLY = 'extreme_oversupply',
-  LARGE_OVERSUPPLY = 'large_oversupply',
   OVERSUPPLY = 'oversupply',
+  MINOR_OVERSUPPLY = 'minor_oversupply',
   GOOD = 'good',
+  MINOR_UNDERSUPPLY = 'minor_undersupply',
   UNDERSUPPLY = 'undersupply',
-  LARGE_UNDERSUPPLY = 'large_undersupply',
   EXTREME_UNDERSUPPLY = 'extreme_undersupply',
 }
 
 export enum PoolBalanceStatus {
   GOOD = 'good',
-  WARNING = 'warning',
-  BAD = 'bad',
-  TERRIBLE = 'terrible',
+  MINOR = 'minor',
+  MODERATE = 'moderate',
+  SEVERE = 'severe',
 }
 
 interface CurvePoolTokenForUi extends CurvePoolToken {
@@ -36,6 +37,8 @@ interface CurvePoolTokenForUi extends CurvePoolToken {
   totalUsdBalanceFormatted: string;
   poolWeight: Decimal;
   poolWeightFormatted: string;
+  poolWeightVsIdealPercentageChange: Decimal;
+  poolWeightVsIdealPercentageChangeFormatted: string;
   balanceStatus: TokenBalanceStatus;
 }
 
@@ -58,20 +61,24 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     const totalUsdBalanceFormatted = usdFormatter.format(totalUsdBalance.toNumber());
     const poolWeight = totalUsdBalance.dividedBy(pool.usdTotal);
     const poolWeightFormatted = percentFormatter.format(poolWeight.toNumber());
+    const poolWeightVsIdealPercentageChange = percentageChange(idealPoolWeight, poolWeight);
+    const poolWeightVsIdealPercentageChangeFormatted = percentFormatter.format(
+      poolWeightVsIdealPercentageChange.toNumber(),
+    );
 
     let balanceStatus;
-    if (idealPoolWeight.minus(poolWeight).abs().greaterThan(0.3)) {
+    if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.4)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.EXTREME_OVERSUPPLY
         : TokenBalanceStatus.EXTREME_UNDERSUPPLY;
-    } else if (idealPoolWeight.minus(poolWeight).abs().greaterThan(0.15)) {
-      balanceStatus = poolWeight.greaterThan(idealPoolWeight)
-        ? TokenBalanceStatus.LARGE_OVERSUPPLY
-        : TokenBalanceStatus.LARGE_UNDERSUPPLY;
-    } else if (idealPoolWeight.minus(poolWeight).abs().greaterThan(0.05)) {
+    } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.2)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.OVERSUPPLY
         : TokenBalanceStatus.UNDERSUPPLY;
+    } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.125)) {
+      balanceStatus = poolWeight.greaterThan(idealPoolWeight)
+        ? TokenBalanceStatus.MINOR_OVERSUPPLY
+        : TokenBalanceStatus.MINOR_UNDERSUPPLY;
     } else {
       balanceStatus = TokenBalanceStatus.GOOD;
     }
@@ -85,6 +92,8 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       poolWeight,
       poolWeightFormatted,
       balanceStatus,
+      poolWeightVsIdealPercentageChange,
+      poolWeightVsIdealPercentageChangeFormatted,
     };
   });
 
@@ -98,23 +107,21 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       ),
     )
   ) {
-    poolBalanceStatus = PoolBalanceStatus.TERRIBLE;
-  } else if (
-    coins.find((coin) =>
-      [TokenBalanceStatus.LARGE_OVERSUPPLY, TokenBalanceStatus.LARGE_UNDERSUPPLY].includes(
-        coin.balanceStatus,
-      ),
-    )
-  ) {
-    poolBalanceStatus = PoolBalanceStatus.BAD;
+    poolBalanceStatus = PoolBalanceStatus.SEVERE;
   } else if (
     coins.find((coin) =>
       [TokenBalanceStatus.OVERSUPPLY, TokenBalanceStatus.UNDERSUPPLY].includes(coin.balanceStatus),
     )
   ) {
-    poolBalanceStatus = PoolBalanceStatus.WARNING;
-  } else {
-    poolBalanceStatus = PoolBalanceStatus.GOOD;
+    poolBalanceStatus = PoolBalanceStatus.MODERATE;
+  } else if (
+    coins.find((coin) =>
+      [TokenBalanceStatus.MINOR_OVERSUPPLY, TokenBalanceStatus.MINOR_UNDERSUPPLY].includes(
+        coin.balanceStatus,
+      ),
+    )
+  ) {
+    poolBalanceStatus = PoolBalanceStatus.MINOR;
   }
 
   return {

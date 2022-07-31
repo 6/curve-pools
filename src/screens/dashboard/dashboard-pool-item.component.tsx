@@ -45,7 +45,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
               <Text fontSize="md">
                 {coin.balanceStatus} (current: {coin.poolWeightFormatted}, ideal:
-                {pool.idealPoolWeightFormatted})
+                {pool.idealPoolWeightFormatted}, change:{' '}
+                {coin.poolWeightVsIdealPercentageChangeFormatted})
               </Text>
             </HStack>
           );
