@@ -6,6 +6,7 @@ import {
   AccordionIcon,
   Avatar,
   AvatarGroup,
+  Badge,
   Box,
   HStack,
   Heading,
@@ -18,9 +19,10 @@ import {
   Tr,
   Th,
   Td,
+  Tooltip,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { CurvePoolForUi } from '../../hooks/use-top-pools';
+import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
@@ -31,17 +33,24 @@ interface DashboardPoolItemProps {
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
+  const badgeColor = {
+    [PoolBalanceStatus.SEVERE]: 'red',
+    [PoolBalanceStatus.MODERATE]: 'orange',
+    [PoolBalanceStatus.MINOR]: 'yellow',
+    [PoolBalanceStatus.GOOD]: 'green',
+  }[pool.balanceStatus];
 
-  console.log('prominent txs:', prominentTxs);
   return (
     <AccordionItem>
       <AccordionButton>
-        <Box flex="1" maxWidth="80px" textAlign="center">
-          <AvatarGroup size="xs" spacing="-0.7rem">
-            {pool.coins.map((coin) => {
-              return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
-            })}
-          </AvatarGroup>
+        <Box flex="1" maxWidth="80px">
+          <Tooltip hasArrow label={pool.coins.map((coin) => coin.symbol).join('+')}>
+            <AvatarGroup size="xs" spacing="-0.7rem">
+              {pool.coins.map((coin) => {
+                return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
+              })}
+            </AvatarGroup>
+          </Tooltip>
         </Box>
         <Box flex="3" textAlign="left">
           <HStack>
@@ -51,7 +60,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </HStack>
         </Box>
         <Box flex="1" textAlign="right">
-          {pool.usdTotalFormatted} - {pool.balanceStatus}
+          {pool.usdTotalFormatted} <Badge colorScheme={badgeColor}>{pool.balanceStatus}</Badge>
         </Box>
         <AccordionIcon />
       </AccordionButton>
