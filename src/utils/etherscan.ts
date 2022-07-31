@@ -129,9 +129,12 @@ export class Etherscan {
     if (!this.apiURL) {
       throw new Error(`No API URL for ${this.baseURL}`);
     }
+    if (!this.apiKey) {
+      throw new Error(`No API key for ${this.baseURL}`);
+    }
     const queryWithApiKey = new URLSearchParams({
       ...query,
-      apikey: this.apiKey as string,
+      apikey: this.apiKey,
     }).toString();
     const url = `${this.apiURL}/api?${queryWithApiKey}`;
     console.info(`GET ${url}`);
