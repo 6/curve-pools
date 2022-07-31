@@ -77,7 +77,7 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.OVERSUPPLY
         : TokenBalanceStatus.UNDERSUPPLY;
-    } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.125)) {
+    } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.1)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.MINOR_OVERSUPPLY
         : TokenBalanceStatus.MINOR_UNDERSUPPLY;
