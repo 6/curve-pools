@@ -186,7 +186,7 @@ export class Etherscan {
     });
     if (error || !result || result.toLowerCase().startsWith('error')) {
       console.warn(result);
-      throw new Error(`Etherscan#fetchBlockNumberByTImestamp unhandled error: ${error}`);
+      throw new Error(`Etherscan#fetchBlockNumberByTimestamp unhandled error: ${error}`);
     }
     return Number(result);
   }
