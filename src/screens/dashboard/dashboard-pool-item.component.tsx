@@ -19,7 +19,6 @@ import {
   Tr,
   Th,
   Td,
-  Tooltip,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
@@ -44,20 +43,15 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
     <AccordionItem>
       <AccordionButton>
         <Box flex="1" maxWidth="80px">
-          <Tooltip hasArrow label={pool.coins.map((coin) => coin.symbol).join('+')}>
-            <AvatarGroup size="xs" spacing="-0.7rem">
-              {pool.coins.map((coin) => {
-                return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
-              })}
-            </AvatarGroup>
-          </Tooltip>
+          <AvatarGroup size="xs" spacing="-0.7rem">
+            {pool.coins.map((coin) => {
+              return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
+            })}
+          </AvatarGroup>
         </Box>
         <Box flex="3" textAlign="left">
-          <HStack>
-            <Text>
-              {pool.network}: {pool.shortName ?? pool.name ?? pool.id}
-            </Text>
-          </HStack>
+          {pool.network}: {pool.shortName ?? pool.name ?? pool.id} (
+          {pool.coins.map((coin) => coin.symbol).join('+')})
         </Box>
         <Box flex="1" textAlign="right">
           {pool.usdTotalFormatted} <Badge colorScheme={badgeColor}>{pool.balanceStatus}</Badge>
