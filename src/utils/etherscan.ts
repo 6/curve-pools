@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { sleep } from './sleep';
 
 interface EtherscanParsedResponse<T> {
   error?: string;
@@ -37,6 +38,21 @@ export interface EtherscanTx {
   functionName?: string; // 'exchange(int128 i, int128 j, uint256 dx, uint256 min_dy)'; -- not present for some chains
 }
 export type EtherscanTxListResult = Array<EtherscanTx>;
+
+export interface EtherscanLog {
+  address: string; // "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+  topics: Array<string>; // ["0x8b3e96f2b889fa771c53c981b40daf005f63f637f1869f707052d15a3dd97140", "0x0000000000000000000000004dda7e6831592cf7ec58aa4f2cf76350e73bbfc8"],
+  data: string; // "0x0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000037e11d600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000032c56f1b2f917e4e6c4",
+  blockNumber: string; // "0xc481a5",
+  timeStamp: string; // "0x60f9d0d6",
+  gasPrice: string; //"0xcce416600",
+  gasUsed: string; // "0x1d195",
+  logIndex: string; // "0xd0",
+  transactionHash: string; //"0x56f587d22597e0bae38f1a665f5b83f3a11d936aa739476f03c5b1acaf406260",
+  transactionIndex: string; //"0x2d"
+}
+
+export type EtherscanLogsResult = Array<EtherscanLog>;
 
 export type EtherscanABIResult = Record<string, unknown>;
 
@@ -123,6 +139,81 @@ export class Etherscan {
       throw new Error(`Etherscan#fetchTxList unhandled error: ${error}`);
     }
     return result;
+  }
+
+  async fetchLogs({
+    contractAddress,
+    fromBlock,
+    toBlock,
+    page = 1,
+    offset = 1000,
+  }: {
+    contractAddress: string;
+    fromBlock: number;
+    toBlock: number;
+    page?: number;
+    offset?: number;
+  }): Promise<EtherscanLogsResult> {
+    const { error, result } = await this.apiFetch<EtherscanLogsResult>({
+      module: 'logs',
+      action: 'getLogs',
+      address: contractAddress,
+      page,
+      offset,
+      fromBlock,
+      toBlock,
+    });
+    // Not sure why etherscan consider this an error
+    if (error === 'No records found') {
+      return [];
+    } else if (error) {
+      throw new Error(`Etherscan#fetchLogs unhandled error: ${error}`);
+    }
+    return result;
+  }
+
+  async fetchLogsPaginated({
+    contractAddress,
+    fromBlock,
+    toBlock,
+  }: {
+    contractAddress: string;
+    fromBlock: number;
+    toBlock: number;
+  }): Promise<EtherscanLogsResult> {
+    let logs: EtherscanLogsResult = [];
+    const offset = 1000; // maximum
+    let page = 1;
+    while (true) {
+      const newLogs = await this.fetchLogs({ contractAddress, fromBlock, toBlock, page, offset });
+      logs = logs.concat(newLogs);
+      page++;
+      if (newLogs.length < offset) {
+        break;
+      }
+      await sleep(400);
+    }
+    return logs;
+  }
+
+  async fetchBlockNumberByTimestamp({
+    timestamp,
+    closest = 'before',
+  }: {
+    timestamp: number;
+    closest?: 'before' | 'after';
+  }): Promise<number> {
+    const { error, result } = await this.apiFetch<string>({
+      module: 'block',
+      action: 'getblocknobytime',
+      timestamp,
+      closest,
+    });
+    if (error || !result || result.toLowerCase().startsWith('error')) {
+      console.warn(result);
+      throw new Error(`Etherscan#fetchBlockNumberByTimestamp unhandled error: ${error}`);
+    }
+    return Number(result);
   }
 
   async apiFetch<T>(query: Record<string, unknown>): Promise<EtherscanParsedResponse<T>> {
