@@ -1,5 +1,5 @@
 import { getTxs } from '../data/txs';
-import { getPool } from '../data/pools';
+import { convertToExtendedPool, getPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
 import { CurveTransaction } from '../src/utils/parse-transaction';
 import { topPools } from '../src/processed-data/pools';
@@ -20,11 +20,7 @@ const main = async () => {
     avalanche: {},
   };
   for (const simplifiedPool of topPools) {
-    const pool = await getPool({
-      network: simplifiedPool.network,
-      poolType: simplifiedPool.poolType,
-      contractAddress: simplifiedPool.address,
-    });
+    const pool = await convertToExtendedPool(simplifiedPool);
 
     const network = pool.network;
     const contractAddress = pool.address;

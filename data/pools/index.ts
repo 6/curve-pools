@@ -202,3 +202,13 @@ export const convertToSimplifiedPool = (
     'usdTotal',
   ]);
 };
+
+export const convertToExtendedPool = async (
+  simplifiedPool: CurvePoolSimplified,
+): Promise<CurvePoolExtended> => {
+  return await getPool({
+    network: simplifiedPool.network,
+    poolType: simplifiedPool.poolType,
+    contractAddress: simplifiedPool.address,
+  });
+};
