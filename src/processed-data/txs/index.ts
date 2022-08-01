@@ -66,14 +66,28 @@ for (const [address, historyJSON] of Object.entries(liquidityHistoryJSON)) {
   liquidityHistory[address] = {
     ...historyJSON,
     graph: historyJSON.graph.map((dataPoint) => {
-      return {
+      const newDataPoint: PoolLiquidityHistory['graph'][0] = {
         ...dataPoint,
-        added: new Decimal(dataPoint.added),
-        removed: new Decimal(dataPoint.removed),
+        tokens: {},
+      };
+      for (const [tokenSymbol, tokenJSON] of Object.entries(dataPoint.tokens)) {
+        newDataPoint.tokens[tokenSymbol] = {
+          ...tokenJSON,
+          added: new Decimal(tokenJSON.added),
+          removed: new Decimal(tokenJSON.removed),
+        };
+      }
+      return newDataPoint;
+    }),
+    tokensSummary: historyJSON.tokensSummary.map((tokenSummary) => {
+      return {
+        ...tokenSummary,
+        totalAdded: new Decimal(tokenSummary.totalAdded),
+        totalRemoved: new Decimal(tokenSummary.totalRemoved),
+        tvlBefore: new Decimal(tokenSummary.tvlBefore),
+        tvlNow: new Decimal(tokenSummary.tvlNow),
+        tvlPercentChange: new Decimal(tokenSummary.tvlPercentChange),
       };
     }),
-    totalAdded: new Decimal(historyJSON.totalAdded),
-    totalRemoved: new Decimal(historyJSON.totalRemoved),
-    tvlPercentChange: new Decimal(historyJSON.tvlPercentChange),
   } as PoolLiquidityHistory;
 }

@@ -54,7 +54,12 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           {pool.coins.map((coin) => coin.symbol).join('+')})
         </Box>
         <Box flex="1" textAlign="right">
-          {pool.usdTotalFormatted} <Badge colorScheme={badgeColor}>{pool.balanceStatus}</Badge>
+          {pool.usdTotalFormatted}{' '}
+          <Badge colorScheme={badgeColor}>
+            {pool.balanceStatus === PoolBalanceStatus.GOOD
+              ? pool.balanceStatus
+              : `${pool.balanceStatus} imbalance`}
+          </Badge>
         </Box>
         <AccordionIcon />
       </AccordionButton>
