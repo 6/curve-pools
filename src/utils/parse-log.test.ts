@@ -1,5 +1,5 @@
 import { Decimal } from 'decimal.js';
-import { mockStethPool } from '../../test/mock-pools';
+import { mock3Pool, mockFraxPool, mockStethPool } from '../../test/mock-pools';
 import { parseLog } from './parse-log';
 import { CurveTransactionType } from './parse-transaction';
 
@@ -120,6 +120,69 @@ describe('parseLog', () => {
     });
   });
 
+  describe('RemoveLiquidityOne', () => {
+    const log = {
+      address: '0xdc24316b9ae028f1497c275eb9192a3ea0f67022',
+      topics: [
+        '0x9e96dd3b997a2a257eec4df9bb6eaf626e206df5f543bd963682d143300be310',
+        '0x000000000000000000000000e859231d5ef4051d300698b9d46c421de1d7d5e0',
+      ],
+      data: '0x00000000000000000000000000000000000000000000000002e4bcb71da7847b00000000000000000000000000000000000000000000000002fdab1ce407273f',
+      blockNumber: '0xe810a4',
+      timeStamp: '0x62dde850',
+      gasPrice: '0x2677449c2',
+      gasUsed: '0x172a60',
+      logIndex: '0xbc',
+      transactionHash: '0x5be68ea89469de3d9f9f0941a88de65b9a4004873be6f3e8cb8315638cb610f9',
+      transactionIndex: '0x46',
+    };
+
+    it('ignores it for now as it cannot be calculated', async () => {
+      const pool = await mockStethPool();
+      const { parsedLog } = parseLog({ pool, log });
+      expect(parsedLog).toBeFalsy();
+    });
+  });
+
+  describe('RemoveLiquidityImbalance', () => {
+    const log = {
+      address: '0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7',
+      topics: [
+        '0x173599dbf9c6ca6f7c3b590df07ae98a45d74ff54065505141e7de6c46a624c2',
+        '0x0000000000000000000000000b686fee0102d9dbb2fb528f24408fe1aabdc87e',
+      ],
+      data: '0x000000000000000000000000000000000000000000000001b2085d858f9fd42c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002ae60190a68e3000000000000000000000000000000000000000000000000000000000000016f00000000000000000000000000000000000000000000000000000000000001830000000000000000000000000000000000000000030ff7ff217909de836a6019000000000000000000000000000000000000000002ff3e64baa19646c659b75b',
+      blockNumber: '0xe84d6b',
+      timeStamp: '0x62e11bc2',
+      gasPrice: '0x1688d3925',
+      gasUsed: '0x1d3e25',
+      logIndex: '0x50',
+      transactionHash: '0x98db4d084279ccab8e5401cb99edbac6fba84375422148a3115f9f5485961d7f',
+      transactionIndex: '0x7',
+    };
+
+    it('returns the correct transaction type and amounts', async () => {
+      const pool = await mock3Pool();
+      const { parsedLog } = parseLog({ pool, log });
+      console.log(parsedLog);
+      expect(parsedLog?.type).toEqual(CurveTransactionType.REMOVE_LIQUIDITY);
+      expect(parsedLog?.hash).toEqual(
+        '0x98db4d084279ccab8e5401cb99edbac6fba84375422148a3115f9f5485961d7f',
+      );
+      expect(parsedLog?.timestamp).toEqual(1658919874);
+      expect(parsedLog?.totalUsdAmount).toEqual(new Decimal('31.306625790936555495'));
+      expect(parsedLog?.tokens).toEqual([
+        {
+          symbol: 'DAI',
+          tokenAmount: new Decimal('31.275350440496059436'),
+          usdAmount: new Decimal('31.306625790936555495'),
+          usdPrice: new Decimal('1.001'),
+          liquidityImpact: 'remove',
+        },
+      ]);
+    });
+  });
+
   describe('TokenExchange', () => {
     const log = {
       address: '0xdc24316b9ae028f1497c275eb9192a3ea0f67022',
@@ -163,6 +226,30 @@ describe('parseLog', () => {
           usdPrice: new Decimal('1681.87'),
         },
       ]);
+    });
+  });
+
+  describe('TokenExchangeUnderlying', () => {
+    const log = {
+      address: '0xd632f22692fac7611d2aa1c0d552930d43caed3b',
+      topics: [
+        '0xd013ca23e77a65003c2c659c5442c00c805371b7fc1ebd4c206c41d1536bd90b',
+        '0x00000000000000000000000000000000c2cf7648c169b25ef1c217864bfa38cc',
+      ],
+      data: '0x000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000af846c8a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009f9bfa4ca365b07a86',
+      blockNumber: '0xe80e75',
+      timeStamp: '0x62ddca28',
+      gasPrice: '0x19806e3dc',
+      gasUsed: '0x72f5e',
+      logIndex: '0x209',
+      transactionHash: '0xde159aabeda34123c8755eb7509d045cd45073126529ae3c89cd4e2aa7755204',
+      transactionIndex: '0xc2',
+    };
+
+    it('ignores it for now as it cannot be calculated', async () => {
+      const pool = await mockFraxPool();
+      const { parsedLog } = parseLog({ pool, log });
+      expect(parsedLog).toBeFalsy();
     });
   });
 });

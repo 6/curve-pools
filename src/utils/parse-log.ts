@@ -5,6 +5,7 @@ import { CurvePoolExtended } from '../../data/pools';
 import { CurvePoolToken } from './curve-api';
 import { EtherscanLog } from './etherscan';
 import { CurveLiquidityImpact, CurveTransactionType } from './parse-transaction';
+import { getTxs } from '../../data/txs';
 
 interface LogCurveTokenAmount {
   symbol: string;
@@ -31,22 +32,24 @@ interface ParseLogProps {
   log: EtherscanLog;
 }
 interface ParseLogAPI {
-  decodedLog: ethers.utils.LogDescription | void;
+  decodedLog: ethers.utils.LogDescription;
   parsedLog: ParsedCurveLog | void;
 }
 export const parseLog = ({ pool, log }: ParseLogProps): ParseLogAPI => {
   const decodedLog = pool.interface.parseLog(log);
 
-  console.log(decodedLog);
-
   let logDetails;
-  if (decodedLog.name.startsWith('RemoveLiquidity')) {
+  // These two seem to work similarly, reporting token_amounts the same way:
+  if (['RemoveLiquidity', 'RemoveLiquidityImbalance'].includes(decodedLog.name)) {
     logDetails = parseRemoveLiquidity({ pool, decodedLog });
+  } else if (decodedLog.name === 'RemoveLiquidityOne') {
+    logDetails = parseRemoveLiquidityOne({ pool, decodedLog });
   } else if (decodedLog.name.startsWith('AddLiquidity')) {
     logDetails = parseAddLiquidity({ pool, decodedLog });
-  } else if (decodedLog.name.startsWith('TokenExchange')) {
+  } else if (decodedLog.name === 'TokenExchange') {
     logDetails = parseExchange({ pool, decodedLog });
   }
+  // TokenExchangeUnderlying unsupported for now, unable to find underlying coin index:
 
   const parsedLog = logDetails
     ? {
@@ -127,6 +130,39 @@ const parseRemoveLiquidity = ({
     type: CurveTransactionType.REMOVE_LIQUIDITY,
     totalUsdAmount,
     tokens,
+  };
+};
+
+const parseRemoveLiquidityOne = ({
+  pool,
+  decodedLog,
+}: ParseLogDetailsProps): PartialParsedCurveLog | void => {
+  const rawAmount: BigNumber = decodedLog.args.token_amount.toString();
+  const coinIndex: BigNumber | void = decodedLog.args.coin_index;
+  if (!coinIndex) {
+    // Older pools don't have coinIndex indexed, so don't know which coin is
+    // being removed without more data?
+    return;
+  }
+
+  const coin = pool.coins[coinIndex.toNumber()];
+  const decimals = Number(coin.decimals);
+  const usdPrice = new Decimal(coin.usdPrice); // TODO: Current price, not price at this tx
+  const tokenAmount = new Decimal(ethers.utils.formatUnits(rawAmount, decimals));
+  const usdAmount = tokenAmount.times(usdPrice);
+  const token = {
+    symbol: coin.symbol,
+    tokenAmount,
+    usdPrice,
+    usdAmount,
+    liquidityImpact: CurveLiquidityImpact.REMOVE,
+  };
+  const totalUsdAmount = usdAmount;
+
+  return {
+    type: CurveTransactionType.REMOVE_LIQUIDITY,
+    totalUsdAmount,
+    tokens: [token],
   };
 };
 
