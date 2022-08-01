@@ -1,12 +1,12 @@
 import { getTxs } from '../data/txs';
-import { getPool } from '../data/pools';
+import { convertToExtendedPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
 import { CurveTransaction } from '../src/utils/parse-transaction';
 import { topPools } from '../src/processed-data/pools';
 import { processProminentTransactions } from '../src/utils/prominent-transactions';
 import {
   Network,
-  PROMINENT_TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
+  TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
   PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
 } from '../src/utils/curve.constants';
 
@@ -20,11 +20,7 @@ const main = async () => {
     avalanche: {},
   };
   for (const simplifiedPool of topPools) {
-    const pool = await getPool({
-      network: simplifiedPool.network,
-      poolType: simplifiedPool.poolType,
-      contractAddress: simplifiedPool.address,
-    });
+    const pool = await convertToExtendedPool(simplifiedPool);
 
     const network = pool.network;
     const contractAddress = pool.address;
@@ -38,7 +34,7 @@ const main = async () => {
       pool,
       txs,
       minimumTotalUsdAmount: PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
-      minimumTimestamp: PROMINENT_TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
+      minimumTimestamp: TRANSACTIONS_MINIMUM_DATE_THRESHOLD,
     });
 
     txsByNetwork[network][pool.address] = processedTxs;

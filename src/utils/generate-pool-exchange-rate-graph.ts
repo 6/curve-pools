@@ -9,7 +9,7 @@ interface GraphDataPoint {
   rate: Decimal;
   timestamp: number;
 }
-export type GraphDataPoints = Record<string, Array<GraphDataPoint>>;
+export type ExchangeRateGraphDataPoints = Record<string, Array<GraphDataPoint>>;
 
 interface GeneratePoolExchangeRateGraphProps {
   pool: CurvePoolExtended;
@@ -18,7 +18,7 @@ interface GeneratePoolExchangeRateGraphProps {
 export const generatePoolExchangeRateGraph = ({
   pool,
   logs,
-}: GeneratePoolExchangeRateGraphProps): GraphDataPoints | void => {
+}: GeneratePoolExchangeRateGraphProps): ExchangeRateGraphDataPoints | void => {
   if (pool.assetTypeName === CurveAssetTypeName.UNKNOWN) {
     // Don't support crypto pools like tricrypto with uncorrelated assets.
     return;
