@@ -82,6 +82,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/process-exchange-rate-graphs
 
+      - name: Process liquidity history graphs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/process-liquidity-history-graphs
+
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
       - name: Commit and push data
