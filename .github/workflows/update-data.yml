@@ -72,6 +72,16 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/process-prominent-transactions
 
+      - name: Fetch top pool latest logs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-top-pool-logs
+
+      - name: Process exchange rate graphs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/process-exchange-rate-graphs
+
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
       - name: Commit and push data
