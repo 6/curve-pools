@@ -1,15 +1,15 @@
-import { convertToExtendedPool, getPool } from '../data/pools';
+import { convertToExtendedPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
 import { topPools } from '../src/processed-data/pools';
 import { getLogs } from '../data/logs';
 import { ParsedCurveLog, parseLog } from '../src/utils/parse-log';
 import {
   generatePoolExchangeRateGraph,
-  GraphDataPoints,
+  ExchangeRateGraphDataPoints,
 } from '../src/utils/generate-pool-exchange-rate-graph';
 
 const main = async () => {
-  const exchangeRateGraphs: Record<string, GraphDataPoints | void> = {};
+  const exchangeRateGraphs: Record<string, ExchangeRateGraphDataPoints | void> = {};
   for (const topPool of topPools) {
     if (topPool.network !== 'ethereum') {
       // Only eth mainnet supports fetching paginated logs for now, ignore
