@@ -1,14 +1,15 @@
-import { convertToSimplifiedPool, getPool } from '../data/pools';
+import { getPool } from '../data/pools';
 import { writeJSON } from '../src/utils/write-json';
-import { processTopPools } from '../src/utils/top-pools';
 import { topPools } from '../src/processed-data/pools';
 import { getLogs } from '../data/logs';
 import { ParsedCurveLog, parseLog } from '../src/utils/parse-log';
-import { generatePoolExchangeRateGraph } from '../src/utils/generate-pool-exchange-rate-graph';
+import {
+  generatePoolExchangeRateGraph,
+  GraphDataPoints,
+} from '../src/utils/generate-pool-exchange-rate-graph';
 
 const main = async () => {
-  const skipped: Record<string, number> = {};
-  const found: Record<string, number> = {};
+  const exchangeRateGraphs: Record<string, GraphDataPoints | void> = {};
   for (const topPool of topPools) {
     if (topPool.network !== 'ethereum') {
       // Only eth mainnet supports fetching paginated logs for now, ignore
@@ -37,9 +38,10 @@ const main = async () => {
 
     const graph = generatePoolExchangeRateGraph({ pool, logs: parsedLogs });
     if (graph) {
-      console.log('graph:', graph);
+      exchangeRateGraphs[pool.address.toLowerCase()] = graph;
     }
   }
+  await writeJSON(`./src/processed-data/logs/ethereum.exchange-rates.json`, exchangeRateGraphs);
 };
 
 main();

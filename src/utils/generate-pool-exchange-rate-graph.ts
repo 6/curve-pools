@@ -9,7 +9,7 @@ interface GraphDataPoint {
   rate: Decimal;
   timestamp: number;
 }
-type GraphDataPoints = Record<string, Array<GraphDataPoint>>;
+export type GraphDataPoints = Record<string, Array<GraphDataPoint>>;
 
 interface GeneratePoolExchangeRateGraphProps {
   pool: CurvePoolExtended;
