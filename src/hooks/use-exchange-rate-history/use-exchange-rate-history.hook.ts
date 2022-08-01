@@ -1,40 +1,47 @@
 import { useMemo } from 'react';
-import moment, { Moment } from 'moment';
 import lodash from 'lodash';
 import { CurvePoolSimplified } from '../../../data/pools';
 import { exchangeRates } from '../../processed-data/logs';
 
 interface DataPoint {
-  pair: string;
-  rate: number;
-  timestamp: Moment;
+  timestamp: number;
+  [tokenPair: string]: number;
+}
+interface ExchangeRateHistory {
+  seriesLabels: Array<string>;
+  dataPoints: Array<DataPoint>;
 }
 interface UseExchangeRateHistoryProps {
   pool: CurvePoolSimplified;
 }
-export const useExchangeRateHistory = ({ pool }: UseExchangeRateHistoryProps): Array<DataPoint> => {
-  if (pool.network !== 'ethereum') {
-    return [];
-  }
+export const useExchangeRateHistory = ({
+  pool,
+}: UseExchangeRateHistoryProps): ExchangeRateHistory | void => {
   return useMemo(() => {
+    if (pool.network !== 'ethereum') {
+      return;
+    }
     const ratesForPool = exchangeRates[pool.address.toLowerCase()];
     if (!ratesForPool) {
-      return [];
+      return;
     }
     const pairs = Object.keys(ratesForPool);
-    if (!pairs.length) {
-      return [];
+    if (!pairs?.length) {
+      return;
     }
-    return lodash.flatten(
+    const dataPoints = lodash.flatten(
       pairs.map((pair) => {
         return ratesForPool[pair].map((rateData) => {
           return {
-            pair,
-            rate: Number(rateData.rate),
-            timestamp: moment(rateData.timestamp * 1000),
+            [pair]: Number(rateData.rate),
+            timestamp: rateData.timestamp,
           };
         });
       }),
     );
+    return {
+      seriesLabels: pairs,
+      dataPoints,
+    };
   }, [pool]);
 };

@@ -21,11 +21,23 @@ import {
   Td,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
 import { unauthedExplorers } from '../../utils/unauthed-explorers';
+import { useExchangeRateHistory } from '../../hooks/use-exchange-rate-history';
+import moment from 'moment';
 
 interface DashboardPoolItemProps {
   pool: CurvePoolForUi;
@@ -38,6 +50,10 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
     [PoolBalanceStatus.MINOR]: 'yellow',
     [PoolBalanceStatus.GOOD]: 'green',
   }[pool.balanceStatus];
+
+  const exchangeRateHistory = useExchangeRateHistory({ pool });
+
+  console.log(`ex history for ${pool.shortName ?? pool.name}`, exchangeRateHistory);
 
   return (
     <AccordionItem>
@@ -78,6 +94,44 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </HStack>
           );
         })}
+        <Heading fontSize="md" marginTop="5">
+          Exchange rate (last 7 days)
+        </Heading>
+        {exchangeRateHistory ? (
+          <LineChart
+            width={500}
+            height={300}
+            data={exchangeRateHistory.dataPoints}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <XAxis
+              dataKey="timestamp"
+              domain={['dataMin', 'dataMax']}
+              name="Time"
+              tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
+              type="number"
+            />
+            <YAxis
+              type="number"
+              domain={['dataMin - 0.05', 'dataMax + 0.05']}
+              tickFormatter={(rate) => rate.toFixed(3)}
+            />
+            <Tooltip />
+            <Legend />
+            {exchangeRateHistory.seriesLabels.map((label, i) => {
+              const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+              return <Line type="monotone" dataKey={label} stroke={color} />;
+            })}
+          </LineChart>
+        ) : (
+          <Text>No data</Text>
+        )}
+
         <Heading fontSize="md" marginTop="5">
           Large recent transactions
         </Heading>
