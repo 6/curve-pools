@@ -4,7 +4,7 @@ import { CurveAssetTypeName, Network, PoolType } from './curve.constants';
 export interface CurvePoolToken {
   address: string; // "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
   usdPrice: number; // 1.016,
-  decimals: string; // "18",
+  decimals: string | number; // "18",
   isBasePoolLpToken: boolean;
   symbol: string; // "ibEUR",
   poolBalance: string; // "2440147371390294759297"

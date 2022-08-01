@@ -2,6 +2,7 @@ import { ethers } from 'ethers';
 import { CurvePoolExtended } from '../data/pools';
 import { CurvePoolMetadata } from '../src/utils/curve-api';
 import { CurveAssetTypeName } from '../src/utils/curve.constants';
+import stethABI from './fixtures/abi/steth.abi.json';
 import triCryptoABI from './fixtures/abi/tricrypto.abi.json';
 import linkusdABI from './fixtures/abi/linkusd.abi.json';
 import saCrvABI from './fixtures/abi/sacrv.abi.json';
@@ -31,6 +32,51 @@ const extendRawPoolData = (
     interface: poolInterface,
     ...overrides,
   };
+};
+
+export const mockStethPool = async (): Promise<CurvePoolExtended> => {
+  return extendRawPoolData(stethABI, {
+    id: '14',
+    address: '0xDC24316b9AE028F1497c275EB9192a3Ea0f67022',
+    coinsAddresses: [
+      '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
+      '0x0000000000000000000000000000000000000000',
+      '0x0000000000000000000000000000000000000000',
+    ],
+    decimals: ['18', '18', '0', '0'],
+    underlyingDecimals: ['18', '18', '0', '0', '0', '0', '0', '0'],
+    assetType: '1',
+    totalSupply: '781518761805593664918188',
+    lpTokenAddress: '0x06325440D014e39736583c165C2963BA99fAf14E',
+    name: 'Curve.fi ETH/stETH',
+    symbol: 'steCRV',
+    priceOracle: 0,
+    implementation: '',
+    assetTypeName: CurveAssetTypeName.ETH,
+    coins: [
+      {
+        address: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+        usdPrice: 1726.43,
+        poolBalance: '228839764799710855491062',
+        decimals: 18,
+        symbol: 'ETH',
+        isBasePoolLpToken: false,
+      },
+      {
+        address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
+        usdPrice: 1681.87,
+        decimals: '18',
+        isBasePoolLpToken: false,
+        symbol: 'stETH',
+        poolBalance: '591143608528464764158667',
+      },
+    ],
+    usdTotal: 1389302536.0189338,
+    isMetaPool: false,
+    usdTotalExcludingBasePool: 1389302536.0189338,
+    gaugeAddress: '0x182b723a58739a9c974cfdb385ceadb237453c28',
+  });
 };
 
 export const mock3Pool = async (): Promise<CurvePoolExtended> => {
