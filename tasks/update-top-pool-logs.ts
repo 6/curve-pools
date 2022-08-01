@@ -1,9 +1,9 @@
+import moment from 'moment';
 import { sleep } from '../src/utils/sleep';
 import { writeJSON } from '../src/utils/write-json';
 import { topPools } from '../src/processed-data/pools';
 import { explorers } from '../src/utils/explorers';
-import { Network } from '../src/utils/curve.constants';
-import moment from 'moment';
+import { Network, TRANSACTIONS_MINIMUM_DATE_THRESHOLD } from '../src/utils/curve.constants';
 
 const main = async () => {
   // First, get the relevant block numbers between 7 days ago...now
@@ -17,7 +17,7 @@ const main = async () => {
     avalanche: { start: undefined, end: undefined },
   };
 
-  const startTimestamp = moment().subtract(7, 'days').unix();
+  const startTimestamp = TRANSACTIONS_MINIMUM_DATE_THRESHOLD.unix();
   const endTimestamp = moment().unix();
 
   for (const network in blocksByNetwork) {
