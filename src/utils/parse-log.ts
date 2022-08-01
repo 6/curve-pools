@@ -2,12 +2,10 @@ import lodash from 'lodash';
 import { BigNumber, ethers } from 'ethers';
 import { Decimal } from 'decimal.js';
 import { CurvePoolExtended } from '../../data/pools';
-import { CurvePoolToken } from './curve-api';
 import { EtherscanLog } from './etherscan';
 import { CurveLiquidityImpact, CurveTransactionType } from './parse-transaction';
-import { getTxs } from '../../data/txs';
 
-interface LogCurveTokenAmount {
+export interface LogCurveTokenAmount {
   symbol: string;
   tokenAmount: Decimal;
   usdPrice: Decimal;
