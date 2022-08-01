@@ -9,7 +9,7 @@ import { getTxs } from '../data/txs';
 import { TRANSACTIONS_MINIMUM_DATE_THRESHOLD } from '../src/utils/curve.constants';
 
 const main = async () => {
-  const graphs: Record<string, PoolLiquidityHistory | void> = {};
+  const graphs: Record<string, PoolLiquidityHistory> = {};
   for (const topPool of topPools) {
     console.log(
       `[process-liquidity-history] for pool=${

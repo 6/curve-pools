@@ -1,4 +1,5 @@
 import { Decimal } from 'decimal.js';
+import liquidityHistoryJSON from './liquidity-history.json';
 import prominentEthereumTxs from './prominent-ethereum.json';
 import prominentArbitrumTxs from './prominent-arbitrum.json';
 import prominentOptimismTxs from './prominent-optimism.json';
@@ -12,6 +13,7 @@ import {
   CurveTransactionType,
 } from '../../utils/parse-transaction';
 import { Network } from '../../utils/curve.constants';
+import { PoolLiquidityHistory } from '../../utils/generate-pool-liquidity-history';
 
 const prominentTxsMap: Record<Network, Record<string, Array<CurveTransactionJSON>>> = {
   ethereum: prominentEthereumTxs,
@@ -58,3 +60,20 @@ const deserializeCurveTransaction = (curveTxJSON: CurveTransactionJSON): CurveTr
     }),
   };
 };
+
+export const liquidityHistory: Record<string, PoolLiquidityHistory> = {};
+for (const [address, historyJSON] of Object.entries(liquidityHistoryJSON)) {
+  liquidityHistory[address] = {
+    ...historyJSON,
+    graph: historyJSON.graph.map((dataPoint) => {
+      return {
+        ...dataPoint,
+        added: new Decimal(dataPoint.added),
+        removed: new Decimal(dataPoint.removed),
+      };
+    }),
+    totalAdded: new Decimal(historyJSON.totalAdded),
+    totalRemoved: new Decimal(historyJSON.totalRemoved),
+    tvlPercentChange: new Decimal(historyJSON.tvlPercentChange),
+  } as PoolLiquidityHistory;
+}
