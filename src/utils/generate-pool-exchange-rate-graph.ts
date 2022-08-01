@@ -11,6 +11,12 @@ interface GraphDataPoint {
 }
 export type ExchangeRateGraphDataPoints = Record<string, Array<GraphDataPoint>>;
 
+interface GraphDataPointJSON {
+  rate: string;
+  timestamp: number;
+}
+export type ExchangeRateGraphDataPointsJSON = Record<string, Array<GraphDataPointJSON>>;
+
 interface GeneratePoolExchangeRateGraphProps {
   pool: CurvePoolExtended;
   logs: Array<ParsedCurveLog>;
