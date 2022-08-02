@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, Text, Center, Accordion } from '@chakra-ui/react';
+import { Container, Heading, Text, Center, Accordion, Box, HStack } from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
@@ -31,6 +31,17 @@ export const DashboardScreen = () => {
           liquidity.
         </Text>
       </Center>
+      <HStack marginBottom="1">
+        <Box flex="1" maxWidth="100px" paddingLeft="15px">
+          <Text fontWeight="bold">Network</Text>
+        </Box>
+        <Box flex="1" maxWidth="80px" paddingLeft="10px">
+          <Text fontWeight="bold">Pool</Text>
+        </Box>
+        <Box flex="1" textAlign="right" paddingRight="45px">
+          <Text fontWeight="bold">Liquidity</Text>
+        </Box>
+      </HStack>
       <Accordion allowToggle>
         {topPools.map((pool) => {
           return <DashboardPoolItem key={`${pool.network}-${pool.id}`} pool={pool} />;

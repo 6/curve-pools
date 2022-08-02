@@ -21,6 +21,7 @@ import {
   Td,
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
+import lodash from 'lodash';
 import { ExternalLinkIcon, QuestionIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
@@ -46,6 +47,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   return (
     <AccordionItem>
       <AccordionButton>
+        <Box flex="1" maxWidth="100px" textAlign="left">
+          {lodash.capitalize(pool.network)}
+        </Box>
         <Box flex="1" maxWidth="80px">
           <AvatarGroup size="xs" spacing="-0.7rem">
             {pool.coins.map((coin) => {
@@ -54,11 +58,11 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </AvatarGroup>
         </Box>
         <Box flex="3" textAlign="left">
-          {pool.network}: {pool.shortName ?? pool.name ?? pool.id} (
-          {pool.coins.map((coin) => coin.symbol).join('+')})
+          <Text fontWeight="bold">{pool.shortName ?? pool.name ?? pool.id}</Text>
+          <Text color="gray.500">{pool.coins.map((coin) => coin.symbol).join('+')}</Text>
         </Box>
-        <Box flex="2" textAlign="right">
-          {pool.usdTotalFormatted}{' '}
+        <Box flex="2" textAlign="right" paddingRight="10px">
+          <Text fontWeight="bold">{pool.usdTotalFormatted}</Text>
           <Badge colorScheme={pool.balanceStatusColor}>
             {pool.balanceStatus === PoolBalanceStatus.GOOD
               ? pool.balanceStatus
