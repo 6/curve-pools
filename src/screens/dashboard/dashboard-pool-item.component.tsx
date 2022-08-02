@@ -143,7 +143,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Legend wrapperStyle={{ position: 'relative' }} />
               {exchangeRateHistory.seriesLabels.map((label, i) => {
                 const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                return <Line type="natural" dataKey={label} stroke={color} dot={false} />;
+                return <Line type="monotone" dataKey={label} stroke={color} dot={false} />;
               })}
             </LineChart>
           </ResponsiveContainer>
@@ -166,7 +166,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           <Text marginBottom="5">
             No recent transactions greater than{' '}
             {usdNoDecimalsFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())}{' '}
-            found
+            found.
           </Text>
         ) : (
           <TableContainer>
