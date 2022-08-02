@@ -26,7 +26,10 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
-import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
+import {
+  CurveAssetTypeName,
+  PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
+} from '../../utils/curve.constants';
 import { unauthedExplorers } from '../../utils/unauthed-explorers';
 import { useExchangeRateHistory } from '../../hooks/use-exchange-rate-history';
 import moment from 'moment';
@@ -140,6 +143,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           <Text>
             {pool.network !== 'ethereum'
               ? 'Data only available for Ethereum mainnet-based pools.'
+              : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
+              ? 'This graph is not supported for pools with uncorrelated assets.'
               : 'No recent data found.'}
           </Text>
         )}
