@@ -72,18 +72,23 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={4}>
+        <Heading fontSize="md" marginTop="5" marginBottom="5">
+          Liquidity breakdown
+        </Heading>
         {pool.coins.map((coin) => {
           return (
             <HStack key={coin.address} marginBottom="1">
               <Avatar size="xs" src={coin.logoURL} />
               <Text fontSize="md">{coin.symbol}</Text>
-              <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
+              <Text fontSize="md">
+                {usdNoDecimalsFormatter.format(coin.totalUsdBalance.toNumber())}
+              </Text>
               <Badge colorScheme={coin.balanceStatusColor}>
                 {coin.balanceStatus.split('_').join(' ')}
               </Badge>
               <Text fontSize="md" flex="1" textAlign="right">
-                Current weight: {coin.poolWeightFormatted} Ideal weight:{' '}
-                {pool.idealPoolWeightFormatted}
+                Current weight: {coin.poolWeightFormatted}{' '}
+                <i>(Ideal : {pool.idealPoolWeightFormatted})</i>
               </Text>
             </HStack>
           );
