@@ -22,8 +22,8 @@ import {
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
 import lodash from 'lodash';
-import { ExternalLinkIcon, QuestionIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
@@ -115,36 +115,38 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           Exchange rate (last 7 days)
         </Heading>
         {!pool.isMetaPool && exchangeRateHistory ? (
-          <LineChart
-            width={500}
-            height={300}
-            data={exchangeRateHistory.dataPoints}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <XAxis
-              dataKey="timestamp"
-              domain={['dataMin', 'dataMax']}
-              name="Time"
-              tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
-              type="number"
-            />
-            <YAxis
-              type="number"
-              domain={['dataMin - 0.001', 'dataMax + 0.001']}
-              tickFormatter={(rate) => rate.toFixed(3)}
-            />
-            <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
-            <Legend wrapperStyle={{ position: 'relative' }} />
-            {exchangeRateHistory.seriesLabels.map((label, i) => {
-              const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-              return <Line type="monotone" dataKey={label} stroke={color} />;
-            })}
-          </LineChart>
+          <ResponsiveContainer minWidth={500} minHeight={300}>
+            <LineChart
+              width={500}
+              height={300}
+              data={exchangeRateHistory.dataPoints}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <XAxis
+                dataKey="timestamp"
+                domain={['dataMin', 'dataMax']}
+                name="Time"
+                tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
+                type="number"
+              />
+              <YAxis
+                type="number"
+                domain={['dataMin - 0.001', 'dataMax + 0.001']}
+                tickFormatter={(rate) => rate.toFixed(3)}
+              />
+              <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
+              <Legend wrapperStyle={{ position: 'relative' }} />
+              {exchangeRateHistory.seriesLabels.map((label, i) => {
+                const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+                return <Line type="monotone" dataKey={label} stroke={color} />;
+              })}
+            </LineChart>
+          </ResponsiveContainer>
         ) : (
           <Text>
             {pool.network !== 'ethereum'
