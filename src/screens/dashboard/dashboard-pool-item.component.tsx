@@ -278,16 +278,13 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                           <Badge colorScheme={eventColor}>{readableEventType}</Badge>
                         </Td>
                         <Td>
-                          {tx.tokens.map((token) => {
+                          {lodash.sortBy(tx.tokens, 'symbol').map((token) => {
                             let icon;
-                            let text;
                             let amountText;
                             if (token.type === CurveLiquidityImpact.ADD) {
-                              icon = <TriangleUpIcon color="green" />;
-                              text = 'Added liquidity';
+                              icon = <TriangleUpIcon color="green.300" />;
                             } else {
-                              icon = <TriangleDownIcon color="red" />;
-                              text = 'Removed liquidity';
+                              icon = <TriangleDownIcon color="red.300" />;
                             }
                             if (
                               token.usdAmount &&
@@ -304,7 +301,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                               <HStack paddingTop="1" paddingBottom="1">
                                 <Avatar size="2xs" src={token.logoURL} />
                                 <Text>
-                                  {token.symbol}: {text} {icon} {amountText}
+                                  {token.symbol} {icon} {amountText}
                                 </Text>
                               </HStack>
                             );
