@@ -70,6 +70,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           <Box flex="1" maxWidth="100px" textAlign="left">
             {lodash.capitalize(pool.network)}
           </Box>
+        </Show>
+        <Show above="sm">
           <Box flex="1" maxWidth="80px">
             <AvatarGroup size="xs" spacing="-0.7rem">
               {pool.coins.map((coin) => {
