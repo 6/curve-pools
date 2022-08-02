@@ -230,7 +230,10 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </ResponsiveContainer>
           </>
         ) : (
-          <Text color="gray.500">Not enough data found, or no data available.</Text>
+          <Text color="gray.500">
+            This pool has no recent <Code>AddLiquidity</Code> or <Code>RemoveLiquidity</Code>{' '}
+            events.
+          </Text>
         )}
 
         <Heading fontSize="md" marginTop="10" marginBottom="5">
