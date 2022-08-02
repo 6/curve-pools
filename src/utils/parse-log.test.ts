@@ -248,8 +248,9 @@ describe('parseLog', () => {
 
     it('ignores it for now as it cannot be calculated', async () => {
       const pool = await mockFraxPool();
-      const { parsedLog } = parseLog({ pool, log });
+      const { parsedLog, exchangeUnderlying } = parseLog({ pool, log });
       expect(parsedLog).toBeFalsy();
+      expect(exchangeUnderlying).toBe(true);
     });
   });
 });

@@ -19,8 +19,9 @@ import {
   Tr,
   Th,
   Td,
+  Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
-import { AddIcon, ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, QuestionIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import {
   LineChart,
   Line,
@@ -98,12 +99,20 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           );
         })}
         <Box marginTop="5">
-          <Link href={explorer.getAddressURL(pool.address)} isExternal>
+          <Link href={explorer.getAddressURL(pool.address)} isExternal color="blue.400">
             View Pool on {explorer.name} <ExternalLinkIcon mx="2px" />
           </Link>
         </Box>
-        <Heading fontSize="md" marginTop="5" marginBottom="2">
+        <Heading fontSize="md" marginTop="10" marginBottom="5">
           Exchange rate (last 7 days)
+          {exchangeRateHistory?.isMissingData && (
+            <Text color="red">
+              Note: Exchange rate data for this pool is incomplete.{' '}
+              <ChakraTooltip label="This pool uses the TokenExchangeUnderlying function which is not yet indexed.">
+                <QuestionIcon />
+              </ChakraTooltip>
+            </Text>
+          )}
         </Heading>
         {exchangeRateHistory ? (
           <LineChart
@@ -130,7 +139,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               tickFormatter={(rate) => rate.toFixed(3)}
             />
             <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
-            <Legend />
+            <Legend wrapperStyle={{ position: 'relative' }} />
             {exchangeRateHistory.seriesLabels.map((label, i) => {
               const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
               return <Line type="monotone" dataKey={label} stroke={color} />;
@@ -144,7 +153,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </Text>
         )}
 
-        <Heading fontSize="md" marginTop="5" marginBottom="2">
+        <Heading fontSize="md" marginTop="10" marginBottom="2">
           Large recent transactions
         </Heading>
         {prominentTxs.length === 0 ? (
@@ -171,9 +180,16 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                     [CurveTransactionType.ADD_LIQUIDITY]: 'Add liquidity',
                     [CurveTransactionType.REMOVE_LIQUIDITY]: 'Remove liquidity',
                   }[tx.type];
+                  const eventColor = {
+                    [CurveTransactionType.EXCHANGE]: 'gray',
+                    [CurveTransactionType.ADD_LIQUIDITY]: 'green',
+                    [CurveTransactionType.REMOVE_LIQUIDITY]: 'orange',
+                  }[tx.type];
                   return (
                     <Tr>
-                      <Td>{readableEventType}</Td>
+                      <Td>
+                        <Badge colorScheme={eventColor}>{readableEventType}</Badge>
+                      </Td>
                       <Td>
                         {tx.tokens.map((token) => {
                           let icon;
@@ -209,6 +225,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                         <Link
                           href={unauthedExplorers[pool.network].mainnet.getTransactionURL(tx.hash)}
                           isExternal
+                          color="blue.400"
                         >
                           {tx.timestampMoment.fromNow()}
                           <ExternalLinkIcon mx="2px" />
