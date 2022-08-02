@@ -21,7 +21,7 @@ export const DashboardScreen = () => {
       <Center>
         <Text
           marginTop="5"
-          marginBottom="5"
+          marginBottom="7"
           fontSize="xl"
           textAlign="center"
           maxW="lg"
