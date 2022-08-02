@@ -227,7 +227,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         )}
 
         <Heading fontSize="md" marginTop="10" marginBottom="5">
-          Large transactions (last 7 days)
+          Large transactions (last 7 days, &gt;={' '}
+          {usdCompactFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())})
         </Heading>
         {prominentTxs.length === 0 ? (
           <Text marginBottom="5">
