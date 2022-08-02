@@ -145,10 +145,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               Exchange rates between assets in this pool. Based on actual rates received from
               <Code>TokenExchange</Code> events (swaps) done by users.
             </Text>
-            <ResponsiveContainer minWidth={500} minHeight={300}>
+            <ResponsiveContainer minWidth={300} minHeight={300}>
               <LineChart
-                width={500}
-                height={300}
                 data={exchangeRateHistory.dataPoints}
                 margin={{
                   top: 5,
@@ -173,7 +171,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                 <Legend wrapperStyle={{ position: 'relative' }} />
                 {exchangeRateHistory.seriesLabels.map((label, i) => {
                   const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                  return <Line type="monotone" dataKey={label} stroke={color} dot={false} />;
+                  return (
+                    <Line key={i} type="monotone" dataKey={label} stroke={color} dot={false} />
+                  );
                 })}
               </LineChart>
             </ResponsiveContainer>
@@ -200,11 +200,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               This excludes changes to liquidity caused by <Code>TokenExchange</Code> events
               (swaps).
             </Text>
-            <ResponsiveContainer minWidth={500} minHeight={300}>
+            <ResponsiveContainer minWidth={300} minHeight={300}>
               <BarChart
                 stackOffset="sign"
-                width={500}
-                height={300}
                 data={liquidityHistory.dataPoints}
                 margin={{
                   top: 5,
@@ -224,7 +222,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                 <ReferenceLine y={0} stroke="#000" />
                 {liquidityHistory.seriesLabels.map((label, i) => {
                   const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                  return <Bar dataKey={label} fill={color} stackId="stack" />;
+                  return <Bar key={i} dataKey={label} fill={color} stackId="stack" />;
                 })}
               </BarChart>
             </ResponsiveContainer>
@@ -268,7 +266,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                   {(txSortOrder === 'largest'
                     ? lodash.orderBy(prominentTxs, (tx) => tx.totalUsdAmount.toNumber(), 'desc')
                     : prominentTxs
-                  ).map((tx) => {
+                  ).map((tx, i) => {
                     const readableEventType = {
                       [CurveTransactionType.EXCHANGE]: 'Exchange',
                       [CurveTransactionType.ADD_LIQUIDITY]: 'Add liquidity',
@@ -281,12 +279,12 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                     }[tx.type];
                     const isBigAmount = tx.totalUsdAmount.greaterThanOrEqualTo(1000000);
                     return (
-                      <Tr>
+                      <Tr key={i}>
                         <Td>
                           <Badge colorScheme={eventColor}>{readableEventType}</Badge>
                         </Td>
                         <Td>
-                          {lodash.sortBy(tx.tokens, 'symbol').map((token) => {
+                          {lodash.sortBy(tx.tokens, 'symbol').map((token, i) => {
                             let icon;
                             let amountText;
                             if (token.type === CurveLiquidityImpact.ADD) {
@@ -306,7 +304,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                               )}`;
                             }
                             return (
-                              <HStack paddingTop="1" paddingBottom="1">
+                              <HStack key={i} paddingTop="1" paddingBottom="1">
                                 <Avatar size="2xs" src={token.logoURL} />
                                 <Text>
                                   {token.symbol} {icon} {amountText}
