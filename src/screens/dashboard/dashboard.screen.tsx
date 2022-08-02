@@ -10,6 +10,7 @@ import {
   useColorMode,
   Button,
   Tooltip,
+  Link,
 } from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
@@ -46,11 +47,14 @@ export const DashboardScreen = () => {
           marginBottom="7"
           fontSize="xl"
           textAlign="center"
-          maxW="lg"
+          maxW="md"
           alignSelf="center"
         >
-          Explore the top Curve.fi pools, identify imbalances early, and find large changes in
-          liquidity.
+          Explore the top{' '}
+          <Link href="https://curve.fi" isExternal>
+            <u>Curve.fi</u>
+          </Link>{' '}
+          pools, identify imbalances, and find large changes in liquidity.
         </Text>
       </Center>
       <HStack marginBottom="1">
