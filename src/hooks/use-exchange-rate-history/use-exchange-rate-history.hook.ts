@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 import lodash from 'lodash';
+import moment from 'moment';
 import { CurvePoolSimplified } from '../../../data/pools';
 import { exchangeRates } from '../../processed-data/logs';
 
 interface DataPoint {
-  timestamp: number;
-  [tokenPair: string]: number;
+  date: string;
+  [tokenPair: string]: number | string;
 }
 interface ExchangeRateHistory {
   seriesLabels: Array<string>;
@@ -34,7 +35,7 @@ export const useExchangeRateHistory = ({
         return ratesForPool[pair].map((rateData) => {
           return {
             [pair]: Number(rateData.rate),
-            timestamp: rateData.timestamp,
+            date: moment(rateData.timestamp * 1000).format('YYYY-MM-DD hh'),
           };
         });
       }),
