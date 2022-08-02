@@ -6,6 +6,7 @@ import {
   Center,
   Accordion,
   Box,
+  Image,
   HStack,
   useColorMode,
   Button,
@@ -35,10 +36,10 @@ export const DashboardScreen = () => {
           </Tooltip>
         </Box>
       </HStack>
-      <Heading fontSize="4xl" textAlign="center">
-        🕵
-      </Heading>
-      <Heading paddingTop="2" fontSize="3xl" textAlign="center">
+      <Center>
+        <Image src="/detective.png" width="40px" />
+      </Center>
+      <Heading paddingTop="3" fontSize="3xl" textAlign="center">
         Curve Pool Scanner
       </Heading>
       <Center>
