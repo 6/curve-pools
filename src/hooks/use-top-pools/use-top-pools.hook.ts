@@ -16,11 +16,11 @@ import { percentageChange } from '../../utils/percentage-calculations';
 
 export enum TokenBalanceStatus {
   EXTREME_OVERSUPPLY = 'extreme_oversupply',
-  OVERSUPPLY = 'oversupply',
+  OVERSUPPLY = 'moderate_oversupply',
   MINOR_OVERSUPPLY = 'minor_oversupply',
   GOOD = 'good',
   MINOR_UNDERSUPPLY = 'minor_undersupply',
-  UNDERSUPPLY = 'undersupply',
+  UNDERSUPPLY = 'moderate_undersupply',
   EXTREME_UNDERSUPPLY = 'extreme_undersupply',
 }
 
