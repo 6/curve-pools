@@ -21,12 +21,16 @@ import {
   Td,
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon, QuestionIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import lodash from 'lodash';
+import { ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
-import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
+import {
+  CurveAssetTypeName,
+  PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD,
+} from '../../utils/curve.constants';
 import { unauthedExplorers } from '../../utils/unauthed-explorers';
 import { useExchangeRateHistory } from '../../hooks/use-exchange-rate-history';
 import moment from 'moment';
@@ -37,22 +41,15 @@ interface DashboardPoolItemProps {
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
-  const badgeColor = {
-    [PoolBalanceStatus.SEVERE]: 'red',
-    [PoolBalanceStatus.MODERATE]: 'orange',
-    [PoolBalanceStatus.MINOR]: 'yellow',
-    [PoolBalanceStatus.GOOD]: 'green',
-  }[pool.balanceStatus];
-
   const exchangeRateHistory = useExchangeRateHistory({ pool });
-
-  console.log(`ex history for ${pool.shortName ?? pool.name}`, exchangeRateHistory);
-
   const explorer = unauthedExplorers[pool.network].mainnet;
 
   return (
     <AccordionItem>
       <AccordionButton>
+        <Box flex="1" maxWidth="100px" textAlign="left">
+          {lodash.capitalize(pool.network)}
+        </Box>
         <Box flex="1" maxWidth="80px">
           <AvatarGroup size="xs" spacing="-0.7rem">
             {pool.coins.map((coin) => {
@@ -61,12 +58,25 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </AvatarGroup>
         </Box>
         <Box flex="3" textAlign="left">
-          {pool.network}: {pool.shortName ?? pool.name ?? pool.id} (
-          {pool.coins.map((coin) => coin.symbol).join('+')})
+          <Text fontWeight="bold">
+            {pool.displayName}
+            {pool.isMetaPool && (
+              <ChakraTooltip
+                label={`Metapools allow for one token to trade with another underlying base pool (${
+                  pool.coins.find((c) => c.isBasePoolLpToken)?.symbol ?? 'unknown'
+                }).`}
+              >
+                <Badge ml="1" fontSize="0.6em" colorScheme="facebook" marginLeft="1">
+                  Meta
+                </Badge>
+              </ChakraTooltip>
+            )}
+          </Text>
+          <Text color="gray.500">{pool.coins.map((coin) => coin.symbol).join('+')}</Text>
         </Box>
-        <Box flex="2" textAlign="right">
-          {pool.usdTotalFormatted}{' '}
-          <Badge colorScheme={badgeColor}>
+        <Box flex="2" textAlign="right" paddingRight="10px">
+          <Text fontWeight="bold">{pool.usdTotalFormatted}</Text>
+          <Badge colorScheme={pool.balanceStatusColor}>
             {pool.balanceStatus === PoolBalanceStatus.GOOD
               ? pool.balanceStatus
               : `${pool.balanceStatus} imbalance`}
@@ -75,16 +85,23 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={4}>
+        <Heading fontSize="md" marginTop="5" marginBottom="5">
+          Liquidity breakdown
+        </Heading>
         {pool.coins.map((coin) => {
           return (
             <HStack key={coin.address} marginBottom="1">
               <Avatar size="xs" src={coin.logoURL} />
               <Text fontSize="md">{coin.symbol}</Text>
-              <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
-              <Badge colorScheme={badgeColor}>{coin.balanceStatus.split('_').join(' ')}</Badge>
+              <Text fontSize="md">
+                {usdNoDecimalsFormatter.format(coin.totalUsdBalance.toNumber())}
+              </Text>
+              <Badge colorScheme={coin.balanceStatusColor}>
+                {coin.balanceStatus.split('_').join(' ')}
+              </Badge>
               <Text fontSize="md" flex="1" textAlign="right">
-                Current weight: {coin.poolWeightFormatted} Ideal weight:{' '}
-                {pool.idealPoolWeightFormatted}
+                Current weight: {coin.poolWeightFormatted}{' '}
+                <i>(Ideal : {pool.idealPoolWeightFormatted})</i>
               </Text>
             </HStack>
           );
@@ -96,62 +113,60 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         </Box>
         <Heading fontSize="md" marginTop="10" marginBottom="5">
           Exchange rate (last 7 days)
-          {exchangeRateHistory?.isMissingData && (
-            <Text color="red">
-              Note: Exchange rate data for this pool is incomplete.{' '}
-              <ChakraTooltip label="This pool uses the TokenExchangeUnderlying function which is not yet indexed.">
-                <QuestionIcon />
-              </ChakraTooltip>
-            </Text>
-          )}
         </Heading>
-        {exchangeRateHistory ? (
-          <LineChart
-            width={500}
-            height={300}
-            data={exchangeRateHistory.dataPoints}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <XAxis
-              dataKey="timestamp"
-              domain={['dataMin', 'dataMax']}
-              name="Time"
-              tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
-              type="number"
-            />
-            <YAxis
-              type="number"
-              domain={['dataMin - 0.001', 'dataMax + 0.001']}
-              tickFormatter={(rate) => rate.toFixed(3)}
-            />
-            <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
-            <Legend wrapperStyle={{ position: 'relative' }} />
-            {exchangeRateHistory.seriesLabels.map((label, i) => {
-              const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-              return <Line type="monotone" dataKey={label} stroke={color} />;
-            })}
-          </LineChart>
+        {!pool.isMetaPool && exchangeRateHistory ? (
+          <ResponsiveContainer minWidth={500} minHeight={300}>
+            <LineChart
+              width={500}
+              height={300}
+              data={exchangeRateHistory.dataPoints}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <XAxis
+                dataKey="timestamp"
+                domain={['dataMin', 'dataMax']}
+                name="Time"
+                tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
+                type="number"
+              />
+              <YAxis
+                type="number"
+                domain={['dataMin - 0.001', 'dataMax + 0.001']}
+                tickFormatter={(rate) => rate.toFixed(3)}
+              />
+              <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
+              <Legend wrapperStyle={{ position: 'relative' }} />
+              {exchangeRateHistory.seriesLabels.map((label, i) => {
+                const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+                return <Line type="monotone" dataKey={label} stroke={color} dot={false} />;
+              })}
+            </LineChart>
+          </ResponsiveContainer>
         ) : (
           <Text>
             {pool.network !== 'ethereum'
               ? 'Data only available for Ethereum mainnet-based pools.'
+              : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
+              ? 'Data not available for pools with uncorrelated assets.'
+              : pool.isMetaPool
+              ? 'Data not available for metapools, as the TokenExchangeUnderlying function is not yet indexed.'
               : 'No recent data found.'}
           </Text>
         )}
 
-        <Heading fontSize="md" marginTop="10" marginBottom="2">
-          Large recent transactions
+        <Heading fontSize="md" marginTop="10" marginBottom="5">
+          Large transactions (last 7 days)
         </Heading>
         {prominentTxs.length === 0 ? (
-          <Text>
+          <Text marginBottom="5">
             No recent transactions greater than{' '}
             {usdNoDecimalsFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())}{' '}
-            found
+            found.
           </Text>
         ) : (
           <TableContainer>

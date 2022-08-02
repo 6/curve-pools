@@ -31,6 +31,8 @@ export enum PoolBalanceStatus {
   SEVERE = 'severe',
 }
 
+type BalanceStatusColor = string;
+
 interface CurvePoolTokenForUi extends CurvePoolToken {
   logoURL: string;
   usdPriceFormatted: string;
@@ -42,6 +44,7 @@ interface CurvePoolTokenForUi extends CurvePoolToken {
   poolWeightVsIdealPercentageChange: Decimal;
   poolWeightVsIdealPercentageChangeFormatted: string;
   balanceStatus: TokenBalanceStatus;
+  balanceStatusColor: BalanceStatusColor;
 }
 
 export interface CurvePoolForUi extends CurvePoolSimplified {
@@ -50,6 +53,8 @@ export interface CurvePoolForUi extends CurvePoolSimplified {
   idealPoolWeightFormatted: string;
   usdTotalFormatted: string;
   balanceStatus: PoolBalanceStatus;
+  balanceStatusColor: BalanceStatusColor;
+  displayName: string;
 }
 
 const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
@@ -69,20 +74,25 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     );
 
     let balanceStatus;
+    let balanceStatusColor;
     if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.4)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.EXTREME_OVERSUPPLY
         : TokenBalanceStatus.EXTREME_UNDERSUPPLY;
+      balanceStatusColor = 'red';
     } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.2)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.OVERSUPPLY
         : TokenBalanceStatus.UNDERSUPPLY;
+      balanceStatusColor = 'orange';
     } else if (poolWeightVsIdealPercentageChange.abs().greaterThan(0.1)) {
       balanceStatus = poolWeight.greaterThan(idealPoolWeight)
         ? TokenBalanceStatus.MINOR_OVERSUPPLY
         : TokenBalanceStatus.MINOR_UNDERSUPPLY;
+      balanceStatusColor = 'yellow';
     } else {
       balanceStatus = TokenBalanceStatus.GOOD;
+      balanceStatusColor = 'green';
     }
 
     return {
@@ -95,14 +105,21 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
       poolWeight,
       poolWeightFormatted,
       balanceStatus,
+      balanceStatusColor,
       poolWeightVsIdealPercentageChange,
       poolWeightVsIdealPercentageChangeFormatted,
     };
   });
 
+  let displayName = pool.shortName ?? pool.name ?? pool.id;
+  if (displayName.startsWith('Curve.fi')) {
+    displayName = displayName.replace(/^Curve\.fi\s+?/, '');
+  }
+
   const usdTotalFormatted = usdCompactFormatter.format(pool.usdTotal);
 
   let poolBalanceStatus = PoolBalanceStatus.GOOD;
+  let balanceStatusColor = 'green';
   if (
     coins.find((coin) =>
       [TokenBalanceStatus.EXTREME_OVERSUPPLY, TokenBalanceStatus.EXTREME_UNDERSUPPLY].includes(
@@ -111,12 +128,14 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     )
   ) {
     poolBalanceStatus = PoolBalanceStatus.SEVERE;
+    balanceStatusColor = 'red';
   } else if (
     coins.find((coin) =>
       [TokenBalanceStatus.OVERSUPPLY, TokenBalanceStatus.UNDERSUPPLY].includes(coin.balanceStatus),
     )
   ) {
     poolBalanceStatus = PoolBalanceStatus.MODERATE;
+    balanceStatusColor = 'orange';
   } else if (
     coins.find((coin) =>
       [TokenBalanceStatus.MINOR_OVERSUPPLY, TokenBalanceStatus.MINOR_UNDERSUPPLY].includes(
@@ -125,17 +144,20 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     )
   ) {
     poolBalanceStatus = PoolBalanceStatus.MINOR;
+    balanceStatusColor = 'yellow';
   }
 
   const coinsSorted = lodash.orderBy(coins, 'totalUsdBalance', 'desc');
 
   return {
     ...pool,
+    displayName,
     coins: coinsSorted,
     idealPoolWeight,
     idealPoolWeightFormatted,
     usdTotalFormatted,
     balanceStatus: poolBalanceStatus,
+    balanceStatusColor,
   };
 };
 

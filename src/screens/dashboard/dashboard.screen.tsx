@@ -1,17 +1,40 @@
 import React from 'react';
-import { Container, Heading, Text, Center, Accordion } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  Text,
+  Center,
+  Accordion,
+  Box,
+  HStack,
+  useColorMode,
+  Button,
+  Tooltip,
+  Link,
+} from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { CURVE_NETWORKS, TOP_POOLS_MINIMUM_TVL_THRESHOLD } from '../../utils/curve.constants';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 export const DashboardScreen = () => {
   const topPools = useTopPools();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   console.log('top pools:', topPools);
 
   return (
-    <Container maxW="900px" paddingTop="10" paddingBottom="10">
+    <Container maxW="900px" paddingTop="5" paddingBottom="10">
+      <HStack>
+        <Box flex="1" textAlign="right">
+          <Tooltip label={colorMode === 'light' ? 'Enable dark mode' : 'Enable light mode'}>
+            <Button onClick={toggleColorMode}>
+              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          </Tooltip>
+        </Box>
+      </HStack>
       <Heading fontSize="4xl" textAlign="center">
         🕵
       </Heading>
@@ -21,15 +44,30 @@ export const DashboardScreen = () => {
       <Center>
         <Text
           marginTop="5"
-          marginBottom="5"
+          marginBottom="7"
           fontSize="xl"
           textAlign="center"
           maxW="md"
           alignSelf="center"
         >
-          Explore the top Curve.fi pools, identify imbalances, and find large changes in liquidity.
+          Explore the top{' '}
+          <Link href="https://curve.fi" isExternal>
+            <u>Curve.fi</u>
+          </Link>{' '}
+          pools, identify imbalances, and find large changes in liquidity.
         </Text>
       </Center>
+      <HStack marginBottom="1">
+        <Box flex="1" maxWidth="100px" paddingLeft="15px">
+          <Text fontWeight="bold">Network</Text>
+        </Box>
+        <Box flex="1" maxWidth="80px" paddingLeft="10px">
+          <Text fontWeight="bold">Pool</Text>
+        </Box>
+        <Box flex="1" textAlign="right" paddingRight="45px">
+          <Text fontWeight="bold">Liquidity</Text>
+        </Box>
+      </HStack>
       <Accordion allowToggle>
         {topPools.map((pool) => {
           return <DashboardPoolItem key={`${pool.network}-${pool.id}`} pool={pool} />;
