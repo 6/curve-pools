@@ -143,7 +143,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Legend wrapperStyle={{ position: 'relative' }} />
               {exchangeRateHistory.seriesLabels.map((label, i) => {
                 const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                return <Line type="monotone" dataKey={label} stroke={color} />;
+                return <Line type="natural" dataKey={label} stroke={color} dot={false} />;
               })}
             </LineChart>
           </ResponsiveContainer>
