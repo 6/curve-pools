@@ -110,15 +110,15 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             }}
           >
             <XAxis
-              dataKey="date"
-              // domain={['dataMin', 'dataMax']}
-              name="Date"
-              type="category"
-              allowDuplicatedCategory={false}
+              dataKey="timestamp"
+              domain={['dataMin', 'dataMax']}
+              name="Time"
+              tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
+              type="number"
             />
             <YAxis
               type="number"
-              domain={['dataMin - 0.02', 'dataMax + 0.02']}
+              domain={['dataMin - 0.05', 'dataMax + 0.05']}
               tickFormatter={(rate) => rate.toFixed(3)}
             />
             <Tooltip />
