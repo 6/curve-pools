@@ -139,7 +139,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         <Heading fontSize="md" marginTop="10" marginBottom="3">
           Exchange rate (last 7 days)
         </Heading>
-        {!pool.isMetaPool && exchangeRateHistory ? (
+        {!pool.isMetaPool && exchangeRateHistory && !exchangeRateHistory.isMissingData ? (
           <>
             <Text color="gray.500" marginBottom="5">
               Exchange rates between assets in this pool. Based on actual rates received from
@@ -179,13 +179,15 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </ResponsiveContainer>
           </>
         ) : (
-          <Text>
+          <Text color="gray.500">
             {pool.network !== 'ethereum'
               ? 'Data only available for Ethereum mainnet-based pools.'
               : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
               ? 'Data not available for pools with uncorrelated assets.'
               : pool.isMetaPool
               ? 'Data not available for metapools, as the TokenExchangeUnderlying function is not yet indexed.'
+              : exchangeRateHistory?.isMissingData
+              ? 'Data is missing from exchange rate history. This pool uses TokenExchangeUnderlying function which is not yet indexed.'
               : 'No recent data found.'}
           </Text>
         )}
@@ -228,7 +230,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </ResponsiveContainer>
           </>
         ) : (
-          <Text>Not enough data found, or no data available.</Text>
+          <Text color="gray.500">Not enough data found, or no data available.</Text>
         )}
 
         <Heading fontSize="md" marginTop="10" marginBottom="5">
