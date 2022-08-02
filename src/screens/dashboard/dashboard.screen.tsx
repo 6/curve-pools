@@ -21,6 +21,7 @@ import { DashboardPoolItem } from './dashboard-pool-item.component';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { CURVE_NETWORKS, TOP_POOLS_MINIMUM_TVL_THRESHOLD } from '../../utils/curve.constants';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { lastUpdatedMoment } from '../../processed-data/last-updated';
 
 export const DashboardScreen = () => {
   const topPools = useTopPools();
@@ -92,7 +93,8 @@ export const DashboardScreen = () => {
       </Center>
       <Center>
         <Text marginTop="1" fontSize="md" textAlign="center">
-          Data last updated: <Code>TODO</Code>
+          Data last updated: <Code>{lastUpdatedMoment.format()}</Code> (
+          {lastUpdatedMoment.fromNow()})
         </Text>
       </Center>
     </Container>
