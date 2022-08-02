@@ -23,7 +23,18 @@ import {
 } from '@chakra-ui/react';
 import lodash from 'lodash';
 import { ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  BarChart,
+  ReferenceLine,
+  Bar,
+} from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
@@ -35,6 +46,7 @@ import { unauthedExplorers } from '../../utils/unauthed-explorers';
 import { useExchangeRateHistory } from '../../hooks/use-exchange-rate-history';
 import moment from 'moment';
 import { CurveLiquidityImpact, CurveTransactionType } from '../../utils/parse-transaction';
+import { useLiquidityHistory } from '../../hooks/use-liquidity-history';
 
 interface DashboardPoolItemProps {
   pool: CurvePoolForUi;
@@ -42,6 +54,7 @@ interface DashboardPoolItemProps {
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
   const exchangeRateHistory = useExchangeRateHistory({ pool });
+  const liquidityHistory = useLiquidityHistory({ pool });
   const explorer = unauthedExplorers[pool.network].mainnet;
 
   return (
@@ -157,6 +170,47 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               ? 'Data not available for metapools, as the TokenExchangeUnderlying function is not yet indexed.'
               : 'No recent data found.'}
           </Text>
+        )}
+
+        <Heading fontSize="md" marginTop="10" marginBottom="5">
+          Liquidity history (last 7 days)
+        </Heading>
+        {!pool.isMetaPool && liquidityHistory ? (
+          <ResponsiveContainer minWidth={500} minHeight={300}>
+            <BarChart
+              stackOffset="sign"
+              width={500}
+              height={300}
+              data={liquidityHistory.dataPoints}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                domain={['dataMin', 'dataMax']}
+                name="Time"
+                // type="number"
+              />
+              <YAxis
+                type="number"
+                // domain={['dataMin - 0.001', 'dataMax + 0.001']}
+                tickFormatter={(rate) => usdCompactFormatter.format(rate)}
+              />
+              <Tooltip />
+              <Legend wrapperStyle={{ position: 'relative' }} />
+              <ReferenceLine y={0} stroke="#000" />
+              {liquidityHistory.seriesLabels.map((label, i) => {
+                const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+                return <Bar dataKey={label} fill={color} stackId="stack" />;
+              })}
+            </BarChart>
+          </ResponsiveContainer>
+        ) : (
+          <Text>Not enough data found, or no data available.</Text>
         )}
 
         <Heading fontSize="md" marginTop="10" marginBottom="5">
