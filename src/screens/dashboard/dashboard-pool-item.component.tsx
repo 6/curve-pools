@@ -221,14 +221,18 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                         </Text>
                       </Td>
                       <Td isNumeric>
-                        <Link
-                          href={unauthedExplorers[pool.network].mainnet.getTransactionURL(tx.hash)}
-                          isExternal
-                          color="blue.400"
-                        >
-                          {tx.timestampMoment.fromNow()}
-                          <ExternalLinkIcon mx="2px" />
-                        </Link>
+                        <ChakraTooltip label={tx.timestampMoment.format('LLL')}>
+                          <Link
+                            href={unauthedExplorers[pool.network].mainnet.getTransactionURL(
+                              tx.hash,
+                            )}
+                            isExternal
+                            color="blue.400"
+                          >
+                            {tx.timestampMoment.fromNow()}
+                            <ExternalLinkIcon mx="2px" />
+                          </Link>
+                        </ChakraTooltip>
                       </Td>
                     </Tr>
                   );
