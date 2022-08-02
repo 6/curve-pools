@@ -83,8 +83,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
               <Text fontSize="md">
                 {coin.balanceStatus} (current: {coin.poolWeightFormatted}, ideal:
-                {pool.idealPoolWeightFormatted}, change:{' '}
-                {coin.poolWeightVsIdealPercentageChangeFormatted})
+                {pool.idealPoolWeightFormatted})
               </Text>
             </HStack>
           );
@@ -176,6 +175,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                     [CurveTransactionType.ADD_LIQUIDITY]: 'green',
                     [CurveTransactionType.REMOVE_LIQUIDITY]: 'orange',
                   }[tx.type];
+                  const isBigAmount = tx.totalUsdAmount.greaterThanOrEqualTo(1000000);
                   return (
                     <Tr>
                       <Td>
@@ -207,14 +207,18 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                           return (
                             <HStack paddingTop="1" paddingBottom="1">
                               <Avatar size="2xs" src={token.logoURL} />
-                              <Text>
+                              <Text fontWeight={isBigAmount ? 'bold' : 'normal'}>
                                 {token.symbol}: {text} {icon} {amountText}
                               </Text>
                             </HStack>
                           );
                         })}
                       </Td>
-                      <Td isNumeric>{tx.totalUsdFormatted}</Td>
+                      <Td isNumeric>
+                        <Text fontWeight={isBigAmount ? 'bold' : 'normal'}>
+                          {tx.totalUsdFormatted}
+                        </Text>
+                      </Td>
                       <Td isNumeric>
                         <Link
                           href={unauthedExplorers[pool.network].mainnet.getTransactionURL(tx.hash)}
