@@ -20,7 +20,7 @@ import {
   Th,
   Td,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { AddIcon, ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import {
   LineChart,
   Line,
@@ -33,11 +33,12 @@ import {
 } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
-import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
+import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD } from '../../utils/curve.constants';
 import { unauthedExplorers } from '../../utils/unauthed-explorers';
 import { useExchangeRateHistory } from '../../hooks/use-exchange-rate-history';
 import moment from 'moment';
+import { CurveLiquidityImpact, CurveTransactionType } from '../../utils/parse-transaction';
 
 interface DashboardPoolItemProps {
   pool: CurvePoolForUi;
@@ -94,7 +95,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </HStack>
           );
         })}
-        <Heading fontSize="md" marginTop="5">
+        <Heading fontSize="md" marginTop="5" marginBottom="2">
           Exchange rate (last 7 days)
         </Heading>
         {exchangeRateHistory ? (
@@ -132,7 +133,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           <Text>No data</Text>
         )}
 
-        <Heading fontSize="md" marginTop="5">
+        <Heading fontSize="md" marginTop="5" marginBottom="2">
           Large recent transactions
         </Heading>
         {prominentTxs.length === 0 ? (
@@ -146,18 +147,52 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             <Table variant="simple" size="sm">
               <Thead>
                 <Tr>
-                  <Th>Type</Th>
+                  <Th>Event</Th>
                   <Th>Details</Th>
-                  <Th isNumeric>USD value</Th>
+                  <Th isNumeric>Total USD value</Th>
                   <Th isNumeric>Date</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {prominentTxs.map((tx) => {
+                  const readableEventType = {
+                    [CurveTransactionType.EXCHANGE]: 'Exchange',
+                    [CurveTransactionType.ADD_LIQUIDITY]: 'Add liquidity',
+                    [CurveTransactionType.REMOVE_LIQUIDITY]: 'Remove liquidity',
+                  }[tx.type];
                   return (
                     <Tr>
-                      <Td>{tx.type}</Td>
-                      <Td>TODO: details</Td>
+                      <Td>{readableEventType}</Td>
+                      <Td>
+                        {tx.tokens.map((token) => {
+                          let icon;
+                          let text;
+                          let amountText;
+                          if (token.type === CurveLiquidityImpact.ADD) {
+                            icon = <TriangleUpIcon color="green" />;
+                            text = 'Added liquidity';
+                          } else {
+                            icon = <TriangleDownIcon color="red" />;
+                            text = 'Removed liquidity';
+                          }
+                          if (
+                            token.usdAmount &&
+                            tx.tokens.length > 1 &&
+                            tx.type !== CurveTransactionType.EXCHANGE
+                          ) {
+                            const amountPrefix =
+                              token.type === CurveLiquidityImpact.ADD ? '+' : '-';
+                            amountText = `${amountPrefix}${usdCompactFormatter.format(
+                              token.usdAmount.toNumber(),
+                            )}`;
+                          }
+                          return (
+                            <Text>
+                              {token.symbol}: {text} {icon} {amountText}
+                            </Text>
+                          );
+                        })}
+                      </Td>
                       <Td isNumeric>{tx.totalUsdFormatted}</Td>
                       <Td isNumeric>
                         <Link
