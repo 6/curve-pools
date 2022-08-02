@@ -118,10 +118,10 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             />
             <YAxis
               type="number"
-              domain={['dataMin - 0.05', 'dataMax + 0.05']}
+              domain={['dataMin - 0.001', 'dataMax + 0.001']}
               tickFormatter={(rate) => rate.toFixed(3)}
             />
-            <Tooltip />
+            <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
             <Legend />
             {exchangeRateHistory.seriesLabels.map((label, i) => {
               const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
