@@ -12,6 +12,7 @@ import {
   Button,
   Tooltip,
   Link,
+  Show,
 } from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
@@ -59,9 +60,11 @@ export const DashboardScreen = () => {
         </Text>
       </Center>
       <HStack marginBottom="1">
-        <Box flex="1" maxWidth="100px" paddingLeft="15px">
-          <Text fontWeight="bold">Network</Text>
-        </Box>
+        <Show above="md">
+          <Box flex="1" maxWidth="100px" paddingLeft="15px">
+            <Text fontWeight="bold">Network</Text>
+          </Box>
+        </Show>
         <Box flex="1" maxWidth="80px" paddingLeft="10px">
           <Text fontWeight="bold">Pool</Text>
         </Box>

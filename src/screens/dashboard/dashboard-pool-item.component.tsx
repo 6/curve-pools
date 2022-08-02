@@ -24,6 +24,7 @@ import {
   Stack,
   Radio,
   Code,
+  Show,
 } from '@chakra-ui/react';
 import lodash from 'lodash';
 import { ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
@@ -65,16 +66,18 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   return (
     <AccordionItem>
       <AccordionButton>
-        <Box flex="1" maxWidth="100px" textAlign="left">
-          {lodash.capitalize(pool.network)}
-        </Box>
-        <Box flex="1" maxWidth="80px">
-          <AvatarGroup size="xs" spacing="-0.7rem">
-            {pool.coins.map((coin) => {
-              return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
-            })}
-          </AvatarGroup>
-        </Box>
+        <Show above="md">
+          <Box flex="1" maxWidth="100px" textAlign="left">
+            {lodash.capitalize(pool.network)}
+          </Box>
+          <Box flex="1" maxWidth="80px">
+            <AvatarGroup size="xs" spacing="-0.7rem">
+              {pool.coins.map((coin) => {
+                return <Avatar key={coin.address} name={coin.symbol} src={coin.logoURL} />;
+              })}
+            </AvatarGroup>
+          </Box>
+        </Show>
         <Box flex="3" textAlign="left">
           <Text fontWeight="bold">
             {pool.displayName}
@@ -117,10 +120,12 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Badge colorScheme={coin.balanceStatusColor}>
                 {coin.balanceStatus.split('_').join(' ')}
               </Badge>
-              <Text fontSize="md" flex="1" textAlign="right">
-                Current weight: {coin.poolWeightFormatted}{' '}
-                <i>(Ideal : {pool.idealPoolWeightFormatted})</i>
-              </Text>
+              <Show above="md">
+                <Text fontSize="md" flex="1" textAlign="right">
+                  Current weight: {coin.poolWeightFormatted}{' '}
+                  <i>(Ideal : {pool.idealPoolWeightFormatted})</i>
+                </Text>
+              </Show>
             </HStack>
           );
         })}
