@@ -56,6 +56,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
 
   console.log(`ex history for ${pool.shortName ?? pool.name}`, exchangeRateHistory);
 
+  const explorer = unauthedExplorers[pool.network].mainnet;
+
   return (
     <AccordionItem>
       <AccordionButton>
@@ -95,6 +97,11 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             </HStack>
           );
         })}
+        <Box marginTop="5">
+          <Link href={explorer.getAddressURL(pool.address)} isExternal>
+            View Pool on {explorer.name} <ExternalLinkIcon mx="2px" />
+          </Link>
+        </Box>
         <Heading fontSize="md" marginTop="5" marginBottom="2">
           Exchange rate (last 7 days)
         </Heading>
@@ -130,7 +137,11 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             })}
           </LineChart>
         ) : (
-          <Text>No data</Text>
+          <Text>
+            {pool.network !== 'ethereum'
+              ? 'Data only available for Ethereum mainnet-based pools.'
+              : 'No recent data found.'}
+          </Text>
         )}
 
         <Heading fontSize="md" marginTop="5" marginBottom="2">
