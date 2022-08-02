@@ -11,6 +11,12 @@ interface GraphDataPoint {
 }
 export type ExchangeRateGraphDataPoints = Record<string, Array<GraphDataPoint>>;
 
+interface GraphDataPointJSON {
+  rate: string;
+  timestamp: number;
+}
+export type ExchangeRateGraphDataPointsJSON = Record<string, Array<GraphDataPointJSON>>;
+
 interface GeneratePoolExchangeRateGraphProps {
   pool: CurvePoolExtended;
   logs: Array<ParsedCurveLog>;
@@ -24,7 +30,8 @@ export const generatePoolExchangeRateGraph = ({
     return;
   }
   const relevantLogs = logs.filter(
-    (log) => log.type === CurveTransactionType.EXCHANGE && log.totalUsdAmount.greaterThan(0),
+    // Ignore extremely tiny swaps that can cause extremely outliers in data:
+    (log) => log.type === CurveTransactionType.EXCHANGE && log.totalUsdAmount.greaterThan(1),
   );
   if (!relevantLogs.length) {
     return;

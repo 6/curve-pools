@@ -32,10 +32,12 @@ interface ParseLogProps {
 interface ParseLogAPI {
   decodedLog: ethers.utils.LogDescription;
   parsedLog: ParsedCurveLog | void;
+  exchangeUnderlying: boolean;
 }
 export const parseLog = ({ pool, log }: ParseLogProps): ParseLogAPI => {
   const decodedLog = pool.interface.parseLog(log);
 
+  let exchangeUnderlying = false;
   let logDetails;
   // These two seem to work similarly, reporting token_amounts the same way:
   if (['RemoveLiquidity', 'RemoveLiquidityImbalance'].includes(decodedLog.name)) {
@@ -46,8 +48,10 @@ export const parseLog = ({ pool, log }: ParseLogProps): ParseLogAPI => {
     logDetails = parseAddLiquidity({ pool, decodedLog });
   } else if (decodedLog.name === 'TokenExchange') {
     logDetails = parseExchange({ pool, decodedLog });
+  } else if (decodedLog.name === 'TokenExchangeUnderlying') {
+    // TokenExchangeUnderlying unsupported for now, unable to find underlying coin index:
+    exchangeUnderlying = true;
   }
-  // TokenExchangeUnderlying unsupported for now, unable to find underlying coin index:
 
   const parsedLog = logDetails
     ? {
@@ -58,7 +62,7 @@ export const parseLog = ({ pool, log }: ParseLogProps): ParseLogAPI => {
       }
     : undefined;
 
-  return { decodedLog, parsedLog };
+  return { decodedLog, parsedLog, exchangeUnderlying };
 };
 
 interface ParseLogDetailsProps {

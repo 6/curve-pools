@@ -56,13 +56,15 @@ export type EtherscanLogsResult = Array<EtherscanLog>;
 
 export type EtherscanABIResult = Record<string, unknown>;
 
-type EtherscanProps = { baseURL: string; apiURL: string; apiKey?: string };
+type EtherscanProps = { name: string; baseURL: string; apiURL: string; apiKey?: string };
 export class Etherscan {
+  name: string;
   baseURL: string;
   apiURL: string;
   apiKey?: string;
 
-  constructor({ baseURL, apiURL, apiKey }: EtherscanProps) {
+  constructor({ name, baseURL, apiURL, apiKey }: EtherscanProps) {
+    this.name = name;
     this.baseURL = baseURL;
     this.apiURL = apiURL;
     this.apiKey = apiKey;
