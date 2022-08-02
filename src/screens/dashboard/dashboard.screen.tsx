@@ -1,17 +1,39 @@
 import React from 'react';
-import { Container, Heading, Text, Center, Accordion, Box, HStack } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  Text,
+  Center,
+  Accordion,
+  Box,
+  HStack,
+  useColorMode,
+  Button,
+  Tooltip,
+} from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
 import { usdNoDecimalsFormatter } from '../../utils/number-formatters';
 import { CURVE_NETWORKS, TOP_POOLS_MINIMUM_TVL_THRESHOLD } from '../../utils/curve.constants';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 export const DashboardScreen = () => {
   const topPools = useTopPools();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   console.log('top pools:', topPools);
 
   return (
-    <Container maxW="900px" paddingTop="10" paddingBottom="10">
+    <Container maxW="900px" paddingTop="5" paddingBottom="10">
+      <HStack>
+        <Box flex="1" textAlign="right">
+          <Tooltip label={colorMode === 'light' ? 'Enable dark mode' : 'Enable light mode'}>
+            <Button onClick={toggleColorMode}>
+              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          </Tooltip>
+        </Box>
+      </HStack>
       <Heading fontSize="4xl" textAlign="center">
         🕵
       </Heading>
