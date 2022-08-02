@@ -54,6 +54,7 @@ export interface CurvePoolForUi extends CurvePoolSimplified {
   usdTotalFormatted: string;
   balanceStatus: PoolBalanceStatus;
   balanceStatusColor: BalanceStatusColor;
+  displayName: string;
 }
 
 const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
@@ -110,6 +111,11 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
     };
   });
 
+  let displayName = pool.shortName ?? pool.name ?? pool.id;
+  if (displayName.startsWith('Curve.fi')) {
+    displayName = displayName.replace(/^Curve\.fi\s+?/, '');
+  }
+
   const usdTotalFormatted = usdCompactFormatter.format(pool.usdTotal);
 
   let poolBalanceStatus = PoolBalanceStatus.GOOD;
@@ -145,6 +151,7 @@ const populatePoolUiData = (pool: CurvePoolSimplified): CurvePoolForUi => {
 
   return {
     ...pool,
+    displayName,
     coins: coinsSorted,
     idealPoolWeight,
     idealPoolWeightFormatted,

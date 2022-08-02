@@ -58,7 +58,20 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </AvatarGroup>
         </Box>
         <Box flex="3" textAlign="left">
-          <Text fontWeight="bold">{pool.shortName ?? pool.name ?? pool.id}</Text>
+          <Text fontWeight="bold">
+            {pool.displayName}
+            {pool.isMetaPool && (
+              <ChakraTooltip
+                label={`Metapools allow for one token to trade with another underlying base pool (${
+                  pool.coins.find((c) => c.isBasePoolLpToken)?.symbol ?? 'unknown'
+                }).`}
+              >
+                <Badge ml="1" fontSize="0.6em" colorScheme="facebook" marginLeft="1">
+                  Meta
+                </Badge>
+              </ChakraTooltip>
+            )}
+          </Text>
           <Text color="gray.500">{pool.coins.map((coin) => coin.symbol).join('+')}</Text>
         </Box>
         <Box flex="2" textAlign="right" paddingRight="10px">
@@ -100,16 +113,8 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         </Box>
         <Heading fontSize="md" marginTop="10" marginBottom="5">
           Exchange rate (last 7 days)
-          {exchangeRateHistory?.isMissingData && (
-            <Text color="red">
-              Note: Exchange rate data for this pool is incomplete.{' '}
-              <ChakraTooltip label="This pool uses the TokenExchangeUnderlying function which is not yet indexed.">
-                <QuestionIcon />
-              </ChakraTooltip>
-            </Text>
-          )}
         </Heading>
-        {exchangeRateHistory ? (
+        {!pool.isMetaPool && exchangeRateHistory ? (
           <LineChart
             width={500}
             height={300}
@@ -145,7 +150,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             {pool.network !== 'ethereum'
               ? 'Data only available for Ethereum mainnet-based pools.'
               : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
-              ? 'This graph is not supported for pools with uncorrelated assets.'
+              ? 'Data not supported for pools with uncorrelated assets.'
+              : pool.isMetaPool
+              ? 'Data not supported for metapools as the TokenExchangeUnderlying function is not yet indexed.'
               : 'No recent data found.'}
           </Text>
         )}
