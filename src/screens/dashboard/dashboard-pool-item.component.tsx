@@ -181,7 +181,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         ) : (
           <Text color="gray.500">
             {pool.network !== 'ethereum'
-              ? 'Data only available for Ethereum mainnet-based pools.'
+              ? 'Data only available for Ethereum mainnet pools.'
               : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
               ? 'Data not available for pools with uncorrelated assets.'
               : pool.isMetaPool
@@ -238,7 +238,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           {usdCompactFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())})
         </Heading>
         {prominentTxs.length === 0 ? (
-          <Text marginBottom="5">
+          <Text marginBottom="5" color="gray.500">
             No recent transactions greater than{' '}
             {usdNoDecimalsFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())}{' '}
             found.
