@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AccordionItem,
   AccordionPanel,
@@ -20,6 +20,10 @@ import {
   Th,
   Td,
   Tooltip as ChakraTooltip,
+  RadioGroup,
+  Stack,
+  Radio,
+  Code,
 } from '@chakra-ui/react';
 import lodash from 'lodash';
 import { ExternalLinkIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
@@ -52,6 +56,7 @@ interface DashboardPoolItemProps {
   pool: CurvePoolForUi;
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
+  const [txSortOrder, setTxSortOrder] = useState<string>('recent');
   const prominentTxs = useProminentTransactions({ pool });
   const exchangeRateHistory = useExchangeRateHistory({ pool });
   const liquidityHistory = useLiquidityHistory({ pool });
@@ -124,42 +129,48 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             View Pool on {explorer.name} <ExternalLinkIcon mx="2px" />
           </Link>
         </Box>
-        <Heading fontSize="md" marginTop="10" marginBottom="5">
+        <Heading fontSize="md" marginTop="10" marginBottom="3">
           Exchange rate (last 7 days)
         </Heading>
         {!pool.isMetaPool && exchangeRateHistory ? (
-          <ResponsiveContainer minWidth={500} minHeight={300}>
-            <LineChart
-              width={500}
-              height={300}
-              data={exchangeRateHistory.dataPoints}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <XAxis
-                dataKey="timestamp"
-                domain={['dataMin', 'dataMax']}
-                name="Time"
-                tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
-                type="number"
-              />
-              <YAxis
-                type="number"
-                domain={['dataMin - 0.001', 'dataMax + 0.001']}
-                tickFormatter={(rate) => rate.toFixed(3)}
-              />
-              <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
-              <Legend wrapperStyle={{ position: 'relative' }} />
-              {exchangeRateHistory.seriesLabels.map((label, i) => {
-                const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                return <Line type="monotone" dataKey={label} stroke={color} dot={false} />;
-              })}
-            </LineChart>
-          </ResponsiveContainer>
+          <>
+            <Text color="gray.500" marginBottom="5">
+              Exchange rates between assets in this pool. Based on actual rates received from
+              <Code>TokenExchange</Code> events (swaps) done by users.
+            </Text>
+            <ResponsiveContainer minWidth={500} minHeight={300}>
+              <LineChart
+                width={500}
+                height={300}
+                data={exchangeRateHistory.dataPoints}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <XAxis
+                  dataKey="timestamp"
+                  domain={['dataMin', 'dataMax']}
+                  name="Time"
+                  tickFormatter={(unixTime) => moment(unixTime * 1000).format('YYYY-MM-DD')}
+                  type="number"
+                />
+                <YAxis
+                  type="number"
+                  domain={['dataMin - 0.001', 'dataMax + 0.001']}
+                  tickFormatter={(rate) => rate.toFixed(3)}
+                />
+                <Tooltip labelFormatter={(t) => new Date(t * 1000).toLocaleString()} />
+                <Legend wrapperStyle={{ position: 'relative' }} />
+                {exchangeRateHistory.seriesLabels.map((label, i) => {
+                  const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+                  return <Line type="monotone" dataKey={label} stroke={color} dot={false} />;
+                })}
+              </LineChart>
+            </ResponsiveContainer>
+          </>
         ) : (
           <Text>
             {pool.network !== 'ethereum'
@@ -172,38 +183,45 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </Text>
         )}
 
-        <Heading fontSize="md" marginTop="10" marginBottom="5">
+        <Heading fontSize="md" marginTop="10" marginBottom="3">
           Liquidity history (last 7 days)
         </Heading>
         {liquidityHistory ? (
-          <ResponsiveContainer minWidth={500} minHeight={300}>
-            <BarChart
-              stackOffset="sign"
-              width={500}
-              height={300}
-              data={liquidityHistory.dataPoints}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <XAxis dataKey="date" domain={['dataMin', 'dataMax']} name="Date" />
-              <YAxis
-                type="number"
-                // domain={['dataMin - 0.001', 'dataMax + 0.001']}
-                tickFormatter={(rate) => usdCompactFormatter.format(rate)}
-              />
-              <Tooltip />
-              <Legend wrapperStyle={{ position: 'relative' }} />
-              <ReferenceLine y={0} stroke="#000" />
-              {liquidityHistory.seriesLabels.map((label, i) => {
-                const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
-                return <Bar dataKey={label} fill={color} stackId="stack" />;
-              })}
-            </BarChart>
-          </ResponsiveContainer>
+          <>
+            <Text color="gray.500" marginBottom="5">
+              Daily USD delta in <Code>AddLiquidity</Code> + <Code>RemoveLiquidity</Code> events.
+              This excludes changes to liquidity caused by <Code>TokenExchange</Code> events
+              (swaps).
+            </Text>
+            <ResponsiveContainer minWidth={500} minHeight={300}>
+              <BarChart
+                stackOffset="sign"
+                width={500}
+                height={300}
+                data={liquidityHistory.dataPoints}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <XAxis dataKey="date" domain={['dataMin', 'dataMax']} name="Date" />
+                <YAxis
+                  type="number"
+                  // domain={['dataMin - 0.001', 'dataMax + 0.001']}
+                  tickFormatter={(rate) => usdCompactFormatter.format(rate)}
+                />
+                <Tooltip />
+                <Legend wrapperStyle={{ position: 'relative' }} />
+                <ReferenceLine y={0} stroke="#000" />
+                {liquidityHistory.seriesLabels.map((label, i) => {
+                  const color = ['green', 'blue', 'purple', 'pink', 'red', 'orange'][i];
+                  return <Bar dataKey={label} fill={color} stackId="stack" />;
+                })}
+              </BarChart>
+            </ResponsiveContainer>
+          </>
         ) : (
           <Text>Not enough data found, or no data available.</Text>
         )}
@@ -218,92 +236,106 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             found.
           </Text>
         ) : (
-          <TableContainer>
-            <Table variant="simple" size="sm">
-              <Thead>
-                <Tr>
-                  <Th>Event</Th>
-                  <Th>Details</Th>
-                  <Th isNumeric>Total USD value</Th>
-                  <Th isNumeric>Date</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {prominentTxs.map((tx) => {
-                  const readableEventType = {
-                    [CurveTransactionType.EXCHANGE]: 'Exchange',
-                    [CurveTransactionType.ADD_LIQUIDITY]: 'Add liquidity',
-                    [CurveTransactionType.REMOVE_LIQUIDITY]: 'Remove liquidity',
-                  }[tx.type];
-                  const eventColor = {
-                    [CurveTransactionType.EXCHANGE]: 'gray',
-                    [CurveTransactionType.ADD_LIQUIDITY]: 'green',
-                    [CurveTransactionType.REMOVE_LIQUIDITY]: 'orange',
-                  }[tx.type];
-                  const isBigAmount = tx.totalUsdAmount.greaterThanOrEqualTo(1000000);
-                  return (
-                    <Tr>
-                      <Td>
-                        <Badge colorScheme={eventColor}>{readableEventType}</Badge>
-                      </Td>
-                      <Td>
-                        {tx.tokens.map((token) => {
-                          let icon;
-                          let text;
-                          let amountText;
-                          if (token.type === CurveLiquidityImpact.ADD) {
-                            icon = <TriangleUpIcon color="green" />;
-                            text = 'Added liquidity';
-                          } else {
-                            icon = <TriangleDownIcon color="red" />;
-                            text = 'Removed liquidity';
-                          }
-                          if (
-                            token.usdAmount &&
-                            tx.tokens.length > 1 &&
-                            tx.type !== CurveTransactionType.EXCHANGE
-                          ) {
-                            const amountPrefix =
-                              token.type === CurveLiquidityImpact.ADD ? '+' : '-';
-                            amountText = `${amountPrefix}${usdCompactFormatter.format(
-                              token.usdAmount.toNumber(),
-                            )}`;
-                          }
-                          return (
-                            <HStack paddingTop="1" paddingBottom="1">
-                              <Avatar size="2xs" src={token.logoURL} />
-                              <Text fontWeight={isBigAmount ? 'bold' : 'normal'}>
-                                {token.symbol}: {text} {icon} {amountText}
-                              </Text>
-                            </HStack>
-                          );
-                        })}
-                      </Td>
-                      <Td isNumeric>
-                        <Text fontWeight={isBigAmount ? 'bold' : 'normal'}>
-                          {tx.totalUsdFormatted}
-                        </Text>
-                      </Td>
-                      <Td isNumeric>
-                        <ChakraTooltip label={tx.timestampMoment.format('LLL')}>
-                          <Link
-                            href={unauthedExplorers[pool.network].mainnet.getTransactionURL(
-                              tx.hash,
-                            )}
-                            isExternal
-                            color="blue.400"
-                          >
-                            {tx.timestampMoment.fromNow()}
-                            <ExternalLinkIcon mx="2px" />
-                          </Link>
-                        </ChakraTooltip>
-                      </Td>
-                    </Tr>
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </TableContainer>
+          <>
+            <HStack marginTop="5" marginBottom="5">
+              <Text>Sort by:</Text>
+              <RadioGroup onChange={setTxSortOrder} value={txSortOrder}>
+                <Stack direction="row">
+                  <Radio value={'recent'}>Recent</Radio>
+                  <Radio value={'largest'}>Largest</Radio>
+                </Stack>
+              </RadioGroup>
+            </HStack>
+            <TableContainer>
+              <Table variant="simple" size="sm">
+                <Thead>
+                  <Tr>
+                    <Th>Event</Th>
+                    <Th>Details</Th>
+                    <Th isNumeric>Total USD value</Th>
+                    <Th isNumeric>Date</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {(txSortOrder === 'largest'
+                    ? lodash.orderBy(prominentTxs, (tx) => tx.totalUsdAmount.toNumber(), 'desc')
+                    : prominentTxs
+                  ).map((tx) => {
+                    const readableEventType = {
+                      [CurveTransactionType.EXCHANGE]: 'Exchange',
+                      [CurveTransactionType.ADD_LIQUIDITY]: 'Add liquidity',
+                      [CurveTransactionType.REMOVE_LIQUIDITY]: 'Remove liquidity',
+                    }[tx.type];
+                    const eventColor = {
+                      [CurveTransactionType.EXCHANGE]: 'gray',
+                      [CurveTransactionType.ADD_LIQUIDITY]: 'green',
+                      [CurveTransactionType.REMOVE_LIQUIDITY]: 'orange',
+                    }[tx.type];
+                    const isBigAmount = tx.totalUsdAmount.greaterThanOrEqualTo(1000000);
+                    return (
+                      <Tr>
+                        <Td>
+                          <Badge colorScheme={eventColor}>{readableEventType}</Badge>
+                        </Td>
+                        <Td>
+                          {tx.tokens.map((token) => {
+                            let icon;
+                            let text;
+                            let amountText;
+                            if (token.type === CurveLiquidityImpact.ADD) {
+                              icon = <TriangleUpIcon color="green" />;
+                              text = 'Added liquidity';
+                            } else {
+                              icon = <TriangleDownIcon color="red" />;
+                              text = 'Removed liquidity';
+                            }
+                            if (
+                              token.usdAmount &&
+                              tx.tokens.length > 1 &&
+                              tx.type !== CurveTransactionType.EXCHANGE
+                            ) {
+                              const amountPrefix =
+                                token.type === CurveLiquidityImpact.ADD ? '+' : '-';
+                              amountText = `${amountPrefix}${usdCompactFormatter.format(
+                                token.usdAmount.toNumber(),
+                              )}`;
+                            }
+                            return (
+                              <HStack paddingTop="1" paddingBottom="1">
+                                <Avatar size="2xs" src={token.logoURL} />
+                                <Text>
+                                  {token.symbol}: {text} {icon} {amountText}
+                                </Text>
+                              </HStack>
+                            );
+                          })}
+                        </Td>
+                        <Td isNumeric>
+                          <Text fontWeight={isBigAmount ? 'bold' : 'normal'}>
+                            {tx.totalUsdFormatted}
+                          </Text>
+                        </Td>
+                        <Td isNumeric>
+                          <ChakraTooltip label={tx.timestampMoment.format('LLL')}>
+                            <Link
+                              href={unauthedExplorers[pool.network].mainnet.getTransactionURL(
+                                tx.hash,
+                              )}
+                              isExternal
+                              color="blue.400"
+                            >
+                              {tx.timestampMoment.fromNow()}
+                              <ExternalLinkIcon mx="2px" />
+                            </Link>
+                          </ChakraTooltip>
+                        </Td>
+                      </Tr>
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </>
         )}
       </AccordionPanel>
     </AccordionItem>
