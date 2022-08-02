@@ -22,16 +22,7 @@ import {
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon, QuestionIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { CurvePoolForUi, PoolBalanceStatus } from '../../hooks/use-top-pools';
 import { useProminentTransactions } from '../../hooks/use-prominent-transactions';
 import { usdCompactFormatter, usdNoDecimalsFormatter } from '../../utils/number-formatters';
