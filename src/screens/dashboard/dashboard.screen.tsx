@@ -93,7 +93,7 @@ export const DashboardScreen = () => {
       </Center>
       <Center>
         <Text marginTop="1" fontSize="md" textAlign="center">
-          Data last updated: <Code>{lastUpdatedMoment.format()}</Code> (
+          Data last updated: <Code>{lastUpdatedMoment.utc().format()}</Code> (
           {lastUpdatedMoment.fromNow()})
         </Text>
       </Center>
