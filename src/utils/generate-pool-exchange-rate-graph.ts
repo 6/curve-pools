@@ -30,7 +30,8 @@ export const generatePoolExchangeRateGraph = ({
     return;
   }
   const relevantLogs = logs.filter(
-    (log) => log.type === CurveTransactionType.EXCHANGE && log.totalUsdAmount.greaterThan(0),
+    // Ignore extremely tiny swaps that can cause extremely outliers in data:
+    (log) => log.type === CurveTransactionType.EXCHANGE && log.totalUsdAmount.greaterThan(1),
   );
   if (!relevantLogs.length) {
     return;
