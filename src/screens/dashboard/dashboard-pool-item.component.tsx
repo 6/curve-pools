@@ -175,7 +175,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         <Heading fontSize="md" marginTop="10" marginBottom="5">
           Liquidity history (last 7 days)
         </Heading>
-        {!pool.isMetaPool && liquidityHistory ? (
+        {liquidityHistory ? (
           <ResponsiveContainer minWidth={500} minHeight={300}>
             <BarChart
               stackOffset="sign"
@@ -189,12 +189,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                 bottom: 5,
               }}
             >
-              <XAxis
-                dataKey="date"
-                domain={['dataMin', 'dataMax']}
-                name="Time"
-                // type="number"
-              />
+              <XAxis dataKey="date" domain={['dataMin', 'dataMax']} name="Date" />
               <YAxis
                 type="number"
                 // domain={['dataMin - 0.001', 'dataMax + 0.001']}
