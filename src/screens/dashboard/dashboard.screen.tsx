@@ -1,4 +1,5 @@
 import React from 'react';
+import lodash from 'lodash';
 import {
   Container,
   Heading,
@@ -13,6 +14,7 @@ import {
   Tooltip,
   Link,
   Show,
+  Code,
 } from '@chakra-ui/react';
 import { useTopPools } from '../../hooks/use-top-pools';
 import { DashboardPoolItem } from './dashboard-pool-item.component';
@@ -78,19 +80,19 @@ export const DashboardScreen = () => {
         })}
       </Accordion>
       <Center>
-        <Text marginTop="5" fontSize="md" textAlign="center">
-          Displaying a total of {topPools.length} pools with a minimum TVL of
-          {' ' + usdNoDecimalsFormatter.format(TOP_POOLS_MINIMUM_TVL_THRESHOLD.toNumber())}.
+        <Text marginTop="8" fontSize="md" textAlign="center">
+          Showing <b>{topPools.length}</b> pools with a minimum TVL of{' '}
+          <b>{usdNoDecimalsFormatter.format(TOP_POOLS_MINIMUM_TVL_THRESHOLD.toNumber())}</b>.
         </Text>
       </Center>
       <Center>
-        <Text fontSize="md" textAlign="center">
-          Supported networks: {CURVE_NETWORKS.join(', ')}.
+        <Text marginTop="1" fontSize="md" textAlign="center">
+          Supported networks: {CURVE_NETWORKS.map(lodash.capitalize).join(', ')}
         </Text>
       </Center>
       <Center>
-        <Text fontSize="md" textAlign="center">
-          Data last updated: TODO.
+        <Text marginTop="1" fontSize="md" textAlign="center">
+          Data last updated: <Code>TODO</Code>
         </Text>
       </Center>
     </Container>
