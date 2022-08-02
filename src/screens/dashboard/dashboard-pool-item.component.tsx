@@ -150,11 +150,11 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           </Text>
         )}
 
-        <Heading fontSize="md" marginTop="10" marginBottom="2">
-          Large recent transactions
+        <Heading fontSize="md" marginTop="10" marginBottom="5">
+          Large transactions (last 7 days)
         </Heading>
         {prominentTxs.length === 0 ? (
-          <Text>
+          <Text marginBottom="5">
             No recent transactions greater than{' '}
             {usdNoDecimalsFormatter.format(PROMINENT_TRANSACTIONS_MINIMUM_USD_THRESHOLD.toNumber())}{' '}
             found
