@@ -64,7 +64,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
           {pool.network}: {pool.shortName ?? pool.name ?? pool.id} (
           {pool.coins.map((coin) => coin.symbol).join('+')})
         </Box>
-        <Box flex="1" textAlign="right">
+        <Box flex="2" textAlign="right">
           {pool.usdTotalFormatted}{' '}
           <Badge colorScheme={badgeColor}>
             {pool.balanceStatus === PoolBalanceStatus.GOOD
@@ -81,9 +81,10 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Avatar size="xs" src={coin.logoURL} />
               <Text fontSize="md">{coin.symbol}</Text>
               <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
-              <Text fontSize="md">
-                {coin.balanceStatus} (current: {coin.poolWeightFormatted}, ideal:
-                {pool.idealPoolWeightFormatted})
+              <Badge colorScheme={badgeColor}>{coin.balanceStatus.split('_').join(' ')}</Badge>
+              <Text fontSize="md" flex="1" textAlign="right">
+                Current weight: {coin.poolWeightFormatted} Ideal weight:{' '}
+                {pool.idealPoolWeightFormatted}
               </Text>
             </HStack>
           );
