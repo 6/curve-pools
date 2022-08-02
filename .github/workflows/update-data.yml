@@ -87,6 +87,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: yarn run-script tasks/process-liquidity-history-graphs
 
+      - name: Update last updated timestamp
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: yarn run-script tasks/update-last-updated-timestamp
+
       # TODO: this should create a PR, then automerge via gh api.
       # then we can enable branch protection
       - name: Commit and push data
