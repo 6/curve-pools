@@ -40,13 +40,6 @@ interface DashboardPoolItemProps {
 }
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
-  const badgeColor = {
-    [PoolBalanceStatus.SEVERE]: 'red',
-    [PoolBalanceStatus.MODERATE]: 'orange',
-    [PoolBalanceStatus.MINOR]: 'yellow',
-    [PoolBalanceStatus.GOOD]: 'green',
-  }[pool.balanceStatus];
-
   const exchangeRateHistory = useExchangeRateHistory({ pool });
 
   console.log(`ex history for ${pool.shortName ?? pool.name}`, exchangeRateHistory);
@@ -69,7 +62,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
         </Box>
         <Box flex="2" textAlign="right">
           {pool.usdTotalFormatted}{' '}
-          <Badge colorScheme={badgeColor}>
+          <Badge colorScheme={pool.balanceStatusColor}>
             {pool.balanceStatus === PoolBalanceStatus.GOOD
               ? pool.balanceStatus
               : `${pool.balanceStatus} imbalance`}
@@ -84,7 +77,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               <Avatar size="xs" src={coin.logoURL} />
               <Text fontSize="md">{coin.symbol}</Text>
               <Text fontSize="md">{coin.totalUsdBalanceFormatted}</Text>
-              <Badge colorScheme={badgeColor}>{coin.balanceStatus.split('_').join(' ')}</Badge>
+              <Badge colorScheme={coin.balanceStatusColor}>
+                {coin.balanceStatus.split('_').join(' ')}
+              </Badge>
               <Text fontSize="md" flex="1" textAlign="right">
                 Current weight: {coin.poolWeightFormatted} Ideal weight:{' '}
                 {pool.idealPoolWeightFormatted}
