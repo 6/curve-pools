@@ -152,9 +152,9 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
             {pool.network !== 'ethereum'
               ? 'Data only available for Ethereum mainnet-based pools.'
               : pool.assetTypeName === CurveAssetTypeName.UNKNOWN
-              ? 'Data not supported for pools with uncorrelated assets.'
+              ? 'Data not available for pools with uncorrelated assets.'
               : pool.isMetaPool
-              ? 'Data not supported for metapools as the TokenExchangeUnderlying function is not yet indexed.'
+              ? 'Data not available for metapools, as the TokenExchangeUnderlying function is not yet indexed.'
               : 'No recent data found.'}
           </Text>
         )}
