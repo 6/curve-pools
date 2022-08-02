@@ -24,10 +24,11 @@ export const DashboardScreen = () => {
           marginBottom="5"
           fontSize="xl"
           textAlign="center"
-          maxW="md"
+          maxW="lg"
           alignSelf="center"
         >
-          Explore the top Curve.fi pools, identify imbalances, and find large changes in liquidity.
+          Explore the top Curve.fi pools, identify imbalances early, and find large changes in
+          liquidity.
         </Text>
       </Center>
       <Accordion allowToggle>
