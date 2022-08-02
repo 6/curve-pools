@@ -145,7 +145,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               Exchange rates between assets in this pool. Based on actual rates received from
               <Code>TokenExchange</Code> events (swaps) done by users.
             </Text>
-            <ResponsiveContainer minWidth={300} minHeight={300}>
+            <ResponsiveContainer height={300} width={'100%'}>
               <LineChart
                 data={exchangeRateHistory.dataPoints}
                 margin={{
@@ -200,7 +200,7 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
               This excludes changes to liquidity caused by <Code>TokenExchange</Code> events
               (swaps).
             </Text>
-            <ResponsiveContainer minWidth={300} minHeight={300}>
+            <ResponsiveContainer height={300} width={'100%'}>
               <BarChart
                 stackOffset="sign"
                 data={liquidityHistory.dataPoints}
