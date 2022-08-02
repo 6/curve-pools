@@ -41,9 +41,6 @@ interface DashboardPoolItemProps {
 export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
   const prominentTxs = useProminentTransactions({ pool });
   const exchangeRateHistory = useExchangeRateHistory({ pool });
-
-  console.log(`ex history for ${pool.shortName ?? pool.name}`, exchangeRateHistory);
-
   const explorer = unauthedExplorers[pool.network].mainnet;
 
   return (
