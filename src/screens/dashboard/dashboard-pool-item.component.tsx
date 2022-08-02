@@ -205,9 +205,12 @@ export const DashboardPoolItem = ({ pool }: DashboardPoolItemProps) => {
                             )}`;
                           }
                           return (
-                            <Text>
-                              {token.symbol}: {text} {icon} {amountText}
-                            </Text>
+                            <HStack paddingTop="1" paddingBottom="1">
+                              <Avatar size="2xs" src={token.logoURL} />
+                              <Text>
+                                {token.symbol}: {text} {icon} {amountText}
+                              </Text>
+                            </HStack>
                           );
                         })}
                       </Td>
