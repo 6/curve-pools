@@ -1,6 +1,44 @@
 {
   "0x7f90122BF0700F9E7e1F688fe926940E8839F353": [],
-  "0x960ea3e3C7FB317332d990873d354E18d7645590": [],
+  "0x960ea3e3C7FB317332d990873d354E18d7645590": [
+    {
+      "hash": "0xef4d4cb0f635c1f94154f340488999088ba9370c47ceb3cbbaa915223793d64d",
+      "pool": "0x960ea3e3C7FB317332d990873d354E18d7645590",
+      "timestamp": 1659510290,
+      "type": "exchange",
+      "totalUsdAmount": "154154.25578953608789",
+      "tokens": [
+        {
+          "symbol": "WETH",
+          "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+          "tokenAmount": "94.30586667821028",
+          "usdAmount": "154154.25578953608789",
+          "type": "add"
+        },
+        {
+          "symbol": "USDT",
+          "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x22ba9375c0e0344a95198c2f15ba6c4dfdd63080389ae7c76da40f4dd9dbef3c",
+      "pool": "0x960ea3e3C7FB317332d990873d354E18d7645590",
+      "timestamp": 1659495322,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "209231.86060447231182",
+      "tokens": [
+        {
+          "symbol": "WBTC",
+          "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+          "tokenAmount": "9.086370808375920086",
+          "usdAmount": "209231.86060447231182",
+          "type": "remove"
+        }
+      ]
+    }
+  ],
   "0xf07d553B195080F84F582e88ecdD54bAa122b279": [],
   "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb": [
     {
@@ -8,13 +46,13 @@
       "pool": "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb",
       "timestamp": 1659166071,
       "type": "add_liquidity",
-      "totalUsdAmount": "151361.4436866",
+      "totalUsdAmount": "153089.04511908",
       "tokens": [
         {
           "symbol": "WBTC",
           "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
           "tokenAmount": "6.54394482",
-          "usdAmount": "151361.4436866",
+          "usdAmount": "153089.04511908",
           "type": "add"
         }
       ]
