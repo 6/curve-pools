@@ -2,6 +2,164 @@
   "0x061b87122Ed14b9526A813209C8a59a633257bAb": [],
   "0x1337BedC9D22ecbe766dF105c9623922A27963EC": [
     {
+      "hash": "0x501b47bca299495765eaa2f734d4697bf537fde1e0c21a88f3f9c9a504f0e341",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659694788,
+      "type": "add_liquidity",
+      "totalUsdAmount": "200231.89186",
+      "tokens": [
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "tokenAmount": "200031.86",
+          "usdAmount": "200231.89186",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0xf9c0126d29d71c17a5227e85ecca1a7df886bdc815b81398b9c08c9e87f2887d",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659692571,
+      "type": "add_liquidity",
+      "totalUsdAmount": "199803.92",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "199803.92",
+          "usdAmount": "199803.92",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0x23f13f900f36d5dada363335a234b90528e7eeafe45c12a24d22955c1db6c55f",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659682597,
+      "type": "exchange",
+      "totalUsdAmount": "100511.961952402",
+      "tokens": [
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "tokenAmount": "100411.550402",
+          "usdAmount": "100511.961952402",
+          "type": "add"
+        },
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xce9f498dac45b152761901940d0bbd90ea04f3c219fd60db5087703d3709a593",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659643115,
+      "type": "exchange",
+      "totalUsdAmount": "500500.236261025",
+      "tokens": [
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "tokenAmount": "500000.236025",
+          "usdAmount": "500500.236261025",
+          "type": "add"
+        },
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xf515fe12a4a84539384b711c7bab210a4c8b9b7907977cabc1401e9e9cc45588",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659636875,
+      "type": "exchange",
+      "totalUsdAmount": "111453.242625",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "111453.242625",
+          "usdAmount": "111453.242625",
+          "type": "add"
+        },
+        {
+          "symbol": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x0b73e689b95d21f6510c899780565fa35a6125e1e8ee5fcc2192aab4c01b28a1",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659619798,
+      "type": "exchange",
+      "totalUsdAmount": "100573.039",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "100573.039",
+          "usdAmount": "100573.039",
+          "type": "add"
+        },
+        {
+          "symbol": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x0f0cf3d0da768669d85d79cf0c1c275dfd4e357ae8ce31e283aab84138394386",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659617306,
+      "type": "exchange",
+      "totalUsdAmount": "100000",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "tokenAmount": "100000",
+          "usdAmount": "100000",
+          "type": "add"
+        },
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0xf8823a7287bfb70c9286f1e90a84ca3e7aeff775409bdc606946600254ad3b0f",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1659617246,
+      "type": "exchange",
+      "totalUsdAmount": "160160",
+      "tokens": [
+        {
+          "symbol": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "tokenAmount": "160000",
+          "usdAmount": "160160",
+          "type": "add"
+        },
+        {
+          "symbol": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xc04a7a1ffd25bfb577bcb1605ab1392e06c114fedb76c9ecb24160ef81a9d7c6",
       "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
       "timestamp": 1659602065,
@@ -60,27 +218,6 @@
         {
           "symbol": "DAI",
           "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0x608a0a8f5e1427adc2fefa6bf72c75ca43767a20e25a7188a848af061e609a80",
-      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
-      "timestamp": 1659005960,
-      "type": "exchange",
-      "totalUsdAmount": "124608.35940156791083",
-      "tokens": [
-        {
-          "symbol": "DAI",
-          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-          "tokenAmount": "124608.359401567910828447",
-          "usdAmount": "124608.35940156791083",
-          "type": "add"
-        },
-        {
-          "symbol": "USDC",
-          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
           "type": "remove"
         }
       ]
