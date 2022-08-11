@@ -1,17 +1,73 @@
 {
   "0x445FE580eF8d70FF569aB36e80c647af338db351": [
     {
+      "hash": "0x4b9239829c477f9cbf49ac19ac4f7f6103948d51304dbdb2089326d5cebe35f3",
+      "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "timestamp": 1660237349,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "1276782.406917956817017291",
+      "tokens": [
+        {
+          "symbol": "amDAI",
+          "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
+          "type": "remove"
+        },
+        {
+          "symbol": "amUSDC",
+          "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
+          "type": "remove"
+        },
+        {
+          "symbol": "amUSDT",
+          "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x49743f17b600f680c8afe094e47dd74f52a4b1099838723a939596602c3a695d",
+      "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "timestamp": 1660234916,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "490784.45766791642926",
+      "tokens": [
+        {
+          "symbol": "amUSDC",
+          "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
+          "tokenAmount": "490294.163504412017247585",
+          "usdAmount": "490784.45766791642926",
+          "type": "remove"
+        }
+      ]
+    },
+    {
+      "hash": "0x2178044fb044909c699ebf247f6c15ceea6c4ff99975e40900be6bceb61f0abc",
+      "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "timestamp": 1660230597,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "202534.00204336970015",
+      "tokens": [
+        {
+          "symbol": "amUSDT",
+          "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
+          "tokenAmount": "202333.289039309038135106",
+          "usdAmount": "202534.00204336970015",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xbbf9b0187c0681a79f7652fd780f3aae2c64f48edacf93a0b932e193c3d3acef",
       "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
       "timestamp": 1660087561,
       "type": "remove_liquidity",
-      "totalUsdAmount": "160521.72812811876705",
+      "totalUsdAmount": "160679.19649045530054",
       "tokens": [
         {
           "symbol": "amDAI",
           "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
           "tokenAmount": "160542.919793531513212163",
-          "usdAmount": "160521.72812811876705",
+          "usdAmount": "160679.19649045530054",
           "type": "remove"
         }
       ]
@@ -21,13 +77,13 @@
       "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
       "timestamp": 1659910486,
       "type": "add_liquidity",
-      "totalUsdAmount": "170875.78",
+      "totalUsdAmount": "171046.65578",
       "tokens": [
         {
           "symbol": "amUSDC",
           "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
           "tokenAmount": "170875.78",
-          "usdAmount": "170875.78",
+          "usdAmount": "171046.65578",
           "type": "add"
         }
       ]
