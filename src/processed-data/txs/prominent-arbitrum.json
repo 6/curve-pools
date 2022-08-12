@@ -1,17 +1,33 @@
 {
   "0x7f90122BF0700F9E7e1F688fe926940E8839F353": [
     {
+      "hash": "0x6084a9178e586693769747d1ab026bfb7f7f8893d2b4d2b43b783b05f20d4eb9",
+      "pool": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
+      "timestamp": 1660299359,
+      "type": "add_liquidity",
+      "totalUsdAmount": "500000",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+          "tokenAmount": "500000",
+          "usdAmount": "500000",
+          "type": "add"
+        }
+      ]
+    },
+    {
       "hash": "0x3841d672a9d3557f6cbe97875e760bcebd08cda9b1b5e60b8eec067508d97ad6",
       "pool": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
       "timestamp": 1660184731,
       "type": "remove_liquidity",
-      "totalUsdAmount": "317915.64362853758828",
+      "totalUsdAmount": "317598.04558295463365",
       "tokens": [
         {
           "symbol": "USDC",
           "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
           "tokenAmount": "317598.045582954633649567",
-          "usdAmount": "317915.64362853758828",
+          "usdAmount": "317598.04558295463365",
           "type": "remove"
         }
       ]
@@ -23,29 +39,13 @@
       "pool": "0x960ea3e3C7FB317332d990873d354E18d7645590",
       "timestamp": 1660193995,
       "type": "remove_liquidity",
-      "totalUsdAmount": "280410.09980376370057",
+      "totalUsdAmount": "280245.5659826349103",
       "tokens": [
         {
           "symbol": "WETH",
           "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
           "tokenAmount": "148.228667683594838917",
-          "usdAmount": "280410.09980376370057",
-          "type": "remove"
-        }
-      ]
-    },
-    {
-      "hash": "0xc005fa0e1de26aef8de5aa4add756cf4884ec7061375da837156f08f2c01c8a7",
-      "pool": "0x960ea3e3C7FB317332d990873d354E18d7645590",
-      "timestamp": 1660176194,
-      "type": "remove_liquidity",
-      "totalUsdAmount": "167200.65973752995383",
-      "tokens": [
-        {
-          "symbol": "WETH",
-          "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-          "tokenAmount": "88.384587595298483844",
-          "usdAmount": "167200.65973752995383",
+          "usdAmount": "280245.5659826349103",
           "type": "remove"
         }
       ]
