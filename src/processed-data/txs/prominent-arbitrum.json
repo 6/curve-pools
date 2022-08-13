@@ -5,13 +5,13 @@
       "pool": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
       "timestamp": 1660299359,
       "type": "add_liquidity",
-      "totalUsdAmount": "500500",
+      "totalUsdAmount": "501500",
       "tokens": [
         {
           "symbol": "USDC",
           "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
           "tokenAmount": "500000",
-          "usdAmount": "500500",
+          "usdAmount": "501500",
           "type": "add"
         }
       ]
@@ -21,18 +21,40 @@
       "pool": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
       "timestamp": 1660184731,
       "type": "remove_liquidity",
-      "totalUsdAmount": "317915.64362853758828",
+      "totalUsdAmount": "318550.83971970349755",
       "tokens": [
         {
           "symbol": "USDC",
           "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
           "tokenAmount": "317598.045582954633649567",
-          "usdAmount": "317915.64362853758828",
+          "usdAmount": "318550.83971970349755",
           "type": "remove"
         }
       ]
     }
   ],
   "0x960ea3e3C7FB317332d990873d354E18d7645590": [],
-  "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb": []
+  "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb": [
+    {
+      "hash": "0x1c64f3ce2c233c2b99eae0d3b22d50b4e998e45c4bd23139d16f54f9f8d32402",
+      "pool": "0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb",
+      "timestamp": 1660225671,
+      "type": "exchange",
+      "totalUsdAmount": "100994.8041216",
+      "tokens": [
+        {
+          "symbol": "WBTC",
+          "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+          "tokenAmount": "4.1094891",
+          "usdAmount": "100994.8041216",
+          "type": "add"
+        },
+        {
+          "symbol": "renBTC",
+          "address": "0xDBf31dF14B66535aF65AaC99C32e9eA844e14501",
+          "type": "remove"
+        }
+      ]
+    }
+  ]
 }
