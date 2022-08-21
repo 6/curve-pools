@@ -1,19 +1,41 @@
 {
   "0x24699312CB27C26Cfc669459D670559E5E44EE60": [],
-  "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40": [],
+  "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40": [
+    {
+      "hash": "0x0f4005fd24f6aaedaf23ac1e32fd14278be0390519aa89c8423c5bf0e5de9b76",
+      "pool": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+      "timestamp": 1660586073,
+      "type": "exchange",
+      "totalUsdAmount": "100079.39609576203908",
+      "tokens": [
+        {
+          "symbol": "DAI",
+          "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+          "tokenAmount": "99482.501089226679002971",
+          "usdAmount": "100079.39609576203908",
+          "type": "add"
+        },
+        {
+          "symbol": "USDC",
+          "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+          "type": "remove"
+        }
+      ]
+    }
+  ],
   "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f": [
     {
       "hash": "0xe8280df10eae18223fed99884694ed069fb3dcfd38311bf8c3ba4ca4628831cf",
       "pool": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
       "timestamp": 1660727072,
       "type": "remove_liquidity",
-      "totalUsdAmount": "290040.023176120803",
+      "totalUsdAmount": "291802.363020333928",
       "tokens": [
         {
           "symbol": "gUSDC",
           "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
           "tokenAmount": "290000",
-          "usdAmount": "290040.023176120803",
+          "usdAmount": "291802.363020333928",
           "type": "remove"
         }
       ]
@@ -23,13 +45,13 @@
       "pool": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
       "timestamp": 1660725670,
       "type": "remove_liquidity",
-      "totalUsdAmount": "250034.502738035175",
+      "totalUsdAmount": "251553.7612244258",
       "tokens": [
         {
           "symbol": "gUSDC",
           "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
           "tokenAmount": "250000",
-          "usdAmount": "250034.502738035175",
+          "usdAmount": "251553.7612244258",
           "type": "remove"
         }
       ]
