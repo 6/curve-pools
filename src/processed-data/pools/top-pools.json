@@ -11,51 +11,22 @@
     "coins": [
       {
         "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        "usdPrice": 1381.19,
-        "poolBalance": "310216902924258139549757",
+        "usdPrice": 1351.19,
+        "poolBalance": "414866684066663200354098",
         "decimals": 18,
         "symbol": "ETH",
         "isBasePoolLpToken": false
       },
       {
         "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "usdPrice": 1368.558613422818,
+        "usdPrice": 1340.7286876195888,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "stETH",
-        "poolBalance": "471258327213641924585690"
+        "poolBalance": "593085859937153160780862"
       }
     ],
-    "usdTotal": 1073413127.0054146
-  },
-  {
-    "id": "44",
-    "shortName": "fraxusdc",
-    "name": "Curve.fi FRAX/USDC",
-    "network": "ethereum",
-    "poolType": "main",
-    "assetTypeName": "usd",
-    "isMetaPool": false,
-    "address": "0xDcEF968d416a41Cdac0ED8702fAC8128A64241A2",
-    "coins": [
-      {
-        "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-        "usdPrice": 0.998561739199998,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "FRAX",
-        "poolBalance": "517359862615493519619848386"
-      },
-      {
-        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-        "usdPrice": 0.99904,
-        "decimals": "6",
-        "isBasePoolLpToken": false,
-        "symbol": "USDC",
-        "poolBalance": "350391748582658"
-      }
-    ],
-    "usdTotal": 866671136.7096179
+    "usdTotal": 1355730941.4833093
   },
   {
     "id": "0",
@@ -69,30 +40,59 @@
     "coins": [
       {
         "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-        "usdPrice": 0.998846,
+        "usdPrice": 1,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "DAI",
-        "poolBalance": "249177748926098444832336179"
+        "poolBalance": "277679933265110649108883705"
       },
       {
         "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-        "usdPrice": 0.99904,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "258167257866042"
+        "poolBalance": "323353631231054"
       },
       {
         "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "261124437407332"
+        "poolBalance": "267855080783661"
       }
     ],
-    "usdTotal": 767934052.5096602
+    "usdTotal": 869479853.9918402
+  },
+  {
+    "id": "44",
+    "shortName": "fraxusdc",
+    "name": "Curve.fi FRAX/USDC",
+    "network": "ethereum",
+    "poolType": "main",
+    "assetTypeName": "usd",
+    "isMetaPool": false,
+    "address": "0xDcEF968d416a41Cdac0ED8702fAC8128A64241A2",
+    "coins": [
+      {
+        "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
+        "usdPrice": 0.9999253844484651,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "FRAX",
+        "poolBalance": "516183534797997454614503322"
+      },
+      {
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "usdPrice": 1.001,
+        "decimals": "6",
+        "isBasePoolLpToken": false,
+        "symbol": "USDC",
+        "poolBalance": "347597913865144"
+      }
+    ],
+    "usdTotal": 864090531.2578645
   },
   {
     "id": "34",
@@ -105,22 +105,22 @@
     "coins": [
       {
         "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-        "usdPrice": 0.998561739199998,
+        "usdPrice": 0.9999253844484651,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "FRAX",
-        "poolBalance": "395343926022598890036266686"
+        "poolBalance": "397830368102608484770261474"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "241944486619421551295004738"
+        "poolBalance": "239557024194775991559923412"
       }
     ],
-    "usdTotal": 641874750.7864922
+    "usdTotal": 642800216.9689697
   },
   {
     "id": "crypto-0",
@@ -134,30 +134,30 @@
     "coins": [
       {
         "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "57726336258322"
+        "poolBalance": "57012884878592"
       },
       {
         "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-        "usdPrice": 19564.29,
+        "usdPrice": 19245.43,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "WBTC",
-        "poolBalance": "294540295280"
+        "poolBalance": "297728381483"
       },
       {
         "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-        "usdPrice": 1382.85,
+        "usdPrice": 1350.15,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "WETH",
-        "poolBalance": "41527176376878114410737"
+        "poolBalance": "42446584474798227975381"
       }
     ],
-    "usdTotal": 172776909.64652342
+    "usdTotal": 171678261.04056314
   },
   {
     "id": "40",
@@ -170,50 +170,22 @@
     "coins": [
       {
         "address": "0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3",
-        "usdPrice": 0.9971135374992671,
+        "usdPrice": 0.9984604521024731,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "MIM",
-        "poolBalance": "114821918724158572557160026"
+        "poolBalance": "115098730712411519510578212"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "24967064799497760433026148"
+        "poolBalance": "24798631550328907670861744"
       }
     ],
-    "usdTotal": 139989510.5465625
-  },
-  {
-    "id": "37",
-    "shortName": "alusd",
-    "network": "ethereum",
-    "poolType": "main",
-    "assetTypeName": "usd",
-    "isMetaPool": true,
-    "address": "0x43b4FdFD4Ff969587185cDB6f0BD875c5Fc83f8c",
-    "coins": [
-      {
-        "address": "0xBC6DA0FE9aD5f3b0d58160288917AA56653660E9",
-        "usdPrice": 0.998549967359486,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "alUSD",
-        "poolBalance": "58864189071898697906895703"
-      },
-      {
-        "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
-        "decimals": "18",
-        "isBasePoolLpToken": true,
-        "symbol": "3Crv",
-        "poolBalance": "53646427001226033377971680"
-      }
-    ],
-    "usdTotal": 113568268.832268
+    "usdTotal": 140283563.70682168
   },
   {
     "id": "15",
@@ -227,38 +199,66 @@
     "coins": [
       {
         "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-        "usdPrice": 0.998846,
+        "usdPrice": 1,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "DAI",
-        "poolBalance": "31473456819326787803826275"
+        "poolBalance": "31476632629224639658733659"
       },
       {
         "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-        "usdPrice": 0.99904,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "30849537202341"
+        "poolBalance": "30900054467875"
       },
       {
         "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "31659558867697"
+        "poolBalance": "31659546393616"
       },
       {
         "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
-        "usdPrice": 1.006880741688048,
+        "usdPrice": 1.0081010637130803,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "sUSD",
-        "poolBalance": "16971471108678574043596936"
+        "poolBalance": "16929433857353932708317444"
       }
     ],
-    "usdTotal": 111004864.3819246
+    "usdTotal": 111165373.37123586
+  },
+  {
+    "id": "37",
+    "shortName": "alusd",
+    "network": "ethereum",
+    "poolType": "main",
+    "assetTypeName": "usd",
+    "isMetaPool": true,
+    "address": "0x43b4FdFD4Ff969587185cDB6f0BD875c5Fc83f8c",
+    "coins": [
+      {
+        "address": "0xBC6DA0FE9aD5f3b0d58160288917AA56653660E9",
+        "usdPrice": 0.9999274804907962,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "alUSD",
+        "poolBalance": "56573732338225457256260761"
+      },
+      {
+        "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+        "usdPrice": 1.0227190541467632,
+        "decimals": "18",
+        "isBasePoolLpToken": true,
+        "symbol": "3Crv",
+        "poolBalance": "51557098295376142897153454"
+      }
+    ],
+    "usdTotal": 109298056.44212124
   },
   {
     "id": "32",
@@ -271,22 +271,22 @@
     "coins": [
       {
         "address": "0x0000000000085d4780B73119b644AE5ecd22b376",
-        "usdPrice": 0.999324089665606,
+        "usdPrice": 1.0004602000138594,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "TUSD",
-        "poolBalance": "41158257279873466688326500"
+        "poolBalance": "44414297493011288467681876"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "51534188700681261193260793"
+        "poolBalance": "48347988668045484138443516"
       }
     ],
-    "usdTotal": 93762630.42593995
+    "usdTotal": 93881146.19381504
   },
   {
     "id": "factory-v2-22",
@@ -300,22 +300,22 @@
     "coins": [
       {
         "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-        "usdPrice": 0.9907721843393076,
+        "usdPrice": 0.9582731347606249,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "CRV",
-        "poolBalance": "18605814833084573786617627"
+        "poolBalance": "18521002385790190143480241"
       },
       {
         "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-        "usdPrice": 0.9098207848741584,
+        "usdPrice": 0.9064012492991976,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "cvxCRV",
-        "poolBalance": "70739435885005434892157063"
+        "poolBalance": "70827536579891013484837514"
       }
     ],
-    "usdTotal": 82794332.88203874
+    "usdTotal": 81946346.65593801
   },
   {
     "id": "crypto-2",
@@ -329,22 +329,22 @@
     "coins": [
       {
         "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-        "usdPrice": 0.998991,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "36306239213681"
+        "poolBalance": "36302222846388"
       },
       {
         "address": "0xdB25f211AB05b1c97D595516F45794528a807ad8",
-        "usdPrice": 0.989437,
+        "usdPrice": 0.989304,
         "decimals": "2",
         "isBasePoolLpToken": false,
         "symbol": "EURS",
-        "poolBalance": "3997805270"
+        "poolBalance": "4000323881"
       }
     ],
-    "usdTotal": 75825370.7476443
+    "usdTotal": 75913889.23692262
   },
   {
     "id": "4",
@@ -358,7 +358,7 @@
     "coins": [
       {
         "address": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
-        "usdPrice": 0.02207685,
+        "usdPrice": 0.02207511,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "cDAI",
@@ -366,14 +366,14 @@
       },
       {
         "address": "0x39AA39c021dfbaE8faC545936693aC917d5E7563",
-        "usdPrice": 0.022654157419815,
+        "usdPrice": 0.022652358453171897,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "cUSDC",
         "poolBalance": "95562825044258880"
       }
     ],
-    "usdTotal": 62823688.82499491
+    "usdTotal": 62818724.47045969
   },
   {
     "id": "33",
@@ -386,22 +386,22 @@
     "coins": [
       {
         "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-        "usdPrice": 1.0297759587508184,
+        "usdPrice": 1.0301245893305335,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "LUSD",
-        "poolBalance": "5268971058517276753705495"
+        "poolBalance": "5403847824893681027369723"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "52718206392723532590951800"
+        "poolBalance": "53034754133886297105436797"
       }
     ],
-    "usdTotal": 59267296.9086944
+    "usdTotal": 59806290.10613764
   },
   {
     "id": "factory-v2-27",
@@ -415,22 +415,22 @@
     "coins": [
       {
         "address": "0x865377367054516e17014CcdED1e7d814EDC9ce4",
-        "usdPrice": 0.9975339632851722,
+        "usdPrice": 0.9991021673033195,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "DOLA",
-        "poolBalance": "29055865394004941003397743"
+        "poolBalance": "29059585602211403813423154"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "24777041309098087364121022"
+        "poolBalance": "25255950231370398481136296"
       }
     ],
-    "usdTotal": 54289161.35719043
+    "usdTotal": 54863236.48831061
   },
   {
     "id": "factory-v2-116",
@@ -444,22 +444,22 @@
     "coins": [
       {
         "address": "0x0C10bF8FcB7Bf5412187A595ab97a3609160b5c6",
-        "usdPrice": 0.9982047077740448,
+        "usdPrice": 0.9995779857890459,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "USDD",
-        "poolBalance": "28909850185783400907908144"
+        "poolBalance": "28920265209154876430591024"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "24602083680247871268089994"
+        "poolBalance": "24591902259431958973866917"
       }
     ],
-    "usdTotal": 53984212.01904884
+    "usdTotal": 54058667.46468795
   },
   {
     "id": "factory-v2-38",
@@ -473,22 +473,22 @@
     "coins": [
       {
         "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        "usdPrice": 1381.19,
-        "poolBalance": "11724149842990836924131",
+        "usdPrice": 1351.19,
+        "poolBalance": "11717124397674839374436",
         "decimals": 18,
         "symbol": "ETH",
         "isBasePoolLpToken": false
       },
       {
         "address": "0x0100546F2cD4C9D97f798fFC9755E47865FF7Ee6",
-        "usdPrice": 1368.7818449441718,
+        "usdPrice": 1339.0377666765191,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "alETH",
         "poolBalance": "23881791045039948454327"
       }
     ],
-    "usdTotal": 48882240.528841496
+    "usdTotal": 47810681.460079856
   },
   {
     "id": "crypto-3",
@@ -502,22 +502,22 @@
     "coins": [
       {
         "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-        "usdPrice": 1382.85,
+        "usdPrice": 1350.15,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "WETH",
-        "poolBalance": "16948330165000904076879"
+        "poolBalance": "16957870993213505888928"
       },
       {
         "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-        "usdPrice": 0.9908366709433389,
+        "usdPrice": 0.9582731347606249,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "CRV",
-        "poolBalance": "23967931468637037083587233"
+        "poolBalance": "24291073773909104062446405"
       }
     ],
-    "usdTotal": 47185303.79445392
+    "usdTotal": 46173152.9335127
   },
   {
     "id": "10",
@@ -531,22 +531,22 @@
     "coins": [
       {
         "address": "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D",
-        "usdPrice": 19551.9508755652,
+        "usdPrice": 19232.953572639602,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "renBTC",
-        "poolBalance": "130139762437"
+        "poolBalance": "130069657783"
       },
       {
         "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-        "usdPrice": 19564.46,
+        "usdPrice": 19245.43,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "WBTC",
-        "poolBalance": "103042328538"
+        "poolBalance": "102134225472"
       }
     ],
-    "usdTotal": 45604537.57114508
+    "usdTotal": 44672407.762751535
   },
   {
     "id": "crypto-4",
@@ -560,22 +560,22 @@
     "coins": [
       {
         "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-        "usdPrice": 1382.85,
+        "usdPrice": 1350.15,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "WETH",
-        "poolBalance": "16116734916197734796540"
+        "poolBalance": "16039625707120746531586"
       },
       {
         "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-        "usdPrice": 4.895765624960878,
+        "usdPrice": 4.694850259761024,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "CVX",
-        "poolBalance": "4467160609004411476617150"
+        "poolBalance": "4513653120918889583734674"
       }
     ],
-    "usdTotal": 44157198.229607135
+    "usdTotal": 42846826.175686285
   },
   {
     "id": "1",
@@ -589,67 +589,30 @@
     "coins": [
       {
         "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
-        "usdPrice": 0.998578416717,
+        "usdPrice": 1.000595596,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "amDAI",
-        "poolBalance": "16263281273883862302406356"
+        "poolBalance": "15999219506209319211795069"
       },
       {
         "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
-        "usdPrice": 0.998991,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "amUSDC",
-        "poolBalance": "12941796657084"
+        "poolBalance": "12971051382953"
       },
       {
         "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
-        "usdPrice": 0.9987152784839999,
+        "usdPrice": 1.000726727,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "amUSDT",
-        "poolBalance": "12389474357354"
+        "poolBalance": "12350342556709"
       }
     ],
-    "usdTotal": 41542457.38243036
-  },
-  {
-    "id": "12",
-    "shortName": "sbtc",
-    "name": "Curve.fi renBTC/wBTC/sBTC",
-    "network": "ethereum",
-    "poolType": "main",
-    "assetTypeName": "btc",
-    "isMetaPool": false,
-    "address": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
-    "coins": [
-      {
-        "address": "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D",
-        "usdPrice": 19551.9508755652,
-        "decimals": "8",
-        "isBasePoolLpToken": false,
-        "symbol": "renBTC",
-        "poolBalance": "80469765051"
-      },
-      {
-        "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-        "usdPrice": 19564.46,
-        "decimals": "8",
-        "isBasePoolLpToken": false,
-        "symbol": "WBTC",
-        "poolBalance": "81655311526"
-      },
-      {
-        "address": "0xfE18be6b3Bd88A2D2A7f928d00292E7a9963CfC6",
-        "usdPrice": 19677.285137301853,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "sBTC",
-        "poolBalance": "465960405283864710100"
-      }
-    ],
-    "usdTotal": 40877665.451297246
+    "usdTotal": 41352088.8957905
   },
   {
     "id": "22",
@@ -663,22 +626,87 @@
     "coins": [
       {
         "address": "0xe2f2a5C287993345a840Db3B0845fbC70f5935a5",
-        "usdPrice": 1.0007168839091591,
+        "usdPrice": 1.0020666011056196,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "mUSD",
-        "poolBalance": "16808349827233735859650996"
+        "poolBalance": "16861470362114249025815880"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "23267362107156033920124925"
+        "poolBalance": "23215302888853125732952839"
       }
     ],
-    "usdTotal": 40583503.3519078
+    "usdTotal": 40639048.90762545
+  },
+  {
+    "id": "12",
+    "shortName": "sbtc",
+    "name": "Curve.fi renBTC/wBTC/sBTC",
+    "network": "ethereum",
+    "poolType": "main",
+    "assetTypeName": "btc",
+    "isMetaPool": false,
+    "address": "0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714",
+    "coins": [
+      {
+        "address": "0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D",
+        "usdPrice": 19232.953572639602,
+        "decimals": "8",
+        "isBasePoolLpToken": false,
+        "symbol": "renBTC",
+        "poolBalance": "81303364981"
+      },
+      {
+        "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "usdPrice": 19245.43,
+        "decimals": "8",
+        "isBasePoolLpToken": false,
+        "symbol": "WBTC",
+        "poolBalance": "80705867411"
+      },
+      {
+        "address": "0xfE18be6b3Bd88A2D2A7f928d00292E7a9963CfC6",
+        "usdPrice": 19358.002197848655,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "sBTC",
+        "poolBalance": "465960405283864710100"
+      }
+    ],
+    "usdTotal": 40189292.20786177
+  },
+  {
+    "id": "35",
+    "shortName": "busdv2",
+    "network": "ethereum",
+    "poolType": "main",
+    "assetTypeName": "usd",
+    "isMetaPool": true,
+    "address": "0x4807862AA8b2bF68830e4C8dc86D0e9A998e085a",
+    "coins": [
+      {
+        "address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+        "usdPrice": 1.0002569929226621,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "BUSD",
+        "poolBalance": "19765269673766484064525723"
+      },
+      {
+        "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+        "usdPrice": 1.0227190541467632,
+        "decimals": "18",
+        "isBasePoolLpToken": true,
+        "symbol": "3Crv",
+        "poolBalance": "17093018451025968571436906"
+      }
+    ],
+    "usdTotal": 37251704.8709336
   },
   {
     "id": "0",
@@ -692,58 +720,30 @@
     "coins": [
       {
         "address": "0x47AFa96Cdc9fAb46904A55a6ad4bf6660B53c38a",
-        "usdPrice": 0.998846,
+        "usdPrice": 1.001,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "avDAI",
-        "poolBalance": "13182235883928368580110231"
+        "poolBalance": "13106461987009385377434064"
       },
       {
         "address": "0x46A51127C3ce23fb7AB1DE06226147F446e4a857",
-        "usdPrice": 0.998991,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "avUSDC",
-        "poolBalance": "12399901275627"
+        "poolBalance": "12286527099471"
       },
       {
         "address": "0x532E6537FEA298397212F09A61e03311686f548e",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "avUSDT",
-        "poolBalance": "11226153569544"
+        "poolBalance": "11238671999153"
       }
     ],
-    "usdTotal": 36780566.92850221
-  },
-  {
-    "id": "35",
-    "shortName": "busdv2",
-    "network": "ethereum",
-    "poolType": "main",
-    "assetTypeName": "usd",
-    "isMetaPool": true,
-    "address": "0x4807862AA8b2bF68830e4C8dc86D0e9A998e085a",
-    "coins": [
-      {
-        "address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
-        "usdPrice": 0.9992138525182582,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "BUSD",
-        "poolBalance": "9194589007157444562473508"
-      },
-      {
-        "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
-        "decimals": "18",
-        "isBasePoolLpToken": true,
-        "symbol": "3Crv",
-        "poolBalance": "24992317951053740983862320"
-      }
-    ],
-    "usdTotal": 34712172.89242375
+    "usdTotal": 36668292.74671901
   },
   {
     "id": "1",
@@ -757,30 +757,30 @@
     "coins": [
       {
         "address": "0x028171bCA77440897B824Ca71D1c56caC55b68A3",
-        "usdPrice": 1.005,
+        "usdPrice": 0.994197,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "aDAI",
-        "poolBalance": "11120183488286405720820866"
+        "poolBalance": "11120379135005757016895026"
       },
       {
         "address": "0xBcca60bB61934080951369a648Fb03DF4F96263C",
-        "usdPrice": 0.997973,
+        "usdPrice": 0.998516,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "aUSDC",
-        "poolBalance": "11258800752670"
+        "poolBalance": "11258864748270"
       },
       {
         "address": "0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811",
-        "usdPrice": 1.005,
+        "usdPrice": 0.992164,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "aUSDT",
-        "poolBalance": "9446354150125"
+        "poolBalance": "9446523860556"
       }
     ],
-    "usdTotal": 31905349.4901478
+    "usdTotal": 31670505.067453567
   },
   {
     "id": "factory-v2-0",
@@ -794,22 +794,22 @@
     "coins": [
       {
         "address": "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9",
-        "usdPrice": 1.0071647504100079,
+        "usdPrice": 1.009297944436209,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "sUSD",
-        "poolBalance": "9605018617380468703276762"
+        "poolBalance": "9569413668685428962632537"
       },
       {
         "address": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
-        "usdPrice": 1.013213694829408,
+        "usdPrice": 1.0152808177059385,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3CRV",
-        "poolBalance": "19782065259148537894256158"
+        "poolBalance": "19800936652702159640386254"
       }
     ],
-    "usdTotal": 29717295.61103584
+    "usdTotal": 29761900.7013629
   },
   {
     "id": "factory-v2-152",
@@ -822,22 +822,22 @@
     "coins": [
       {
         "address": "0xBEA0000029AD1c77D3d5D23Ba2D8893dB9d1Efab",
-        "usdPrice": 0.9886354834837989,
+        "usdPrice": 0.9894554455309027,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "BEAN",
-        "poolBalance": "14817398032616"
+        "poolBalance": "14819925228163"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "14201651322565957713203333"
+        "poolBalance": "14188417711715566334479185"
       }
     ],
-    "usdTotal": 29153241.66891014
+    "usdTotal": 29174420.861331612
   },
   {
     "id": "0",
@@ -850,22 +850,22 @@
     "coins": [
       {
         "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-        "usdPrice": 0.998979,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "13564024924455"
+        "poolBalance": "13578077523966"
       },
       {
         "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "15235732911779"
+        "poolBalance": "15309016807761"
       }
     ],
-    "usdTotal": 28785908.96678613
+    "usdTotal": 28915981.426058725
   },
   {
     "id": "crypto-0",
@@ -879,30 +879,30 @@
     "coins": [
       {
         "address": "0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171",
-        "usdPrice": 1.0596440302754506,
+        "usdPrice": 1.06174841025525,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "am3CRV",
-        "poolBalance": "8857293323367096348842903"
+        "poolBalance": "8617124999405856226621331"
       },
       {
         "address": "0x5c2ed810328349100A66B82b78a1791B101C9D61",
-        "usdPrice": 19564.46,
+        "usdPrice": 19245.43,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "amWBTC",
-        "poolBalance": "47680606072"
+        "poolBalance": "47969445882"
       },
       {
         "address": "0x28424507fefb6f7f8E9D3860F56504E4e5f5f390",
-        "usdPrice": 1381.19,
+        "usdPrice": 1351.19,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "amWETH",
-        "poolBalance": "6710600889872655260875"
+        "poolBalance": "6851695067403171405071"
       }
     ],
-    "usdTotal": 27982645.940301776
+    "usdTotal": 27639086.75582263
   },
   {
     "id": "19",
@@ -916,22 +916,22 @@
     "coins": [
       {
         "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
-        "usdPrice": 0.9993578441656434,
+        "usdPrice": 1.0006290662657176,
         "decimals": "2",
         "isBasePoolLpToken": false,
         "symbol": "GUSD",
-        "poolBalance": "1003073337"
+        "poolBalance": "1058351194"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "14977240093639327370838768"
+        "poolBalance": "14431778137102471200945696"
       }
     ],
-    "usdTotal": 25320641.987937286
+    "usdTotal": 25349824.15636765
   },
   {
     "id": "13",
@@ -945,22 +945,22 @@
     "coins": [
       {
         "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        "usdPrice": 1381.19,
-        "poolBalance": "13626230686092716519579",
+        "usdPrice": 1351.19,
+        "poolBalance": "13624912715247888671147",
         "decimals": 18,
         "symbol": "ETH",
         "isBasePoolLpToken": false
       },
       {
         "address": "0x5e74C9036fb86BD7eCdcb084a0673EFc32eA31cb",
-        "usdPrice": 1391.396642210347,
+        "usdPrice": 1361.167429972518,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "sETH",
-        "poolBalance": "4237009750601925413910"
+        "poolBalance": "4238346128377745041572"
       }
     ],
-    "usdTotal": 24715774.70132442
+    "usdTotal": 24178944.518613704
   },
   {
     "id": "factory-v2-144",
@@ -974,7 +974,7 @@
     "coins": [
       {
         "address": "0x0000000000085d4780B73119b644AE5ecd22b376",
-        "usdPrice": 0.999324089665606,
+        "usdPrice": 1.0004602000138594,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "TUSD",
@@ -982,14 +982,14 @@
       },
       {
         "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
-        "usdPrice": 0.9994715782942162,
+        "usdPrice": 1.001075971669573,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "crvFRAX",
-        "poolBalance": "12702069754119971350601962"
+        "poolBalance": "11800542497022175030198531"
       }
     ],
-    "usdTotal": 23466744.16583772
+    "usdTotal": 22596871.76817843
   },
   {
     "id": "factory-v2-127",
@@ -1003,7 +1003,7 @@
     "coins": [
       {
         "address": "0xBcB8b7FC9197fEDa75C101fA69d3211b5a30dCD9",
-        "usdPrice": 7.9360940980027594,
+        "usdPrice": 7.970187151750029,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "xFraxTempleLP",
@@ -1011,14 +1011,14 @@
       },
       {
         "address": "0x6021444f1706f15465bEe85463BCc7d7cC17Fc03",
-        "usdPrice": 8.042907358877617,
+        "usdPrice": 8.07745927692248,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "UNI-V2",
         "poolBalance": "1119218074886828440880207"
       }
     ],
-    "usdTotal": 22269034.711396255
+    "usdTotal": 22364701.34386556
   },
   {
     "id": "0",
@@ -1031,59 +1031,30 @@
     "coins": [
       {
         "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-        "usdPrice": 0.998079920208,
+        "usdPrice": 1.000112113,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "DAI",
-        "poolBalance": "9481840442330465682523165"
+        "poolBalance": "9477264004089824313896187"
       },
       {
         "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
-        "usdPrice": 0.998991,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "5817495755330"
+        "poolBalance": "5926678692815"
       },
       {
         "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
-        "usdPrice": 0.9985084873469999,
+        "usdPrice": 1.000557558,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "6205525655300"
+        "poolBalance": "6121573970713"
       }
     ],
-    "usdTotal": 21471530.489485655
-  },
-  {
-    "id": "factory-v2-60",
-    "shortName": "f-ibbtc",
-    "name": "Curve.fi Factory BTC Metapool: ibBTC",
-    "network": "ethereum",
-    "poolType": "factory",
-    "assetTypeName": "btc",
-    "isMetaPool": true,
-    "address": "0xFbdCA68601f835b27790D98bbb8eC7f05FDEaA9B",
-    "coins": [
-      {
-        "address": "0x8751D4196027d4e6DA63716fA7786B5174F04C15",
-        "usdPrice": 19576.09687547387,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "wibBTC",
-        "poolBalance": "540589598807019981798"
-      },
-      {
-        "address": "0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3",
-        "usdPrice": 19869.531191480743,
-        "decimals": "18",
-        "isBasePoolLpToken": true,
-        "symbol": "crvRenWSBTC",
-        "poolBalance": "514180570291609832539"
-      }
-    ],
-    "usdTotal": 20799161.235582277
+    "usdTotal": 21535919.003349893
   },
   {
     "id": "factory-v2-141",
@@ -1097,7 +1068,7 @@
     "coins": [
       {
         "address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
-        "usdPrice": 0.9992138525182582,
+        "usdPrice": 1.0002569929226621,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "BUSD",
@@ -1105,14 +1076,43 @@
       },
       {
         "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
-        "usdPrice": 0.9994715782942162,
+        "usdPrice": 1.001075971669573,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "crvFRAX",
         "poolBalance": "11039066650169510684039447"
       }
     ],
-    "usdTotal": 20767639.097652793
+    "usdTotal": 20795512.44408499
+  },
+  {
+    "id": "factory-v2-60",
+    "shortName": "f-ibbtc",
+    "name": "Curve.fi Factory BTC Metapool: ibBTC",
+    "network": "ethereum",
+    "poolType": "factory",
+    "assetTypeName": "btc",
+    "isMetaPool": true,
+    "address": "0xFbdCA68601f835b27790D98bbb8eC7f05FDEaA9B",
+    "coins": [
+      {
+        "address": "0x8751D4196027d4e6DA63716fA7786B5174F04C15",
+        "usdPrice": 19257.107584490797,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "wibBTC",
+        "poolBalance": "540589598807019981798"
+      },
+      {
+        "address": "0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3",
+        "usdPrice": 19545.77686052868,
+        "decimals": "18",
+        "isBasePoolLpToken": true,
+        "symbol": "crvRenWSBTC",
+        "poolBalance": "514180570291609832539"
+      }
+    ],
+    "usdTotal": 20460250.756222695
   },
   {
     "id": "factory-v2-140",
@@ -1126,22 +1126,22 @@
     "coins": [
       {
         "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
-        "usdPrice": 0.9993578441656434,
+        "usdPrice": 1.0006290662657176,
         "decimals": "2",
         "isBasePoolLpToken": false,
         "symbol": "GUSD",
-        "poolBalance": "883902353"
+        "poolBalance": "912919193"
       },
       {
         "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
-        "usdPrice": 0.9994715782942162,
+        "usdPrice": 1.001075971669573,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "crvFRAX",
-        "poolBalance": "10736863198974268017483506"
+        "poolBalance": "10746565376308995806420055"
       }
     ],
-    "usdTotal": 19564537.106878094
+    "usdTotal": 19893063.17287554
   },
   {
     "id": "factory-v2-66",
@@ -1155,30 +1155,30 @@
     "coins": [
       {
         "address": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8",
-        "usdPrice": 0.9937176665204531,
+        "usdPrice": 0.9990319829011781,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "agEUR",
-        "poolBalance": "4469684695693552126117570"
+        "poolBalance": "4446029087323398588710178"
       },
       {
         "address": "0xC581b735A1688071A1746c968e0798D642EDE491",
-        "usdPrice": 0.9902729962461362,
+        "usdPrice": 0.9901558954967475,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "EURT",
-        "poolBalance": "3831985901959"
+        "poolBalance": "3865251521792"
       },
       {
         "address": "0xdB25f211AB05b1c97D595516F45794528a807ad8",
-        "usdPrice": 0.989421,
+        "usdPrice": 0.989304,
         "decimals": "2",
         "isBasePoolLpToken": false,
         "symbol": "EURS",
-        "poolBalance": "1117114511"
+        "poolBalance": "1114990033"
       }
     ],
-    "usdTotal": 19289282.37247398
+    "usdTotal": 19299567.833095454
   },
   {
     "id": "25",
@@ -1192,22 +1192,22 @@
     "coins": [
       {
         "address": "0x674C6Ad92Fd080e4004b2312b45f796a192D27a0",
-        "usdPrice": 0.9422623259245235,
+        "usdPrice": 0.943529125991518,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "USDN",
-        "poolBalance": "17446960990560135065828057"
+        "poolBalance": "17446623377588714783108738"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "1686453939553086275936640"
+        "poolBalance": "1685840354130622732750108"
       }
     ],
-    "usdTotal": 18162000.104290366
+    "usdTotal": 18185538.35937838
   },
   {
     "id": "7",
@@ -1221,7 +1221,7 @@
     "coins": [
       {
         "address": "0x8e595470Ed749b85C6F7669de83EAe304C2ec68F",
-        "usdPrice": 0.010518003278804883,
+        "usdPrice": 0.010530155077764624,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "iDAI",
@@ -1229,7 +1229,7 @@
       },
       {
         "address": "0x76Eb2FE28b36B3ee97F3Adae0C69606eeDB2A37c",
-        "usdPrice": 0.01051729849756377,
+        "usdPrice": 0.010537932210983876,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "iUSDC",
@@ -1237,14 +1237,14 @@
       },
       {
         "address": "0x48759F220ED983dB51fA7A8C0D2AAb8f3ce4166a",
-        "usdPrice": 0.0106454652232149,
+        "usdPrice": 0.010656381676579738,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "iUSDT",
         "poolBalance": "73149203960373025"
       }
     ],
-    "usdTotal": 17221432.696867794
+    "usdTotal": 17243010.344763536
   },
   {
     "id": "factory-v2-113",
@@ -1258,22 +1258,22 @@
     "coins": [
       {
         "address": "0x466a756E9A7401B5e2444a3fCB3c2C12FBEa0a54",
-        "usdPrice": 1.015695511616051,
+        "usdPrice": 1.0243172872639201,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "PUSd",
-        "poolBalance": "6525984637671029302286513"
+        "poolBalance": "6036168209814623731395822"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "9512921998491896283450785"
+        "poolBalance": "10102502092686005325101687"
       }
     ],
-    "usdTotal": 16344020.63112141
+    "usdTotal": 16514972.830893556
   },
   {
     "id": "2",
@@ -1287,30 +1287,30 @@
     "coins": [
       {
         "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "5349044294431"
+        "poolBalance": "5281851488354"
       },
       {
         "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
-        "usdPrice": 19565.64,
+        "usdPrice": 19245.43,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "WBTC",
-        "poolBalance": "27322508458"
+        "poolBalance": "27620743195"
       },
       {
         "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-        "usdPrice": 1382.85,
+        "usdPrice": 1350.15,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "WETH",
-        "poolBalance": "3842494050366772443771"
+        "poolBalance": "3936988797758962618510"
       }
     ],
-    "usdTotal": 16008460.835842524
+    "usdTotal": 15918389.562210105
   },
   {
     "id": "crypto-0",
@@ -1324,30 +1324,30 @@
     "coins": [
       {
         "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDT",
-        "poolBalance": "5349044294431"
+        "poolBalance": "5281851488354"
       },
       {
         "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
-        "usdPrice": 19564.29,
+        "usdPrice": 19245.43,
         "decimals": "8",
         "isBasePoolLpToken": false,
         "symbol": "WBTC",
-        "poolBalance": "27322508458"
+        "poolBalance": "27620743195"
       },
       {
         "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-        "usdPrice": 1382.67,
+        "usdPrice": 1350.15,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "WETH",
-        "poolBalance": "3842494050366772443771"
+        "poolBalance": "3936988797758962618510"
       }
     ],
-    "usdTotal": 16007400.333049275
+    "usdTotal": 15918389.562210105
   },
   {
     "id": "crypto-1",
@@ -1361,22 +1361,22 @@
     "coins": [
       {
         "address": "0xC581b735A1688071A1746c968e0798D642EDE491",
-        "usdPrice": 0.9902890100238304,
+        "usdPrice": 0.9901558954967475,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "EURT",
-        "poolBalance": "8340651854943"
+        "poolBalance": "8320729892328"
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.0212903947644691,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
-        "poolBalance": "7143814457840952129650983"
+        "poolBalance": "7124884868962418676693416"
       }
     ],
-    "usdTotal": 15555564.956157437
+    "usdTotal": 15525575.271814415
   },
   {
     "id": "factory-v2-62",
@@ -1390,51 +1390,22 @@
     "coins": [
       {
         "address": "0x74E23dF9110Aa9eA0b6ff2fAEE01e740CA1c642e",
-        "usdPrice": 0.9976887766204697,
+        "usdPrice": 0.9984639619513839,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "TOR",
-        "poolBalance": "8638773569458469770302296"
+        "poolBalance": "8642039545185212668646853"
       },
       {
         "address": "0x27e611fd27b276acbd5ffd632e5eaebec9761e40",
-        "usdPrice": 1.012392,
+        "usdPrice": 1.0131861739999999,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "DAI+USDC",
-        "poolBalance": "6635239551095771854292337"
+        "poolBalance": "6620515706954978110682802"
       }
     ],
-    "usdTotal": 15336270.87362722
-  },
-  {
-    "id": "factory-v2-138",
-    "shortName": "f-fraxbpape",
-    "name": "Curve.fi Factory USD Metapool: apeUSDFRAXBP",
-    "network": "ethereum",
-    "poolType": "factory",
-    "assetTypeName": "usd",
-    "isMetaPool": true,
-    "address": "0x04b727C7e246CA70d496ecF52E6b6280f3c8077D",
-    "coins": [
-      {
-        "address": "0xfF709449528B6fB6b88f557F7d93dEce33bca78D",
-        "usdPrice": 0.9984133784399599,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "ApeUSD",
-        "poolBalance": "7800120763739379349568750"
-      },
-      {
-        "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
-        "usdPrice": 0.9994715782942162,
-        "decimals": "18",
-        "isBasePoolLpToken": true,
-        "symbol": "crvFRAX",
-        "poolBalance": "7187278955709709673561877"
-      }
-    ],
-    "usdTotal": 14971225.965468703
+    "usdTotal": 15336580.022662781
   },
   {
     "id": "factory-v2-147",
@@ -1448,22 +1419,51 @@
     "coins": [
       {
         "address": "0xBC6DA0FE9aD5f3b0d58160288917AA56653660E9",
-        "usdPrice": 0.998549967359486,
+        "usdPrice": 0.9999274804907962,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "alUSD",
-        "poolBalance": "6414355048181998432696317"
+        "poolBalance": "6414355000682205550344555"
       },
       {
         "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
-        "usdPrice": 0.9994715782942162,
+        "usdPrice": 1.001075971669573,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "crvFRAX",
-        "poolBalance": "7080289725343515513799091"
+        "poolBalance": "7081288889435600150406032"
       }
     ],
-    "usdTotal": 13481602.370563693
+    "usdTotal": 13502797.99047039
+  },
+  {
+    "id": "factory-v2-138",
+    "shortName": "f-fraxbpape",
+    "name": "Curve.fi Factory USD Metapool: apeUSDFRAXBP",
+    "network": "ethereum",
+    "poolType": "factory",
+    "assetTypeName": "usd",
+    "isMetaPool": true,
+    "address": "0x04b727C7e246CA70d496ecF52E6b6280f3c8077D",
+    "coins": [
+      {
+        "address": "0xfF709449528B6fB6b88f557F7d93dEce33bca78D",
+        "usdPrice": 0.9997768210855859,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "ApeUSD",
+        "poolBalance": "6804940814293607342787723"
+      },
+      {
+        "address": "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
+        "usdPrice": 1.001075971669573,
+        "decimals": "18",
+        "isBasePoolLpToken": true,
+        "symbol": "crvFRAX",
+        "poolBalance": "6285522418325470085165319"
+      }
+    ],
+    "usdTotal": 13095707.557366075
   },
   {
     "id": "factory-v2-9",
@@ -1477,7 +1477,7 @@
     "coins": [
       {
         "address": "0x2A8e1E676Ec238d8A992307B495b45B3fEAa5e86",
-        "usdPrice": 0.9954346192664836,
+        "usdPrice": 0.9968080410908792,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "OUSD",
@@ -1485,14 +1485,14 @@
       },
       {
         "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "usdPrice": 1.021306316534907,
+        "usdPrice": 1.0227190541467632,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "3Crv",
         "poolBalance": "4588755882073339523830895"
       }
     ],
-    "usdTotal": 11216922.184534816
+    "usdTotal": 11232415.016718902
   },
   {
     "id": "3",
@@ -1504,22 +1504,22 @@
     "coins": [
       {
         "address": "0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A",
-        "usdPrice": 0.999467,
+        "usdPrice": 0.999153,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "MIM",
-        "poolBalance": "8517215314758806578230818"
+        "poolBalance": "8539431064248193595163753"
       },
       {
         "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
-        "usdPrice": 1.009902148425667,
+        "usdPrice": 1.0095795240410401,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "2CRV",
-        "poolBalance": "2578732237077532679153173"
+        "poolBalance": "2598148795700357699729785"
       }
     ],
-    "usdTotal": 11116942.865435168
+    "usdTotal": 11155235.990687743
   },
   {
     "id": "factory-v2-19",
@@ -1533,22 +1533,22 @@
     "coins": [
       {
         "address": "0x64343594Ab9b56e99087BfA6F2335Db24c2d1F17",
-        "usdPrice": 0.9913746508116209,
+        "usdPrice": 0.9916804151565011,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "VST",
-        "poolBalance": "7112966578834698081753055"
+        "poolBalance": "7017058652214895517889516"
       },
       {
         "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
-        "usdPrice": 0.998937,
+        "usdPrice": 0.998643,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "FRAX",
-        "poolBalance": "3817275812743030261436935"
+        "poolBalance": "3922966931260729050849042"
       }
     ],
-    "usdTotal": 10864832.806881063
+    "usdTotal": 10876323.102540992
   },
   {
     "id": "factory-v2-3",
@@ -1562,7 +1562,7 @@
     "coins": [
       {
         "address": "0x96E61422b6A9bA0e068B6c5ADd4fFaBC6a4aae27",
-        "usdPrice": 0.9850723137572784,
+        "usdPrice": 0.9904055609515947,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "ibEUR",
@@ -1570,79 +1570,14 @@
       },
       {
         "address": "0xD71eCFF9342A5Ced620049e616c5035F1dB98620",
-        "usdPrice": 0.99931521,
+        "usdPrice": 0.99919704,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "sEUR",
         "poolBalance": "2404614469727027555681967"
       }
     ],
-    "usdTotal": 10788023.988035675
-  },
-  {
-    "id": "3",
-    "shortName": "geist",
-    "name": "Curve.fi gDAI/gUSDC/gUSDT",
-    "network": "fantom",
-    "poolType": "main",
-    "assetTypeName": "usd",
-    "isMetaPool": false,
-    "address": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
-    "coins": [
-      {
-        "address": "0x07E6332dD090D287d3489245038daF987955DCFB",
-        "usdPrice": 0.998846,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "gDAI",
-        "poolBalance": "4190124445999052703363221"
-      },
-      {
-        "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
-        "usdPrice": 0.9989947796619244,
-        "decimals": "6",
-        "isBasePoolLpToken": false,
-        "symbol": "gUSDC",
-        "poolBalance": "3173700706520"
-      },
-      {
-        "address": "0x940F41F0ec9ba1A34CF001cc03347ac092F5F6B5",
-        "usdPrice": 0.9989445958061651,
-        "decimals": "6",
-        "isBasePoolLpToken": false,
-        "symbol": "gfUSDT",
-        "poolBalance": "3246119311235"
-      }
-    ],
-    "usdTotal": 10598492.823711446
-  },
-  {
-    "id": "0",
-    "shortName": "2pool",
-    "network": "fantom",
-    "poolType": "main",
-    "assetTypeName": "usd",
-    "isMetaPool": false,
-    "address": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
-    "coins": [
-      {
-        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
-        "usdPrice": 0.998846,
-        "decimals": "18",
-        "isBasePoolLpToken": false,
-        "symbol": "DAI",
-        "poolBalance": "5840349419612673569301385"
-      },
-      {
-        "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
-        "usdPrice": 0.998991,
-        "decimals": "6",
-        "isBasePoolLpToken": false,
-        "symbol": "USDC",
-        "poolBalance": "4542735069359"
-      }
-    ],
-    "usdTotal": 10371761.10605646
+    "usdTotal": 10833137.088012375
   },
   {
     "id": "factory-v2-1",
@@ -1656,30 +1591,95 @@
     "coins": [
       {
         "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
-        "usdPrice": 0.9972631371721239,
+        "usdPrice": 0.9980449833057816,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "MIM",
-        "poolBalance": "7039445972654229487613957"
+        "poolBalance": "7048186989624174093246281"
       },
       {
         "address": "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
-        "usdPrice": 1,
+        "usdPrice": 1.001,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "fUSDT",
-        "poolBalance": "1665572494226"
+        "poolBalance": "1689235782121"
       },
       {
         "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
-        "usdPrice": 0.99904,
+        "usdPrice": 1,
         "decimals": "6",
         "isBasePoolLpToken": false,
         "symbol": "USDC",
-        "poolBalance": "1682673196023"
+        "poolBalance": "1912949121794"
       }
     ],
-    "usdTotal": 10366810.298623648
+    "usdTotal": 10638281.806092607
+  },
+  {
+    "id": "3",
+    "shortName": "geist",
+    "name": "Curve.fi gDAI/gUSDC/gUSDT",
+    "network": "fantom",
+    "poolType": "main",
+    "assetTypeName": "usd",
+    "isMetaPool": false,
+    "address": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
+    "coins": [
+      {
+        "address": "0x07E6332dD090D287d3489245038daF987955DCFB",
+        "usdPrice": 1,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "gDAI",
+        "poolBalance": "4191021911223845741171399"
+      },
+      {
+        "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
+        "usdPrice": 1.0001560426390563,
+        "decimals": "6",
+        "isBasePoolLpToken": false,
+        "symbol": "gUSDC",
+        "poolBalance": "3164354479990"
+      },
+      {
+        "address": "0x940F41F0ec9ba1A34CF001cc03347ac092F5F6B5",
+        "usdPrice": 1.0000933806194066,
+        "decimals": "6",
+        "isBasePoolLpToken": false,
+        "symbol": "gfUSDT",
+        "poolBalance": "3254634303310"
+      }
+    ],
+    "usdTotal": 10610808.388515
+  },
+  {
+    "id": "0",
+    "shortName": "2pool",
+    "network": "fantom",
+    "poolType": "main",
+    "assetTypeName": "usd",
+    "isMetaPool": false,
+    "address": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+    "coins": [
+      {
+        "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+        "usdPrice": 1,
+        "decimals": "18",
+        "isBasePoolLpToken": false,
+        "symbol": "DAI",
+        "poolBalance": "5829854005567697842040598"
+      },
+      {
+        "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+        "usdPrice": 1.001,
+        "decimals": "6",
+        "isBasePoolLpToken": false,
+        "symbol": "USDC",
+        "poolBalance": "4538138649471"
+      }
+    ],
+    "usdTotal": 10372530.793688169
   },
   {
     "id": "factory-v2-152",
@@ -1693,21 +1693,21 @@
     "coins": [
       {
         "address": "0x2e1AD108fF1D8C782fcBbB89AAd783aC49586756",
-        "usdPrice": 0.9977269686878043,
+        "usdPrice": 0.999693044092621,
         "decimals": "18",
         "isBasePoolLpToken": false,
         "symbol": "TUSD",
-        "poolBalance": "5368704648430144472656696"
+        "poolBalance": "5367073079945765254501264"
       },
       {
         "address": "0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171",
-        "usdPrice": 1.0596440360344221,
+        "usdPrice": 1.06174841025525,
         "decimals": "18",
         "isBasePoolLpToken": true,
         "symbol": "am3CRV",
-        "poolBalance": "4422852733317359957978059"
+        "poolBalance": "4424389883816550302510174"
       }
     ],
-    "usdTotal": 10043150.935776617
+    "usdTotal": 10063014.550650174
   }
 ]
