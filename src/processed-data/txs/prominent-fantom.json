@@ -1,18 +1,36 @@
 {
   "0x24699312CB27C26Cfc669459D670559E5E44EE60": [],
+  "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f": [
+    {
+      "hash": "0xfce597741d5aba21da8e5dd391632db9984000b7f848c3487f43116462971ca4",
+      "pool": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
+      "timestamp": 1663110782,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "574897.85261156274019",
+      "tokens": [
+        {
+          "symbol": "gUSDC",
+          "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
+          "tokenAmount": "574229.168219319880950168",
+          "usdAmount": "574897.85261156274019",
+          "type": "remove"
+        }
+      ]
+    }
+  ],
   "0x2dd7C9371965472E5A5fD28fbE165007c61439E1": [
     {
       "hash": "0xa95d7de5dd4eb1a8c1f6fd4ba7e07915a17901338275e1b210a9e7e5e05afc7a",
       "pool": "0x2dd7C9371965472E5A5fD28fbE165007c61439E1",
       "timestamp": 1663653046,
       "type": "add_liquidity",
-      "totalUsdAmount": "249758.5",
+      "totalUsdAmount": "250008.2585",
       "tokens": [
         {
           "symbol": "USDC",
           "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
           "tokenAmount": "249758.5",
-          "usdAmount": "249758.5",
+          "usdAmount": "250008.2585",
           "type": "add"
         }
       ]
@@ -22,20 +40,20 @@
       "pool": "0x2dd7C9371965472E5A5fD28fbE165007c61439E1",
       "timestamp": 1663245631,
       "type": "add_liquidity",
-      "totalUsdAmount": "458126.81542",
+      "totalUsdAmount": "458134.70639",
       "tokens": [
         {
           "symbol": "fUSDT",
           "address": "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
           "tokenAmount": "225005.42",
-          "usdAmount": "225230.42542",
+          "usdAmount": "225005.42",
           "type": "add"
         },
         {
           "symbol": "USDC",
           "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
           "tokenAmount": "232896.39",
-          "usdAmount": "232896.39",
+          "usdAmount": "233129.28639",
           "type": "add"
         }
       ]
@@ -45,27 +63,27 @@
       "pool": "0x2dd7C9371965472E5A5fD28fbE165007c61439E1",
       "timestamp": 1663165179,
       "type": "add_liquidity",
-      "totalUsdAmount": "407379.86698671118019",
+      "totalUsdAmount": "407186.76901721860127",
       "tokens": [
         {
           "symbol": "MIM",
           "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
           "tokenAmount": "128981.11",
-          "usdAmount": "128728.94977671118019",
+          "usdAmount": "128533.17322721860127",
           "type": "add"
         },
         {
           "symbol": "fUSDT",
           "address": "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
           "tokenAmount": "137917.21",
-          "usdAmount": "138055.12721",
+          "usdAmount": "137917.21",
           "type": "add"
         },
         {
           "symbol": "USDC",
           "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
           "tokenAmount": "140595.79",
-          "usdAmount": "140595.79",
+          "usdAmount": "140736.38579",
           "type": "add"
         }
       ]
@@ -90,24 +108,6 @@
         {
           "symbol": "USDC",
           "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
-          "type": "remove"
-        }
-      ]
-    }
-  ],
-  "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f": [
-    {
-      "hash": "0xfce597741d5aba21da8e5dd391632db9984000b7f848c3487f43116462971ca4",
-      "pool": "0x0fa949783947Bf6c1b171DB13AEACBB488845B3f",
-      "timestamp": 1663110782,
-      "type": "remove_liquidity",
-      "totalUsdAmount": "574318.77245415192766",
-      "tokens": [
-        {
-          "symbol": "gUSDC",
-          "address": "0xe578C856933D8e1082740bf7661e379Aa2A30b26",
-          "tokenAmount": "574229.168219319880950168",
-          "usdAmount": "574318.77245415192766",
           "type": "remove"
         }
       ]
