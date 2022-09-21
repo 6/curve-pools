@@ -22,17 +22,38 @@
   ],
   "0x1337BedC9D22ecbe766dF105c9623922A27963EC": [
     {
+      "hash": "0xdb927a8f5443c5d99b7704859d8a1e8e1bd3fda731452a6a70f7d40b160d45ba",
+      "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+      "timestamp": 1663754316,
+      "type": "exchange",
+      "totalUsdAmount": "798109.96207727399896",
+      "tokens": [
+        {
+          "symbol": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "tokenAmount": "798940.060800445662002402",
+          "usdAmount": "798109.96207727399896",
+          "type": "add"
+        },
+        {
+          "symbol": "USDC",
+          "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0xc5fd883a347430ea859363d6f99816880eb010635055a1bae5c6f70a15ab1d12",
       "pool": "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
       "timestamp": 1663413777,
       "type": "remove_liquidity",
-      "totalUsdAmount": "181950.25021981768769",
+      "totalUsdAmount": "182019.03850444075815",
       "tokens": [
         {
           "symbol": "DAI",
           "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
           "tokenAmount": "182208.352983190292865431",
-          "usdAmount": "181950.25021981768769",
+          "usdAmount": "182019.03850444075815",
           "type": "remove"
         }
       ]
