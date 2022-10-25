@@ -1,4 +1,38 @@
 {
   "0x061b87122Ed14b9526A813209C8a59a633257bAb": [],
-  "0x1337BedC9D22ecbe766dF105c9623922A27963EC": []
+  "0x1337BedC9D22ecbe766dF105c9623922A27963EC": [],
+  "0x7Bc5728BC2b59B45a58d9A576E2Ffc5f0505B35E": [
+    {
+      "hash": "0x702ff195dd3110933c43b67135babbedf3f701eb917a9d37fcb28931c9dc211e",
+      "pool": "0x7Bc5728BC2b59B45a58d9A576E2Ffc5f0505B35E",
+      "timestamp": 1666677182,
+      "type": "add_liquidity",
+      "totalUsdAmount": "660327.14",
+      "tokens": [
+        {
+          "symbol": "ETH",
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "tokenAmount": "451",
+          "usdAmount": "660327.14",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0xe2359babfa0a5973007888e372882c235c10cdb435d45691a7ed1857331599de",
+      "pool": "0x7Bc5728BC2b59B45a58d9A576E2Ffc5f0505B35E",
+      "timestamp": 1666676745,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "522106.81071889586831",
+      "tokens": [
+        {
+          "symbol": "sETH",
+          "address": "0xE405de8F52ba7559f9df3C368500B6E6ae6Cee49",
+          "tokenAmount": "354.019970982776991924",
+          "usdAmount": "522106.81071889586831",
+          "type": "remove"
+        }
+      ]
+    }
+  ]
 }
