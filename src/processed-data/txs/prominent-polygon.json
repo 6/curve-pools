@@ -1,6 +1,53 @@
 {
   "0x445FE580eF8d70FF569aB36e80c647af338db351": [
     {
+      "hash": "0x2969920a589b75e0371cab21a315925e91d4842ef78243388c1c3fe3139a66d8",
+      "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "timestamp": 1667890968,
+      "type": "add_liquidity",
+      "totalUsdAmount": "453914.57901861530179",
+      "tokens": [
+        {
+          "symbol": "amDAI",
+          "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
+          "tokenAmount": "221481.18",
+          "usdAmount": "221244.90580893487411",
+          "type": "add"
+        },
+        {
+          "symbol": "amUSDT",
+          "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
+          "tokenAmount": "232921.41",
+          "usdAmount": "232669.67320968042768",
+          "type": "add"
+        }
+      ]
+    },
+    {
+      "hash": "0xf8625114cc33db859307936df4a1d2e5a5a5f69ce2bddb23396f35cde11ee18a",
+      "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "timestamp": 1667890742,
+      "type": "remove_liquidity",
+      "totalUsdAmount": "654271.095558286773913658",
+      "tokens": [
+        {
+          "symbol": "amDAI",
+          "address": "0x27F8D03b3a2196956ED754baDc28D73be8830A6e",
+          "type": "remove"
+        },
+        {
+          "symbol": "amUSDC",
+          "address": "0x1a13F4Ca1d028320A707D99520AbFefca3998b7F",
+          "type": "remove"
+        },
+        {
+          "symbol": "amUSDT",
+          "address": "0x60D55F02A771d515e077c9C2403a1ef324885CeC",
+          "type": "remove"
+        }
+      ]
+    },
+    {
       "hash": "0x873f16105e73758991964748dc89d10f167b01c70d31142e1f8b200af7c38033",
       "pool": "0x445FE580eF8d70FF569aB36e80c647af338db351",
       "timestamp": 1667828029,
