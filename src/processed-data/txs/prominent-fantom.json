@@ -1,4 +1,26 @@
 {
   "0x24699312CB27C26Cfc669459D670559E5E44EE60": [],
-  "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40": []
+  "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40": [
+    {
+      "hash": "0x8d3b4345ac9dc86f08637b3cb695813979a598882bde87dbe3bbf2352df006fd",
+      "pool": "0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40",
+      "timestamp": 1668028148,
+      "type": "exchange",
+      "totalUsdAmount": "115126.41366",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+          "tokenAmount": "115260",
+          "usdAmount": "115126.41366",
+          "type": "add"
+        },
+        {
+          "symbol": "DAI",
+          "address": "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+          "type": "remove"
+        }
+      ]
+    }
+  ]
 }
