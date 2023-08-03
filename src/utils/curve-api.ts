@@ -92,7 +92,7 @@ export const fetchPools = async ({
 
 export const fetchGauges = async (): Promise<FetchGaugesResponse> => {
   // Includes all chains:
-  const gaugesUri = 'https://api.curve.fi/api/getGauges';
+  const gaugesUri = 'https://api.curve.fi/api/getAllGauges';
   console.log(`GET ${gaugesUri}`);
   const response = await fetch(gaugesUri);
   const json = await response.json();
